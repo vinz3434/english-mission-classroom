@@ -4,21 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#162d4a">
-<meta name="description" content="Des questionnaires pour réviser l’anglais et la conjugaison.">
+<meta name="description" content="Des questionnaires pour réviser l’anglais, la conjugaison et les mathématiques.">
 <meta name="referrer" content="no-referrer">
-<title>Mes révisions · Anglais et conjugaison</title>
+<title>Mes révisions · Quiz et calculs</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="./icon-192.png">
 <style>:root{color-scheme:light;--navy:#162d4a;--blue:#215ad4;--paper:#fff;--muted:#526277;--line:#dce3ec;--green:#14704d;--orange:#a54615;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--navy);background:#f2f5fa}
 *{box-sizing:border-box}body{margin:0;min-height:100svh}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f3ac36;outline-offset:4px}button:disabled{opacity:.48;cursor:default}header{max-width:680px;margin:auto;padding:22px 20px 10px;display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;border-radius:14px;background:var(--navy);color:white;width:44px;height:44px;font-weight:850;letter-spacing:-2px}header strong{font-size:17px}header small{display:block;color:var(--muted);font-size:13px;margin-top:2px}main{max-width:680px;margin:auto;padding:16px 20px 28px}.card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,36px);box-shadow:0 8px 32px #152d4a06}h1{font-size:clamp(30px,8vw,44px);line-height:1.12;letter-spacing:-1.2px;margin:14px 0 18px}h2{font-size:clamp(23px,6vw,29px);line-height:1.3;margin:22px 0}p{line-height:1.6}.eyebrow{font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue)}.intro{color:var(--muted);font-size:17px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.chip{font-size:13px;padding:8px 11px;border-radius:30px;background:#eef3fd;color:#284b88}.primary,.secondary{border:0;border-radius:14px;padding:16px 18px;min-height:52px;font-weight:750;width:100%}.primary{background:var(--blue);color:white}.secondary{background:#edf2fa;color:var(--navy);margin-top:12px}.primary:hover:enabled{background:#1949b0}.note{font-size:13px;color:var(--muted);line-height:1.6}.rule{display:flex;align-items:flex-start;gap:12px;margin:22px 0;font-size:15px;line-height:1.5}.rule span{color:var(--green);font-weight:900}.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--muted)}.category{font-size:12px;background:#edf2fa;border-radius:20px;padding:7px 10px}.progress{height:7px;background:#edf1f7;border-radius:8px;margin:16px 0 26px;overflow:hidden}.progress div{height:100%;background:var(--blue);border-radius:8px;transition:width .2s}.context{white-space:pre-line;background:#f2f6fc;border-left:3px solid #779ae2;border-radius:0 12px 12px 0;padding:16px;line-height:1.65;font-size:15px;margin-top:18px}label{font-size:14px;font-weight:700;display:block;margin:26px 0 9px}input{width:100%;min-height:56px;border:1.5px solid #b9c8dc;border-radius:12px;padding:14px;color:var(--navy);background:white;font-size:18px;margin-bottom:16px}input:disabled{color:var(--muted);background:#f8fafc}.feedback{border-radius:14px;padding:18px;margin:20px 0;background:#fff3e9;border:1px solid #f3d5bb}.feedback.correct{background:#edf9f2;border-color:#b7dec8}.feedback strong{color:var(--orange)}.feedback.correct strong{color:var(--green)}.feedback p{margin:9px 0 0;font-size:15px}.score{font-size:74px;letter-spacing:-4px;font-weight:850;line-height:1;margin:26px 0 18px}.score span{font-size:32px;color:var(--muted);letter-spacing:-1px}.review{list-style:none;padding:0;margin:24px 0}.review li{border-top:1px solid var(--line);padding:16px 0;line-height:1.5;font-size:14px;overflow-wrap:anywhere}.review strong{display:block;font-size:15px;margin:0 0 6px}.right{color:var(--green)}.wrong{color:var(--orange)}.review .answer{color:var(--muted);margin-top:4px}.footer{max-width:680px;margin:0 auto;padding:0 24px 28px;font-size:12px;color:var(--muted);line-height:1.65}.footer details{margin-top:10px}.footer summary{cursor:pointer;min-height:36px;padding:8px 0}.footer p{margin:4px 0 10px}.status{display:inline-flex;gap:6px;align-items:center}.status::before{content:"";width:7px;height:7px;border-radius:50%;background:#8491a3}.status.ready::before{background:var(--green)}[hidden]{display:none!important}@media(max-width:380px){main{padding:12px 12px 24px}header{padding:18px 14px 8px}.card{border-radius:20px;padding:22px}.category{max-width:58%;text-align:right}h2{font-size:23px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .quiz-menu{display:grid;gap:14px;margin:26px 0 20px}.quiz-option{width:100%;text-align:left;border:1.5px solid #d3dfef;border-radius:18px;background:#f7faff;color:var(--navy);padding:20px;min-height:160px;display:flex;flex-direction:column;gap:8px}.quiz-option:hover{border-color:var(--blue);background:#eef4ff}.option-subject{text-transform:uppercase;letter-spacing:1.3px;font-weight:800;font-size:12px;color:var(--blue)}.quiz-option strong{font-size:23px;letter-spacing:-.5px;line-height:1.2}.option-description{color:var(--muted);font-size:14px;line-height:1.5}.option-meta{font-size:13px;font-weight:750;margin-top:5px}.quiz-option.conj3{background:#f5faf7;border-color:#c6ddce}.conj3 .option-subject{color:var(--green)}.menu-button{margin-left:auto;border:1px solid #cbd6e5;background:white;color:var(--navy);border-radius:12px;min-height:44px;padding:10px 12px;font-size:13px;font-weight:700;flex-shrink:0}.answer-hint{color:var(--muted);font-size:14px;margin:0 0 10px}.secondary{width:100%;min-height:48px;margin-top:12px;border:1px solid #cbd6e5;border-radius:14px;background:white;color:var(--navy);font-weight:700}@media(max-width:430px){header{flex-wrap:wrap}.menu-button{margin-left:56px;margin-top:2px}.quiz-option strong{font-size:22px}}
+
+.quiz-option.penelopeMaths{background:#f8f5fc;border-color:#d9cfeb}.penelopeMaths .option-subject{color:#66449a}.worked-example{padding:16px;border-radius:14px;background:#f3f0fa;line-height:1.65;margin:24px 0}.worked-example strong{font-size:14px;color:#66449a}.worked-example p{margin:8px 0 0}
 </style>
 </head>
 <body>
 <header><div class="logo" aria-hidden="true">MR</div><div><strong>Mes révisions</strong><small>Un petit défi, de grands progrès.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
-<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent uniquement en mémoire pendant la partie. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>44 questions sur le thème « In my classroom » : 32 de vocabulaire, 8 de consignes et 4 de compréhension de courts dialogues. Chaque partie tire 3 questions de vocabulaire, 1 consigne et 1 dialogue.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. Ni nom, ni compte, ni réponse, ni score ne sont envoyés par le quiz. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>Correction automatique par réponses prévues : certaines formulations pourtant justes peuvent ne pas être reconnues. Les accents sont nécessaires pour les réponses en français. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Version 2.0 · Préparée le 19 octobre 2026.</p></details></footer>
+<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent uniquement en mémoire pendant la partie. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>44 questions sur le thème « In my classroom » : 32 de vocabulaire, 8 de consignes et 4 de compréhension de courts dialogues. Chaque partie tire 3 questions de vocabulaire, 1 consigne et 1 dialogue.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>Correction automatique par réponses prévues : certaines formulations pourtant justes peuvent ne pas être reconnues. Les accents sont nécessaires pour les réponses en français. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Version 3.0 · Préparée le 19 octobre 2026.</p></details></footer>
 <script>const QUIZZES = {
   "english": {
     "id": "english",
@@ -2125,6 +2127,1588 @@
         "accentSensitive": true
       }
     ]
+  },
+  "penelopeMaths": {
+    "id": "penelopeMaths",
+    "subject": "Mathématiques · 5e",
+    "title": "Pénélope — Parenthèses et priorités",
+    "description": "Un calcul à la fois. Tu peux écrire les étapes sur un brouillon, puis saisir le résultat.",
+    "menuDescription": "Calcul de gauche à droite, priorités et parenthèses simples ou doubles.",
+    "duration": "10 à 15 minutes",
+    "scope": "Règles de calcul · Entraînement distinct des exercices à rendre.",
+    "size": 10,
+    "storageKey": "english-mission-classroom.penelope-maths.previous.v1",
+    "plan": [
+      [
+        "left",
+        2
+      ],
+      [
+        "priority",
+        2
+      ],
+      [
+        "simple",
+        3
+      ],
+      [
+        "nested",
+        3
+      ]
+    ],
+    "bank": [
+      {
+        "id": "maths_left_1",
+        "conceptId": "maths_left_1",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 32 − 9 + 4",
+        "expression": "32 − 9 + 4",
+        "steps": [
+          "23 + 4"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "32 − 9 + 4 = 23 + 4 = 27",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_2",
+        "conceptId": "maths_left_2",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 41 − 16 + 8",
+        "expression": "41 − 16 + 8",
+        "steps": [
+          "25 + 8"
+        ],
+        "acceptedAnswers": [
+          "33"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "41 − 16 + 8 = 25 + 8 = 33",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_3",
+        "conceptId": "maths_left_3",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 27 − 8 + 6",
+        "expression": "27 − 8 + 6",
+        "steps": [
+          "19 + 6"
+        ],
+        "acceptedAnswers": [
+          "25"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "27 − 8 + 6 = 19 + 6 = 25",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_4",
+        "conceptId": "maths_left_4",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 36 − 14 + 5",
+        "expression": "36 − 14 + 5",
+        "steps": [
+          "22 + 5"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "36 − 14 + 5 = 22 + 5 = 27",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_5",
+        "conceptId": "maths_left_5",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 48 − 19 + 7",
+        "expression": "48 − 19 + 7",
+        "steps": [
+          "29 + 7"
+        ],
+        "acceptedAnswers": [
+          "36"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "48 − 19 + 7 = 29 + 7 = 36",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_6",
+        "conceptId": "maths_left_6",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 25 − 7 + 9",
+        "expression": "25 − 7 + 9",
+        "steps": [
+          "18 + 9"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "25 − 7 + 9 = 18 + 9 = 27",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_7",
+        "conceptId": "maths_left_7",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 43 − 18 + 6",
+        "expression": "43 − 18 + 6",
+        "steps": [
+          "25 + 6"
+        ],
+        "acceptedAnswers": [
+          "31"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "43 − 18 + 6 = 25 + 6 = 31",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_8",
+        "conceptId": "maths_left_8",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 35 − 12 + 8",
+        "expression": "35 − 12 + 8",
+        "steps": [
+          "23 + 8"
+        ],
+        "acceptedAnswers": [
+          "31"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "35 − 12 + 8 = 23 + 8 = 31",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_9",
+        "conceptId": "maths_left_9",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 29 − 11 + 5",
+        "expression": "29 − 11 + 5",
+        "steps": [
+          "18 + 5"
+        ],
+        "acceptedAnswers": [
+          "23"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "29 − 11 + 5 = 18 + 5 = 23",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_10",
+        "conceptId": "maths_left_10",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 52 − 24 + 9",
+        "expression": "52 − 24 + 9",
+        "steps": [
+          "28 + 9"
+        ],
+        "acceptedAnswers": [
+          "37"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "52 − 24 + 9 = 28 + 9 = 37",
+        "explanation": "Addition et soustraction ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_11",
+        "conceptId": "maths_left_11",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 36 : 6 × 3",
+        "expression": "36 : 6 × 3",
+        "steps": [
+          "6 × 3"
+        ],
+        "acceptedAnswers": [
+          "18"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "36 : 6 × 3 = 6 × 3 = 18",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_12",
+        "conceptId": "maths_left_12",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 42 : 7 × 4",
+        "expression": "42 : 7 × 4",
+        "steps": [
+          "6 × 4"
+        ],
+        "acceptedAnswers": [
+          "24"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "42 : 7 × 4 = 6 × 4 = 24",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_13",
+        "conceptId": "maths_left_13",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 56 : 8 × 5",
+        "expression": "56 : 8 × 5",
+        "steps": [
+          "7 × 5"
+        ],
+        "acceptedAnswers": [
+          "35"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "56 : 8 × 5 = 7 × 5 = 35",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_14",
+        "conceptId": "maths_left_14",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 63 : 9 × 2",
+        "expression": "63 : 9 × 2",
+        "steps": [
+          "7 × 2"
+        ],
+        "acceptedAnswers": [
+          "14"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "63 : 9 × 2 = 7 × 2 = 14",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_15",
+        "conceptId": "maths_left_15",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 80 : 10 × 3",
+        "expression": "80 : 10 × 3",
+        "steps": [
+          "8 × 3"
+        ],
+        "acceptedAnswers": [
+          "24"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "80 : 10 × 3 = 8 × 3 = 24",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_16",
+        "conceptId": "maths_left_16",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 54 : 6 × 4",
+        "expression": "54 : 6 × 4",
+        "steps": [
+          "9 × 4"
+        ],
+        "acceptedAnswers": [
+          "36"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "54 : 6 × 4 = 9 × 4 = 36",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_17",
+        "conceptId": "maths_left_17",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 72 : 8 × 5",
+        "expression": "72 : 8 × 5",
+        "steps": [
+          "9 × 5"
+        ],
+        "acceptedAnswers": [
+          "45"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "72 : 8 × 5 = 9 × 5 = 45",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_18",
+        "conceptId": "maths_left_18",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 45 : 6 × 2",
+        "expression": "45 : 6 × 2",
+        "steps": [
+          "7,5 × 2"
+        ],
+        "acceptedAnswers": [
+          "15"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "45 : 6 × 2 = 7,5 × 2 = 15",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_19",
+        "conceptId": "maths_left_19",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 35 : 2 × 2",
+        "expression": "35 : 2 × 2",
+        "steps": [
+          "17,5 × 2"
+        ],
+        "acceptedAnswers": [
+          "35"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "35 : 2 × 2 = 17,5 × 2 = 35",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_left_20",
+        "conceptId": "maths_left_20",
+        "category": "left",
+        "categoryLabel": "De gauche à droite",
+        "prompt": "Calcule : 27 : 4 × 2",
+        "expression": "27 : 4 × 2",
+        "steps": [
+          "6,75 × 2"
+        ],
+        "acceptedAnswers": [
+          "13.5"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "27 : 4 × 2 = 6,75 × 2 = 13,5",
+        "explanation": "Division et multiplication ont la même priorité : on calcule de gauche à droite."
+      },
+      {
+        "id": "maths_priority_1",
+        "conceptId": "maths_priority_1",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 7 + 4 × 6",
+        "expression": "7 + 4 × 6",
+        "steps": [
+          "7 + 24"
+        ],
+        "acceptedAnswers": [
+          "31"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "7 + 4 × 6 = 7 + 24 = 31",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_2",
+        "conceptId": "maths_priority_2",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 9 + 5 × 3",
+        "expression": "9 + 5 × 3",
+        "steps": [
+          "9 + 15"
+        ],
+        "acceptedAnswers": [
+          "24"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "9 + 5 × 3 = 9 + 15 = 24",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_3",
+        "conceptId": "maths_priority_3",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 8 + 6 × 4",
+        "expression": "8 + 6 × 4",
+        "steps": [
+          "8 + 24"
+        ],
+        "acceptedAnswers": [
+          "32"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "8 + 6 × 4 = 8 + 24 = 32",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_4",
+        "conceptId": "maths_priority_4",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 11 + 3 × 7",
+        "expression": "11 + 3 × 7",
+        "steps": [
+          "11 + 21"
+        ],
+        "acceptedAnswers": [
+          "32"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "11 + 3 × 7 = 11 + 21 = 32",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_5",
+        "conceptId": "maths_priority_5",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 6 + 8 × 2",
+        "expression": "6 + 8 × 2",
+        "steps": [
+          "6 + 16"
+        ],
+        "acceptedAnswers": [
+          "22"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "6 + 8 × 2 = 6 + 16 = 22",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_6",
+        "conceptId": "maths_priority_6",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 13 + 4 × 5",
+        "expression": "13 + 4 × 5",
+        "steps": [
+          "13 + 20"
+        ],
+        "acceptedAnswers": [
+          "33"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "13 + 4 × 5 = 13 + 20 = 33",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_7",
+        "conceptId": "maths_priority_7",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 12 + 7 × 3",
+        "expression": "12 + 7 × 3",
+        "steps": [
+          "12 + 21"
+        ],
+        "acceptedAnswers": [
+          "33"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "12 + 7 × 3 = 12 + 21 = 33",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_8",
+        "conceptId": "maths_priority_8",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 15 + 6 × 2",
+        "expression": "15 + 6 × 2",
+        "steps": [
+          "15 + 12"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "15 + 6 × 2 = 15 + 12 = 27",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_9",
+        "conceptId": "maths_priority_9",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 5 + 9 × 4",
+        "expression": "5 + 9 × 4",
+        "steps": [
+          "5 + 36"
+        ],
+        "acceptedAnswers": [
+          "41"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "5 + 9 × 4 = 5 + 36 = 41",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_10",
+        "conceptId": "maths_priority_10",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 17 + 3 × 6",
+        "expression": "17 + 3 × 6",
+        "steps": [
+          "17 + 18"
+        ],
+        "acceptedAnswers": [
+          "35"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "17 + 3 × 6 = 17 + 18 = 35",
+        "explanation": "On effectue la multiplication avant l’addition."
+      },
+      {
+        "id": "maths_priority_11",
+        "conceptId": "maths_priority_11",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 40 − 24 : 6",
+        "expression": "40 − 24 : 6",
+        "steps": [
+          "40 − 4"
+        ],
+        "acceptedAnswers": [
+          "36"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "40 − 24 : 6 = 40 − 4 = 36",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_12",
+        "conceptId": "maths_priority_12",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 35 − 18 : 3",
+        "expression": "35 − 18 : 3",
+        "steps": [
+          "35 − 6"
+        ],
+        "acceptedAnswers": [
+          "29"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "35 − 18 : 3 = 35 − 6 = 29",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_13",
+        "conceptId": "maths_priority_13",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 42 − 28 : 7",
+        "expression": "42 − 28 : 7",
+        "steps": [
+          "42 − 4"
+        ],
+        "acceptedAnswers": [
+          "38"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "42 − 28 : 7 = 42 − 4 = 38",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_14",
+        "conceptId": "maths_priority_14",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 31 − 45 : 9",
+        "expression": "31 − 45 : 9",
+        "steps": [
+          "31 − 5"
+        ],
+        "acceptedAnswers": [
+          "26"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "31 − 45 : 9 = 31 − 5 = 26",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_15",
+        "conceptId": "maths_priority_15",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 50 − 32 : 8",
+        "expression": "50 − 32 : 8",
+        "steps": [
+          "50 − 4"
+        ],
+        "acceptedAnswers": [
+          "46"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "50 − 32 : 8 = 50 − 4 = 46",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_16",
+        "conceptId": "maths_priority_16",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 29 − 21 : 3",
+        "expression": "29 − 21 : 3",
+        "steps": [
+          "29 − 7"
+        ],
+        "acceptedAnswers": [
+          "22"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "29 − 21 : 3 = 29 − 7 = 22",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_17",
+        "conceptId": "maths_priority_17",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 48 − 54 : 6",
+        "expression": "48 − 54 : 6",
+        "steps": [
+          "48 − 9"
+        ],
+        "acceptedAnswers": [
+          "39"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "48 − 54 : 6 = 48 − 9 = 39",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_18",
+        "conceptId": "maths_priority_18",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 37 − 35 : 5",
+        "expression": "37 − 35 : 5",
+        "steps": [
+          "37 − 7"
+        ],
+        "acceptedAnswers": [
+          "30"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "37 − 35 : 5 = 37 − 7 = 30",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_19",
+        "conceptId": "maths_priority_19",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 24 − 15 : 2",
+        "expression": "24 − 15 : 2",
+        "steps": [
+          "24 − 7,5"
+        ],
+        "acceptedAnswers": [
+          "16.5"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "24 − 15 : 2 = 24 − 7,5 = 16,5",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_priority_20",
+        "conceptId": "maths_priority_20",
+        "category": "priority",
+        "categoryLabel": "Les priorités",
+        "prompt": "Calcule : 33 − 25 : 2",
+        "expression": "33 − 25 : 2",
+        "steps": [
+          "33 − 12,5"
+        ],
+        "acceptedAnswers": [
+          "20.5"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "33 − 25 : 2 = 33 − 12,5 = 20,5",
+        "explanation": "On effectue la division avant la soustraction."
+      },
+      {
+        "id": "maths_simple_1",
+        "conceptId": "maths_simple_1",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 3 × (7 + 4)",
+        "expression": "3 × (7 + 4)",
+        "steps": [
+          "3 × 11"
+        ],
+        "acceptedAnswers": [
+          "33"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "3 × (7 + 4) = 3 × 11 = 33",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_2",
+        "conceptId": "maths_simple_2",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 4 × (8 + 3)",
+        "expression": "4 × (8 + 3)",
+        "steps": [
+          "4 × 11"
+        ],
+        "acceptedAnswers": [
+          "44"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "4 × (8 + 3) = 4 × 11 = 44",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_3",
+        "conceptId": "maths_simple_3",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 5 × (6 + 2)",
+        "expression": "5 × (6 + 2)",
+        "steps": [
+          "5 × 8"
+        ],
+        "acceptedAnswers": [
+          "40"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "5 × (6 + 2) = 5 × 8 = 40",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_4",
+        "conceptId": "maths_simple_4",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 2 × (9 + 6)",
+        "expression": "2 × (9 + 6)",
+        "steps": [
+          "2 × 15"
+        ],
+        "acceptedAnswers": [
+          "30"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "2 × (9 + 6) = 2 × 15 = 30",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_5",
+        "conceptId": "maths_simple_5",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 6 × (5 + 3)",
+        "expression": "6 × (5 + 3)",
+        "steps": [
+          "6 × 8"
+        ],
+        "acceptedAnswers": [
+          "48"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "6 × (5 + 3) = 6 × 8 = 48",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_6",
+        "conceptId": "maths_simple_6",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 7 × (4 + 2)",
+        "expression": "7 × (4 + 2)",
+        "steps": [
+          "7 × 6"
+        ],
+        "acceptedAnswers": [
+          "42"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "7 × (4 + 2) = 7 × 6 = 42",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_7",
+        "conceptId": "maths_simple_7",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 3 × (8 + 6)",
+        "expression": "3 × (8 + 6)",
+        "steps": [
+          "3 × 14"
+        ],
+        "acceptedAnswers": [
+          "42"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "3 × (8 + 6) = 3 × 14 = 42",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_8",
+        "conceptId": "maths_simple_8",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 4 × (9 + 2)",
+        "expression": "4 × (9 + 2)",
+        "steps": [
+          "4 × 11"
+        ],
+        "acceptedAnswers": [
+          "44"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "4 × (9 + 2) = 4 × 11 = 44",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_9",
+        "conceptId": "maths_simple_9",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 5 × (7 + 3)",
+        "expression": "5 × (7 + 3)",
+        "steps": [
+          "5 × 10"
+        ],
+        "acceptedAnswers": [
+          "50"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "5 × (7 + 3) = 5 × 10 = 50",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_10",
+        "conceptId": "maths_simple_10",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 2 × (6 + 9)",
+        "expression": "2 × (6 + 9)",
+        "steps": [
+          "2 × 15"
+        ],
+        "acceptedAnswers": [
+          "30"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "2 × (6 + 9) = 2 × 15 = 30",
+        "explanation": "On calcule d’abord l’addition entre parenthèses, puis on multiplie."
+      },
+      {
+        "id": "maths_simple_11",
+        "conceptId": "maths_simple_11",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 6 + (14 − 5) × 3",
+        "expression": "6 + (14 − 5) × 3",
+        "steps": [
+          "6 + 9 × 3",
+          "6 + 27"
+        ],
+        "acceptedAnswers": [
+          "33"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "6 + (14 − 5) × 3 = 6 + 9 × 3 = 6 + 27 = 33",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_12",
+        "conceptId": "maths_simple_12",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 8 + (16 − 7) × 2",
+        "expression": "8 + (16 − 7) × 2",
+        "steps": [
+          "8 + 9 × 2",
+          "8 + 18"
+        ],
+        "acceptedAnswers": [
+          "26"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "8 + (16 − 7) × 2 = 8 + 9 × 2 = 8 + 18 = 26",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_13",
+        "conceptId": "maths_simple_13",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 5 + (18 − 6) × 4",
+        "expression": "5 + (18 − 6) × 4",
+        "steps": [
+          "5 + 12 × 4",
+          "5 + 48"
+        ],
+        "acceptedAnswers": [
+          "53"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "5 + (18 − 6) × 4 = 5 + 12 × 4 = 5 + 48 = 53",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_14",
+        "conceptId": "maths_simple_14",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 7 + (15 − 8) × 3",
+        "expression": "7 + (15 − 8) × 3",
+        "steps": [
+          "7 + 7 × 3",
+          "7 + 21"
+        ],
+        "acceptedAnswers": [
+          "28"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "7 + (15 − 8) × 3 = 7 + 7 × 3 = 7 + 21 = 28",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_15",
+        "conceptId": "maths_simple_15",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 9 + (13 − 4) × 2",
+        "expression": "9 + (13 − 4) × 2",
+        "steps": [
+          "9 + 9 × 2",
+          "9 + 18"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "9 + (13 − 4) × 2 = 9 + 9 × 2 = 9 + 18 = 27",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_16",
+        "conceptId": "maths_simple_16",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 4 + (17 − 9) × 5",
+        "expression": "4 + (17 − 9) × 5",
+        "steps": [
+          "4 + 8 × 5",
+          "4 + 40"
+        ],
+        "acceptedAnswers": [
+          "44"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "4 + (17 − 9) × 5 = 4 + 8 × 5 = 4 + 40 = 44",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_17",
+        "conceptId": "maths_simple_17",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 12 + (19 − 7) × 2",
+        "expression": "12 + (19 − 7) × 2",
+        "steps": [
+          "12 + 12 × 2",
+          "12 + 24"
+        ],
+        "acceptedAnswers": [
+          "36"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "12 + (19 − 7) × 2 = 12 + 12 × 2 = 12 + 24 = 36",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_18",
+        "conceptId": "maths_simple_18",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 3 + (16 − 6) × 4",
+        "expression": "3 + (16 − 6) × 4",
+        "steps": [
+          "3 + 10 × 4",
+          "3 + 40"
+        ],
+        "acceptedAnswers": [
+          "43"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "3 + (16 − 6) × 4 = 3 + 10 × 4 = 3 + 40 = 43",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_19",
+        "conceptId": "maths_simple_19",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 10 + (18 − 9) × 3",
+        "expression": "10 + (18 − 9) × 3",
+        "steps": [
+          "10 + 9 × 3",
+          "10 + 27"
+        ],
+        "acceptedAnswers": [
+          "37"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "10 + (18 − 9) × 3 = 10 + 9 × 3 = 10 + 27 = 37",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_simple_20",
+        "conceptId": "maths_simple_20",
+        "category": "simple",
+        "categoryLabel": "Parenthèses simples",
+        "prompt": "Calcule : 11 + (14 − 6) × 2",
+        "expression": "11 + (14 − 6) × 2",
+        "steps": [
+          "11 + 8 × 2",
+          "11 + 16"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "11 + (14 − 6) × 2 = 11 + 8 × 2 = 11 + 16 = 27",
+        "explanation": "On commence par les parenthèses, puis la multiplication et enfin l’addition."
+      },
+      {
+        "id": "maths_nested_1",
+        "conceptId": "maths_nested_1",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 25 − (14 − (3 + 4))",
+        "expression": "25 − (14 − (3 + 4))",
+        "steps": [
+          "25 − (14 − 7)",
+          "25 − 7"
+        ],
+        "acceptedAnswers": [
+          "18"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "25 − (14 − (3 + 4)) = 25 − (14 − 7) = 25 − 7 = 18",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_2",
+        "conceptId": "maths_nested_2",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 30 − (18 − (5 + 6))",
+        "expression": "30 − (18 − (5 + 6))",
+        "steps": [
+          "30 − (18 − 11)",
+          "30 − 7"
+        ],
+        "acceptedAnswers": [
+          "23"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "30 − (18 − (5 + 6)) = 30 − (18 − 11) = 30 − 7 = 23",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_3",
+        "conceptId": "maths_nested_3",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 28 − (16 − (2 + 7))",
+        "expression": "28 − (16 − (2 + 7))",
+        "steps": [
+          "28 − (16 − 9)",
+          "28 − 7"
+        ],
+        "acceptedAnswers": [
+          "21"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "28 − (16 − (2 + 7)) = 28 − (16 − 9) = 28 − 7 = 21",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_4",
+        "conceptId": "maths_nested_4",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 35 − (21 − (4 + 8))",
+        "expression": "35 − (21 − (4 + 8))",
+        "steps": [
+          "35 − (21 − 12)",
+          "35 − 9"
+        ],
+        "acceptedAnswers": [
+          "26"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "35 − (21 − (4 + 8)) = 35 − (21 − 12) = 35 − 9 = 26",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_5",
+        "conceptId": "maths_nested_5",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 40 − (24 − (6 + 5))",
+        "expression": "40 − (24 − (6 + 5))",
+        "steps": [
+          "40 − (24 − 11)",
+          "40 − 13"
+        ],
+        "acceptedAnswers": [
+          "27"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "40 − (24 − (6 + 5)) = 40 − (24 − 11) = 40 − 13 = 27",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_6",
+        "conceptId": "maths_nested_6",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 32 − (19 − (7 + 3))",
+        "expression": "32 − (19 − (7 + 3))",
+        "steps": [
+          "32 − (19 − 10)",
+          "32 − 9"
+        ],
+        "acceptedAnswers": [
+          "23"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "32 − (19 − (7 + 3)) = 32 − (19 − 10) = 32 − 9 = 23",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_7",
+        "conceptId": "maths_nested_7",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 26 − (15 − (4 + 6))",
+        "expression": "26 − (15 − (4 + 6))",
+        "steps": [
+          "26 − (15 − 10)",
+          "26 − 5"
+        ],
+        "acceptedAnswers": [
+          "21"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "26 − (15 − (4 + 6)) = 26 − (15 − 10) = 26 − 5 = 21",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_8",
+        "conceptId": "maths_nested_8",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 38 − (23 − (5 + 9))",
+        "expression": "38 − (23 − (5 + 9))",
+        "steps": [
+          "38 − (23 − 14)",
+          "38 − 9"
+        ],
+        "acceptedAnswers": [
+          "29"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "38 − (23 − (5 + 9)) = 38 − (23 − 14) = 38 − 9 = 29",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_9",
+        "conceptId": "maths_nested_9",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 29 − (17 − (6 + 4))",
+        "expression": "29 − (17 − (6 + 4))",
+        "steps": [
+          "29 − (17 − 10)",
+          "29 − 7"
+        ],
+        "acceptedAnswers": [
+          "22"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "29 − (17 − (6 + 4)) = 29 − (17 − 10) = 29 − 7 = 22",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_10",
+        "conceptId": "maths_nested_10",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : 34 − (20 − (3 + 8))",
+        "expression": "34 − (20 − (3 + 8))",
+        "steps": [
+          "34 − (20 − 11)",
+          "34 − 9"
+        ],
+        "acceptedAnswers": [
+          "25"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "34 − (20 − (3 + 8)) = 34 − (20 − 11) = 34 − 9 = 25",
+        "explanation": "On commence par les parenthèses les plus intérieures, puis on termine celles de l’extérieur."
+      },
+      {
+        "id": "maths_nested_11",
+        "conceptId": "maths_nested_11",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (15 − (4 + 6)) × 3",
+        "expression": "(15 − (4 + 6)) × 3",
+        "steps": [
+          "(15 − 10) × 3",
+          "5 × 3"
+        ],
+        "acceptedAnswers": [
+          "15"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(15 − (4 + 6)) × 3 = (15 − 10) × 3 = 5 × 3 = 15",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_12",
+        "conceptId": "maths_nested_12",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (18 − (5 + 7)) × 2",
+        "expression": "(18 − (5 + 7)) × 2",
+        "steps": [
+          "(18 − 12) × 2",
+          "6 × 2"
+        ],
+        "acceptedAnswers": [
+          "12"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(18 − (5 + 7)) × 2 = (18 − 12) × 2 = 6 × 2 = 12",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_13",
+        "conceptId": "maths_nested_13",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (20 − (6 + 8)) × 4",
+        "expression": "(20 − (6 + 8)) × 4",
+        "steps": [
+          "(20 − 14) × 4",
+          "6 × 4"
+        ],
+        "acceptedAnswers": [
+          "24"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(20 − (6 + 8)) × 4 = (20 − 14) × 4 = 6 × 4 = 24",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_14",
+        "conceptId": "maths_nested_14",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (17 − (3 + 9)) × 5",
+        "expression": "(17 − (3 + 9)) × 5",
+        "steps": [
+          "(17 − 12) × 5",
+          "5 × 5"
+        ],
+        "acceptedAnswers": [
+          "25"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(17 − (3 + 9)) × 5 = (17 − 12) × 5 = 5 × 5 = 25",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_15",
+        "conceptId": "maths_nested_15",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (22 − (7 + 5)) × 3",
+        "expression": "(22 − (7 + 5)) × 3",
+        "steps": [
+          "(22 − 12) × 3",
+          "10 × 3"
+        ],
+        "acceptedAnswers": [
+          "30"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(22 − (7 + 5)) × 3 = (22 − 12) × 3 = 10 × 3 = 30",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_16",
+        "conceptId": "maths_nested_16",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (19 − (6 + 4)) × 2",
+        "expression": "(19 − (6 + 4)) × 2",
+        "steps": [
+          "(19 − 10) × 2",
+          "9 × 2"
+        ],
+        "acceptedAnswers": [
+          "18"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(19 − (6 + 4)) × 2 = (19 − 10) × 2 = 9 × 2 = 18",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_17",
+        "conceptId": "maths_nested_17",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (24 − (8 + 7)) × 4",
+        "expression": "(24 − (8 + 7)) × 4",
+        "steps": [
+          "(24 − 15) × 4",
+          "9 × 4"
+        ],
+        "acceptedAnswers": [
+          "36"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(24 − (8 + 7)) × 4 = (24 − 15) × 4 = 9 × 4 = 36",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_18",
+        "conceptId": "maths_nested_18",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (21 − (5 + 9)) × 3",
+        "expression": "(21 − (5 + 9)) × 3",
+        "steps": [
+          "(21 − 14) × 3",
+          "7 × 3"
+        ],
+        "acceptedAnswers": [
+          "21"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(21 − (5 + 9)) × 3 = (21 − 14) × 3 = 7 × 3 = 21",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_19",
+        "conceptId": "maths_nested_19",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (16 − (4 + 7)) × 6",
+        "expression": "(16 − (4 + 7)) × 6",
+        "steps": [
+          "(16 − 11) × 6",
+          "5 × 6"
+        ],
+        "acceptedAnswers": [
+          "30"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(16 − (4 + 7)) × 6 = (16 − 11) × 6 = 5 × 6 = 30",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      },
+      {
+        "id": "maths_nested_20",
+        "conceptId": "maths_nested_20",
+        "category": "nested",
+        "categoryLabel": "Parenthèses doubles",
+        "prompt": "Calcule : (23 − (9 + 6)) × 2",
+        "expression": "(23 − (9 + 6)) × 2",
+        "steps": [
+          "(23 − 15) × 2",
+          "8 × 2"
+        ],
+        "acceptedAnswers": [
+          "16"
+        ],
+        "answerType": "number",
+        "answerHint": "Écris seulement le résultat. Virgule ou point acceptés.",
+        "inputMode": "decimal",
+        "exactCorrection": "(23 − (9 + 6)) × 2 = (23 − 15) × 2 = 8 × 2 = 16",
+        "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
+      }
+    ],
+    "workedExample": "Exemple guidé : 8 + 2 × 3 = 8 + 6 = 14. On effectue la multiplication avant l’addition."
   }
 };
 function normalize(text, accentSensitive = false) {
@@ -2133,8 +3717,22 @@ function normalize(text, accentSensitive = false) {
   return value.replace(/[’']/g, ' ').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 }
 function isCorrect(question, answer) {
+  if (question.answerType === 'number') {
+    const value = parseNumericAnswer(answer);
+    return value !== null && question.acceptedAnswers.some(a => parseNumericAnswer(a) === value);
+  }
   const value = normalize(answer, question.accentSensitive);
   return value.length > 0 && question.acceptedAnswers.some(a => normalize(a, question.accentSensitive) === value);
+}
+function parseNumericAnswer(answer) {
+  const text = String(answer).trim().replace(/−/g, '-');
+  if (!/^[+-]?(?:\d+(?:[.,]\d+)?|[.,]\d+)$/.test(text)) return null;
+  const negative = text.startsWith('-');
+  const [integer = '', decimal = ''] = text.replace(/^[+-]/, '').replace(',', '.').split('.');
+  const whole = integer.replace(/^0+/, '') || '0';
+  const fraction = decimal.replace(/0+$/, '');
+  const value = whole + (fraction ? '.' + fraction : '');
+  return (negative && value !== '0' ? '-' : '') + value;
 }
 function shuffle(items, random = Math.random) {
   const copy = [...items];
@@ -2180,7 +3778,7 @@ function showMenu(){
 function showWelcome(id){
   selectedQuiz=QUIZZES[id];questions=[];results=[];index=0;submitted=false;root.dataset.quizId=id;menuButton.hidden=false;
   const quiz=selectedQuiz;
-  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div><div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>`;
+  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div>${quiz.workedExample?`<div class="worked-example"><strong>Un exemple pour commencer</strong><p>${escapeHTML(quiz.workedExample)}</p></div>`:''}<div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>`;
   document.querySelector('#start').addEventListener('click',start);focusHeading();
 }
 function start(){
