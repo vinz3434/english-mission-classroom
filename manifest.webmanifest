@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "English Mission — In my classroom",
-  "short_name": "English Mission",
-  "description": "Un petit quiz pour réviser les mots de la classe en anglais.",
+  "name": "Mes révisions — Anglais et conjugaison",
+  "short_name": "Mes révisions",
+  "description": "Des questionnaires pour réviser l’anglais et la conjugaison.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
@@ -11,7 +11,17 @@
   "theme_color": "#162d4a",
   "prefer_related_applications": false,
   "icons": [
-    {"src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }
