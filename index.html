@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#233653">
-<meta name="description" content="Des questionnaires pour réviser l’anglais, la conjugaison et les mathématiques.">
+<meta name="description" content="Des questionnaires pour réviser l’anglais, la conjugaison, la géographie et les mathématiques.">
 <meta name="referrer" content="no-referrer">
 <title>Mes révisions · Quiz et calculs</title>
 <link rel="manifest" href="./manifest.webmanifest">
@@ -17,6 +17,7 @@
 .quiz-option.penelopeMaths{background:#f8f5fc;border-color:#d9cfeb}.penelopeMaths .option-subject{color:#66449a}.worked-example{padding:16px;border-radius:14px;background:#f3f0fa;line-height:1.65;margin:24px 0}.worked-example strong{font-size:14px;color:#66449a}.worked-example p{margin:8px 0 0}
 
 /* Egg-collecting island: original CSS artwork, no Roblox assets or fonts. */
+.answer-label{font-size:14px;font-weight:700;margin:26px 0 9px}.answer-choices{display:grid;gap:10px;margin:14px 0 24px}.choice{border:2px solid #c6d6da;background:#fff;color:var(--navy);border-radius:13px;min-height:54px;padding:15px 16px;text-align:left;line-height:1.45;overflow-wrap:anywhere;font-weight:650}.choice:hover:enabled{border-color:#779e85;background:#f4f9ed}.choice.chosen{border-color:#496d30;background:#eef7ca;box-shadow:inset 0 0 0 1px #496d30}.choice:disabled{opacity:1;cursor:default}.quiz-option.time{background:#fff8ed;border-color:#e5d7b6;box-shadow:0 5px 0 #e5d7b6}.time .option-icon{background:#f9e9bc}.time .option-subject{color:#7b511f}.quiz-option.geography{background:#f0f8f5;border-color:#bddbd1;box-shadow:0 5px 0 #bddbd1}.geography .option-icon{background:#d7eee7}.geography .option-subject{color:#235f53}
 h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 :root{--navy:#152944;--blue:#3354bd;--muted:#4e6073;--line:#d2dfdc;--green:#176047;--orange:#9c3b13;background:#e4f5ee;color:var(--navy)}
 body{background:radial-gradient(ellipse at 4% 4%,#fff 0,transparent 35%),radial-gradient(ellipse at 100% 28%,#fff8ce 0,transparent 35%),linear-gradient(150deg,#d9f0ff 0%,#e8f8ed 60%,#f9f8e7 100%);background-attachment:fixed}
@@ -34,7 +35,7 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 <body>
 <header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
-<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires en conjugaison. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Version 4.0 · Préparée le 20 octobre 2026.</p></details></footer>
+<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les deux nouveaux questionnaires proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Version 5.0 · Préparée le 20 octobre 2026.</p></details></footer>
 <script>const QUIZZES = {
   "english": {
     "id": "english",
@@ -5549,6 +5550,2492 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
       }
     ]
   },
+  "time": {
+    "id": "time",
+    "subject": "Enzo · Conjugaison CM1",
+    "title": "Passé, présent, futur",
+    "description": "Classe les phrases et les expressions de temps. Choisis ta réponse, puis découvre la correction.",
+    "menuDescription": "Repère quand se passe l’action : avant, maintenant ou après.",
+    "duration": "4 à 6 minutes",
+    "scope": "Activité passé-présent-futur du cahier · Ce questionnaire ne couvre pas toute l’évaluation de conjugaison.",
+    "size": 10,
+    "storageKey": "mes-revisions.time.previous.v1",
+    "plan": [
+      [
+        "pastSentence",
+        2
+      ],
+      [
+        "presentSentence",
+        2
+      ],
+      [
+        "futureSentence",
+        2
+      ],
+      [
+        "marker",
+        4
+      ]
+    ],
+    "bank": [
+      {
+        "id": "time_pastSentence_0",
+        "conceptId": "time_pastSentence_0",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Hier, nous avons visité un musée. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Hier, nous avons visité un musée.",
+        "explanation": "« Hier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_1",
+        "conceptId": "time_pastSentence_1",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « La semaine dernière, tu as joué au ballon. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : La semaine dernière, tu as joué au ballon.",
+        "explanation": "« La semaine dernière » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_2",
+        "conceptId": "time_pastSentence_2",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « L’année dernière, les enfants étaient en CE2. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : L’année dernière, les enfants étaient en CE2.",
+        "explanation": "« L’année dernière » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_3",
+        "conceptId": "time_pastSentence_3",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « L’été dernier, elle a appris à nager. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : L’été dernier, elle a appris à nager.",
+        "explanation": "« L’été dernier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_4",
+        "conceptId": "time_pastSentence_4",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Autrefois, les voyageurs utilisaient cette route. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Autrefois, les voyageurs utilisaient cette route.",
+        "explanation": "« Autrefois » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_5",
+        "conceptId": "time_pastSentence_5",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Il y a quatre ans, nous habitions ici. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Il y a quatre ans, nous habitions ici.",
+        "explanation": "« Il y a quatre ans » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_6",
+        "conceptId": "time_pastSentence_6",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Hier soir, j’ai lu un livre. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Hier soir, j’ai lu un livre.",
+        "explanation": "« Hier soir » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_7",
+        "conceptId": "time_pastSentence_7",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Le mois dernier, vous avez planté un arbre. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Le mois dernier, vous avez planté un arbre.",
+        "explanation": "« Le mois dernier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_8",
+        "conceptId": "time_pastSentence_8",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Avant-hier, ils sont allés à la bibliothèque. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Avant-hier, ils sont allés à la bibliothèque.",
+        "explanation": "« Avant-hier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_9",
+        "conceptId": "time_pastSentence_9",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Le week-end dernier, nous avons préparé un gâteau. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Le week-end dernier, nous avons préparé un gâteau.",
+        "explanation": "« Le week-end dernier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_10",
+        "conceptId": "time_pastSentence_10",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Il y a deux jours, elle a rangé sa chambre. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Il y a deux jours, elle a rangé sa chambre.",
+        "explanation": "« Il y a deux jours » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_pastSentence_11",
+        "conceptId": "time_pastSentence_11",
+        "category": "pastSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Lundi dernier, tu as terminé ton dessin. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : Lundi dernier, tu as terminé ton dessin.",
+        "explanation": "« Lundi dernier » situe ici l’action avant le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_0",
+        "conceptId": "time_presentSentence_0",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « En ce moment, je lis une histoire. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : En ce moment, je lis une histoire.",
+        "explanation": "« En ce moment » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_1",
+        "conceptId": "time_presentSentence_1",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Maintenant, nous rangeons la classe. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Maintenant, nous rangeons la classe.",
+        "explanation": "« Maintenant » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_2",
+        "conceptId": "time_presentSentence_2",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Aujourd’hui, tu portes un pull bleu. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Aujourd’hui, tu portes un pull bleu.",
+        "explanation": "« Aujourd’hui » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_3",
+        "conceptId": "time_presentSentence_3",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « À présent, elle dessine une maison. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : À présent, elle dessine une maison.",
+        "explanation": "« À présent » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_4",
+        "conceptId": "time_presentSentence_4",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Actuellement, ils étudient la géographie. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Actuellement, ils étudient la géographie.",
+        "explanation": "« Actuellement » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_5",
+        "conceptId": "time_presentSentence_5",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « En ce moment, vous écoutez la consigne. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : En ce moment, vous écoutez la consigne.",
+        "explanation": "« En ce moment » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_6",
+        "conceptId": "time_presentSentence_6",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Maintenant, le chat dort sur le tapis. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Maintenant, le chat dort sur le tapis.",
+        "explanation": "« Maintenant » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_7",
+        "conceptId": "time_presentSentence_7",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Aujourd’hui, nous travaillons ensemble. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Aujourd’hui, nous travaillons ensemble.",
+        "explanation": "« Aujourd’hui » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_8",
+        "conceptId": "time_presentSentence_8",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « À présent, les élèves observent la carte. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : À présent, les élèves observent la carte.",
+        "explanation": "« À présent » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_9",
+        "conceptId": "time_presentSentence_9",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « En ce moment, je prépare mon cartable. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : En ce moment, je prépare mon cartable.",
+        "explanation": "« En ce moment » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_10",
+        "conceptId": "time_presentSentence_10",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Maintenant, tu écris une phrase. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Maintenant, tu écris une phrase.",
+        "explanation": "« Maintenant » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_presentSentence_11",
+        "conceptId": "time_presentSentence_11",
+        "category": "presentSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Aujourd’hui, elle joue dans la cour. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : Aujourd’hui, elle joue dans la cour.",
+        "explanation": "« Aujourd’hui » situe ici l’action au moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_0",
+        "conceptId": "time_futureSentence_0",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Demain, nous visiterons un musée. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Demain, nous visiterons un musée.",
+        "explanation": "« Demain » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_1",
+        "conceptId": "time_futureSentence_1",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Dans trois jours, tu partiras à la montagne. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Dans trois jours, tu partiras à la montagne.",
+        "explanation": "« Dans trois jours » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_2",
+        "conceptId": "time_futureSentence_2",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « L’année prochaine, ils entreront au collège. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : L’année prochaine, ils entreront au collège.",
+        "explanation": "« L’année prochaine » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_3",
+        "conceptId": "time_futureSentence_3",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Dans une semaine, elle lira ce livre. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Dans une semaine, elle lira ce livre.",
+        "explanation": "« Dans une semaine » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_4",
+        "conceptId": "time_futureSentence_4",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Bientôt, vous découvrirez une nouvelle leçon. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Bientôt, vous découvrirez une nouvelle leçon.",
+        "explanation": "« Bientôt » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_5",
+        "conceptId": "time_futureSentence_5",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Demain après-midi, nous irons au parc. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Demain après-midi, nous irons au parc.",
+        "explanation": "« Demain après-midi » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_6",
+        "conceptId": "time_futureSentence_6",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Le mois prochain, je commencerai un nouveau cahier. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Le mois prochain, je commencerai un nouveau cahier.",
+        "explanation": "« Le mois prochain » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_7",
+        "conceptId": "time_futureSentence_7",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « L’été prochain, tu apprendras à nager. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : L’été prochain, tu apprendras à nager.",
+        "explanation": "« L’été prochain » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_8",
+        "conceptId": "time_futureSentence_8",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Dans deux jours, ils joueront au basket. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Dans deux jours, ils joueront au basket.",
+        "explanation": "« Dans deux jours » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_9",
+        "conceptId": "time_futureSentence_9",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « La semaine prochaine, nous préparerons une affiche. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : La semaine prochaine, nous préparerons une affiche.",
+        "explanation": "« La semaine prochaine » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_10",
+        "conceptId": "time_futureSentence_10",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Demain matin, elle rangera sa chambre. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Demain matin, elle rangera sa chambre.",
+        "explanation": "« Demain matin » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_futureSentence_11",
+        "conceptId": "time_futureSentence_11",
+        "category": "futureSentence",
+        "categoryLabel": "Une phrase à situer",
+        "prompt": "Cette phrase parle-t-elle du passé, du présent ou du futur ? « Plus tard, vous construirez une maquette. »",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : Plus tard, vous construirez une maquette.",
+        "explanation": "« Plus tard » situe ici l’action après le moment où l’on parle. Observe aussi la forme du verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_0",
+        "conceptId": "time_marker_Passé_0",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « hier » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : hier",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_1",
+        "conceptId": "time_marker_Passé_1",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « la semaine dernière » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : la semaine dernière",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_2",
+        "conceptId": "time_marker_Passé_2",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « l’année dernière » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : l’année dernière",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_3",
+        "conceptId": "time_marker_Passé_3",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « l’été dernier » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : l’été dernier",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_4",
+        "conceptId": "time_marker_Passé_4",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « autrefois » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : autrefois",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_5",
+        "conceptId": "time_marker_Passé_5",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « il y a quatre ans » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : il y a quatre ans",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_6",
+        "conceptId": "time_marker_Passé_6",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « avant-hier » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : avant-hier",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Passé_7",
+        "conceptId": "time_marker_Passé_7",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « le mois dernier » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Passé"
+        ],
+        "exactCorrection": "Passé : le mois dernier",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Passé ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_0",
+        "conceptId": "time_marker_Présent_0",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « maintenant » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : maintenant",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_1",
+        "conceptId": "time_marker_Présent_1",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « en ce moment » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : en ce moment",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_2",
+        "conceptId": "time_marker_Présent_2",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « à présent » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : à présent",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_3",
+        "conceptId": "time_marker_Présent_3",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « actuellement » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : actuellement",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_4",
+        "conceptId": "time_marker_Présent_4",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « au moment où je parle » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : au moment où je parle",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_5",
+        "conceptId": "time_marker_Présent_5",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « tout de suite » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : tout de suite",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_6",
+        "conceptId": "time_marker_Présent_6",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « à cet instant » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : à cet instant",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Présent_7",
+        "conceptId": "time_marker_Présent_7",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « en cet instant » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Présent"
+        ],
+        "exactCorrection": "Présent : en cet instant",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Présent ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_0",
+        "conceptId": "time_marker_Futur_0",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « demain » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : demain",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_1",
+        "conceptId": "time_marker_Futur_1",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « dans trois jours » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : dans trois jours",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_2",
+        "conceptId": "time_marker_Futur_2",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « l’année prochaine » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : l’année prochaine",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_3",
+        "conceptId": "time_marker_Futur_3",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « dans une semaine » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : dans une semaine",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_4",
+        "conceptId": "time_marker_Futur_4",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « bientôt » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : bientôt",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_5",
+        "conceptId": "time_marker_Futur_5",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « demain après-midi » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : demain après-midi",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_6",
+        "conceptId": "time_marker_Futur_6",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « plus tard » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : plus tard",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      },
+      {
+        "id": "time_marker_Futur_7",
+        "conceptId": "time_marker_Futur_7",
+        "category": "marker",
+        "categoryLabel": "Un indicateur de temps",
+        "prompt": "Dans l’activité de classement, dans quelle colonne places-tu « le mois prochain » ?",
+        "choices": [
+          "Passé",
+          "Présent",
+          "Futur"
+        ],
+        "acceptedAnswers": [
+          "Futur"
+        ],
+        "exactCorrection": "Futur : le mois prochain",
+        "explanation": "Dans le classement de cette activité, cette expression se place dans la colonne « Futur ». Une phrase complète donne aussi des indications grâce au verbe.",
+        "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
+        "sourceRef": "Activité de classement du 7/09, document 6"
+      }
+    ]
+  },
+  "geography": {
+    "id": "geography",
+    "subject": "Enzo · Géographie CM1",
+    "title": "Géo.2 à Géo.4 — Les déplacements",
+    "description": "Pourquoi et comment se déplace-t-on ? Retrouve les moyens de transport et leurs infrastructures.",
+    "menuDescription": "Au quotidien, sur de longues distances et avec les infrastructures adaptées.",
+    "duration": "5 à 8 minutes",
+    "scope": "Géo.2, Géo.3 et Géo.4 uniquement · Géo.1 reste à ajouter après réception.",
+    "size": 10,
+    "storageKey": "mes-revisions.geography.previous.v1",
+    "plan": [
+      [
+        "geo2",
+        3
+      ],
+      [
+        "geo3",
+        3
+      ],
+      [
+        "geo4",
+        4
+      ]
+    ],
+    "bank": [
+      {
+        "id": "geo_individual_bike",
+        "conceptId": "geo_individual_bike",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel moyen de transport est individuel dans la leçon ?",
+        "acceptedAnswers": [
+          "Le vélo",
+          "vélo",
+          "un vélo"
+        ],
+        "choices": [
+          "Le vélo",
+          "Le bus",
+          "Le tramway",
+          "Le train"
+        ],
+        "exactCorrection": "Le vélo",
+        "explanation": "Le vélo est cité parmi les transports individuels.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_individual_car",
+        "conceptId": "geo_individual_car",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "La voiture familiale est un transport…",
+        "acceptedAnswers": [
+          "Individuel",
+          "transport individuel"
+        ],
+        "choices": [
+          "Individuel",
+          "Collectif",
+          "Maritime",
+          "Ferroviaire"
+        ],
+        "exactCorrection": "Individuel",
+        "explanation": "La leçon classe la voiture parmi les transports individuels.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_collective_bus",
+        "conceptId": "geo_collective_bus",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel véhicule est un transport collectif ?",
+        "acceptedAnswers": [
+          "Le bus",
+          "bus",
+          "autobus",
+          "un bus"
+        ],
+        "choices": [
+          "Le bus",
+          "Le vélo personnel",
+          "La voiture familiale",
+          "La trottinette personnelle"
+        ],
+        "exactCorrection": "Le bus",
+        "explanation": "Un bus transporte plusieurs voyageurs.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_collective_tram",
+        "conceptId": "geo_collective_tram",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Le tramway est un transport…",
+        "acceptedAnswers": [
+          "Collectif",
+          "transport collectif"
+        ],
+        "choices": [
+          "Collectif",
+          "Individuel",
+          "Maritime",
+          "Aérien"
+        ],
+        "exactCorrection": "Collectif",
+        "explanation": "Le tramway est cité parmi les transports collectifs.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_school",
+        "conceptId": "geo_school",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Aller en classe chaque matin est un déplacement pour…",
+        "acceptedAnswers": [
+          "Aller à l’école",
+          "l'école",
+          "école"
+        ],
+        "choices": [
+          "Aller à l’école",
+          "Participer à une expédition scientifique",
+          "Migrer vers un autre pays",
+          "Faire du tourisme à l’étranger"
+        ],
+        "exactCorrection": "Aller à l’école",
+        "explanation": "L’école fait partie des raisons de se déplacer au quotidien.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_work",
+        "conceptId": "geo_work",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Aller à son emploi le matin est un déplacement pour…",
+        "acceptedAnswers": [
+          "Travailler",
+          "le travail",
+          "travail"
+        ],
+        "choices": [
+          "Travailler",
+          "Changer définitivement de pays",
+          "Explorer un désert",
+          "Visiter un pays pendant les vacances"
+        ],
+        "exactCorrection": "Travailler",
+        "explanation": "Le travail fait partie des déplacements quotidiens.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_health",
+        "conceptId": "geo_health",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Aller chez le dentiste correspond à…",
+        "acceptedAnswers": [
+          "Un rendez-vous médical",
+          "rendez-vous médical",
+          "soins médicaux"
+        ],
+        "choices": [
+          "Un rendez-vous médical",
+          "Une migration climatique",
+          "Une expédition scientifique",
+          "Un voyage d’affaires"
+        ],
+        "exactCorrection": "Un rendez-vous médical",
+        "explanation": "Les rendez-vous médicaux sont cités dans Géo.2.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_leisure",
+        "conceptId": "geo_leisure",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Aller à son entraînement sportif correspond à…",
+        "acceptedAnswers": [
+          "Un loisir",
+          "loisir",
+          "les loisirs",
+          "loisirs"
+        ],
+        "choices": [
+          "Un loisir",
+          "Une migration politique",
+          "Une importation de marchandises",
+          "Une recherche scientifique"
+        ],
+        "exactCorrection": "Un loisir",
+        "explanation": "Les loisirs sont une raison de se déplacer.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_economy",
+        "conceptId": "geo_economy",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel avantage des transports collectifs la leçon cite-t-elle ?",
+        "acceptedAnswers": [
+          "Faire des économies",
+          "économiser",
+          "des économies"
+        ],
+        "choices": [
+          "Faire des économies",
+          "Augmenter les dépenses de tous",
+          "Supprimer toutes les routes",
+          "Remplacer les déplacements par avion partout"
+        ],
+        "exactCorrection": "Faire des économies",
+        "explanation": "Partager un transport peut permettre de faire des économies.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_traffic",
+        "conceptId": "geo_traffic",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Les transports collectifs peuvent aider à…",
+        "acceptedAnswers": [
+          "Limiter les embouteillages",
+          "réduire les embouteillages",
+          "moins de bouchons",
+          "réduire les bouchons"
+        ],
+        "choices": [
+          "Limiter les embouteillages",
+          "Multiplier les embouteillages",
+          "Supprimer tous les déplacements",
+          "Transformer les routes en voies ferrées"
+        ],
+        "exactCorrection": "Limiter les embouteillages",
+        "explanation": "Moins de véhicules individuels peuvent limiter les embouteillages.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_pollution",
+        "conceptId": "geo_pollution",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel autre avantage des transports collectifs est cité ?",
+        "acceptedAnswers": [
+          "Limiter la pollution",
+          "réduire la pollution",
+          "moins de pollution"
+        ],
+        "choices": [
+          "Limiter la pollution",
+          "Augmenter la pollution",
+          "Supprimer tout effort physique",
+          "Rendre tous les voyages gratuits"
+        ],
+        "exactCorrection": "Limiter la pollution",
+        "explanation": "La leçon cite la limitation de la pollution.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_legs",
+        "conceptId": "geo_legs",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel déplacement fait travailler tes jambes sans moteur ?",
+        "acceptedAnswers": [
+          "Aller à vélo",
+          "vélo",
+          "à vélo",
+          "faire du vélo"
+        ],
+        "choices": [
+          "Aller à vélo",
+          "Prendre une voiture à essence",
+          "Prendre un bus diesel",
+          "Prendre un avion"
+        ],
+        "exactCorrection": "Aller à vélo",
+        "explanation": "Le vélo est non motorisé et fait bouger le corps.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_not_motorised",
+        "conceptId": "geo_not_motorised",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel moyen de transport fonctionne ici sans moteur ?",
+        "acceptedAnswers": [
+          "Un vélo classique",
+          "vélo",
+          "un vélo"
+        ],
+        "choices": [
+          "Un vélo classique",
+          "Une voiture à essence",
+          "Une moto",
+          "Un autocar"
+        ],
+        "exactCorrection": "Un vélo classique",
+        "explanation": "Un vélo classique est un moyen de transport non motorisé.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_compare",
+        "conceptId": "geo_compare",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Parmi ces choix, lequel peut limiter les voitures individuelles pour un trajet en ville ?",
+        "acceptedAnswers": [
+          "Prendre le tramway",
+          "tramway",
+          "le tramway",
+          "prendre le tram"
+        ],
+        "choices": [
+          "Prendre le tramway",
+          "Utiliser chacun sa voiture",
+          "Ajouter des voitures vides",
+          "Faire circuler plus de voitures individuelles"
+        ],
+        "exactCorrection": "Prendre le tramway",
+        "explanation": "Un transport collectif partage le trajet entre plusieurs voyageurs.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_definition_collective",
+        "conceptId": "geo_definition_collective",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Que signifie « transport collectif » ?",
+        "acceptedAnswers": [
+          "Un transport partagé par plusieurs voyageurs",
+          "transport en commun",
+          "plusieurs voyageurs"
+        ],
+        "choices": [
+          "Un transport partagé par plusieurs voyageurs",
+          "Un véhicule utilisé uniquement par une seule personne",
+          "Un transport réservé aux bateaux",
+          "Un transport qui ne roule jamais"
+        ],
+        "exactCorrection": "Un transport partagé par plusieurs voyageurs",
+        "explanation": "Bus et tramway sont des exemples de transports collectifs.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_definition_individual",
+        "conceptId": "geo_definition_individual",
+        "category": "geo2",
+        "categoryLabel": "Géo.2 · Au quotidien",
+        "prompt": "Quel couple contient seulement des transports individuels cités dans la leçon ?",
+        "acceptedAnswers": [
+          "Vélo et voiture",
+          "voiture et vélo"
+        ],
+        "choices": [
+          "Vélo et voiture",
+          "Bus et tramway",
+          "Bus et voiture",
+          "Tramway et vélo"
+        ],
+        "exactCorrection": "Vélo et voiture",
+        "explanation": "Géo.2 donne le vélo et la voiture comme exemples de transports individuels.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.2"
+      },
+      {
+        "id": "geo_meeting",
+        "conceptId": "geo_meeting",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une personne voyage pour participer à une réunion professionnelle.",
+        "acceptedAnswers": [
+          "Travail et affaires"
+        ],
+        "choices": [
+          "Travail et affaires",
+          "Migration",
+          "Études et formation",
+          "Santé"
+        ],
+        "exactCorrection": "Travail et affaires",
+        "explanation": "Les réunions professionnelles figurent dans la branche travail et affaires.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_trade",
+        "conceptId": "geo_trade",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une personne voyage pour négocier un contrat professionnel.",
+        "acceptedAnswers": [
+          "Travail et affaires"
+        ],
+        "choices": [
+          "Travail et affaires",
+          "Migration",
+          "Études et formation",
+          "Santé"
+        ],
+        "exactCorrection": "Travail et affaires",
+        "explanation": "Les négociations font partie des voyages pour le travail et les affaires.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_university",
+        "conceptId": "geo_university",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une étudiante part étudier dans une université loin de chez elle.",
+        "acceptedAnswers": [
+          "Études et formation"
+        ],
+        "choices": [
+          "Études et formation",
+          "Santé",
+          "Tourisme et loisirs",
+          "Recherche et exploration"
+        ],
+        "exactCorrection": "Études et formation",
+        "explanation": "Étudier loin de son domicile relève des études et de la formation.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_training",
+        "conceptId": "geo_training",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Un apprenti voyage pour suivre un stage professionnel.",
+        "acceptedAnswers": [
+          "Études et formation"
+        ],
+        "choices": [
+          "Études et formation",
+          "Santé",
+          "Tourisme et loisirs",
+          "Recherche et exploration"
+        ],
+        "exactCorrection": "Études et formation",
+        "explanation": "La carte mentale cite les stages et les formations.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_specialist",
+        "conceptId": "geo_specialist",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une personne voyage pour recevoir un traitement médical indisponible près de chez elle.",
+        "acceptedAnswers": [
+          "Santé"
+        ],
+        "choices": [
+          "Santé",
+          "Tourisme et loisirs",
+          "Recherche et exploration",
+          "Visites familiales et sociales"
+        ],
+        "exactCorrection": "Santé",
+        "explanation": "La carte mentale cite les soins spécialisés.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_hospital",
+        "conceptId": "geo_hospital",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une famille se déplace loin pour consulter un médecin spécialiste.",
+        "acceptedAnswers": [
+          "Santé"
+        ],
+        "choices": [
+          "Santé",
+          "Tourisme et loisirs",
+          "Recherche et exploration",
+          "Visites familiales et sociales"
+        ],
+        "exactCorrection": "Santé",
+        "explanation": "Le but principal de ce voyage est l’accès aux soins.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_holiday",
+        "conceptId": "geo_holiday",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une famille part découvrir les paysages d’un autre pays pendant les vacances.",
+        "acceptedAnswers": [
+          "Tourisme et loisirs"
+        ],
+        "choices": [
+          "Tourisme et loisirs",
+          "Recherche et exploration",
+          "Visites familiales et sociales",
+          "Travail et affaires"
+        ],
+        "exactCorrection": "Tourisme et loisirs",
+        "explanation": "Découvrir des paysages pendant les vacances relève du tourisme.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_festival",
+        "conceptId": "geo_festival",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Des amis voyagent pour assister à un festival loin de chez eux.",
+        "acceptedAnswers": [
+          "Tourisme et loisirs"
+        ],
+        "choices": [
+          "Tourisme et loisirs",
+          "Recherche et exploration",
+          "Visites familiales et sociales",
+          "Travail et affaires"
+        ],
+        "exactCorrection": "Tourisme et loisirs",
+        "explanation": "La carte mentale cite les événements culturels.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_research",
+        "conceptId": "geo_research",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Des scientifiques partent étudier une région éloignée.",
+        "acceptedAnswers": [
+          "Recherche et exploration"
+        ],
+        "choices": [
+          "Recherche et exploration",
+          "Visites familiales et sociales",
+          "Travail et affaires",
+          "Migration"
+        ],
+        "exactCorrection": "Recherche et exploration",
+        "explanation": "Il s’agit d’une exploration scientifique.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_exploration",
+        "conceptId": "geo_exploration",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une équipe part explorer un désert lointain.",
+        "acceptedAnswers": [
+          "Recherche et exploration"
+        ],
+        "choices": [
+          "Recherche et exploration",
+          "Visites familiales et sociales",
+          "Travail et affaires",
+          "Migration"
+        ],
+        "exactCorrection": "Recherche et exploration",
+        "explanation": "L’exploration de régions reculées figure dans cette branche.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_family_visit",
+        "conceptId": "geo_family_visit",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une personne voyage pour rendre visite à ses grands-parents qui vivent loin.",
+        "acceptedAnswers": [
+          "Visites familiales et sociales"
+        ],
+        "choices": [
+          "Visites familiales et sociales",
+          "Travail et affaires",
+          "Migration",
+          "Études et formation"
+        ],
+        "exactCorrection": "Visites familiales et sociales",
+        "explanation": "Le but du voyage est de retrouver ses proches.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_wedding",
+        "conceptId": "geo_wedding",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une famille voyage pour assister au mariage d’un proche.",
+        "acceptedAnswers": [
+          "Visites familiales et sociales"
+        ],
+        "choices": [
+          "Visites familiales et sociales",
+          "Travail et affaires",
+          "Migration",
+          "Études et formation"
+        ],
+        "exactCorrection": "Visites familiales et sociales",
+        "explanation": "Le mariage est un événement familial cité dans la carte mentale.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_migration_move",
+        "conceptId": "geo_migration_move",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "À quelle raison de voyager correspond cette situation ? Une famille change de pays pour s’y installer durablement.",
+        "acceptedAnswers": [
+          "Migration"
+        ],
+        "choices": [
+          "Migration",
+          "Études et formation",
+          "Santé",
+          "Tourisme et loisirs"
+        ],
+        "exactCorrection": "Migration",
+        "explanation": "Une migration correspond à un changement de lieu de vie.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_migration_economic",
+        "conceptId": "geo_migration_economic",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "Quel type de migration est décrit ? Une personne change de pays pour trouver de meilleures conditions de vie.",
+        "acceptedAnswers": [
+          "Migration économique"
+        ],
+        "choices": [
+          "Migration économique",
+          "Migration politique",
+          "Migration climatique",
+          "Migration familiale"
+        ],
+        "exactCorrection": "Migration économique",
+        "explanation": "La carte mentale associe cette raison à la migration économique.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_migration_political",
+        "conceptId": "geo_migration_political",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "Quel type de migration est décrit ? Une personne quitte son pays pour fuir un conflit ou une oppression.",
+        "acceptedAnswers": [
+          "Migration politique"
+        ],
+        "choices": [
+          "Migration politique",
+          "Migration économique",
+          "Migration climatique",
+          "Migration familiale"
+        ],
+        "exactCorrection": "Migration politique",
+        "explanation": "La leçon cite la fuite d’un conflit ou d’une oppression.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_migration_climate",
+        "conceptId": "geo_migration_climate",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "Quel type de migration est décrit ? Une personne doit changer de région de vie à cause des effets du climat.",
+        "acceptedAnswers": [
+          "Migration climatique"
+        ],
+        "choices": [
+          "Migration climatique",
+          "Migration économique",
+          "Migration politique",
+          "Migration familiale"
+        ],
+        "exactCorrection": "Migration climatique",
+        "explanation": "Le déplacement est lié au climat.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_migration_family",
+        "conceptId": "geo_migration_family",
+        "category": "geo3",
+        "categoryLabel": "Géo.3 · Se déplacer loin",
+        "prompt": "Quel type de migration est décrit ? Une personne change de pays pour s’installer auprès de sa famille.",
+        "acceptedAnswers": [
+          "Migration familiale"
+        ],
+        "choices": [
+          "Migration familiale",
+          "Migration économique",
+          "Migration politique",
+          "Migration climatique"
+        ],
+        "exactCorrection": "Migration familiale",
+        "explanation": "La raison du changement de lieu de vie est de rejoindre sa famille.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.3"
+      },
+      {
+        "id": "geo_cycle_track",
+        "conceptId": "geo_cycle_track",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une piste cyclable ?",
+        "acceptedAnswers": [
+          "Transport à vélo",
+          "à vélo"
+        ],
+        "choices": [
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien"
+        ],
+        "exactCorrection": "Transport à vélo",
+        "explanation": "La piste cyclable est une infrastructure pour les vélos.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_bike_parking",
+        "conceptId": "geo_bike_parking",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un parking vélo ?",
+        "acceptedAnswers": [
+          "Transport à vélo",
+          "à vélo"
+        ],
+        "choices": [
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien"
+        ],
+        "exactCorrection": "Transport à vélo",
+        "explanation": "Le parking vélo permet de stationner les vélos.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_highway",
+        "conceptId": "geo_highway",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une autoroute ?",
+        "acceptedAnswers": [
+          "Transport routier",
+          "routier"
+        ],
+        "choices": [
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire"
+        ],
+        "exactCorrection": "Transport routier",
+        "explanation": "Une autoroute fait partie des infrastructures routières.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_fuel",
+        "conceptId": "geo_fuel",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une station-service ?",
+        "acceptedAnswers": [
+          "Transport routier",
+          "routier"
+        ],
+        "choices": [
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire"
+        ],
+        "exactCorrection": "Transport routier",
+        "explanation": "La station-service figure dans l’encadré routier de la fiche.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_roundabout",
+        "conceptId": "geo_roundabout",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un rond-point ?",
+        "acceptedAnswers": [
+          "Transport routier",
+          "routier"
+        ],
+        "choices": [
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire"
+        ],
+        "exactCorrection": "Transport routier",
+        "explanation": "Le rond-point organise la circulation sur les routes.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_bus_stop",
+        "conceptId": "geo_bus_stop",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un arrêt de bus ?",
+        "acceptedAnswers": [
+          "Transport routier",
+          "routier"
+        ],
+        "choices": [
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire"
+        ],
+        "exactCorrection": "Transport routier",
+        "explanation": "L’arrêt de bus figure dans les infrastructures routières.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_charging",
+        "conceptId": "geo_charging",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une borne de recharge pour voitures ?",
+        "acceptedAnswers": [
+          "Transport routier",
+          "routier"
+        ],
+        "choices": [
+          "Transport routier",
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire"
+        ],
+        "exactCorrection": "Transport routier",
+        "explanation": "La borne de recharge est dans l’encadré routier.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_harbour",
+        "conceptId": "geo_harbour",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un port ?",
+        "acceptedAnswers": [
+          "Transport maritime",
+          "maritime"
+        ],
+        "choices": [
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo"
+        ],
+        "exactCorrection": "Transport maritime",
+        "explanation": "Un port accueille les bateaux.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_ferry_terminal",
+        "conceptId": "geo_ferry_terminal",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une gare maritime ?",
+        "acceptedAnswers": [
+          "Transport maritime",
+          "maritime"
+        ],
+        "choices": [
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo"
+        ],
+        "exactCorrection": "Transport maritime",
+        "explanation": "La gare maritime accueille notamment les passagers des ferries.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_lighthouse",
+        "conceptId": "geo_lighthouse",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un phare ?",
+        "acceptedAnswers": [
+          "Transport maritime",
+          "maritime"
+        ],
+        "choices": [
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo"
+        ],
+        "exactCorrection": "Transport maritime",
+        "explanation": "Le phare figure dans l’encadré maritime de la fiche.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_harbour_crane",
+        "conceptId": "geo_harbour_crane",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une grue dans un port ?",
+        "acceptedAnswers": [
+          "Transport maritime",
+          "maritime"
+        ],
+        "choices": [
+          "Transport maritime",
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo"
+        ],
+        "exactCorrection": "Transport maritime",
+        "explanation": "La grue du port sert à la manutention des marchandises.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_airport",
+        "conceptId": "geo_airport",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un aéroport ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "Un aéroport accueille les avions.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_runway",
+        "conceptId": "geo_runway",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une piste d’atterrissage ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "La piste d’atterrissage est une infrastructure aérienne.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_control_tower",
+        "conceptId": "geo_control_tower",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une tour de contrôle d’aéroport ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "La tour de contrôle figure dans l’encadré aérien.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_heliport",
+        "conceptId": "geo_heliport",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un héliport ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "Un héliport est destiné aux hélicoptères.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_hangar",
+        "conceptId": "geo_hangar",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un hangar pour avions ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "Le hangar pour avions est une infrastructure aérienne.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_rail_tracks",
+        "conceptId": "geo_rail_tracks",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu des voies ferrées ?",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "Les trains circulent sur des voies ferrées.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_rail_bridge",
+        "conceptId": "geo_rail_bridge",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu un pont ferroviaire ?",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "Le pont ferroviaire permet le passage des trains.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_rail_signals",
+        "conceptId": "geo_rail_signals",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu la signalisation ferroviaire ?",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "Cette signalisation concerne la circulation des trains.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_catenary",
+        "conceptId": "geo_catenary",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu des caténaires au-dessus des voies ferrées ?",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "Les caténaires figurent dans les infrastructures ferroviaires.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_rail_station",
+        "conceptId": "geo_rail_station",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "À quelle famille de transport associes-tu une gare de trains ?",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport à vélo",
+          "Transport routier",
+          "Transport maritime"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "La gare accueille les trains et les voyageurs.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_rail_vehicle",
+        "conceptId": "geo_rail_vehicle",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Quel véhicule circule sur des voies ferrées ?",
+        "acceptedAnswers": [
+          "Le train",
+          "train",
+          "un train"
+        ],
+        "choices": [
+          "Le train",
+          "Le ferry",
+          "L’hélicoptère",
+          "Le camion"
+        ],
+        "exactCorrection": "Le train",
+        "explanation": "Les voies ferrées sont destinées aux trains.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_air_vehicle",
+        "conceptId": "geo_air_vehicle",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Quel véhicule utilise une piste d’atterrissage ?",
+        "acceptedAnswers": [
+          "L’avion",
+          "avion",
+          "un avion"
+        ],
+        "choices": [
+          "L’avion",
+          "Le vélo",
+          "Le bus",
+          "Le navire"
+        ],
+        "exactCorrection": "L’avion",
+        "explanation": "L’avion utilise les infrastructures aériennes.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_sea_vehicle",
+        "conceptId": "geo_sea_vehicle",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Quel véhicule accueille-t-on dans un port ?",
+        "acceptedAnswers": [
+          "Un bateau",
+          "bateau",
+          "navire",
+          "un navire"
+        ],
+        "choices": [
+          "Un bateau",
+          "Un train",
+          "Une voiture sur la route",
+          "Un vélo"
+        ],
+        "exactCorrection": "Un bateau",
+        "explanation": "Le bateau est un moyen de transport maritime.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_infrastructure_difference",
+        "conceptId": "geo_infrastructure_difference",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Quel élément est une infrastructure plutôt qu’un véhicule ?",
+        "acceptedAnswers": [
+          "Une gare",
+          "gare",
+          "la gare"
+        ],
+        "choices": [
+          "Une gare",
+          "Un train",
+          "Un avion",
+          "Un camion"
+        ],
+        "exactCorrection": "Une gare",
+        "explanation": "Une infrastructure est un aménagement ou un équipement qui permet le transport.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_vehicle_difference",
+        "conceptId": "geo_vehicle_difference",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Quel élément est un moyen de transport plutôt qu’une infrastructure ?",
+        "acceptedAnswers": [
+          "Un bus",
+          "bus",
+          "le bus"
+        ],
+        "choices": [
+          "Un bus",
+          "Une route",
+          "Un port",
+          "Un aéroport"
+        ],
+        "exactCorrection": "Un bus",
+        "explanation": "Le bus est un véhicule ; les autres propositions sont des infrastructures.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_baggage",
+        "conceptId": "geo_baggage",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Dans quelle famille de la fiche trouve-t-on la logistique des bagages ?",
+        "acceptedAnswers": [
+          "Transport aérien",
+          "aérien"
+        ],
+        "choices": [
+          "Transport aérien",
+          "Transport à vélo",
+          "Transport maritime",
+          "Transport routier"
+        ],
+        "exactCorrection": "Transport aérien",
+        "explanation": "La gestion des bagages figure dans l’encadré du transport aérien.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      },
+      {
+        "id": "geo_tunnel",
+        "conceptId": "geo_tunnel",
+        "category": "geo4",
+        "categoryLabel": "Géo.4 · Transports",
+        "prompt": "Dans la fiche Géo.4, le tunnel est rangé dans la famille…",
+        "acceptedAnswers": [
+          "Transport ferroviaire",
+          "ferroviaire"
+        ],
+        "choices": [
+          "Transport ferroviaire",
+          "Transport maritime",
+          "Transport à vélo",
+          "Transport aérien"
+        ],
+        "exactCorrection": "Transport ferroviaire",
+        "explanation": "On répond ici d’après le classement de la fiche : le tunnel est dans l’encadré ferroviaire.",
+        "answerHint": "Choisis une proposition, puis valide.",
+        "sourceRef": "Géo.4"
+      }
+    ]
+  },
   "penelopeMaths": {
     "id": "penelopeMaths",
     "subject": "Mathématiques · 5e",
@@ -7239,7 +9726,7 @@ let collection=cleanCollection(null),collectionSaved=true;
 try{collection=cleanCollection(JSON.parse(localStorage.getItem(COLLECTION_KEY)));}catch{}
 function saveCollection(){try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}}
 const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
-const icons={english:'🥚',conj3:'📚',penelopeMaths:'🧮'};
+const icons={english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
 function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function focusHeading(){ root.querySelector('h1,h2')?.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
@@ -7270,12 +9757,18 @@ function start(){
 }
 function showQuestion(){
   submitted=false;const q=questions[index],total=questions.length;
-  root.innerHTML=`<div class="topline"><span>Question ${index+1} sur ${total}</span><span class="category">${escapeHTML(q.categoryLabel)}</span></div><div class="progress" role="progressbar" aria-label="Progression" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${total}"><div style="width:${index/total*100}%"></div></div>${q.contextSnippet?`<div class="context" lang="en">${escapeHTML(q.contextSnippet)}</div>`:''}<h2 tabindex="-1">${escapeHTML(q.prompt)}</h2><form id="answer-form" novalidate><label for="answer">Ta réponse</label>${q.answerHint?`<p class="answer-hint">${escapeHTML(q.answerHint)}</p>`:''}<input id="answer" name="answer" placeholder="Écris ta réponse ici…" ${q.inputMode?`inputmode="${escapeHTML(q.inputMode)}"`:''} autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="300" required><button class="primary" id="check" type="submit" disabled>Valider ma réponse</button></form><div id="feedback" aria-live="polite" aria-atomic="true"></div>`;
+  const choices=q.choices?shuffle(q.choices):null;
+  root.innerHTML=`<div class="topline"><span>Question ${index+1} sur ${total}</span><span class="category">${escapeHTML(q.categoryLabel)}</span></div><div class="progress" role="progressbar" aria-label="Progression" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${total}"><div style="width:${index/total*100}%"></div></div>${q.contextSnippet?`<div class="context" lang="en">${escapeHTML(q.contextSnippet)}</div>`:''}<h2 tabindex="-1">${escapeHTML(q.prompt)}</h2><form id="answer-form" novalidate>${choices?'<p class="answer-label" id="answer-label">Ta réponse</p>':'<label for="answer">Ta réponse</label>'}${q.answerHint?`<p class="answer-hint">${escapeHTML(q.answerHint)}</p>`:''}${choices?`<div class="answer-choices" role="group" aria-labelledby="answer-label">${choices.map((answer,i)=>`<button type="button" class="choice" data-choice="${i}" aria-pressed="false">${escapeHTML(answer)}</button>`).join('')}</div><input type="hidden" id="answer" name="answer" value="">`:`<input id="answer" name="answer" placeholder="Écris ta réponse ici…" ${q.inputMode?`inputmode="${escapeHTML(q.inputMode)}"`:''} autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="300" required>`}<button class="primary" id="check" type="submit" disabled>Valider ma réponse</button></form><div id="feedback" aria-live="polite" aria-atomic="true"></div>`;
   const input=document.querySelector('#answer'),check=document.querySelector('#check');
   input.addEventListener('input',()=>{check.disabled=!normalize(input.value,q.accentSensitive);});
+  if(choices)root.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{
+    if(submitted)return;input.value=choices[Number(button.dataset.choice)];check.disabled=false;
+    root.querySelectorAll('[data-choice]').forEach(item=>{const selected=item===button;item.setAttribute('aria-pressed',String(selected));item.classList.toggle('chosen',selected);});
+  }));
   document.querySelector('#answer-form').addEventListener('submit',event=>{
     event.preventDefault();if(submitted||!normalize(input.value,q.accentSensitive))return;submitted=true;
     const answer=input.value.trim(),assessment=q.englishFlexible?assessEnglish(q,answer):{correct:isCorrect(q,answer),typo:false},correct=assessment.correct;results.push({question:q,answer,correct,typo:assessment.typo});input.disabled=true;check.hidden=true;
+    root.querySelectorAll('[data-choice]').forEach(button=>{button.disabled=true;});
     document.querySelector('#feedback').innerHTML=`<div class="feedback ${correct?'correct':''}"><strong>${correct?'Bien joué ! ✓':'On apprend en essayant.'}</strong>${assessment.typo?'<p>Le mot est reconnu malgré une petite faute de frappe. Regarde bien son orthographe ci-dessous.</p>':''}<p>${escapeHTML(q.exactCorrection)}</p><p>${escapeHTML(q.explanation)}</p></div><button class="primary" id="next">${index===total-1?'Voir mon résultat →':'Question suivante →'}</button>`;
     document.querySelector('#next').addEventListener('click',()=>{document.querySelector('#next').disabled=true;index++;if(index===total)summary();else showQuestion();},{once:true});document.querySelector('#next').focus({preventScroll:true});
   });focusHeading();

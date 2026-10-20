@@ -1,6 +1,6 @@
 // Cache local limité au chemin de cette application, sans suivi ni API.
 const PREFIX = 'english-mission:' + self.registration.scope + ':';
-const CACHE = PREFIX + 'v4';
+const CACHE = PREFIX + 'v5';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
