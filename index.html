@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#162d4a">
+<meta name="theme-color" content="#233653">
 <meta name="description" content="Des questionnaires pour réviser l’anglais, la conjugaison et les mathématiques.">
 <meta name="referrer" content="no-referrer">
 <title>Mes révisions · Quiz et calculs</title>
@@ -15,34 +15,76 @@
 .quiz-menu{display:grid;gap:14px;margin:26px 0 20px}.quiz-option{width:100%;text-align:left;border:1.5px solid #d3dfef;border-radius:18px;background:#f7faff;color:var(--navy);padding:20px;min-height:160px;display:flex;flex-direction:column;gap:8px}.quiz-option:hover{border-color:var(--blue);background:#eef4ff}.option-subject{text-transform:uppercase;letter-spacing:1.3px;font-weight:800;font-size:12px;color:var(--blue)}.quiz-option strong{font-size:23px;letter-spacing:-.5px;line-height:1.2}.option-description{color:var(--muted);font-size:14px;line-height:1.5}.option-meta{font-size:13px;font-weight:750;margin-top:5px}.quiz-option.conj3{background:#f5faf7;border-color:#c6ddce}.conj3 .option-subject{color:var(--green)}.menu-button{margin-left:auto;border:1px solid #cbd6e5;background:white;color:var(--navy);border-radius:12px;min-height:44px;padding:10px 12px;font-size:13px;font-weight:700;flex-shrink:0}.answer-hint{color:var(--muted);font-size:14px;margin:0 0 10px}.secondary{width:100%;min-height:48px;margin-top:12px;border:1px solid #cbd6e5;border-radius:14px;background:white;color:var(--navy);font-weight:700}@media(max-width:430px){header{flex-wrap:wrap}.menu-button{margin-left:56px;margin-top:2px}.quiz-option strong{font-size:22px}}
 
 .quiz-option.penelopeMaths{background:#f8f5fc;border-color:#d9cfeb}.penelopeMaths .option-subject{color:#66449a}.worked-example{padding:16px;border-radius:14px;background:#f3f0fa;line-height:1.65;margin:24px 0}.worked-example strong{font-size:14px;color:#66449a}.worked-example p{margin:8px 0 0}
+
+/* Egg-collecting island: original CSS artwork, no Roblox assets or fonts. */
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
+:root{--navy:#152944;--blue:#3354bd;--muted:#4e6073;--line:#d2dfdc;--green:#176047;--orange:#9c3b13;background:#e4f5ee;color:var(--navy)}
+body{background:radial-gradient(ellipse at 4% 4%,#fff 0,transparent 35%),radial-gradient(ellipse at 100% 28%,#fff8ce 0,transparent 35%),linear-gradient(150deg,#d9f0ff 0%,#e8f8ed 60%,#f9f8e7 100%);background-attachment:fixed}
+header,main,.footer{max-width:760px}.logo{background:#233653;border-radius:12px;box-shadow:0 4px 0 #112037;letter-spacing:0;font-size:25px}
+header strong{font-size:18px}header small{font-size:12px}.card{border:2px solid #fff;border-radius:26px;box-shadow:0 8px 0 #a8c5bb55,0 18px 48px #193d4712;background:#ffffffee}
+h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;align-items:center;gap:18px}.hero>div:first-child{flex:1}.hero h1{font-size:clamp(34px,6vw,53px);margin:15px 0;line-height:1.05}.hero .intro{font-size:16px;margin-bottom:6px}.eyebrow{color:#315882;font-size:11px;letter-spacing:1.8px}
+.egg-art{width:132px;height:162px;flex-shrink:0;position:relative;isolation:isolate;border:3px solid #966a18;border-radius:52% 52% 47% 47% / 65% 65% 38% 38%;background:radial-gradient(ellipse at 32% 25%,#fff8c4 0 11%,transparent 12%),radial-gradient(ellipse at 72% 65%,#e18b1f 0 8%,transparent 9%),radial-gradient(ellipse at 35% 70%,#f7a521 0 10%,transparent 11%),linear-gradient(120deg,#fff598,#ffcb50 56%,#efa721);box-shadow:inset -10px -5px 0 #b8752322,0 10px 0 #244d4017;transform:rotate(9deg);display:grid;place-items:center;margin:12px 5px 18px}.egg-art span{font-size:42px;color:#fff9d9;text-shadow:2px 3px #936000}.egg-art::before{content:'✦';position:absolute;top:-22px;right:-13px;color:#1c8c78;font-size:25px}.egg-art::after{content:'✧';position:absolute;left:-18px;bottom:14px;color:#8a63b8;font-size:25px}.egg-art.small{width:98px;height:122px;margin:8px auto 24px}
+.collection-bar{display:flex;gap:10px;justify-content:space-between;align-items:center;background:#eaf2ec;border:1px solid #cbded2;border-radius:14px;padding:12px 14px;margin-top:24px;font-size:13px;font-weight:700}.small-button{background:#fff;border:1px solid #afc6b9;min-height:44px;padding:9px 12px;border-radius:10px;color:#174c3f;font-weight:800;font-size:13px;white-space:nowrap}
+.menu-heading{font-size:18px;margin:28px 0 14px}.quiz-menu{margin:0 0 20px;gap:14px}.quiz-option{position:relative;border:2px solid #cbded2;box-shadow:0 5px 0 #cbded2;padding:20px 20px 20px 78px;min-height:152px;background:#f7fcf1;border-radius:16px;gap:7px}.quiz-option:hover{background:#f1f9e6;border-color:#81a45e}.quiz-option:active{transform:translateY(2px);box-shadow:0 3px 0 #cbded2}.option-icon{position:absolute;left:18px;top:20px;display:grid;place-items:center;font-size:26px;width:43px;height:43px;border-radius:12px;background:#e4edcc}.quiz-option strong{font-size:25px;letter-spacing:-.6px}.option-subject{font-size:10px;letter-spacing:1.4px;color:#315c25}.option-description{font-size:14px}.option-meta{font-size:12px;color:#34526b}.quiz-option.conj3{background:#eef7fd;border-color:#c6dce9;box-shadow:0 5px 0 #c6dce9}.conj3 .option-icon{background:#d4eafa}.conj3 .option-subject{color:#28577b}.quiz-option.penelopeMaths{border-color:#dbcfeb;box-shadow:0 5px 0 #dbcfeb}.penelopeMaths .option-icon{background:#e9dff4}
+.primary{background:#d8f164;color:#213518;box-shadow:0 5px 0 #9ab64a;border:2px solid #adca4c;border-radius:13px;margin-bottom:5px}.primary:hover:enabled{background:#e2fc72}.primary:active:enabled{transform:translateY(2px);box-shadow:0 3px 0 #9ab64a}.primary:disabled{box-shadow:none}.secondary,.menu-button{border:1px solid #c3d2d7;box-shadow:0 3px 0 #d9e3e6}.category{font-size:11px;background:#edf3e4;color:#315126;line-height:1.3}.progress{background:#e7eddf;height:9px}.progress div{background:linear-gradient(90deg,#82ba54,#c4df59)}.context{background:#f1f6fa;border-color:#80a5c5}.chip{background:#edf4e8;color:#315829}.feedback.correct{background:#ecf8e6;border:2px solid #a9ca95}.feedback{border-width:2px}.score{color:#224a35}.mission-map{border:1px solid #d8e5c5;border-radius:16px;padding:18px;background:#f6faef}.mission-map>strong{font-size:14px}.mission-map p{font-size:14px;line-height:1.9;margin:8px 0}.reward-disclaimer{font-size:12px;line-height:1.5;color:#586472;margin:14px 0 6px}.reward-panel{padding:25px 20px;text-align:center;background:linear-gradient(130deg,#fff6d8,#edf8da);border:2px solid #d8bc64;border-radius:20px;margin:24px 0}.reward-panel h2{font-size:25px}.reward-panel p{font-size:14px}.reward-panel .primary{max-width:360px}.pet-reveal{text-align:center;border-radius:20px;background:#f2ebfa;border:2px solid #c4a6e4;padding:25px;margin:20px 0}.pet-reveal>span{font-size:85px;display:block}.pet-reveal h2{font-size:26px}.pet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}.pet-tile{display:flex;align-items:center;flex-direction:column;gap:9px;text-align:center;background:#f4f7e9;border:1px solid #d4dfbc;padding:20px 12px;border-radius:16px;min-width:0}.pet-tile span{font-size:45px}.pet-tile strong{font-size:14px}.pet-tile small{color:var(--muted)}.pet-tile.locked{background:#f3f4f4;color:#667275}.pet-tile.locked span{filter:grayscale(1);opacity:.5}.listening{font-size:14px;line-height:1.6;border-top:1px solid var(--line);padding-top:16px;margin-top:18px}.listening summary{min-height:44px;cursor:pointer;font-weight:750}.listening a{color:#2958ad}.review li{padding:18px 0}.footer{padding-top:10px}
+@media(max-width:440px){.hero{gap:7px}.hero h1{font-size:34px}.egg-art{width:83px;height:111px;border-width:2px;margin-right:0}.egg-art span{font-size:29px}.hero .intro{font-size:14px}.collection-bar{flex-wrap:wrap;padding:10px 12px;gap:5px}.small-button{margin-left:auto}.card{padding:24px 20px}.quiz-option{padding:18px 16px 18px 67px}.option-icon{left:13px;width:38px;height:38px;font-size:24px}.quiz-option strong{font-size:22px}header{padding-top:18px}.menu-button{margin-left:auto}main{padding:14px 12px 25px}.eyebrow{font-size:10px;letter-spacing:1.3px}.topline{font-size:12px}.category{max-width:50%;text-align:right}h2{font-size:24px}.reward-panel{padding:22px 16px}}
+@media(max-width:350px){.hero h1{font-size:29px}.egg-art{width:70px;height:96px}.card{padding:22px 16px}.quiz-option strong{font-size:20px}}
 </style>
 </head>
 <body>
-<header><div class="logo" aria-hidden="true">MR</div><div><strong>Mes révisions</strong><small>Un petit défi, de grands progrès.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
+<header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
-<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent uniquement en mémoire pendant la partie. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>44 questions sur le thème « In my classroom » : 32 de vocabulaire, 8 de consignes et 4 de compréhension de courts dialogues. Chaque partie tire 3 questions de vocabulaire, 1 consigne et 1 dialogue.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>Correction automatique par réponses prévues : certaines formulations pourtant justes peuvent ne pas être reconnues. Les accents sont nécessaires pour les réponses en français. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Version 3.0 · Préparée le 19 octobre 2026.</p></details></footer>
+<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires en conjugaison. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Version 4.0 · Préparée le 20 octobre 2026.</p></details></footer>
 <script>const QUIZZES = {
   "english": {
     "id": "english",
-    "subject": "Anglais",
-    "title": "In my classroom",
-    "description": "Un petit défi pour retrouver les mots de la classe et comprendre les consignes.",
-    "menuDescription": "Les mots et les consignes de la classe.",
-    "duration": "3 à 5 minutes",
-    "scope": "Matériel scolaire · Consignes · Mini-dialogues",
-    "size": 5,
-    "storageKey": "english-mission-classroom.previous.v1",
+    "subject": "Enzo · Anglais CM1",
+    "title": "L’île des mots",
+    "description": "Explore les sept thèmes de ton cahier d’anglais. Dix bonnes réponses font apparaître un œuf magique !",
+    "menuDescription": "Toutes tes fiches : présentation, classe, vêtements, maison, goûts, Halloween et vocabulaire culturel.",
+    "duration": "5 à 10 minutes",
+    "scope": "Les dix fiches du cahier disponibles · Les dialogues restent à réécouter.",
+    "size": 10,
+    "storageKey": "english-mission-classroom.english.previous.v4",
     "plan": [
       [
-        "vocabulary",
-        3
+        "self",
+        1
+      ],
+      [
+        "classroom",
+        1
       ],
       [
         "instructions",
         1
       ],
       [
-        "dialogue",
+        "clothing",
+        1
+      ],
+      [
+        "colours",
+        1
+      ],
+      [
+        "house",
+        1
+      ],
+      [
+        "routine",
+        1
+      ],
+      [
+        "family",
+        1
+      ],
+      [
+        "halloween",
+        1
+      ],
+      [
+        "culture",
         1
       ]
     ],
@@ -57,8 +99,10 @@
         ],
         "exactCorrection": "scissors (ou a pair of scissors) = des ciseaux",
         "explanation": "En anglais, « scissors » est toujours au pluriel, tout comme en français. On peut aussi dire « a pair of scissors » pour une paire de ciseaux.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_scissors_en_fr",
@@ -73,8 +117,10 @@
         ],
         "exactCorrection": "scissors = des ciseaux (ou une paire de ciseaux)",
         "explanation": "« scissors » désigne les ciseaux servant à découper en classe.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_sharpener_fr_en",
@@ -82,12 +128,15 @@
         "prompt": "Comment dit-on « un taille-crayon » en anglais ?",
         "acceptedAnswers": [
           "a pencil sharpener",
-          "pencil sharpener"
+          "pencil sharpener",
+          "sharpener"
         ],
         "exactCorrection": "a pencil sharpener = un taille-crayon",
         "explanation": "Le mot est « a pencil sharpener ». « Sharpener » vient du verbe to sharpen (tailler).",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_sharpener_en_fr",
@@ -102,8 +151,10 @@
         ],
         "exactCorrection": "a pencil sharpener = un taille-crayon",
         "explanation": "« a pencil sharpener » est l’outil qui sert à tailler les crayons à papier.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_glue_fr_en",
@@ -115,8 +166,10 @@
         ],
         "exactCorrection": "glue (ou some glue) = de la colle",
         "explanation": "« glue » est un nom indénombrable en anglais pour désigner la colle.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_glue_en_fr",
@@ -129,8 +182,10 @@
         ],
         "exactCorrection": "glue = de la colle",
         "explanation": "« glue » est la colle en bâton ou liquide dans la trousse.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_schoolbag_fr_en",
@@ -140,12 +195,16 @@
           "a schoolbag",
           "schoolbag",
           "a school bag",
-          "school bag"
+          "school bag",
+          "backpack",
+          "a backpack"
         ],
         "exactCorrection": "a schoolbag = un cartable",
         "explanation": "On emploie « a schoolbag » pour le cartable ou sac d’école.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_schoolbag_en_fr",
@@ -163,8 +222,10 @@
         ],
         "exactCorrection": "a schoolbag = un cartable (ou sac d’école)",
         "explanation": "« a schoolbag » est le cartable dans lequel on emporte son matériel à l’école.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pencil_fr_en",
@@ -176,8 +237,10 @@
         ],
         "exactCorrection": "a pencil = un crayon (à papier)",
         "explanation": "« a pencil » désigne un crayon à papier (à ne pas confondre avec « a pen » qui est le stylo).",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pencil_en_fr",
@@ -194,8 +257,10 @@
         ],
         "exactCorrection": "a pencil = un crayon (à papier)",
         "explanation": "« a pencil » est le crayon en bois de la trousse.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pen_fr_en",
@@ -207,8 +272,10 @@
         ],
         "exactCorrection": "a pen = un stylo",
         "explanation": "« a pen » est le mot pour un stylo d’écriture.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pen_en_fr",
@@ -223,8 +290,10 @@
         ],
         "exactCorrection": "a pen = un stylo",
         "explanation": "« a pen » permet d’écrire à l’encre.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pencilcase_fr_en",
@@ -238,8 +307,10 @@
         ],
         "exactCorrection": "a pencil case = une trousse",
         "explanation": "On dit « a pencil case » pour la trousse où l’on range stylos, règle et gomme.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_pencilcase_en_fr",
@@ -252,8 +323,10 @@
         ],
         "exactCorrection": "a pencil case = une trousse",
         "explanation": "« a pencil case » est la trousse de l’écolier.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_ruler_fr_en",
@@ -265,8 +338,10 @@
         ],
         "exactCorrection": "a ruler = une règle",
         "explanation": "« a ruler » est l’instrument pour tracer et mesurer.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_ruler_en_fr",
@@ -279,8 +354,10 @@
         ],
         "exactCorrection": "a ruler = une règle",
         "explanation": "« a ruler » désigne la règle graduée.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_book_fr_en",
@@ -292,8 +369,10 @@
         ],
         "exactCorrection": "a book = un livre",
         "explanation": "« a book » désigne un livre de lecture ou de leçon.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_book_en_fr",
@@ -306,8 +385,10 @@
         ],
         "exactCorrection": "a book = un livre",
         "explanation": "« a book » signifie un livre.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_notebook_fr_en",
@@ -319,8 +400,10 @@
         ],
         "exactCorrection": "a notebook = un cahier",
         "explanation": "« a notebook » est le mot exact pour désigner un cahier scolaire.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_notebook_en_fr",
@@ -331,12 +414,16 @@
           "cahier",
           "le cahier",
           "un carnet",
-          "carnet"
+          "carnet",
+          "carnet",
+          "un carnet"
         ],
         "exactCorrection": "a notebook = un cahier",
         "explanation": "« a notebook » est le cahier dans lequel on écrit ses cours et exercices.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_rubber_fr_en",
@@ -346,12 +433,16 @@
           "a rubber",
           "rubber",
           "an eraser",
-          "eraser"
+          "eraser",
+          "eraser",
+          "an eraser"
         ],
         "exactCorrection": "La fiche utilise a rubber. Eraser est également correct en anglais américain.",
         "explanation": "On emploie « a rubber » (anglais britannique). « Eraser » est la variante courante en anglais américain.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_rubber_en_fr",
@@ -364,8 +455,10 @@
         ],
         "exactCorrection": "a rubber = une gomme (la fiche utilise a rubber ; eraser en anglais américain)",
         "explanation": "« a rubber » sert à effacer les traits de crayon à papier.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_desk_fr_en",
@@ -377,8 +470,10 @@
         ],
         "exactCorrection": "a desk = un bureau / pupitre",
         "explanation": "« a desk » est le bureau ou le pupitre d’élève dans la classe.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_desk_en_fr",
@@ -394,8 +489,10 @@
         ],
         "exactCorrection": "a desk = un bureau (ou un pupitre)",
         "explanation": "« a desk » est la table de travail de l’élève.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_chair_fr_en",
@@ -407,8 +504,10 @@
         ],
         "exactCorrection": "a chair = une chaise",
         "explanation": "« a chair » est la chaise sur laquelle on s’assoit en classe.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_chair_en_fr",
@@ -421,8 +520,10 @@
         ],
         "exactCorrection": "a chair = une chaise",
         "explanation": "« a chair » est le siège.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_whiteboard_fr_en",
@@ -436,8 +537,10 @@
         ],
         "exactCorrection": "a whiteboard = un tableau blanc",
         "explanation": "« a whiteboard » est composé de white (blanc) et board (tableau).",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_whiteboard_en_fr",
@@ -450,8 +553,10 @@
         ],
         "exactCorrection": "a whiteboard = un tableau blanc",
         "explanation": "« a whiteboard » est le tableau blanc effaçable de la classe.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_chalk_fr_en",
@@ -464,8 +569,10 @@
         ],
         "exactCorrection": "chalk (ou a piece of chalk) = de la craie",
         "explanation": "La craie est un nom indénombrable : chalk ou some chalk. Pour un morceau, on dit a piece of chalk.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_chalk_en_fr",
@@ -481,8 +588,10 @@
         ],
         "exactCorrection": "chalk = de la craie",
         "explanation": "« chalk » désigne la craie utilisée pour écrire sur un tableau noir.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_highlighter_fr_en",
@@ -494,8 +603,10 @@
         ],
         "exactCorrection": "a highlighter = un surligneur",
         "explanation": "« a highlighter » vient de highlight (surligner ou mettre en valeur du texte).",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "vocab_highlighter_en_fr",
@@ -510,8 +621,10 @@
         ],
         "exactCorrection": "a highlighter = un surligneur",
         "explanation": "« a highlighter » est le feutre fluorescent pour surligner les mots importants.",
-        "category": "vocabulary",
-        "categoryLabel": "Matériel scolaire"
+        "category": "classroom",
+        "categoryLabel": "La classe",
+        "englishFlexible": true,
+        "answerKind": "vocabulary"
       },
       {
         "id": "instruction_give_pencil",
@@ -528,7 +641,9 @@
         "exactCorrection": "Give me your pencil. = Donne-moi ton crayon. (ou Donnez-moi votre crayon.)",
         "explanation": "« Give me » signifie « Donne-moi » (ou « Donnez-moi »), et « your pencil » est « ton crayon » / « votre crayon ».",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_show_book",
@@ -543,7 +658,9 @@
         "exactCorrection": "Show me your book. = Montre-moi ton livre. (ou Montrez-moi votre livre.)",
         "explanation": "« Show me » signifie « Montre-moi » (ou « Montrez-moi »), et « your book » est « ton livre » / « votre livre ».",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_take_out_books",
@@ -565,7 +682,9 @@
         "exactCorrection": "Take out your books, please. = Sortez vos livres, s’il vous plaît.",
         "explanation": "« Take out » signifie « Sortez » (ou « Sors »), et « please » ajoute la politesse (« s’il vous plaît »).",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_open_book_32",
@@ -582,7 +701,9 @@
         "exactCorrection": "Open your book to page 32. = Ouvre ton livre à la page 32. (ou Ouvrez votre livre...)",
         "explanation": "« Open » signifie « Ouvre / Ouvrez », « your book » = ton livre, et « to page 32 » = à la page 32.",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_stand_up",
@@ -600,7 +721,9 @@
         "exactCorrection": "Stand up! = Lève-toi ! / Levez-vous ! / Debout !",
         "explanation": "« Stand up! » est la consigne classique pour se mettre debout en classe.",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_sit_down",
@@ -618,7 +741,9 @@
         "exactCorrection": "Sit down! = Assieds-toi ! / Asseyez-vous ! / Assieds-toi",
         "explanation": "« Sit down! » est l’instruction pour s’asseoir à sa place.",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_be_quiet",
@@ -640,7 +765,9 @@
         "exactCorrection": "Be quiet! = Silence ! / Tais-toi ! / Taisez-vous ! / Soyez silencieux",
         "explanation": "« Quiet » signifie calme ou silencieux. L’enseignant demande le silence dans la classe.",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "instruction_listen_carefully",
@@ -659,7 +786,9 @@
         "exactCorrection": "Listen carefully! = Écoute attentivement ! / Écoutez attentivement !",
         "explanation": "« Listen » veut dire « Écoute / Écoutez », et « carefully » signifie « avec attention / attentivement ».",
         "category": "instructions",
-        "categoryLabel": "Consigne de classe"
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "dialogue_tom_needs_glue",
@@ -676,8 +805,10 @@
         ],
         "exactCorrection": "Tom a besoin de colle : glue.",
         "explanation": "Dans le dialogue, Tom dit : « I don’t have any glue. Do you have any glue for me please? ». Il cherche donc de la colle (glue).",
-        "category": "dialogue",
-        "categoryLabel": "Compréhension du dialogue"
+        "category": "instructions",
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "dialogue_who_helps_tom",
@@ -691,8 +822,10 @@
         ],
         "exactCorrection": "C’est Lucy qui aide Tom en lui donnant sa colle (« Lucy: Yes, I do. Here you are! »).",
         "explanation": "Lucy répond favorablement à Tom et lui tend la colle avec la formule « Here you are! » (« Voici ! »).",
-        "category": "dialogue",
-        "categoryLabel": "Compréhension du dialogue"
+        "category": "instructions",
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "dialogue_teacher_page",
@@ -709,8 +842,10 @@
         ],
         "exactCorrection": "Il faut ouvrir le livre à la page 32 (thirty-two).",
         "explanation": "L’enseignant donne la consigne : « Open your book page 32 », ce qui correspond au numéro 32.",
-        "category": "dialogue",
-        "categoryLabel": "Compréhension du dialogue"
+        "category": "instructions",
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
       },
       {
         "id": "dialogue_read_in_silence",
@@ -726,10 +861,3296 @@
         ],
         "exactCorrection": "Il faut lire en silence (in silence).",
         "explanation": "L’enseignant indique : « Everybody reads the first paragraph in silence » (Tout le monde lit le premier paragraphe en silence).",
-        "category": "dialogue",
-        "categoryLabel": "Compréhension du dialogue"
+        "category": "instructions",
+        "categoryLabel": "Consignes",
+        "englishFlexible": true,
+        "answerKind": "phrase"
+      },
+      {
+        "conceptId": "en_black_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "black hair",
+        "id": "black_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux noirs » en anglais ?",
+        "acceptedAnswers": [
+          "black hair"
+        ],
+        "exactCorrection": "black hair = cheveux noirs",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_black_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "black hair",
+        "id": "black_hair_en_fr",
+        "prompt": "Que signifie « black hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux noirs",
+          "des cheveux noirs"
+        ],
+        "exactCorrection": "black hair = cheveux noirs",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_blond_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blond hair",
+        "id": "blond_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux blonds » en anglais ?",
+        "acceptedAnswers": [
+          "blond hair",
+          "blonde hair"
+        ],
+        "exactCorrection": "blond hair = cheveux blonds",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_blond_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blond hair",
+        "id": "blond_hair_en_fr",
+        "prompt": "Que signifie « blond hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux blonds",
+          "des cheveux blonds"
+        ],
+        "exactCorrection": "blond hair = cheveux blonds",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_red_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "red hair",
+        "id": "red_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux roux » en anglais ?",
+        "acceptedAnswers": [
+          "red hair",
+          "ginger hair"
+        ],
+        "exactCorrection": "red hair = cheveux roux",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_red_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "red hair",
+        "id": "red_hair_en_fr",
+        "prompt": "Que signifie « red hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux roux",
+          "des cheveux roux"
+        ],
+        "exactCorrection": "red hair = cheveux roux",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_brown_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "brown hair",
+        "id": "brown_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux bruns » en anglais ?",
+        "acceptedAnswers": [
+          "brown hair"
+        ],
+        "exactCorrection": "brown hair = cheveux bruns",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_brown_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "brown hair",
+        "id": "brown_hair_en_fr",
+        "prompt": "Que signifie « brown hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux bruns",
+          "cheveux marron",
+          "cheveux châtains",
+          "des cheveux bruns"
+        ],
+        "exactCorrection": "brown hair = cheveux bruns",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_short_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "short hair",
+        "id": "short_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux courts » en anglais ?",
+        "acceptedAnswers": [
+          "short hair"
+        ],
+        "exactCorrection": "short hair = cheveux courts",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_short_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "short hair",
+        "id": "short_hair_en_fr",
+        "prompt": "Que signifie « short hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux courts",
+          "des cheveux courts"
+        ],
+        "exactCorrection": "short hair = cheveux courts",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_long_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "long hair",
+        "id": "long_hair_fr_en",
+        "prompt": "Comment dit-on « cheveux longs » en anglais ?",
+        "acceptedAnswers": [
+          "long hair"
+        ],
+        "exactCorrection": "long hair = cheveux longs",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_long_hair",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "long hair",
+        "id": "long_hair_en_fr",
+        "prompt": "Que signifie « long hair » en français ?",
+        "acceptedAnswers": [
+          "cheveux longs",
+          "des cheveux longs"
+        ],
+        "exactCorrection": "long hair = cheveux longs",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_blue_eyes",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blue eyes",
+        "id": "blue_eyes_fr_en",
+        "prompt": "Comment dit-on « yeux bleus » en anglais ?",
+        "acceptedAnswers": [
+          "blue eyes"
+        ],
+        "exactCorrection": "blue eyes = yeux bleus",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_blue_eyes",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blue eyes",
+        "id": "blue_eyes_en_fr",
+        "prompt": "Que signifie « blue eyes » en français ?",
+        "acceptedAnswers": [
+          "yeux bleus",
+          "des yeux bleus"
+        ],
+        "exactCorrection": "blue eyes = yeux bleus",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_green_eyes",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "green eyes",
+        "id": "green_eyes_fr_en",
+        "prompt": "Comment dit-on « yeux verts » en anglais ?",
+        "acceptedAnswers": [
+          "green eyes"
+        ],
+        "exactCorrection": "green eyes = yeux verts",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_green_eyes",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "green eyes",
+        "id": "green_eyes_en_fr",
+        "prompt": "Que signifie « green eyes » en français ?",
+        "acceptedAnswers": [
+          "yeux verts",
+          "des yeux verts"
+        ],
+        "exactCorrection": "green eyes = yeux verts",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "id": "name",
+        "conceptId": "en_name",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je m’appelle Sam. »",
+        "acceptedAnswers": [
+          "My name is Sam",
+          "My name's Sam",
+          "I'm Sam",
+          "I am Sam"
+        ],
+        "exactCorrection": "My name is Sam. / I’m Sam.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "ask_name",
+        "conceptId": "en_ask_name",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Comment demandes-tu son prénom à quelqu’un en anglais ?",
+        "acceptedAnswers": [
+          "What is your name",
+          "What's your name"
+        ],
+        "exactCorrection": "What’s your name?",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "ask_age",
+        "conceptId": "en_ask_age",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Comment demandes-tu son âge à quelqu’un en anglais ?",
+        "acceptedAnswers": [
+          "How old are you"
+        ],
+        "exactCorrection": "How old are you?",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "age_nine",
+        "conceptId": "en_age_nine",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « J’ai neuf ans. »",
+        "acceptedAnswers": [
+          "I'm nine years old",
+          "I am nine years old",
+          "I'm 9 years old",
+          "I am 9 years old",
+          "I'm nine",
+          "I am nine",
+          "I'm 9"
+        ],
+        "exactCorrection": "I’m nine years old.",
+        "explanation": "En anglais, on utilise « I am » pour donner son âge."
+      },
+      {
+        "id": "age_ten",
+        "conceptId": "en_age_ten",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « J’ai dix ans. »",
+        "acceptedAnswers": [
+          "I'm ten years old",
+          "I am ten years old",
+          "I'm 10 years old",
+          "I am 10 years old",
+          "I'm ten",
+          "I am ten",
+          "I'm 10"
+        ],
+        "exactCorrection": "I’m ten years old.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "have_eyes",
+        "conceptId": "en_have_eyes",
+        "category": "self",
+        "categoryLabel": "Se présenter",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « J’ai les yeux bleus. »",
+        "acceptedAnswers": [
+          "I have blue eyes",
+          "I've got blue eyes",
+          "I have got blue eyes"
+        ],
+        "exactCorrection": "I have blue eyes.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "conceptId": "en_shorts",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "shorts",
+        "id": "shorts_fr_en",
+        "prompt": "Comment dit-on « un short » en anglais ?",
+        "acceptedAnswers": [
+          "shorts"
+        ],
+        "exactCorrection": "shorts = un short",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_shorts",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "shorts",
+        "id": "shorts_en_fr",
+        "prompt": "Que signifie « shorts » en français ?",
+        "acceptedAnswers": [
+          "un short",
+          "short"
+        ],
+        "exactCorrection": "shorts = un short",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_skirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skirt",
+        "id": "skirt_fr_en",
+        "prompt": "Comment dit-on « une jupe » en anglais ?",
+        "acceptedAnswers": [
+          "a skirt"
+        ],
+        "exactCorrection": "a skirt = une jupe",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_skirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skirt",
+        "id": "skirt_en_fr",
+        "prompt": "Que signifie « a skirt » en français ?",
+        "acceptedAnswers": [
+          "une jupe",
+          "jupe"
+        ],
+        "exactCorrection": "a skirt = une jupe",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_boots",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "boots",
+        "id": "boots_fr_en",
+        "prompt": "Comment dit-on « des bottes » en anglais ?",
+        "acceptedAnswers": [
+          "boots"
+        ],
+        "exactCorrection": "boots = des bottes",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_boots",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "boots",
+        "id": "boots_en_fr",
+        "prompt": "Que signifie « boots » en français ?",
+        "acceptedAnswers": [
+          "des bottes",
+          "bottes"
+        ],
+        "exactCorrection": "boots = des bottes",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_dress",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a dress",
+        "id": "dress_fr_en",
+        "prompt": "Comment dit-on « une robe » en anglais ?",
+        "acceptedAnswers": [
+          "a dress"
+        ],
+        "exactCorrection": "a dress = une robe",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_dress",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a dress",
+        "id": "dress_en_fr",
+        "prompt": "Que signifie « a dress » en français ?",
+        "acceptedAnswers": [
+          "une robe",
+          "robe"
+        ],
+        "exactCorrection": "a dress = une robe",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_hat",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a hat",
+        "id": "hat_fr_en",
+        "prompt": "Comment dit-on « un chapeau » en anglais ?",
+        "acceptedAnswers": [
+          "a hat"
+        ],
+        "exactCorrection": "a hat = un chapeau",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_hat",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a hat",
+        "id": "hat_en_fr",
+        "prompt": "Que signifie « a hat » en français ?",
+        "acceptedAnswers": [
+          "un chapeau",
+          "chapeau"
+        ],
+        "exactCorrection": "a hat = un chapeau",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_jumper",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a jumper",
+        "id": "jumper_fr_en",
+        "prompt": "Comment dit-on « un pull » en anglais ?",
+        "acceptedAnswers": [
+          "a jumper",
+          "sweater",
+          "a sweater",
+          "pullover"
+        ],
+        "exactCorrection": "a jumper = un pull",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_jumper",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a jumper",
+        "id": "jumper_en_fr",
+        "prompt": "Que signifie « a jumper » en français ?",
+        "acceptedAnswers": [
+          "un pull",
+          "pull",
+          "pullover"
+        ],
+        "exactCorrection": "a jumper = un pull",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_shoes",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "shoes",
+        "id": "shoes_fr_en",
+        "prompt": "Comment dit-on « des chaussures » en anglais ?",
+        "acceptedAnswers": [
+          "shoes"
+        ],
+        "exactCorrection": "shoes = des chaussures",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_shoes",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "shoes",
+        "id": "shoes_en_fr",
+        "prompt": "Que signifie « shoes » en français ?",
+        "acceptedAnswers": [
+          "des chaussures",
+          "chaussures",
+          "souliers",
+          "des souliers"
+        ],
+        "exactCorrection": "shoes = des chaussures",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_socks",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "socks",
+        "id": "socks_fr_en",
+        "prompt": "Comment dit-on « des chaussettes » en anglais ?",
+        "acceptedAnswers": [
+          "socks"
+        ],
+        "exactCorrection": "socks = des chaussettes",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_socks",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "socks",
+        "id": "socks_en_fr",
+        "prompt": "Que signifie « socks » en français ?",
+        "acceptedAnswers": [
+          "des chaussettes",
+          "chaussettes"
+        ],
+        "exactCorrection": "socks = des chaussettes",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_trousers",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "trousers",
+        "id": "trousers_fr_en",
+        "prompt": "Comment dit-on « un pantalon » en anglais ?",
+        "acceptedAnswers": [
+          "trousers",
+          "pants",
+          "a pair of trousers",
+          "a pair of pants"
+        ],
+        "exactCorrection": "trousers = un pantalon",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_trousers",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "trousers",
+        "id": "trousers_en_fr",
+        "prompt": "Que signifie « trousers » en français ?",
+        "acceptedAnswers": [
+          "un pantalon",
+          "pantalon"
+        ],
+        "exactCorrection": "trousers = un pantalon",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_coat",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a coat",
+        "id": "coat_fr_en",
+        "prompt": "Comment dit-on « un manteau » en anglais ?",
+        "acceptedAnswers": [
+          "a coat"
+        ],
+        "exactCorrection": "a coat = un manteau",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_coat",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a coat",
+        "id": "coat_en_fr",
+        "prompt": "Que signifie « a coat » en français ?",
+        "acceptedAnswers": [
+          "un manteau",
+          "manteau"
+        ],
+        "exactCorrection": "a coat = un manteau",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_shirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a shirt",
+        "id": "shirt_fr_en",
+        "prompt": "Comment dit-on « une chemise » en anglais ?",
+        "acceptedAnswers": [
+          "a shirt"
+        ],
+        "exactCorrection": "a shirt = une chemise",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_shirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a shirt",
+        "id": "shirt_en_fr",
+        "prompt": "Que signifie « a shirt » en français ?",
+        "acceptedAnswers": [
+          "une chemise",
+          "chemise"
+        ],
+        "exactCorrection": "a shirt = une chemise",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_tshirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a tee-shirt",
+        "id": "tshirt_fr_en",
+        "prompt": "Comment dit-on « un tee-shirt » en anglais ?",
+        "acceptedAnswers": [
+          "a tee-shirt",
+          "t-shirt",
+          "t shirt",
+          "tee shirt",
+          "teeshirt"
+        ],
+        "exactCorrection": "a tee-shirt = un tee-shirt",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_tshirt",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a tee-shirt",
+        "id": "tshirt_en_fr",
+        "prompt": "Que signifie « a tee-shirt » en français ?",
+        "acceptedAnswers": [
+          "un tee-shirt",
+          "t-shirt",
+          "tee shirt",
+          "t shirt",
+          "teeshirt"
+        ],
+        "exactCorrection": "a tee-shirt = un tee-shirt",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "id": "wearing",
+        "conceptId": "en_wearing",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « Je porte une chemise. »",
+        "acceptedAnswers": [
+          "I'm wearing a shirt",
+          "I am wearing a shirt"
+        ],
+        "exactCorrection": "I’m wearing a shirt.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "would_like",
+        "conceptId": "en_would_like",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I’d like new shoes » ?",
+        "acceptedAnswers": [
+          "Je voudrais de nouvelles chaussures",
+          "J'aimerais de nouvelles chaussures",
+          "Je voudrais des chaussures neuves",
+          "J'aimerais des chaussures neuves"
+        ],
+        "exactCorrection": "Je voudrais de nouvelles chaussures.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "prefer",
+        "conceptId": "en_prefer",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I prefer the green shoes » ?",
+        "acceptedAnswers": [
+          "Je préfère les chaussures vertes",
+          "Je préfère les souliers verts"
+        ],
+        "exactCorrection": "Je préfère les chaussures vertes.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "try_on",
+        "conceptId": "en_try_on",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « Can I try them on? », à propos de chaussures ?",
+        "acceptedAnswers": [
+          "Puis-je les essayer",
+          "Est-ce que je peux les essayer",
+          "Je peux les essayer",
+          "Puis je les essayer"
+        ],
+        "exactCorrection": "Puis-je les essayer ?",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "like_them",
+        "conceptId": "en_like_them",
+        "category": "clothing",
+        "categoryLabel": "Vêtements",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « Do you like them? », à propos de chaussures ?",
+        "acceptedAnswers": [
+          "Est-ce que tu les aimes",
+          "Tu les aimes",
+          "Est-ce qu’elles te plaisent",
+          "Elles te plaisent",
+          "Est-ce que vous les aimez",
+          "Vous les aimez"
+        ],
+        "exactCorrection": "Est-ce qu’elles te plaisent ?",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "conceptId": "en_black",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "black",
+        "id": "black_fr_en",
+        "prompt": "Comment dit-on « noir » en anglais ?",
+        "acceptedAnswers": [
+          "black"
+        ],
+        "exactCorrection": "black = noir",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_black",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "black",
+        "id": "black_en_fr",
+        "prompt": "Que signifie « black » en français ?",
+        "acceptedAnswers": [
+          "noir"
+        ],
+        "exactCorrection": "black = noir",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_brown",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "brown",
+        "id": "brown_fr_en",
+        "prompt": "Comment dit-on « marron » en anglais ?",
+        "acceptedAnswers": [
+          "brown"
+        ],
+        "exactCorrection": "brown = marron",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_brown",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "brown",
+        "id": "brown_en_fr",
+        "prompt": "Que signifie « brown » en français ?",
+        "acceptedAnswers": [
+          "marron",
+          "brun"
+        ],
+        "exactCorrection": "brown = marron",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_red",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "red",
+        "id": "red_fr_en",
+        "prompt": "Comment dit-on « rouge » en anglais ?",
+        "acceptedAnswers": [
+          "red"
+        ],
+        "exactCorrection": "red = rouge",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_red",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "red",
+        "id": "red_en_fr",
+        "prompt": "Que signifie « red » en français ?",
+        "acceptedAnswers": [
+          "rouge"
+        ],
+        "exactCorrection": "red = rouge",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_blue",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blue",
+        "id": "blue_fr_en",
+        "prompt": "Comment dit-on « bleu » en anglais ?",
+        "acceptedAnswers": [
+          "blue"
+        ],
+        "exactCorrection": "blue = bleu",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_blue",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "blue",
+        "id": "blue_en_fr",
+        "prompt": "Que signifie « blue » en français ?",
+        "acceptedAnswers": [
+          "bleu"
+        ],
+        "exactCorrection": "blue = bleu",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_green",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "green",
+        "id": "green_fr_en",
+        "prompt": "Comment dit-on « vert » en anglais ?",
+        "acceptedAnswers": [
+          "green"
+        ],
+        "exactCorrection": "green = vert",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_green",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "green",
+        "id": "green_en_fr",
+        "prompt": "Que signifie « green » en français ?",
+        "acceptedAnswers": [
+          "vert"
+        ],
+        "exactCorrection": "green = vert",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_grey",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "grey",
+        "id": "grey_fr_en",
+        "prompt": "Comment dit-on « gris » en anglais ?",
+        "acceptedAnswers": [
+          "grey",
+          "gray"
+        ],
+        "exactCorrection": "grey = gris",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_grey",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "grey",
+        "id": "grey_en_fr",
+        "prompt": "Que signifie « grey » en français ?",
+        "acceptedAnswers": [
+          "gris"
+        ],
+        "exactCorrection": "grey = gris",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_pink",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "pink",
+        "id": "pink_fr_en",
+        "prompt": "Comment dit-on « rose » en anglais ?",
+        "acceptedAnswers": [
+          "pink"
+        ],
+        "exactCorrection": "pink = rose",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_pink",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "pink",
+        "id": "pink_en_fr",
+        "prompt": "Que signifie « pink » en français ?",
+        "acceptedAnswers": [
+          "rose"
+        ],
+        "exactCorrection": "pink = rose",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_white",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "white",
+        "id": "white_fr_en",
+        "prompt": "Comment dit-on « blanc » en anglais ?",
+        "acceptedAnswers": [
+          "white"
+        ],
+        "exactCorrection": "white = blanc",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_white",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "white",
+        "id": "white_en_fr",
+        "prompt": "Que signifie « white » en français ?",
+        "acceptedAnswers": [
+          "blanc"
+        ],
+        "exactCorrection": "white = blanc",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_yellow",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "yellow",
+        "id": "yellow_fr_en",
+        "prompt": "Comment dit-on « jaune » en anglais ?",
+        "acceptedAnswers": [
+          "yellow"
+        ],
+        "exactCorrection": "yellow = jaune",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_yellow",
+        "category": "colours",
+        "categoryLabel": "Couleurs",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "yellow",
+        "id": "yellow_en_fr",
+        "prompt": "Que signifie « yellow » en français ?",
+        "acceptedAnswers": [
+          "jaune"
+        ],
+        "exactCorrection": "yellow = jaune",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_flat",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a flat",
+        "id": "flat_fr_en",
+        "prompt": "Comment dit-on « un appartement » en anglais ?",
+        "acceptedAnswers": [
+          "a flat",
+          "apartment",
+          "an apartment"
+        ],
+        "exactCorrection": "a flat = un appartement",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_flat",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a flat",
+        "id": "flat_en_fr",
+        "prompt": "Que signifie « a flat » en français ?",
+        "acceptedAnswers": [
+          "un appartement",
+          "appartement"
+        ],
+        "exactCorrection": "a flat = un appartement",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_building",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a building",
+        "id": "building_fr_en",
+        "prompt": "Comment dit-on « un immeuble » en anglais ?",
+        "acceptedAnswers": [
+          "a building"
+        ],
+        "exactCorrection": "a building = un immeuble",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_building",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a building",
+        "id": "building_en_fr",
+        "prompt": "Que signifie « a building » en français ?",
+        "acceptedAnswers": [
+          "un immeuble",
+          "immeuble",
+          "bâtiment",
+          "un bâtiment"
+        ],
+        "exactCorrection": "a building = un immeuble",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_bedroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bedroom",
+        "id": "bedroom_fr_en",
+        "prompt": "Comment dit-on « une chambre » en anglais ?",
+        "acceptedAnswers": [
+          "a bedroom"
+        ],
+        "exactCorrection": "a bedroom = une chambre",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_bedroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bedroom",
+        "id": "bedroom_en_fr",
+        "prompt": "Que signifie « a bedroom » en français ?",
+        "acceptedAnswers": [
+          "une chambre",
+          "chambre",
+          "chambre à coucher",
+          "une chambre à coucher"
+        ],
+        "exactCorrection": "a bedroom = une chambre",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_toilet",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a toilet",
+        "id": "toilet_fr_en",
+        "prompt": "Comment dit-on « des toilettes » en anglais ?",
+        "acceptedAnswers": [
+          "a toilet",
+          "toilet",
+          "toilets",
+          "restroom"
+        ],
+        "exactCorrection": "a toilet = des toilettes",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_toilet",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a toilet",
+        "id": "toilet_en_fr",
+        "prompt": "Que signifie « a toilet » en français ?",
+        "acceptedAnswers": [
+          "des toilettes",
+          "toilettes",
+          "les toilettes",
+          "wc"
+        ],
+        "exactCorrection": "a toilet = des toilettes",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_bathroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bathroom",
+        "id": "bathroom_fr_en",
+        "prompt": "Comment dit-on « une salle de bains » en anglais ?",
+        "acceptedAnswers": [
+          "a bathroom"
+        ],
+        "exactCorrection": "a bathroom = une salle de bains",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_bathroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bathroom",
+        "id": "bathroom_en_fr",
+        "prompt": "Que signifie « a bathroom » en français ?",
+        "acceptedAnswers": [
+          "une salle de bains",
+          "salle de bains",
+          "salle de bain",
+          "une salle de bain"
+        ],
+        "exactCorrection": "a bathroom = une salle de bains",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_cellar",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a cellar",
+        "id": "cellar_fr_en",
+        "prompt": "Comment dit-on « une cave » en anglais ?",
+        "acceptedAnswers": [
+          "a cellar",
+          "basement"
+        ],
+        "exactCorrection": "a cellar = une cave",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_cellar",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a cellar",
+        "id": "cellar_en_fr",
+        "prompt": "Que signifie « a cellar » en français ?",
+        "acceptedAnswers": [
+          "une cave",
+          "cave",
+          "sous-sol",
+          "un sous-sol"
+        ],
+        "exactCorrection": "a cellar = une cave",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_attic",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an attic",
+        "id": "attic_fr_en",
+        "prompt": "Comment dit-on « un grenier » en anglais ?",
+        "acceptedAnswers": [
+          "an attic"
+        ],
+        "exactCorrection": "an attic = un grenier",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_attic",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an attic",
+        "id": "attic_en_fr",
+        "prompt": "Que signifie « an attic » en français ?",
+        "acceptedAnswers": [
+          "un grenier",
+          "grenier",
+          "combles",
+          "les combles"
+        ],
+        "exactCorrection": "an attic = un grenier",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_diningroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a dining-room",
+        "id": "diningroom_fr_en",
+        "prompt": "Comment dit-on « une salle à manger » en anglais ?",
+        "acceptedAnswers": [
+          "a dining-room",
+          "dining room"
+        ],
+        "exactCorrection": "a dining-room = une salle à manger",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_diningroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a dining-room",
+        "id": "diningroom_en_fr",
+        "prompt": "Que signifie « a dining-room » en français ?",
+        "acceptedAnswers": [
+          "une salle à manger",
+          "salle à manger"
+        ],
+        "exactCorrection": "a dining-room = une salle à manger",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_kitchen",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a kitchen",
+        "id": "kitchen_fr_en",
+        "prompt": "Comment dit-on « une cuisine » en anglais ?",
+        "acceptedAnswers": [
+          "a kitchen"
+        ],
+        "exactCorrection": "a kitchen = une cuisine",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_kitchen",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a kitchen",
+        "id": "kitchen_en_fr",
+        "prompt": "Que signifie « a kitchen » en français ?",
+        "acceptedAnswers": [
+          "une cuisine",
+          "cuisine"
+        ],
+        "exactCorrection": "a kitchen = une cuisine",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_livingroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a living room",
+        "id": "livingroom_fr_en",
+        "prompt": "Comment dit-on « un salon » en anglais ?",
+        "acceptedAnswers": [
+          "a living room",
+          "living-room",
+          "lounge",
+          "a lounge",
+          "sitting room"
+        ],
+        "exactCorrection": "a living room = un salon",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_livingroom",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a living room",
+        "id": "livingroom_en_fr",
+        "prompt": "Que signifie « a living room » en français ?",
+        "acceptedAnswers": [
+          "un salon",
+          "salon",
+          "séjour",
+          "un séjour",
+          "salle de séjour"
+        ],
+        "exactCorrection": "a living room = un salon",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "id": "how_many_rooms",
+        "conceptId": "en_how_many_rooms",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « How many rooms are there in your house? » ?",
+        "acceptedAnswers": [
+          "Combien y a-t-il de pièces dans ta maison",
+          "Combien de pièces y a-t-il dans ta maison",
+          "Il y a combien de pièces dans ta maison",
+          "Combien de pièces dans ta maison"
+        ],
+        "exactCorrection": "Combien y a-t-il de pièces dans ta maison ?",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "three_rooms",
+        "conceptId": "en_three_rooms",
+        "category": "house",
+        "categoryLabel": "La maison",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « Il y a trois pièces. »",
+        "acceptedAnswers": [
+          "There are three rooms",
+          "There are 3 rooms"
+        ],
+        "exactCorrection": "There are three rooms.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "wake_up_en_fr",
+        "conceptId": "en_routine_wake_up",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I wake up » ?",
+        "acceptedAnswers": [
+          "Je me réveille",
+          "Je me reveille"
+        ],
+        "exactCorrection": "I wake up = Je me réveille",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "wake_up_fr_en",
+        "conceptId": "en_routine_wake_up",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je me réveille ».",
+        "acceptedAnswers": [
+          "I wake up"
+        ],
+        "exactCorrection": "I wake up = Je me réveille",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "brush_teeth_en_fr",
+        "conceptId": "en_routine_brush_teeth",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I brush my teeth » ?",
+        "acceptedAnswers": [
+          "Je me brosse les dents",
+          "Je brosse mes dents"
+        ],
+        "exactCorrection": "I brush my teeth = Je me brosse les dents",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "brush_teeth_fr_en",
+        "conceptId": "en_routine_brush_teeth",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je me brosse les dents ».",
+        "acceptedAnswers": [
+          "I brush my teeth"
+        ],
+        "exactCorrection": "I brush my teeth = Je me brosse les dents",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "wash_en_fr",
+        "conceptId": "en_routine_wash",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I wash myself » ?",
+        "acceptedAnswers": [
+          "Je me lave"
+        ],
+        "exactCorrection": "I wash myself = Je me lave",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "wash_fr_en",
+        "conceptId": "en_routine_wash",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je me lave ».",
+        "acceptedAnswers": [
+          "I wash myself",
+          "I wash"
+        ],
+        "exactCorrection": "I wash myself = Je me lave",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "breakfast_en_fr",
+        "conceptId": "en_routine_breakfast",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I have breakfast » ?",
+        "acceptedAnswers": [
+          "Je prends mon petit déjeuner",
+          "Je prends le petit déjeuner",
+          "Je mange mon petit déjeuner",
+          "Je déjeune"
+        ],
+        "exactCorrection": "I have breakfast = Je prends mon petit déjeuner",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "breakfast_fr_en",
+        "conceptId": "en_routine_breakfast",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je prends mon petit déjeuner ».",
+        "acceptedAnswers": [
+          "I have breakfast",
+          "I eat breakfast"
+        ],
+        "exactCorrection": "I have breakfast = Je prends mon petit déjeuner",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "go_school_en_fr",
+        "conceptId": "en_routine_go_school",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « I go to school » ?",
+        "acceptedAnswers": [
+          "Je vais à l’école",
+          "Je vais a l'ecole"
+        ],
+        "exactCorrection": "I go to school = Je vais à l’école",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "go_school_fr_en",
+        "conceptId": "en_routine_go_school",
+        "category": "routine",
+        "categoryLabel": "Le matin",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis en anglais : « Je vais à l’école ».",
+        "acceptedAnswers": [
+          "I go to school"
+        ],
+        "exactCorrection": "I go to school = Je vais à l’école",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "conceptId": "en_pet",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a pet",
+        "id": "pet_fr_en",
+        "prompt": "Comment dit-on « un animal de compagnie » en anglais ?",
+        "acceptedAnswers": [
+          "a pet"
+        ],
+        "exactCorrection": "a pet = un animal de compagnie",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_pet",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a pet",
+        "id": "pet_en_fr",
+        "prompt": "Que signifie « a pet » en français ?",
+        "acceptedAnswers": [
+          "un animal de compagnie",
+          "animal de compagnie",
+          "animal domestique",
+          "un animal domestique"
+        ],
+        "exactCorrection": "a pet = un animal de compagnie",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_brother",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a brother",
+        "id": "brother_fr_en",
+        "prompt": "Comment dit-on « un frère » en anglais ?",
+        "acceptedAnswers": [
+          "a brother"
+        ],
+        "exactCorrection": "a brother = un frère",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_brother",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a brother",
+        "id": "brother_en_fr",
+        "prompt": "Que signifie « a brother » en français ?",
+        "acceptedAnswers": [
+          "un frère",
+          "frère"
+        ],
+        "exactCorrection": "a brother = un frère",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_sister",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a sister",
+        "id": "sister_fr_en",
+        "prompt": "Comment dit-on « une sœur » en anglais ?",
+        "acceptedAnswers": [
+          "a sister"
+        ],
+        "exactCorrection": "a sister = une sœur",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_sister",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a sister",
+        "id": "sister_en_fr",
+        "prompt": "Que signifie « a sister » en français ?",
+        "acceptedAnswers": [
+          "une sœur",
+          "sœur",
+          "soeur",
+          "une soeur"
+        ],
+        "exactCorrection": "a sister = une sœur",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_drawing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "drawing",
+        "id": "drawing_fr_en",
+        "prompt": "Comment dit-on « dessiner » en anglais ?",
+        "acceptedAnswers": [
+          "drawing",
+          "to draw"
+        ],
+        "exactCorrection": "drawing = dessiner",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_drawing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "drawing",
+        "id": "drawing_en_fr",
+        "prompt": "Que signifie « drawing » en français ?",
+        "acceptedAnswers": [
+          "dessiner",
+          "le dessin",
+          "dessin"
+        ],
+        "exactCorrection": "drawing = dessiner",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_swimming",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "swimming",
+        "id": "swimming_fr_en",
+        "prompt": "Comment dit-on « nager » en anglais ?",
+        "acceptedAnswers": [
+          "swimming",
+          "to swim"
+        ],
+        "exactCorrection": "swimming = nager",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_swimming",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "swimming",
+        "id": "swimming_en_fr",
+        "prompt": "Que signifie « swimming » en français ?",
+        "acceptedAnswers": [
+          "nager",
+          "la natation",
+          "natation"
+        ],
+        "exactCorrection": "swimming = nager",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_football",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "football",
+        "id": "football_fr_en",
+        "prompt": "Comment dit-on « le football » en anglais ?",
+        "acceptedAnswers": [
+          "football",
+          "soccer"
+        ],
+        "exactCorrection": "football = le football",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_football",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "football",
+        "id": "football_en_fr",
+        "prompt": "Que signifie « football » en français ?",
+        "acceptedAnswers": [
+          "le football",
+          "football",
+          "foot",
+          "le foot"
+        ],
+        "exactCorrection": "football = le football",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_basketball",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "basketball",
+        "id": "basketball_fr_en",
+        "prompt": "Comment dit-on « le basket » en anglais ?",
+        "acceptedAnswers": [
+          "basketball",
+          "basket ball"
+        ],
+        "exactCorrection": "basketball = le basket",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_basketball",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "basketball",
+        "id": "basketball_en_fr",
+        "prompt": "Que signifie « basketball » en français ?",
+        "acceptedAnswers": [
+          "le basket",
+          "basket",
+          "basketball"
+        ],
+        "exactCorrection": "basketball = le basket",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_dancing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "dancing",
+        "id": "dancing_fr_en",
+        "prompt": "Comment dit-on « danser » en anglais ?",
+        "acceptedAnswers": [
+          "dancing",
+          "to dance"
+        ],
+        "exactCorrection": "dancing = danser",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_dancing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "dancing",
+        "id": "dancing_en_fr",
+        "prompt": "Que signifie « dancing » en français ?",
+        "acceptedAnswers": [
+          "danser",
+          "la danse",
+          "danse"
+        ],
+        "exactCorrection": "dancing = danser",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_skiing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "skiing",
+        "id": "skiing_fr_en",
+        "prompt": "Comment dit-on « faire du ski » en anglais ?",
+        "acceptedAnswers": [
+          "skiing",
+          "to ski"
+        ],
+        "exactCorrection": "skiing = faire du ski",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_skiing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "skiing",
+        "id": "skiing_en_fr",
+        "prompt": "Que signifie « skiing » en français ?",
+        "acceptedAnswers": [
+          "faire du ski",
+          "ski",
+          "le ski",
+          "skier"
+        ],
+        "exactCorrection": "skiing = faire du ski",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_reading",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "reading books",
+        "id": "reading_fr_en",
+        "prompt": "Comment dit-on « lire des livres » en anglais ?",
+        "acceptedAnswers": [
+          "reading books",
+          "to read books"
+        ],
+        "exactCorrection": "reading books = lire des livres",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_reading",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "reading books",
+        "id": "reading_en_fr",
+        "prompt": "Que signifie « reading books » en français ?",
+        "acceptedAnswers": [
+          "lire des livres",
+          "la lecture",
+          "lire"
+        ],
+        "exactCorrection": "reading books = lire des livres",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_singing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "singing",
+        "id": "singing_fr_en",
+        "prompt": "Comment dit-on « chanter » en anglais ?",
+        "acceptedAnswers": [
+          "singing",
+          "to sing"
+        ],
+        "exactCorrection": "singing = chanter",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_singing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "singing",
+        "id": "singing_en_fr",
+        "prompt": "Que signifie « singing » en français ?",
+        "acceptedAnswers": [
+          "chanter",
+          "le chant",
+          "chant"
+        ],
+        "exactCorrection": "singing = chanter",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_going_school",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "going to school",
+        "id": "going_school_fr_en",
+        "prompt": "Comment dit-on « aller à l’école » en anglais ?",
+        "acceptedAnswers": [
+          "going to school"
+        ],
+        "exactCorrection": "going to school = aller à l’école",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_going_school",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "going to school",
+        "id": "going_school_en_fr",
+        "prompt": "Que signifie « going to school » en français ?",
+        "acceptedAnswers": [
+          "aller à l’école",
+          "aller a l'ecole"
+        ],
+        "exactCorrection": "going to school = aller à l’école",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_comics",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "comics",
+        "id": "comics_fr_en",
+        "prompt": "Comment dit-on « des bandes dessinées » en anglais ?",
+        "acceptedAnswers": [
+          "comics",
+          "comic books"
+        ],
+        "exactCorrection": "comics = des bandes dessinées",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_comics",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "comics",
+        "id": "comics_en_fr",
+        "prompt": "Que signifie « comics » en français ?",
+        "acceptedAnswers": [
+          "des bandes dessinées",
+          "bandes dessinées",
+          "bd",
+          "des bd"
+        ],
+        "exactCorrection": "comics = des bandes dessinées",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_cakes",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "cakes",
+        "id": "cakes_fr_en",
+        "prompt": "Comment dit-on « des gâteaux » en anglais ?",
+        "acceptedAnswers": [
+          "cakes"
+        ],
+        "exactCorrection": "cakes = des gâteaux",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_cakes",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "cakes",
+        "id": "cakes_en_fr",
+        "prompt": "Que signifie « cakes » en français ?",
+        "acceptedAnswers": [
+          "des gâteaux",
+          "gâteaux"
+        ],
+        "exactCorrection": "cakes = des gâteaux",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_icecreams",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "ice-creams",
+        "id": "icecreams_fr_en",
+        "prompt": "Comment dit-on « des glaces » en anglais ?",
+        "acceptedAnswers": [
+          "ice-creams",
+          "ice cream",
+          "ice creams",
+          "ice-cream"
+        ],
+        "exactCorrection": "ice-creams = des glaces",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_icecreams",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "ice-creams",
+        "id": "icecreams_en_fr",
+        "prompt": "Que signifie « ice-creams » en français ?",
+        "acceptedAnswers": [
+          "des glaces",
+          "glaces",
+          "crèmes glacées"
+        ],
+        "exactCorrection": "ice-creams = des glaces",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "id": "find_pet",
+        "conceptId": "en_find_pet",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Que signifie « Find someone who has a pet » ?",
+        "acceptedAnswers": [
+          "Trouve quelqu'un qui a un animal de compagnie",
+          "Trouve quelqu'un qui possède un animal de compagnie",
+          "Cherche quelqu'un qui a un animal de compagnie"
+        ],
+        "exactCorrection": "Trouve quelqu’un qui a un animal de compagnie.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "likes_drawing",
+        "conceptId": "en_likes_drawing",
+        "category": "family",
+        "categoryLabel": "Famille et goûts",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Traduis : « J’aime dessiner. »",
+        "acceptedAnswers": [
+          "I like drawing",
+          "I like to draw"
+        ],
+        "exactCorrection": "I like drawing.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "conceptId": "en_witch",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a witch",
+        "id": "witch_fr_en",
+        "prompt": "Comment dit-on « une sorcière » en anglais ?",
+        "acceptedAnswers": [
+          "a witch"
+        ],
+        "exactCorrection": "a witch = une sorcière",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_witch",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a witch",
+        "id": "witch_en_fr",
+        "prompt": "Que signifie « a witch » en français ?",
+        "acceptedAnswers": [
+          "une sorcière",
+          "sorcière"
+        ],
+        "exactCorrection": "a witch = une sorcière",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_vampire",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a vampire",
+        "id": "vampire_fr_en",
+        "prompt": "Comment dit-on « un vampire » en anglais ?",
+        "acceptedAnswers": [
+          "a vampire"
+        ],
+        "exactCorrection": "a vampire = un vampire",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_vampire",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a vampire",
+        "id": "vampire_en_fr",
+        "prompt": "Que signifie « a vampire » en français ?",
+        "acceptedAnswers": [
+          "un vampire",
+          "vampire"
+        ],
+        "exactCorrection": "a vampire = un vampire",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_bat",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bat",
+        "id": "bat_fr_en",
+        "prompt": "Comment dit-on « une chauve-souris » en anglais ?",
+        "acceptedAnswers": [
+          "a bat"
+        ],
+        "exactCorrection": "a bat = une chauve-souris",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_bat",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a bat",
+        "id": "bat_en_fr",
+        "prompt": "Que signifie « a bat » en français ?",
+        "acceptedAnswers": [
+          "une chauve-souris",
+          "chauve-souris",
+          "chauve souris"
+        ],
+        "exactCorrection": "a bat = une chauve-souris",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_moon",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "the moon",
+        "id": "moon_fr_en",
+        "prompt": "Comment dit-on « la lune » en anglais ?",
+        "acceptedAnswers": [
+          "the moon"
+        ],
+        "exactCorrection": "the moon = la lune",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_moon",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "the moon",
+        "id": "moon_en_fr",
+        "prompt": "Que signifie « the moon » en français ?",
+        "acceptedAnswers": [
+          "la lune",
+          "lune"
+        ],
+        "exactCorrection": "the moon = la lune",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_pumpkin",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a pumpkin",
+        "id": "pumpkin_fr_en",
+        "prompt": "Comment dit-on « une citrouille » en anglais ?",
+        "acceptedAnswers": [
+          "a pumpkin",
+          "a jack o lantern",
+          "jack-o-lantern",
+          "jack o'lantern"
+        ],
+        "exactCorrection": "a pumpkin = une citrouille",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_pumpkin",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a pumpkin",
+        "id": "pumpkin_en_fr",
+        "prompt": "Que signifie « a pumpkin » en français ?",
+        "acceptedAnswers": [
+          "une citrouille",
+          "citrouille",
+          "potiron",
+          "un potiron"
+        ],
+        "exactCorrection": "a pumpkin = une citrouille",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_mummy",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a mummy",
+        "id": "mummy_fr_en",
+        "prompt": "Comment dit-on « une momie » en anglais ?",
+        "acceptedAnswers": [
+          "a mummy"
+        ],
+        "exactCorrection": "a mummy = une momie",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_mummy",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a mummy",
+        "id": "mummy_en_fr",
+        "prompt": "Que signifie « a mummy » en français ?",
+        "acceptedAnswers": [
+          "une momie",
+          "momie"
+        ],
+        "exactCorrection": "a mummy = une momie",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_black_cat",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a black cat",
+        "id": "black_cat_fr_en",
+        "prompt": "Comment dit-on « un chat noir » en anglais ?",
+        "acceptedAnswers": [
+          "a black cat"
+        ],
+        "exactCorrection": "a black cat = un chat noir",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_black_cat",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a black cat",
+        "id": "black_cat_en_fr",
+        "prompt": "Que signifie « a black cat » en français ?",
+        "acceptedAnswers": [
+          "un chat noir",
+          "chat noir"
+        ],
+        "exactCorrection": "a black cat = un chat noir",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_ghost",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a ghost",
+        "id": "ghost_fr_en",
+        "prompt": "Comment dit-on « un fantôme » en anglais ?",
+        "acceptedAnswers": [
+          "a ghost"
+        ],
+        "exactCorrection": "a ghost = un fantôme",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_ghost",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a ghost",
+        "id": "ghost_en_fr",
+        "prompt": "Que signifie « a ghost » en français ?",
+        "acceptedAnswers": [
+          "un fantôme",
+          "fantôme",
+          "spectre",
+          "un spectre"
+        ],
+        "exactCorrection": "a ghost = un fantôme",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_skeleton",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skeleton",
+        "id": "skeleton_fr_en",
+        "prompt": "Comment dit-on « un squelette » en anglais ?",
+        "acceptedAnswers": [
+          "a skeleton"
+        ],
+        "exactCorrection": "a skeleton = un squelette",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_skeleton",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skeleton",
+        "id": "skeleton_en_fr",
+        "prompt": "Que signifie « a skeleton » en français ?",
+        "acceptedAnswers": [
+          "un squelette",
+          "squelette"
+        ],
+        "exactCorrection": "a skeleton = un squelette",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_monster",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a monster",
+        "id": "monster_fr_en",
+        "prompt": "Comment dit-on « un monstre » en anglais ?",
+        "acceptedAnswers": [
+          "a monster"
+        ],
+        "exactCorrection": "a monster = un monstre",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_monster",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a monster",
+        "id": "monster_en_fr",
+        "prompt": "Que signifie « a monster » en français ?",
+        "acceptedAnswers": [
+          "un monstre",
+          "monstre"
+        ],
+        "exactCorrection": "a monster = un monstre",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_spider",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a spider",
+        "id": "spider_fr_en",
+        "prompt": "Comment dit-on « une araignée » en anglais ?",
+        "acceptedAnswers": [
+          "a spider"
+        ],
+        "exactCorrection": "a spider = une araignée",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_spider",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a spider",
+        "id": "spider_en_fr",
+        "prompt": "Que signifie « a spider » en français ?",
+        "acceptedAnswers": [
+          "une araignée",
+          "araignée"
+        ],
+        "exactCorrection": "a spider = une araignée",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_coffin",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a coffin",
+        "id": "coffin_fr_en",
+        "prompt": "Comment dit-on « un cercueil » en anglais ?",
+        "acceptedAnswers": [
+          "a coffin"
+        ],
+        "exactCorrection": "a coffin = un cercueil",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_coffin",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a coffin",
+        "id": "coffin_en_fr",
+        "prompt": "Que signifie « a coffin » en français ?",
+        "acceptedAnswers": [
+          "un cercueil",
+          "cercueil"
+        ],
+        "exactCorrection": "a coffin = un cercueil",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_owl",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an owl",
+        "id": "owl_fr_en",
+        "prompt": "Comment dit-on « une chouette » en anglais ?",
+        "acceptedAnswers": [
+          "an owl"
+        ],
+        "exactCorrection": "an owl = une chouette",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_owl",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an owl",
+        "id": "owl_en_fr",
+        "prompt": "Que signifie « an owl » en français ?",
+        "acceptedAnswers": [
+          "une chouette",
+          "chouette",
+          "hibou",
+          "un hibou"
+        ],
+        "exactCorrection": "an owl = une chouette",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_haunted_house",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a haunted house",
+        "id": "haunted_house_fr_en",
+        "prompt": "Comment dit-on « une maison hantée » en anglais ?",
+        "acceptedAnswers": [
+          "a haunted house"
+        ],
+        "exactCorrection": "a haunted house = une maison hantée",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_haunted_house",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a haunted house",
+        "id": "haunted_house_en_fr",
+        "prompt": "Que signifie « a haunted house » en français ?",
+        "acceptedAnswers": [
+          "une maison hantée",
+          "maison hantée"
+        ],
+        "exactCorrection": "a haunted house = une maison hantée",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "id": "position_in",
+        "conceptId": "en_position_in",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Complète avec in ou on : « The ghost is ___ the attic. »",
+        "acceptedAnswers": [
+          "in"
+        ],
+        "exactCorrection": "The ghost is in the attic. = Le fantôme est dans le grenier.",
+        "explanation": "« In » signifie dans ; « on » signifie sur."
+      },
+      {
+        "id": "position_on",
+        "conceptId": "en_position_on",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Complète avec in ou on : « The bat is ___ the chair. »",
+        "acceptedAnswers": [
+          "on"
+        ],
+        "exactCorrection": "The bat is on the chair. = La chauve-souris est sur la chaise.",
+        "explanation": "« On » signifie sur ; « in » signifie dans."
+      },
+      {
+        "id": "spider_stairs",
+        "conceptId": "en_spider_stairs",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Dans « The spider is on the stairs », où est l’araignée ?",
+        "acceptedAnswers": [
+          "Sur les escaliers",
+          "Sur l'escalier",
+          "Sur les marches"
+        ],
+        "exactCorrection": "Elle est sur l’escalier.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "id": "vampire_room",
+        "conceptId": "en_vampire_room",
+        "category": "halloween",
+        "categoryLabel": "Halloween et positions",
+        "englishFlexible": true,
+        "answerKind": "phrase",
+        "prompt": "Dans « The vampire is in the living room », où est le vampire ?",
+        "acceptedAnswers": [
+          "Dans le salon",
+          "Dans le séjour",
+          "Dans la salle de séjour"
+        ],
+        "exactCorrection": "Il est dans le salon.",
+        "explanation": "La formulation peut varier, mais le sens doit rester le même."
+      },
+      {
+        "conceptId": "en_state",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a state",
+        "id": "state_fr_en",
+        "prompt": "Comment dit-on « un État » en anglais ?",
+        "acceptedAnswers": [
+          "a state"
+        ],
+        "exactCorrection": "a state = un État",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_state",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a state",
+        "id": "state_en_fr",
+        "prompt": "Que signifie « a state » en français ?",
+        "acceptedAnswers": [
+          "un État",
+          "État"
+        ],
+        "exactCorrection": "a state = un État",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_country",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a country",
+        "id": "country_fr_en",
+        "prompt": "Comment dit-on « un pays » en anglais ?",
+        "acceptedAnswers": [
+          "a country"
+        ],
+        "exactCorrection": "a country = un pays",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_country",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a country",
+        "id": "country_en_fr",
+        "prompt": "Que signifie « a country » en français ?",
+        "acceptedAnswers": [
+          "un pays",
+          "pays"
+        ],
+        "exactCorrection": "a country = un pays",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_fifty",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "fifty",
+        "id": "fifty_fr_en",
+        "prompt": "Comment dit-on « cinquante » en anglais ?",
+        "acceptedAnswers": [
+          "fifty"
+        ],
+        "exactCorrection": "fifty = cinquante",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_fifty",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "fifty",
+        "id": "fifty_en_fr",
+        "prompt": "Que signifie « fifty » en français ?",
+        "acceptedAnswers": [
+          "cinquante",
+          "50"
+        ],
+        "exactCorrection": "fifty = cinquante",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_star",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a star",
+        "id": "star_fr_en",
+        "prompt": "Comment dit-on « une étoile » en anglais ?",
+        "acceptedAnswers": [
+          "a star"
+        ],
+        "exactCorrection": "a star = une étoile",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_star",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a star",
+        "id": "star_en_fr",
+        "prompt": "Que signifie « a star » en français ?",
+        "acceptedAnswers": [
+          "une étoile",
+          "étoile"
+        ],
+        "exactCorrection": "a star = une étoile",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_gift",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a gift",
+        "id": "gift_fr_en",
+        "prompt": "Comment dit-on « un cadeau » en anglais ?",
+        "acceptedAnswers": [
+          "a gift",
+          "present",
+          "a present"
+        ],
+        "exactCorrection": "a gift = un cadeau",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_gift",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a gift",
+        "id": "gift_en_fr",
+        "prompt": "Que signifie « a gift » en français ?",
+        "acceptedAnswers": [
+          "un cadeau",
+          "cadeau",
+          "présent",
+          "un présent"
+        ],
+        "exactCorrection": "a gift = un cadeau",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_people",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "people",
+        "id": "people_fr_en",
+        "prompt": "Comment dit-on « les gens » en anglais ?",
+        "acceptedAnswers": [
+          "people"
+        ],
+        "exactCorrection": "people = les gens",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_people",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "people",
+        "id": "people_en_fr",
+        "prompt": "Que signifie « people » en français ?",
+        "acceptedAnswers": [
+          "les gens",
+          "gens",
+          "population",
+          "la population",
+          "peuple",
+          "le peuple"
+        ],
+        "exactCorrection": "people = les gens",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_icon",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an icon",
+        "id": "icon_fr_en",
+        "prompt": "Comment dit-on « un symbole » en anglais ?",
+        "acceptedAnswers": [
+          "an icon",
+          "symbol",
+          "a symbol"
+        ],
+        "exactCorrection": "an icon = un symbole",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_icon",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "an icon",
+        "id": "icon_en_fr",
+        "prompt": "Que signifie « an icon » en français ?",
+        "acceptedAnswers": [
+          "un symbole",
+          "symbole",
+          "icône",
+          "une icône"
+        ],
+        "exactCorrection": "an icon = un symbole",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_offer",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "to offer",
+        "id": "offer_fr_en",
+        "prompt": "Comment dit-on « offrir » en anglais ?",
+        "acceptedAnswers": [
+          "to offer",
+          "offer"
+        ],
+        "exactCorrection": "to offer = offrir",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_offer",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "to offer",
+        "id": "offer_en_fr",
+        "prompt": "Que signifie « to offer » en français ?",
+        "acceptedAnswers": [
+          "offrir"
+        ],
+        "exactCorrection": "to offer = offrir",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_freedom",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "freedom",
+        "id": "freedom_fr_en",
+        "prompt": "Comment dit-on « la liberté » en anglais ?",
+        "acceptedAnswers": [
+          "freedom",
+          "liberty"
+        ],
+        "exactCorrection": "freedom = la liberté",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_freedom",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "freedom",
+        "id": "freedom_en_fr",
+        "prompt": "Que signifie « freedom » en français ?",
+        "acceptedAnswers": [
+          "la liberté",
+          "liberté"
+        ],
+        "exactCorrection": "freedom = la liberté",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_story",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Ici, dans la fiche sur le gratte-ciel, « story » signifie étage. Dans un autre contexte, il peut signifier histoire.",
+        "speechPhrase": "a story",
+        "id": "story_fr_en",
+        "prompt": "Comment dit-on « un étage » en anglais ? (Pour les étages d’un bâtiment.)",
+        "acceptedAnswers": [
+          "a story",
+          "storey",
+          "a storey"
+        ],
+        "exactCorrection": "a story = un étage",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_story",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Ici, dans la fiche sur le gratte-ciel, « story » signifie étage. Dans un autre contexte, il peut signifier histoire.",
+        "speechPhrase": "a story",
+        "id": "story_en_fr",
+        "prompt": "Que signifie « a story » en français ? (Pour les étages d’un bâtiment.)",
+        "acceptedAnswers": [
+          "un étage",
+          "étage"
+        ],
+        "exactCorrection": "a story = un étage",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_roof",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a roof",
+        "id": "roof_fr_en",
+        "prompt": "Comment dit-on « un toit » en anglais ?",
+        "acceptedAnswers": [
+          "a roof"
+        ],
+        "exactCorrection": "a roof = un toit",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_roof",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a roof",
+        "id": "roof_en_fr",
+        "prompt": "Que signifie « a roof » en français ?",
+        "acceptedAnswers": [
+          "un toit",
+          "toit",
+          "toiture",
+          "une toiture"
+        ],
+        "exactCorrection": "a roof = un toit",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_height",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "the height",
+        "id": "height_fr_en",
+        "prompt": "Comment dit-on « la hauteur » en anglais ?",
+        "acceptedAnswers": [
+          "the height"
+        ],
+        "exactCorrection": "the height = la hauteur",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_height",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "the height",
+        "id": "height_en_fr",
+        "prompt": "Que signifie « the height » en français ?",
+        "acceptedAnswers": [
+          "la hauteur",
+          "hauteur",
+          "taille",
+          "la taille"
+        ],
+        "exactCorrection": "the height = la hauteur",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_skyscraper",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skyscraper",
+        "id": "skyscraper_fr_en",
+        "prompt": "Comment dit-on « un gratte-ciel » en anglais ?",
+        "acceptedAnswers": [
+          "a skyscraper"
+        ],
+        "exactCorrection": "a skyscraper = un gratte-ciel",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_skyscraper",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "a skyscraper",
+        "id": "skyscraper_en_fr",
+        "prompt": "Que signifie « a skyscraper » en français ?",
+        "acceptedAnswers": [
+          "un gratte-ciel",
+          "gratte-ciel",
+          "gratte ciel"
+        ],
+        "exactCorrection": "a skyscraper = un gratte-ciel",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
+      },
+      {
+        "conceptId": "en_tall",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "tall",
+        "id": "tall_fr_en",
+        "prompt": "Comment dit-on « grand » en anglais ?",
+        "acceptedAnswers": [
+          "tall"
+        ],
+        "exactCorrection": "tall = grand",
+        "answerHint": "Écris le mot en anglais. L’article est facultatif."
+      },
+      {
+        "conceptId": "en_tall",
+        "category": "culture",
+        "categoryLabel": "Vocabulaire culturel",
+        "englishFlexible": true,
+        "answerKind": "vocabulary",
+        "explanation": "Plusieurs mots peuvent avoir le même sens. Voici la forme à retenir.",
+        "speechPhrase": "tall",
+        "id": "tall_en_fr",
+        "prompt": "Que signifie « tall » en français ?",
+        "acceptedAnswers": [
+          "grand",
+          "haut",
+          "de grande taille"
+        ],
+        "exactCorrection": "tall = grand",
+        "answerHint": "Réponds en français. Un synonyme de même sens convient."
       }
-    ]
+    ],
+    "listening": [
+      {
+        "title": "Describing myself",
+        "url": "https://me-qr.com/N0ner4jg"
+      },
+      {
+        "title": "In my classroom",
+        "url": "https://me-qr.com/gcMw0KpC"
+      },
+      {
+        "title": "In the clothing store",
+        "url": "https://drive.google.com/file/d/1Mt48d8uJRTWyWrJW34XQTyi1nToL-Rwt/view?usp=sharing"
+      },
+      {
+        "title": "My house",
+        "url": "https://me-qr.com/853TFhp2"
+      },
+      {
+        "title": "School things song",
+        "url": "https://ladigitale.dev/digiview/#/v/671b4ce100046"
+      }
+    ],
+    "reward": true
   },
   "conj3": {
     "id": "conj3",
@@ -3721,8 +7142,50 @@ function isCorrect(question, answer) {
     const value = parseNumericAnswer(answer);
     return value !== null && question.acceptedAnswers.some(a => parseNumericAnswer(a) === value);
   }
+  if(question.englishFlexible)return assessEnglish(question,answer).correct;
   const value = normalize(answer, question.accentSensitive);
   return value.length > 0 && question.acceptedAnswers.some(a => normalize(a, question.accentSensitive) === value);
+}
+function englishCanonical(text, vocabulary=false){
+ let value=String(text).normalize('NFC').toLowerCase().replace(/[’‘`]/g,"'");
+ // Expand equivalent contractions before punctuation normalization.
+ for(const [pattern,replacement]of [[/\bi'm\b/g,'i am'],[/\bmy name's\b/g,'my name is'],[/\bi'd\b/g,'i would'],[/\bwhat's\b/g,'what is'],[/\bi've\b/g,'i have'],[/\bthere's\b/g,'there is'],[/\bdon't\b/g,'do not'],[/\bisn't\b/g,'is not']])value=value.replace(pattern,replacement);
+ value=normalize(value).replace(/œ/g,'oe');
+ if(vocabulary)value=value.replace(/^(?:de la|de l|du|des|un|une|le|la|les|l|a|an|the|some)\s+/,'');
+ return value;
+}
+// One missing letter or an adjacent transposition in a long word, never a
+// general similarity threshold. Other valid vocabulary words remain protected.
+function smallTypingSlip(input,expected){
+ if(expected.length<6||input.length<5)return false;
+ if(expected.length===input.length+1){
+  for(let i=0;i<expected.length;i++)if(expected.slice(0,i)+expected.slice(i+1)===input)return true;
+ }
+ if(expected.length===input.length){
+  for(let i=0;i<expected.length-1;i++)if(expected.slice(0,i)+expected[i+1]+expected[i]+expected.slice(i+2)===input)return true;
+ }
+ return false;
+}
+function assessEnglish(question,answer){
+ if(/[-−]\s*\d/.test(String(answer)))return {correct:false,typo:false};
+ const vocabulary=question.answerKind==='vocabulary';
+ const input=englishCanonical(answer,vocabulary);
+ if(!input)return {correct:false,typo:false};
+ const accepted=question.acceptedAnswers.map(a=>englishCanonical(a,vocabulary));
+ if(accepted.includes(input))return {correct:true,typo:false};
+ // Never fuzz numbers, negations, or short prepositions, and never change
+ // token count. Curated synonyms supply semantic flexibility.
+ const protectedWords=new Set(['in','on','not','no','ne','pas','non','do','fifty','fifteen','nine','ten','eight','three','brown','blond','blonde','black','green','blue','brother','sister','bedroom','bathroom','shirt','skirt','short','shorts','pen','pencil','hat','bat','cat']);
+ const words=input.split(' ');
+ for(const candidate of accepted){
+  const expected=candidate.split(' ');if(words.length!==expected.length)continue;
+  const differences=expected.map((w,i)=>w!==words[i]?i:-1).filter(i=>i>=0);
+  if(differences.length!==1)continue;
+  const i=differences[0];
+  if(protectedWords.has(words[i])||protectedWords.has(expected[i])||/\d/.test(words[i]+expected[i]))continue;
+  if(smallTypingSlip(words[i],expected[i]))return {correct:true,typo:true};
+ }
+ return {correct:false,typo:false};
 }
 function parseNumericAnswer(answer) {
   const text = String(answer).trim().replace(/−/g, '-');
@@ -3747,9 +7210,9 @@ function drawSession(bank, previous = [], random = Math.random, plan = [['vocabu
   const chosen = [];
   for (const [category, count] of plan) {
     const candidates = shuffle(bank.filter(q => q.category === category && !excluded.has(q.conceptId)), random);
-    const used = new Set();
+    const used = new Set(),allUsed = new Set(chosen.map(q=>q.conceptId));
     for (const q of candidates) {
-      if (used.has(q.conceptId)) continue;
+      if (used.has(q.conceptId)||allUsed.has(q.conceptId)) continue;
       chosen.push(q); used.add(q.conceptId);
       if (used.size === count) break;
     }
@@ -3758,10 +7221,26 @@ function drawSession(bank, previous = [], random = Math.random, plan = [['vocabu
   return shuffle(chosen, random);
 }
 
+const PETS=[{name:'Chouette savante',icon:'🦉',colour:'violet'},{name:'Renard des mots',icon:'🦊',colour:'orange'},{name:'Dragon des étoiles',icon:'🐉',colour:'green'},{name:'Chat de la lune',icon:'🐈‍⬛',colour:'blue'},{name:'Licorne des livres',icon:'🦄',colour:'pink'}];
+function cleanCollection(value){
+ if(!value||!Number.isSafeInteger(value.earned)||value.earned<0||value.earned>10000||!Array.isArray(value.pets))return {earned:0,pending:0,pets:[]};
+ const pets=value.pets.filter(x=>Number.isInteger(x)&&x>=0&&x<PETS.length).slice(0,value.earned);
+ return {earned:value.earned,pending:value.earned-pets.length,pets};
+}
+function earnEgg(value){const state=cleanCollection(value);if(state.earned>=10000)return state;return {...state,earned:state.earned+1,pending:state.pending+1};}
+function hatchEgg(value){const state=cleanCollection(value);if(!state.pending)return state;return {...state,pending:state.pending-1,pets:[...state.pets,state.pets.length%PETS.length]};}
+
 const root = document.querySelector('#quiz');
 const menuButton = document.querySelector('#menu-button');
 const previousByQuiz = new Map();
-let selectedQuiz = null, questions = [], results = [], index = 0, submitted = false;
+let selectedQuiz = null, questions = [], results = [], index = 0, submitted = false,sessionRewardClaimed=false;
+const COLLECTION_KEY='mes-revisions.english.eggs.v1';
+let collection=cleanCollection(null),collectionSaved=true;
+try{collection=cleanCollection(JSON.parse(localStorage.getItem(COLLECTION_KEY)));}catch{}
+function saveCollection(){try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}}
+const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
+const icons={english:'🥚',conj3:'📚',penelopeMaths:'🧮'};
+function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function focusHeading(){ root.querySelector('h1,h2')?.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
 function loadPrevious(quiz){
@@ -3772,16 +7251,18 @@ function loadPrevious(quiz){
 }
 function showMenu(){
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="eyebrow">Tes petits défis</div><h1 tabindex="-1">À toi de jouer.</h1><p class="intro">Choisis un questionnaire. Une nouvelle série t’attend à chaque partie.</p><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><p class="note">Joue d’abord. Découvre la correction après ta réponse.</p>`;
+  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><p class="note">L’œuf magique récompense une mission d’anglais à 10/10. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
+  document.querySelector('#collection-open').addEventListener('click',showCollection);
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
 }
 function showWelcome(id){
   selectedQuiz=QUIZZES[id];questions=[];results=[];index=0;submitted=false;root.dataset.quizId=id;menuButton.hidden=false;
   const quiz=selectedQuiz;
-  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div>${quiz.workedExample?`<div class="worked-example"><strong>Un exemple pour commencer</strong><p>${escapeHTML(quiz.workedExample)}</p></div>`:''}<div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>`;
+  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div>${quiz.workedExample?`<div class="worked-example"><strong>Un exemple pour commencer</strong><p>${escapeHTML(quiz.workedExample)}</p></div>`:''}${quiz.reward?`<div class="mission-map"><strong>Les 7 mondes de ton cahier</strong><p>👋 Présentation · 🎒 Classe · 👕 Vêtements<br>🏠 Maison et matin · ⚽ Goûts et famille<br>🎃 Halloween · 🗽 Vocabulaire culturel</p><p class="note">Chaque partie passe par les sept thèmes.</p></div>`:''}<div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>${quiz.reward?rewardDisclaimer()+`<details class="listening"><summary>Réécouter les supports de classe</summary><p>Ces liens ouvrent les supports d’origine avec Internet. Les questions du quiz ne remplacent pas l’écoute.</p>${quiz.listening.map(x=>`<p><a href="${escapeHTML(x.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(x.title)} ↗</a></p>`).join('')}</details>`:''}`;
   document.querySelector('#start').addEventListener('click',start);focusHeading();
 }
 function start(){
+  sessionRewardClaimed=false;
   questions=drawSession(selectedQuiz.bank,loadPrevious(selectedQuiz),Math.random,selectedQuiz.plan);
   const previous=questions.map(q=>q.conceptId);previousByQuiz.set(selectedQuiz.id,previous);
   try {localStorage.setItem(selectedQuiz.storageKey,JSON.stringify(previous));} catch {}
@@ -3794,16 +7275,29 @@ function showQuestion(){
   input.addEventListener('input',()=>{check.disabled=!normalize(input.value,q.accentSensitive);});
   document.querySelector('#answer-form').addEventListener('submit',event=>{
     event.preventDefault();if(submitted||!normalize(input.value,q.accentSensitive))return;submitted=true;
-    const answer=input.value.trim(),correct=isCorrect(q,answer);results.push({question:q,answer,correct});input.disabled=true;check.hidden=true;
-    document.querySelector('#feedback').innerHTML=`<div class="feedback ${correct?'correct':''}"><strong>${correct?'Bien joué ! ✓':'On apprend en essayant.'}</strong><p>${escapeHTML(q.exactCorrection)}</p><p>${escapeHTML(q.explanation)}</p></div><button class="primary" id="next">${index===total-1?'Voir mon résultat →':'Question suivante →'}</button>`;
-    document.querySelector('#next').addEventListener('click',()=>{index++;if(index===total)summary();else showQuestion();});document.querySelector('#next').focus({preventScroll:true});
+    const answer=input.value.trim(),assessment=q.englishFlexible?assessEnglish(q,answer):{correct:isCorrect(q,answer),typo:false},correct=assessment.correct;results.push({question:q,answer,correct,typo:assessment.typo});input.disabled=true;check.hidden=true;
+    document.querySelector('#feedback').innerHTML=`<div class="feedback ${correct?'correct':''}"><strong>${correct?'Bien joué ! ✓':'On apprend en essayant.'}</strong>${assessment.typo?'<p>Le mot est reconnu malgré une petite faute de frappe. Regarde bien son orthographe ci-dessous.</p>':''}<p>${escapeHTML(q.exactCorrection)}</p><p>${escapeHTML(q.explanation)}</p></div><button class="primary" id="next">${index===total-1?'Voir mon résultat →':'Question suivante →'}</button>`;
+    document.querySelector('#next').addEventListener('click',()=>{document.querySelector('#next').disabled=true;index++;if(index===total)summary();else showQuestion();},{once:true});document.querySelector('#next').focus({preventScroll:true});
   });focusHeading();
 }
 function summary(){
   const total=questions.length,score=results.filter(r=>r.correct).length;
+  const earned=selectedQuiz.reward&&score===total&&!sessionRewardClaimed;
+  if(earned){collection=earnEgg(collection);saveCollection();sessionRewardClaimed=true;}
   const message=score===total?'Mission accomplie !':score/total>=.6?'Tu progresses, continue !':'Chaque essai t’aide à apprendre.';
-  root.innerHTML=`<div class="eyebrow">Mission terminée · ${escapeHTML(selectedQuiz.subject)}</div><h1 tabindex="-1">${message}</h1><div class="score">${score}<span> / ${total}</span></div><p class="intro">Voici les ${total} questions de ta partie.</p><ul class="review">${results.map(r=>`<li><strong class="${r.correct?'right':'wrong'}">${r.correct?'✓ Réussi':'↗ À revoir'}</strong>${escapeHTML(r.question.prompt)}<div class="answer">Ta réponse : ${escapeHTML(r.answer)}</div><div>${escapeHTML(r.question.exactCorrection)}</div></li>`).join('')}</ul><button class="primary" id="again">Une nouvelle mission ↗</button><button class="secondary" id="other-quiz">Choisir un autre questionnaire</button><p class="note">La prochaine série évite les ${total} notions de celle-ci.</p>`;
+  root.innerHTML=`<div class="eyebrow">Mission terminée · ${escapeHTML(selectedQuiz.subject)}</div><h1 tabindex="-1">${message}</h1><div class="score">${score}<span> / ${total}</span></div>${earned?`<div class="reward-panel">${eggArt(true)}<h2>Un œuf magique pour toi !</h2><p>Les dix réponses sont justes. Un nouveau compagnon t’attend.</p><button class="primary" id="hatch">Faire éclore mon œuf ✨</button>${rewardDisclaimer()}${!collectionSaved?'<p>Le stockage est indisponible : la collection restera pendant cette visite uniquement.</p>':''}</div>`:selectedQuiz.reward?'<p class="note">Tu peux retenter ta chance avec de nouvelles questions. L’œuf arrive à 10/10.</p>':''}<div id="hatch-result" aria-live="polite"></div><p class="intro">Voici les ${total} questions de ta partie.</p><ul class="review">${results.map(r=>`<li><strong class="${r.correct?'right':'wrong'}">${r.correct?'✓ Réussi':'↗ À revoir'}</strong>${escapeHTML(r.question.prompt)}<div class="answer">Ta réponse : ${escapeHTML(r.answer)}</div><div>${escapeHTML(r.question.exactCorrection)}</div></li>`).join('')}</ul><button class="primary" id="again">Une nouvelle mission ↗</button><button class="secondary" id="other-quiz">Choisir un autre questionnaire</button><p class="note">La prochaine série évite les ${total} notions de celle-ci.</p>`;
+  if(earned)document.querySelector('#hatch').addEventListener('click',()=>{
+   document.querySelector('#hatch').disabled=true;collection=hatchEgg(collection);saveCollection();
+   const pet=PETS[collection.pets.at(-1)];document.querySelector('#hatch-result').innerHTML=`<div class="pet-reveal ${pet.colour}"><span aria-hidden="true">${pet.icon}</span><h2>${pet.name}</h2><p>Bienvenue dans ta collection !</p>${rewardDisclaimer()}</div>`;
+   document.querySelector('#hatch-result').scrollIntoView({behavior:'auto',block:'center'});
+  },{once:true});
   document.querySelector('#again').addEventListener('click',start);document.querySelector('#other-quiz').addEventListener('click',showMenu);focusHeading();
+}
+function showCollection(){
+ menuButton.hidden=false;root.dataset.quizId='collection';
+ root.innerHTML=`<div class="eyebrow">Tes compagnons de révision</div><h1 tabindex="-1">Ma collection</h1><p class="intro">${collection.earned} œuf${collection.earned>1?'s':''} gagné${collection.earned>1?'s':''} · ${collection.pending} à éclore</p>${collection.pending?`<div class="reward-panel">${eggArt(true)}<button class="primary" id="collection-hatch">Faire éclore un œuf ✨</button></div>`:''}<div class="pet-grid">${PETS.map((pet,i)=>{const count=collection.pets.filter(x=>x===i).length;return `<div class="pet-tile ${count?'':'locked'}"><span aria-hidden="true">${count?pet.icon:'🥚'}</span><strong>${count?pet.name:'À découvrir'}</strong><small>${count?'× '+count:'Une mission à 10/10'}</small></div>`;}).join('')}</div>${rewardDisclaimer()}<p class="note">Ta collection est enregistrée sur cet appareil. Elle n’est pas synchronisée entre téléphones.</p><button class="secondary" id="collection-back">Retour aux missions</button>`;
+ document.querySelector('#collection-back').addEventListener('click',showMenu);
+ document.querySelector('#collection-hatch')?.addEventListener('click',()=>{collection=hatchEgg(collection);saveCollection();showCollection();});focusHeading();
 }
 menuButton.addEventListener('click',showMenu);showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
