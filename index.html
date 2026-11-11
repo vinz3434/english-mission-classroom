@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#233653">
-<meta name="description" content="Des questionnaires pour réviser l’anglais, la conjugaison, la géographie et les mathématiques.">
+<meta name="description" content="Des questionnaires pour réviser le français, l’anglais, la géographie et les mathématiques.">
 <meta name="referrer" content="no-referrer">
 <title>Mes révisions · Quiz et calculs</title>
 <link rel="manifest" href="./manifest.webmanifest">
@@ -30,13 +30,5197 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 .primary{background:#d8f164;color:#213518;box-shadow:0 5px 0 #9ab64a;border:2px solid #adca4c;border-radius:13px;margin-bottom:5px}.primary:hover:enabled{background:#e2fc72}.primary:active:enabled{transform:translateY(2px);box-shadow:0 3px 0 #9ab64a}.primary:disabled{box-shadow:none}.secondary,.menu-button{border:1px solid #c3d2d7;box-shadow:0 3px 0 #d9e3e6}.category{font-size:11px;background:#edf3e4;color:#315126;line-height:1.3}.progress{background:#e7eddf;height:9px}.progress div{background:linear-gradient(90deg,#82ba54,#c4df59)}.context{background:#f1f6fa;border-color:#80a5c5}.chip{background:#edf4e8;color:#315829}.feedback.correct{background:#ecf8e6;border:2px solid #a9ca95}.feedback{border-width:2px}.score{color:#224a35}.mission-map{border:1px solid #d8e5c5;border-radius:16px;padding:18px;background:#f6faef}.mission-map>strong{font-size:14px}.mission-map p{font-size:14px;line-height:1.9;margin:8px 0}.reward-disclaimer{font-size:12px;line-height:1.5;color:#586472;margin:14px 0 6px}.reward-panel{padding:25px 20px;text-align:center;background:linear-gradient(130deg,#fff6d8,#edf8da);border:2px solid #d8bc64;border-radius:20px;margin:24px 0}.reward-panel h2{font-size:25px}.reward-panel p{font-size:14px}.reward-panel .primary{max-width:360px}.pet-reveal{text-align:center;border-radius:20px;background:#f2ebfa;border:2px solid #c4a6e4;padding:25px;margin:20px 0}.pet-reveal>span{font-size:85px;display:block}.pet-reveal h2{font-size:26px}.pet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}.pet-tile{display:flex;align-items:center;flex-direction:column;gap:9px;text-align:center;background:#f4f7e9;border:1px solid #d4dfbc;padding:20px 12px;border-radius:16px;min-width:0}.pet-tile span{font-size:45px}.pet-tile strong{font-size:14px}.pet-tile small{color:var(--muted)}.pet-tile.locked{background:#f3f4f4;color:#667275}.pet-tile.locked span{filter:grayscale(1);opacity:.5}.listening{font-size:14px;line-height:1.6;border-top:1px solid var(--line);padding-top:16px;margin-top:18px}.listening summary{min-height:44px;cursor:pointer;font-weight:750}.listening a{color:#2958ad}.review li{padding:18px 0}.footer{padding-top:10px}
 @media(max-width:440px){.hero{gap:7px}.hero h1{font-size:34px}.egg-art{width:83px;height:111px;border-width:2px;margin-right:0}.egg-art span{font-size:29px}.hero .intro{font-size:14px}.collection-bar{flex-wrap:wrap;padding:10px 12px;gap:5px}.small-button{margin-left:auto}.card{padding:24px 20px}.quiz-option{padding:18px 16px 18px 67px}.option-icon{left:13px;width:38px;height:38px;font-size:24px}.quiz-option strong{font-size:22px}header{padding-top:18px}.menu-button{margin-left:auto}main{padding:14px 12px 25px}.eyebrow{font-size:10px;letter-spacing:1.3px}.topline{font-size:12px}.category{max-width:50%;text-align:right}h2{font-size:24px}.reward-panel{padding:22px 16px}}
 @media(max-width:350px){.hero h1{font-size:29px}.egg-art{width:70px;height:96px}.card{padding:22px 16px}.quiz-option strong{font-size:20px}}
+
+/* CM1 missions: preserve the existing island theme and touch targets. */
+.quiz-option.determinants{background:#fff4e8;border-color:#e8cfac;box-shadow:0 5px 0 #e8cfac}.determinants .option-icon{background:#ffe4ba}.determinants .option-subject{color:#80501c}.quiz-option.lengths{background:#eaf8f8;border-color:#b9dcdc;box-shadow:0 5px 0 #b9dcdc}.lengths .option-icon{background:#cdf0ee}.lengths .option-subject{color:#205c61}
 </style>
 </head>
 <body>
 <header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
-<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les deux nouveaux questionnaires proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Version 5.0 · Préparée le 20 octobre 2026.</p></details></footer>
+<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les questionnaires Passé-présent-futur, Géographie, Déterminants et Longueurs proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Déterminants, niveau CM1 : 92 questions originales en séries de dix. Trois déterminants à repérer, trois familles à identifier et quatre accords à choisir. Les quatre familles travaillées sont les articles définis, les articles indéfinis, les possessifs et les démonstratifs.</p><p>Unités de longueur, niveau CM1 : 129 questions originales en séries de dix. Deux questions sur les unités, quatre conversions, deux comparaisons et deux petits problèmes. Les mesures restent entières ; les corrections expliquent les équivalences.</p><p>Version 6.0 · Mise à jour le 11 novembre 2026.</p></details></footer>
 <script>const QUIZZES = {
+  "determinants": {
+    "id": "determinants",
+    "subject": "Français · CM1",
+    "title": "Les déterminants",
+    "description": "Repère le petit mot qui accompagne le nom, retrouve sa famille et choisis le bon accord.",
+    "menuDescription": "Articles définis et indéfinis, possessifs, démonstratifs et accords.",
+    "duration": "5 à 8 minutes",
+    "scope": "Exercices originaux CM1 · Entraînement général, distinct d’une fiche de classe.",
+    "size": 10,
+    "storageKey": "mes-revisions.determinants.previous.v1",
+    "plan": [
+      [
+        "spot",
+        3
+      ],
+      [
+        "family",
+        3
+      ],
+      [
+        "agreement",
+        4
+      ]
+    ],
+    "bank": [
+      {
+        "id": "det_spot_0",
+        "conceptId": "det_spot_0",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « le petit bateau » ?",
+        "choices": [
+          "le",
+          "petit",
+          "bateau"
+        ],
+        "acceptedAnswers": [
+          "le"
+        ],
+        "exactCorrection": "La bonne réponse : le.",
+        "explanation": "« le » accompagne le nom « bateau ». « petit » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "le",
+        "noun": "bateau"
+      },
+      {
+        "id": "det_spot_1",
+        "conceptId": "det_spot_1",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « la grande maison » ?",
+        "choices": [
+          "la",
+          "grande",
+          "maison"
+        ],
+        "acceptedAnswers": [
+          "la"
+        ],
+        "exactCorrection": "La bonne réponse : la.",
+        "explanation": "« la » accompagne le nom « maison ». « grande » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "la",
+        "noun": "maison"
+      },
+      {
+        "id": "det_spot_2",
+        "conceptId": "det_spot_2",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « les jolies fleurs » ?",
+        "choices": [
+          "les",
+          "jolies",
+          "fleurs"
+        ],
+        "acceptedAnswers": [
+          "les"
+        ],
+        "exactCorrection": "La bonne réponse : les.",
+        "explanation": "« les » accompagne le nom « fleurs ». « jolies » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "les",
+        "noun": "fleurs"
+      },
+      {
+        "id": "det_spot_3",
+        "conceptId": "det_spot_3",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « un nouveau cahier » ?",
+        "choices": [
+          "un",
+          "nouveau",
+          "cahier"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "« un » accompagne le nom « cahier ». « nouveau » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "cahier"
+      },
+      {
+        "id": "det_spot_4",
+        "conceptId": "det_spot_4",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « une belle histoire » ?",
+        "choices": [
+          "une",
+          "belle",
+          "histoire"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "« une » accompagne le nom « histoire ». « belle » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "histoire"
+      },
+      {
+        "id": "det_spot_5",
+        "conceptId": "det_spot_5",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « des petits poussins » ?",
+        "choices": [
+          "des",
+          "petits",
+          "poussins"
+        ],
+        "acceptedAnswers": [
+          "des"
+        ],
+        "exactCorrection": "La bonne réponse : des.",
+        "explanation": "« des » accompagne le nom « poussins ». « petits » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "noun": "poussins"
+      },
+      {
+        "id": "det_spot_6",
+        "conceptId": "det_spot_6",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « mon vieux cartable » ?",
+        "choices": [
+          "mon",
+          "vieux",
+          "cartable"
+        ],
+        "acceptedAnswers": [
+          "mon"
+        ],
+        "exactCorrection": "La bonne réponse : mon.",
+        "explanation": "« mon » accompagne le nom « cartable ». « vieux » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "mon",
+        "noun": "cartable"
+      },
+      {
+        "id": "det_spot_7",
+        "conceptId": "det_spot_7",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ma petite tortue » ?",
+        "choices": [
+          "ma",
+          "petite",
+          "tortue"
+        ],
+        "acceptedAnswers": [
+          "ma"
+        ],
+        "exactCorrection": "La bonne réponse : ma.",
+        "explanation": "« ma » accompagne le nom « tortue ». « petite » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ma",
+        "noun": "tortue"
+      },
+      {
+        "id": "det_spot_8",
+        "conceptId": "det_spot_8",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « mes belles billes » ?",
+        "choices": [
+          "mes",
+          "belles",
+          "billes"
+        ],
+        "acceptedAnswers": [
+          "mes"
+        ],
+        "exactCorrection": "La bonne réponse : mes.",
+        "explanation": "« mes » accompagne le nom « billes ». « belles » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "mes",
+        "noun": "billes"
+      },
+      {
+        "id": "det_spot_9",
+        "conceptId": "det_spot_9",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ton grand vélo » ?",
+        "choices": [
+          "ton",
+          "grand",
+          "vélo"
+        ],
+        "acceptedAnswers": [
+          "ton"
+        ],
+        "exactCorrection": "La bonne réponse : ton.",
+        "explanation": "« ton » accompagne le nom « vélo ». « grand » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ton",
+        "noun": "vélo"
+      },
+      {
+        "id": "det_spot_10",
+        "conceptId": "det_spot_10",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ta nouvelle trousse » ?",
+        "choices": [
+          "ta",
+          "nouvelle",
+          "trousse"
+        ],
+        "acceptedAnswers": [
+          "ta"
+        ],
+        "exactCorrection": "La bonne réponse : ta.",
+        "explanation": "« ta » accompagne le nom « trousse ». « nouvelle » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ta",
+        "noun": "trousse"
+      },
+      {
+        "id": "det_spot_11",
+        "conceptId": "det_spot_11",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « tes petites voitures » ?",
+        "choices": [
+          "tes",
+          "petites",
+          "voitures"
+        ],
+        "acceptedAnswers": [
+          "tes"
+        ],
+        "exactCorrection": "La bonne réponse : tes.",
+        "explanation": "« tes » accompagne le nom « voitures ». « petites » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "tes",
+        "noun": "voitures"
+      },
+      {
+        "id": "det_spot_12",
+        "conceptId": "det_spot_12",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « son joli dessin » ?",
+        "choices": [
+          "son",
+          "joli",
+          "dessin"
+        ],
+        "acceptedAnswers": [
+          "son"
+        ],
+        "exactCorrection": "La bonne réponse : son.",
+        "explanation": "« son » accompagne le nom « dessin ». « joli » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "son",
+        "noun": "dessin"
+      },
+      {
+        "id": "det_spot_13",
+        "conceptId": "det_spot_13",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « sa grande cabane » ?",
+        "choices": [
+          "sa",
+          "grande",
+          "cabane"
+        ],
+        "acceptedAnswers": [
+          "sa"
+        ],
+        "exactCorrection": "La bonne réponse : sa.",
+        "explanation": "« sa » accompagne le nom « cabane ». « grande » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "sa",
+        "noun": "cabane"
+      },
+      {
+        "id": "det_spot_14",
+        "conceptId": "det_spot_14",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ses nouveaux livres » ?",
+        "choices": [
+          "ses",
+          "nouveaux",
+          "livres"
+        ],
+        "acceptedAnswers": [
+          "ses"
+        ],
+        "exactCorrection": "La bonne réponse : ses.",
+        "explanation": "« ses » accompagne le nom « livres ». « nouveaux » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ses",
+        "noun": "livres"
+      },
+      {
+        "id": "det_spot_15",
+        "conceptId": "det_spot_15",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « notre nouveau jardin » ?",
+        "choices": [
+          "notre",
+          "nouveau",
+          "jardin"
+        ],
+        "acceptedAnswers": [
+          "notre"
+        ],
+        "exactCorrection": "La bonne réponse : notre.",
+        "explanation": "« notre » accompagne le nom « jardin ». « nouveau » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "notre",
+        "noun": "jardin"
+      },
+      {
+        "id": "det_spot_16",
+        "conceptId": "det_spot_16",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « votre jolie classe » ?",
+        "choices": [
+          "votre",
+          "jolie",
+          "classe"
+        ],
+        "acceptedAnswers": [
+          "votre"
+        ],
+        "exactCorrection": "La bonne réponse : votre.",
+        "explanation": "« votre » accompagne le nom « classe ». « jolie » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "votre",
+        "noun": "classe"
+      },
+      {
+        "id": "det_spot_17",
+        "conceptId": "det_spot_17",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « nos petits arbres » ?",
+        "choices": [
+          "nos",
+          "petits",
+          "arbres"
+        ],
+        "acceptedAnswers": [
+          "nos"
+        ],
+        "exactCorrection": "La bonne réponse : nos.",
+        "explanation": "« nos » accompagne le nom « arbres ». « petits » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "nos",
+        "noun": "arbres"
+      },
+      {
+        "id": "det_spot_18",
+        "conceptId": "det_spot_18",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « vos grandes affiches » ?",
+        "choices": [
+          "vos",
+          "grandes",
+          "affiches"
+        ],
+        "acceptedAnswers": [
+          "vos"
+        ],
+        "exactCorrection": "La bonne réponse : vos.",
+        "explanation": "« vos » accompagne le nom « affiches ». « grandes » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "vos",
+        "noun": "affiches"
+      },
+      {
+        "id": "det_spot_19",
+        "conceptId": "det_spot_19",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « leur petit chien » ?",
+        "choices": [
+          "leur",
+          "petit",
+          "chien"
+        ],
+        "acceptedAnswers": [
+          "leur"
+        ],
+        "exactCorrection": "La bonne réponse : leur.",
+        "explanation": "« leur » accompagne le nom « chien ». « petit » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "leur",
+        "noun": "chien"
+      },
+      {
+        "id": "det_spot_20",
+        "conceptId": "det_spot_20",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « leurs belles chaussures » ?",
+        "choices": [
+          "leurs",
+          "belles",
+          "chaussures"
+        ],
+        "acceptedAnswers": [
+          "leurs"
+        ],
+        "exactCorrection": "La bonne réponse : leurs.",
+        "explanation": "« leurs » accompagne le nom « chaussures ». « belles » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "leurs",
+        "noun": "chaussures"
+      },
+      {
+        "id": "det_spot_21",
+        "conceptId": "det_spot_21",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ce petit lapin » ?",
+        "choices": [
+          "ce",
+          "petit",
+          "lapin"
+        ],
+        "acceptedAnswers": [
+          "ce"
+        ],
+        "exactCorrection": "La bonne réponse : ce.",
+        "explanation": "« ce » accompagne le nom « lapin ». « petit » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "noun": "lapin"
+      },
+      {
+        "id": "det_spot_22",
+        "conceptId": "det_spot_22",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « cet immense arbre » ?",
+        "choices": [
+          "cet",
+          "immense",
+          "arbre"
+        ],
+        "acceptedAnswers": [
+          "cet"
+        ],
+        "exactCorrection": "La bonne réponse : cet.",
+        "explanation": "« cet » accompagne le nom « arbre ». « immense » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "noun": "arbre"
+      },
+      {
+        "id": "det_spot_23",
+        "conceptId": "det_spot_23",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « cette jolie étoile » ?",
+        "choices": [
+          "cette",
+          "jolie",
+          "étoile"
+        ],
+        "acceptedAnswers": [
+          "cette"
+        ],
+        "exactCorrection": "La bonne réponse : cette.",
+        "explanation": "« cette » accompagne le nom « étoile ». « jolie » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "noun": "étoile"
+      },
+      {
+        "id": "det_spot_24",
+        "conceptId": "det_spot_24",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « ces grands nuages » ?",
+        "choices": [
+          "ces",
+          "grands",
+          "nuages"
+        ],
+        "acceptedAnswers": [
+          "ces"
+        ],
+        "exactCorrection": "La bonne réponse : ces.",
+        "explanation": "« ces » accompagne le nom « nuages ». « grands » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "noun": "nuages"
+      },
+      {
+        "id": "det_spot_25",
+        "conceptId": "det_spot_25",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « une longue règle » ?",
+        "choices": [
+          "une",
+          "longue",
+          "règle"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "« une » accompagne le nom « règle ». « longue » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "règle"
+      },
+      {
+        "id": "det_spot_26",
+        "conceptId": "det_spot_26",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « le dernier wagon » ?",
+        "choices": [
+          "le",
+          "dernier",
+          "wagon"
+        ],
+        "acceptedAnswers": [
+          "le"
+        ],
+        "exactCorrection": "La bonne réponse : le.",
+        "explanation": "« le » accompagne le nom « wagon ». « dernier » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "le",
+        "noun": "wagon"
+      },
+      {
+        "id": "det_spot_27",
+        "conceptId": "det_spot_27",
+        "category": "spot",
+        "categoryLabel": "Repère le déterminant",
+        "prompt": "Quel est le déterminant dans « mes petits crayons » ?",
+        "choices": [
+          "mes",
+          "petits",
+          "crayons"
+        ],
+        "acceptedAnswers": [
+          "mes"
+        ],
+        "exactCorrection": "La bonne réponse : mes.",
+        "explanation": "« mes » accompagne le nom « crayons ». « petits » est un adjectif.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "mes",
+        "noun": "crayons"
+      },
+      {
+        "id": "det_family_0",
+        "conceptId": "det_family_0",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « le chat », quelle est la famille de « le » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "le",
+        "family": 0
+      },
+      {
+        "id": "det_family_1",
+        "conceptId": "det_family_1",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « la porte », quelle est la famille de « la » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "la",
+        "family": 0
+      },
+      {
+        "id": "det_family_2",
+        "conceptId": "det_family_2",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « les oiseaux », quelle est la famille de « les » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "les",
+        "family": 0
+      },
+      {
+        "id": "det_family_3",
+        "conceptId": "det_family_3",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « l’arbre », quelle est la famille de « l’ » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "l’",
+        "family": 0
+      },
+      {
+        "id": "det_family_4",
+        "conceptId": "det_family_4",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « le soleil », quelle est la famille de « le » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "le",
+        "family": 0
+      },
+      {
+        "id": "det_family_5",
+        "conceptId": "det_family_5",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « la lune », quelle est la famille de « la » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "la",
+        "family": 0
+      },
+      {
+        "id": "det_family_6",
+        "conceptId": "det_family_6",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « les étoiles », quelle est la famille de « les » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "les",
+        "family": 0
+      },
+      {
+        "id": "det_family_7",
+        "conceptId": "det_family_7",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « l’école », quelle est la famille de « l’ » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article défini"
+        ],
+        "exactCorrection": "La bonne réponse : Article défini.",
+        "explanation": "Les articles définis sont le, la, l’ et les.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "l’",
+        "family": 0
+      },
+      {
+        "id": "det_family_8",
+        "conceptId": "det_family_8",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « un ballon », quelle est la famille de « un » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "family": 1
+      },
+      {
+        "id": "det_family_9",
+        "conceptId": "det_family_9",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « une plume », quelle est la famille de « une » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "family": 1
+      },
+      {
+        "id": "det_family_10",
+        "conceptId": "det_family_10",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « des biscuits », quelle est la famille de « des » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "family": 1
+      },
+      {
+        "id": "det_family_11",
+        "conceptId": "det_family_11",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « un escargot », quelle est la famille de « un » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "family": 1
+      },
+      {
+        "id": "det_family_12",
+        "conceptId": "det_family_12",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « une grenouille », quelle est la famille de « une » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "family": 1
+      },
+      {
+        "id": "det_family_13",
+        "conceptId": "det_family_13",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « des livres », quelle est la famille de « des » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "family": 1
+      },
+      {
+        "id": "det_family_14",
+        "conceptId": "det_family_14",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « un château », quelle est la famille de « un » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "family": 1
+      },
+      {
+        "id": "det_family_15",
+        "conceptId": "det_family_15",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « une image », quelle est la famille de « une » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Article indéfini"
+        ],
+        "exactCorrection": "La bonne réponse : Article indéfini.",
+        "explanation": "Les articles indéfinis sont un, une et des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "family": 1
+      },
+      {
+        "id": "det_family_16",
+        "conceptId": "det_family_16",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « mon sac », quelle est la famille de « mon » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "mon",
+        "family": 2
+      },
+      {
+        "id": "det_family_17",
+        "conceptId": "det_family_17",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ta règle », quelle est la famille de « ta » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ta",
+        "family": 2
+      },
+      {
+        "id": "det_family_18",
+        "conceptId": "det_family_18",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ses crayons », quelle est la famille de « ses » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ses",
+        "family": 2
+      },
+      {
+        "id": "det_family_19",
+        "conceptId": "det_family_19",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « notre maison », quelle est la famille de « notre » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "notre",
+        "family": 2
+      },
+      {
+        "id": "det_family_20",
+        "conceptId": "det_family_20",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « vos jeux », quelle est la famille de « vos » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "vos",
+        "family": 2
+      },
+      {
+        "id": "det_family_21",
+        "conceptId": "det_family_21",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « leur jardin », quelle est la famille de « leur » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "leur",
+        "family": 2
+      },
+      {
+        "id": "det_family_22",
+        "conceptId": "det_family_22",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « leurs vélos », quelle est la famille de « leurs » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "leurs",
+        "family": 2
+      },
+      {
+        "id": "det_family_23",
+        "conceptId": "det_family_23",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « mes amis », quelle est la famille de « mes » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant possessif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant possessif.",
+        "explanation": "Ce déterminant indique à qui appartient ce dont on parle : c’est un possessif. Il s’accorde avec le nom qu’il accompagne.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "mes",
+        "family": 2
+      },
+      {
+        "id": "det_family_24",
+        "conceptId": "det_family_24",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ce livre », quelle est la famille de « ce » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "family": 3
+      },
+      {
+        "id": "det_family_25",
+        "conceptId": "det_family_25",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « cet oiseau », quelle est la famille de « cet » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "family": 3
+      },
+      {
+        "id": "det_family_26",
+        "conceptId": "det_family_26",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « cette fleur », quelle est la famille de « cette » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "family": 3
+      },
+      {
+        "id": "det_family_27",
+        "conceptId": "det_family_27",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ces tables », quelle est la famille de « ces » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "family": 3
+      },
+      {
+        "id": "det_family_28",
+        "conceptId": "det_family_28",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ce matin », quelle est la famille de « ce » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "family": 3
+      },
+      {
+        "id": "det_family_29",
+        "conceptId": "det_family_29",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « cet arbre », quelle est la famille de « cet » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "family": 3
+      },
+      {
+        "id": "det_family_30",
+        "conceptId": "det_family_30",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « cette histoire », quelle est la famille de « cette » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "family": 3
+      },
+      {
+        "id": "det_family_31",
+        "conceptId": "det_family_31",
+        "category": "family",
+        "categoryLabel": "Trouve sa famille",
+        "prompt": "Dans « ces bateaux », quelle est la famille de « ces » ?",
+        "choices": [
+          "Article défini",
+          "Article indéfini",
+          "Déterminant possessif",
+          "Déterminant démonstratif"
+        ],
+        "acceptedAnswers": [
+          "Déterminant démonstratif"
+        ],
+        "exactCorrection": "La bonne réponse : Déterminant démonstratif.",
+        "explanation": "Ce, cet, cette et ces sont des déterminants démonstratifs : ils servent à désigner.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "family": 3
+      },
+      {
+        "id": "det_demo_0",
+        "conceptId": "det_demo_0",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ ballon ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ce"
+        ],
+        "exactCorrection": "La bonne réponse : ce.",
+        "explanation": "On écrit « ce ballon » : le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "noun": "ballon"
+      },
+      {
+        "id": "det_demo_1",
+        "conceptId": "det_demo_1",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ jardin ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ce"
+        ],
+        "exactCorrection": "La bonne réponse : ce.",
+        "explanation": "On écrit « ce jardin » : le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "noun": "jardin"
+      },
+      {
+        "id": "det_demo_2",
+        "conceptId": "det_demo_2",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ livre ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ce"
+        ],
+        "exactCorrection": "La bonne réponse : ce.",
+        "explanation": "On écrit « ce livre » : le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "noun": "livre"
+      },
+      {
+        "id": "det_demo_3",
+        "conceptId": "det_demo_3",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ château ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ce"
+        ],
+        "exactCorrection": "La bonne réponse : ce.",
+        "explanation": "On écrit « ce château » : le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ce",
+        "noun": "château"
+      },
+      {
+        "id": "det_demo_4",
+        "conceptId": "det_demo_4",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ arbre ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cet"
+        ],
+        "exactCorrection": "La bonne réponse : cet.",
+        "explanation": "On écrit « cet arbre » : le nom est masculin singulier devant une voyelle.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "noun": "arbre"
+      },
+      {
+        "id": "det_demo_5",
+        "conceptId": "det_demo_5",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ oiseau ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cet"
+        ],
+        "exactCorrection": "La bonne réponse : cet.",
+        "explanation": "On écrit « cet oiseau » : le nom est masculin singulier devant une voyelle.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "noun": "oiseau"
+      },
+      {
+        "id": "det_demo_6",
+        "conceptId": "det_demo_6",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ avion ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cet"
+        ],
+        "exactCorrection": "La bonne réponse : cet.",
+        "explanation": "On écrit « cet avion » : le nom est masculin singulier devant une voyelle.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "noun": "avion"
+      },
+      {
+        "id": "det_demo_7",
+        "conceptId": "det_demo_7",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ escargot ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cet"
+        ],
+        "exactCorrection": "La bonne réponse : cet.",
+        "explanation": "On écrit « cet escargot » : le nom est masculin singulier devant une voyelle.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cet",
+        "noun": "escargot"
+      },
+      {
+        "id": "det_demo_8",
+        "conceptId": "det_demo_8",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ fleur ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cette"
+        ],
+        "exactCorrection": "La bonne réponse : cette.",
+        "explanation": "On écrit « cette fleur » : le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "noun": "fleur"
+      },
+      {
+        "id": "det_demo_9",
+        "conceptId": "det_demo_9",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ maison ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cette"
+        ],
+        "exactCorrection": "La bonne réponse : cette.",
+        "explanation": "On écrit « cette maison » : le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "noun": "maison"
+      },
+      {
+        "id": "det_demo_10",
+        "conceptId": "det_demo_10",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ étoile ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cette"
+        ],
+        "exactCorrection": "La bonne réponse : cette.",
+        "explanation": "On écrit « cette étoile » : le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "noun": "étoile"
+      },
+      {
+        "id": "det_demo_11",
+        "conceptId": "det_demo_11",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ image ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "cette"
+        ],
+        "exactCorrection": "La bonne réponse : cette.",
+        "explanation": "On écrit « cette image » : le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "cette",
+        "noun": "image"
+      },
+      {
+        "id": "det_demo_12",
+        "conceptId": "det_demo_12",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ ballons ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ces"
+        ],
+        "exactCorrection": "La bonne réponse : ces.",
+        "explanation": "On écrit « ces ballons » : le nom est pluriel.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "noun": "ballons"
+      },
+      {
+        "id": "det_demo_13",
+        "conceptId": "det_demo_13",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ maisons ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ces"
+        ],
+        "exactCorrection": "La bonne réponse : ces.",
+        "explanation": "On écrit « ces maisons » : le nom est pluriel.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "noun": "maisons"
+      },
+      {
+        "id": "det_demo_14",
+        "conceptId": "det_demo_14",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ arbres ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ces"
+        ],
+        "exactCorrection": "La bonne réponse : ces.",
+        "explanation": "On écrit « ces arbres » : le nom est pluriel.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "noun": "arbres"
+      },
+      {
+        "id": "det_demo_15",
+        "conceptId": "det_demo_15",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un démonstratif : « ___ images ».",
+        "choices": [
+          "ce",
+          "cet",
+          "cette",
+          "ces"
+        ],
+        "acceptedAnswers": [
+          "ces"
+        ],
+        "exactCorrection": "La bonne réponse : ces.",
+        "explanation": "On écrit « ces images » : le nom est pluriel.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "ces",
+        "noun": "images"
+      },
+      {
+        "id": "det_article_0",
+        "conceptId": "det_article_0",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ pomme ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une pomme ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "pomme"
+      },
+      {
+        "id": "det_article_1",
+        "conceptId": "det_article_1",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ vélo ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un vélo ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "vélo"
+      },
+      {
+        "id": "det_article_2",
+        "conceptId": "det_article_2",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ chat ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un chat ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "chat"
+      },
+      {
+        "id": "det_article_3",
+        "conceptId": "det_article_3",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ table ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une table ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "table"
+      },
+      {
+        "id": "det_article_4",
+        "conceptId": "det_article_4",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ cahier ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un cahier ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "cahier"
+      },
+      {
+        "id": "det_article_5",
+        "conceptId": "det_article_5",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ tortue ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une tortue ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "tortue"
+      },
+      {
+        "id": "det_article_6",
+        "conceptId": "det_article_6",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ stylo ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un stylo ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "stylo"
+      },
+      {
+        "id": "det_article_7",
+        "conceptId": "det_article_7",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ règle ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une règle ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "règle"
+      },
+      {
+        "id": "det_article_8",
+        "conceptId": "det_article_8",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ oiseau ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un oiseau ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "oiseau"
+      },
+      {
+        "id": "det_article_9",
+        "conceptId": "det_article_9",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ école ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une école ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "école"
+      },
+      {
+        "id": "det_article_10",
+        "conceptId": "det_article_10",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ avion ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "un"
+        ],
+        "exactCorrection": "La bonne réponse : un.",
+        "explanation": "On écrit « un avion ». Le nom est masculin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "un",
+        "noun": "avion"
+      },
+      {
+        "id": "det_article_11",
+        "conceptId": "det_article_11",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ étoile ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "une"
+        ],
+        "exactCorrection": "La bonne réponse : une.",
+        "explanation": "On écrit « une étoile ». Le nom est féminin singulier.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "une",
+        "noun": "étoile"
+      },
+      {
+        "id": "det_article_12",
+        "conceptId": "det_article_12",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ pommes ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "des"
+        ],
+        "exactCorrection": "La bonne réponse : des.",
+        "explanation": "On écrit « des pommes ». Au pluriel, on emploie des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "noun": "pommes"
+      },
+      {
+        "id": "det_article_13",
+        "conceptId": "det_article_13",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ vélos ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "des"
+        ],
+        "exactCorrection": "La bonne réponse : des.",
+        "explanation": "On écrit « des vélos ». Au pluriel, on emploie des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "noun": "vélos"
+      },
+      {
+        "id": "det_article_14",
+        "conceptId": "det_article_14",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ tables ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "des"
+        ],
+        "exactCorrection": "La bonne réponse : des.",
+        "explanation": "On écrit « des tables ». Au pluriel, on emploie des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "noun": "tables"
+      },
+      {
+        "id": "det_article_15",
+        "conceptId": "det_article_15",
+        "category": "agreement",
+        "categoryLabel": "Accorde avec le nom",
+        "prompt": "Complète avec un article indéfini : « ___ oiseaux ».",
+        "choices": [
+          "un",
+          "une",
+          "des"
+        ],
+        "acceptedAnswers": [
+          "des"
+        ],
+        "exactCorrection": "La bonne réponse : des.",
+        "explanation": "On écrit « des oiseaux ». Au pluriel, on emploie des.",
+        "answerHint": "Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — déterminants",
+        "det": "des",
+        "noun": "oiseaux"
+      }
+    ],
+    "workedExample": "Dans « cette petite maison », cette est le déterminant, petite est un adjectif et maison est le nom."
+  },
+  "lengths": {
+    "id": "lengths",
+    "subject": "Mathématiques · CM1",
+    "title": "Les unités de longueur",
+    "description": "Change d’unité, compare des longueurs et relève de petits défis. Tu peux utiliser un brouillon.",
+    "menuDescription": "km, hm, dam, m, dm, cm, mm · Conversions, comparaisons et petits problèmes.",
+    "duration": "5 à 10 minutes",
+    "scope": "Exercices originaux CM1 · Mesures entières et conversions exactes.",
+    "size": 10,
+    "storageKey": "mes-revisions.lengths.previous.v1",
+    "plan": [
+      [
+        "unit",
+        2
+      ],
+      [
+        "convert",
+        4
+      ],
+      [
+        "compare",
+        2
+      ],
+      [
+        "problem",
+        2
+      ]
+    ],
+    "bank": [
+      {
+        "id": "length_symbol_km",
+        "conceptId": "length_symbol_km",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « kilomètre » ?",
+        "choices": [
+          "km",
+          "hm",
+          "m"
+        ],
+        "acceptedAnswers": [
+          "km"
+        ],
+        "exactCorrection": "La bonne réponse : km.",
+        "explanation": "Le symbole du kilomètre est km.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_km",
+        "conceptId": "length_name_km",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « km » ?",
+        "choices": [
+          "kilomètre",
+          "décamètre",
+          "décimètre"
+        ],
+        "acceptedAnswers": [
+          "kilomètre"
+        ],
+        "exactCorrection": "La bonne réponse : kilomètre.",
+        "explanation": "Le symbole km signifie kilomètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_hm",
+        "conceptId": "length_symbol_hm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « hectomètre » ?",
+        "choices": [
+          "hm",
+          "dam",
+          "dm"
+        ],
+        "acceptedAnswers": [
+          "hm"
+        ],
+        "exactCorrection": "La bonne réponse : hm.",
+        "explanation": "Le symbole du hectomètre est hm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_hm",
+        "conceptId": "length_name_hm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « hm » ?",
+        "choices": [
+          "hectomètre",
+          "mètre",
+          "centimètre"
+        ],
+        "acceptedAnswers": [
+          "hectomètre"
+        ],
+        "exactCorrection": "La bonne réponse : hectomètre.",
+        "explanation": "Le symbole hm signifie hectomètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_dam",
+        "conceptId": "length_symbol_dam",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « décamètre » ?",
+        "choices": [
+          "dam",
+          "m",
+          "cm"
+        ],
+        "acceptedAnswers": [
+          "dam"
+        ],
+        "exactCorrection": "La bonne réponse : dam.",
+        "explanation": "Le symbole du décamètre est dam.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_dam",
+        "conceptId": "length_name_dam",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « dam » ?",
+        "choices": [
+          "décamètre",
+          "décimètre",
+          "millimètre"
+        ],
+        "acceptedAnswers": [
+          "décamètre"
+        ],
+        "exactCorrection": "La bonne réponse : décamètre.",
+        "explanation": "Le symbole dam signifie décamètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_m",
+        "conceptId": "length_symbol_m",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « mètre » ?",
+        "choices": [
+          "m",
+          "dm",
+          "mm"
+        ],
+        "acceptedAnswers": [
+          "m"
+        ],
+        "exactCorrection": "La bonne réponse : m.",
+        "explanation": "Le symbole du mètre est m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_m",
+        "conceptId": "length_name_m",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « m » ?",
+        "choices": [
+          "mètre",
+          "centimètre",
+          "kilomètre"
+        ],
+        "acceptedAnswers": [
+          "mètre"
+        ],
+        "exactCorrection": "La bonne réponse : mètre.",
+        "explanation": "Le symbole m signifie mètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_dm",
+        "conceptId": "length_symbol_dm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « décimètre » ?",
+        "choices": [
+          "dm",
+          "cm",
+          "km"
+        ],
+        "acceptedAnswers": [
+          "dm"
+        ],
+        "exactCorrection": "La bonne réponse : dm.",
+        "explanation": "Le symbole du décimètre est dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_dm",
+        "conceptId": "length_name_dm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « dm » ?",
+        "choices": [
+          "décimètre",
+          "millimètre",
+          "hectomètre"
+        ],
+        "acceptedAnswers": [
+          "décimètre"
+        ],
+        "exactCorrection": "La bonne réponse : décimètre.",
+        "explanation": "Le symbole dm signifie décimètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_cm",
+        "conceptId": "length_symbol_cm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « centimètre » ?",
+        "choices": [
+          "cm",
+          "mm",
+          "hm"
+        ],
+        "acceptedAnswers": [
+          "cm"
+        ],
+        "exactCorrection": "La bonne réponse : cm.",
+        "explanation": "Le symbole du centimètre est cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_cm",
+        "conceptId": "length_name_cm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « cm » ?",
+        "choices": [
+          "centimètre",
+          "kilomètre",
+          "décamètre"
+        ],
+        "acceptedAnswers": [
+          "centimètre"
+        ],
+        "exactCorrection": "La bonne réponse : centimètre.",
+        "explanation": "Le symbole cm signifie centimètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_symbol_mm",
+        "conceptId": "length_symbol_mm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Quelle est l’abréviation de « millimètre » ?",
+        "choices": [
+          "mm",
+          "km",
+          "dam"
+        ],
+        "acceptedAnswers": [
+          "mm"
+        ],
+        "exactCorrection": "La bonne réponse : mm.",
+        "explanation": "Le symbole du millimètre est mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_name_mm",
+        "conceptId": "length_name_mm",
+        "category": "unit",
+        "categoryLabel": "Choisis ton unité",
+        "prompt": "Que signifie le symbole « mm » ?",
+        "choices": [
+          "millimètre",
+          "hectomètre",
+          "mètre"
+        ],
+        "acceptedAnswers": [
+          "millimètre"
+        ],
+        "exactCorrection": "La bonne réponse : millimètre.",
+        "explanation": "Le symbole mm signifie millimètre.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur"
+      },
+      {
+        "id": "length_km_m_2",
+        "conceptId": "length_km_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 km = … m.",
+        "choices": [
+          "2000 m",
+          "20000 m",
+          "200 m"
+        ],
+        "acceptedAnswers": [
+          "2000 m"
+        ],
+        "exactCorrection": "La bonne réponse : 2000 m.",
+        "explanation": "1 km = 1000 m. Donc 2 × 1000 = 2000 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "km",
+          "to": "m",
+          "result": 2000
+        }
+      },
+      {
+        "id": "length_m_km_2",
+        "conceptId": "length_m_km_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2000 m = … km.",
+        "choices": [
+          "2 km",
+          "20 km",
+          "3 km"
+        ],
+        "acceptedAnswers": [
+          "2 km"
+        ],
+        "exactCorrection": "La bonne réponse : 2 km.",
+        "explanation": "1 km = 1000 m. Donc 2000 ÷ 1000 = 2 km.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2000,
+          "from": "m",
+          "to": "km",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_km_m_3",
+        "conceptId": "length_km_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 km = … m.",
+        "choices": [
+          "3000 m",
+          "30000 m",
+          "300 m"
+        ],
+        "acceptedAnswers": [
+          "3000 m"
+        ],
+        "exactCorrection": "La bonne réponse : 3000 m.",
+        "explanation": "1 km = 1000 m. Donc 3 × 1000 = 3000 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "km",
+          "to": "m",
+          "result": 3000
+        }
+      },
+      {
+        "id": "length_m_km_3",
+        "conceptId": "length_m_km_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3000 m = … km.",
+        "choices": [
+          "3 km",
+          "30 km",
+          "4 km"
+        ],
+        "acceptedAnswers": [
+          "3 km"
+        ],
+        "exactCorrection": "La bonne réponse : 3 km.",
+        "explanation": "1 km = 1000 m. Donc 3000 ÷ 1000 = 3 km.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3000,
+          "from": "m",
+          "to": "km",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_km_m_5",
+        "conceptId": "length_km_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 km = … m.",
+        "choices": [
+          "5000 m",
+          "50000 m",
+          "500 m"
+        ],
+        "acceptedAnswers": [
+          "5000 m"
+        ],
+        "exactCorrection": "La bonne réponse : 5000 m.",
+        "explanation": "1 km = 1000 m. Donc 5 × 1000 = 5000 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "km",
+          "to": "m",
+          "result": 5000
+        }
+      },
+      {
+        "id": "length_m_km_5",
+        "conceptId": "length_m_km_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5000 m = … km.",
+        "choices": [
+          "5 km",
+          "50 km",
+          "6 km"
+        ],
+        "acceptedAnswers": [
+          "5 km"
+        ],
+        "exactCorrection": "La bonne réponse : 5 km.",
+        "explanation": "1 km = 1000 m. Donc 5000 ÷ 1000 = 5 km.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5000,
+          "from": "m",
+          "to": "km",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_km_m_8",
+        "conceptId": "length_km_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 km = … m.",
+        "choices": [
+          "8000 m",
+          "80000 m",
+          "800 m"
+        ],
+        "acceptedAnswers": [
+          "8000 m"
+        ],
+        "exactCorrection": "La bonne réponse : 8000 m.",
+        "explanation": "1 km = 1000 m. Donc 8 × 1000 = 8000 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "km",
+          "to": "m",
+          "result": 8000
+        }
+      },
+      {
+        "id": "length_m_km_8",
+        "conceptId": "length_m_km_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8000 m = … km.",
+        "choices": [
+          "8 km",
+          "80 km",
+          "9 km"
+        ],
+        "acceptedAnswers": [
+          "8 km"
+        ],
+        "exactCorrection": "La bonne réponse : 8 km.",
+        "explanation": "1 km = 1000 m. Donc 8000 ÷ 1000 = 8 km.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8000,
+          "from": "m",
+          "to": "km",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_hm_m_2",
+        "conceptId": "length_hm_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 hm = … m.",
+        "choices": [
+          "200 m",
+          "2000 m",
+          "20 m"
+        ],
+        "acceptedAnswers": [
+          "200 m"
+        ],
+        "exactCorrection": "La bonne réponse : 200 m.",
+        "explanation": "1 hm = 100 m. Donc 2 × 100 = 200 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "hm",
+          "to": "m",
+          "result": 200
+        }
+      },
+      {
+        "id": "length_m_hm_2",
+        "conceptId": "length_m_hm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 200 m = … hm.",
+        "choices": [
+          "2 hm",
+          "20 hm",
+          "3 hm"
+        ],
+        "acceptedAnswers": [
+          "2 hm"
+        ],
+        "exactCorrection": "La bonne réponse : 2 hm.",
+        "explanation": "1 hm = 100 m. Donc 200 ÷ 100 = 2 hm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 200,
+          "from": "m",
+          "to": "hm",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_hm_m_3",
+        "conceptId": "length_hm_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 hm = … m.",
+        "choices": [
+          "300 m",
+          "3000 m",
+          "30 m"
+        ],
+        "acceptedAnswers": [
+          "300 m"
+        ],
+        "exactCorrection": "La bonne réponse : 300 m.",
+        "explanation": "1 hm = 100 m. Donc 3 × 100 = 300 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "hm",
+          "to": "m",
+          "result": 300
+        }
+      },
+      {
+        "id": "length_m_hm_3",
+        "conceptId": "length_m_hm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 300 m = … hm.",
+        "choices": [
+          "3 hm",
+          "30 hm",
+          "4 hm"
+        ],
+        "acceptedAnswers": [
+          "3 hm"
+        ],
+        "exactCorrection": "La bonne réponse : 3 hm.",
+        "explanation": "1 hm = 100 m. Donc 300 ÷ 100 = 3 hm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 300,
+          "from": "m",
+          "to": "hm",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_hm_m_5",
+        "conceptId": "length_hm_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 hm = … m.",
+        "choices": [
+          "500 m",
+          "5000 m",
+          "50 m"
+        ],
+        "acceptedAnswers": [
+          "500 m"
+        ],
+        "exactCorrection": "La bonne réponse : 500 m.",
+        "explanation": "1 hm = 100 m. Donc 5 × 100 = 500 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "hm",
+          "to": "m",
+          "result": 500
+        }
+      },
+      {
+        "id": "length_m_hm_5",
+        "conceptId": "length_m_hm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 500 m = … hm.",
+        "choices": [
+          "5 hm",
+          "50 hm",
+          "6 hm"
+        ],
+        "acceptedAnswers": [
+          "5 hm"
+        ],
+        "exactCorrection": "La bonne réponse : 5 hm.",
+        "explanation": "1 hm = 100 m. Donc 500 ÷ 100 = 5 hm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 500,
+          "from": "m",
+          "to": "hm",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_hm_m_8",
+        "conceptId": "length_hm_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 hm = … m.",
+        "choices": [
+          "800 m",
+          "8000 m",
+          "80 m"
+        ],
+        "acceptedAnswers": [
+          "800 m"
+        ],
+        "exactCorrection": "La bonne réponse : 800 m.",
+        "explanation": "1 hm = 100 m. Donc 8 × 100 = 800 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "hm",
+          "to": "m",
+          "result": 800
+        }
+      },
+      {
+        "id": "length_m_hm_8",
+        "conceptId": "length_m_hm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 800 m = … hm.",
+        "choices": [
+          "8 hm",
+          "80 hm",
+          "9 hm"
+        ],
+        "acceptedAnswers": [
+          "8 hm"
+        ],
+        "exactCorrection": "La bonne réponse : 8 hm.",
+        "explanation": "1 hm = 100 m. Donc 800 ÷ 100 = 8 hm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 800,
+          "from": "m",
+          "to": "hm",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_dam_m_2",
+        "conceptId": "length_dam_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 dam = … m.",
+        "choices": [
+          "20 m",
+          "200 m",
+          "2 m"
+        ],
+        "acceptedAnswers": [
+          "20 m"
+        ],
+        "exactCorrection": "La bonne réponse : 20 m.",
+        "explanation": "1 dam = 10 m. Donc 2 × 10 = 20 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "dam",
+          "to": "m",
+          "result": 20
+        }
+      },
+      {
+        "id": "length_m_dam_2",
+        "conceptId": "length_m_dam_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 20 m = … dam.",
+        "choices": [
+          "2 dam",
+          "20 dam",
+          "3 dam"
+        ],
+        "acceptedAnswers": [
+          "2 dam"
+        ],
+        "exactCorrection": "La bonne réponse : 2 dam.",
+        "explanation": "1 dam = 10 m. Donc 20 ÷ 10 = 2 dam.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 20,
+          "from": "m",
+          "to": "dam",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_dam_m_3",
+        "conceptId": "length_dam_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 dam = … m.",
+        "choices": [
+          "30 m",
+          "300 m",
+          "3 m"
+        ],
+        "acceptedAnswers": [
+          "30 m"
+        ],
+        "exactCorrection": "La bonne réponse : 30 m.",
+        "explanation": "1 dam = 10 m. Donc 3 × 10 = 30 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "dam",
+          "to": "m",
+          "result": 30
+        }
+      },
+      {
+        "id": "length_m_dam_3",
+        "conceptId": "length_m_dam_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 30 m = … dam.",
+        "choices": [
+          "3 dam",
+          "30 dam",
+          "4 dam"
+        ],
+        "acceptedAnswers": [
+          "3 dam"
+        ],
+        "exactCorrection": "La bonne réponse : 3 dam.",
+        "explanation": "1 dam = 10 m. Donc 30 ÷ 10 = 3 dam.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 30,
+          "from": "m",
+          "to": "dam",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_dam_m_5",
+        "conceptId": "length_dam_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 dam = … m.",
+        "choices": [
+          "50 m",
+          "500 m",
+          "5 m"
+        ],
+        "acceptedAnswers": [
+          "50 m"
+        ],
+        "exactCorrection": "La bonne réponse : 50 m.",
+        "explanation": "1 dam = 10 m. Donc 5 × 10 = 50 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "dam",
+          "to": "m",
+          "result": 50
+        }
+      },
+      {
+        "id": "length_m_dam_5",
+        "conceptId": "length_m_dam_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 50 m = … dam.",
+        "choices": [
+          "5 dam",
+          "50 dam",
+          "6 dam"
+        ],
+        "acceptedAnswers": [
+          "5 dam"
+        ],
+        "exactCorrection": "La bonne réponse : 5 dam.",
+        "explanation": "1 dam = 10 m. Donc 50 ÷ 10 = 5 dam.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 50,
+          "from": "m",
+          "to": "dam",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_dam_m_8",
+        "conceptId": "length_dam_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 dam = … m.",
+        "choices": [
+          "80 m",
+          "800 m",
+          "8 m"
+        ],
+        "acceptedAnswers": [
+          "80 m"
+        ],
+        "exactCorrection": "La bonne réponse : 80 m.",
+        "explanation": "1 dam = 10 m. Donc 8 × 10 = 80 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "dam",
+          "to": "m",
+          "result": 80
+        }
+      },
+      {
+        "id": "length_m_dam_8",
+        "conceptId": "length_m_dam_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 80 m = … dam.",
+        "choices": [
+          "8 dam",
+          "80 dam",
+          "9 dam"
+        ],
+        "acceptedAnswers": [
+          "8 dam"
+        ],
+        "exactCorrection": "La bonne réponse : 8 dam.",
+        "explanation": "1 dam = 10 m. Donc 80 ÷ 10 = 8 dam.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 80,
+          "from": "m",
+          "to": "dam",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_m_dm_2",
+        "conceptId": "length_m_dm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 m = … dm.",
+        "choices": [
+          "20 dm",
+          "200 dm",
+          "2 dm"
+        ],
+        "acceptedAnswers": [
+          "20 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 20 dm.",
+        "explanation": "1 m = 10 dm. Donc 2 × 10 = 20 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "m",
+          "to": "dm",
+          "result": 20
+        }
+      },
+      {
+        "id": "length_dm_m_2",
+        "conceptId": "length_dm_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 20 dm = … m.",
+        "choices": [
+          "2 m",
+          "20 m",
+          "3 m"
+        ],
+        "acceptedAnswers": [
+          "2 m"
+        ],
+        "exactCorrection": "La bonne réponse : 2 m.",
+        "explanation": "1 m = 10 dm. Donc 20 ÷ 10 = 2 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 20,
+          "from": "dm",
+          "to": "m",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_m_dm_3",
+        "conceptId": "length_m_dm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 m = … dm.",
+        "choices": [
+          "30 dm",
+          "300 dm",
+          "3 dm"
+        ],
+        "acceptedAnswers": [
+          "30 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 30 dm.",
+        "explanation": "1 m = 10 dm. Donc 3 × 10 = 30 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "m",
+          "to": "dm",
+          "result": 30
+        }
+      },
+      {
+        "id": "length_dm_m_3",
+        "conceptId": "length_dm_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 30 dm = … m.",
+        "choices": [
+          "3 m",
+          "30 m",
+          "4 m"
+        ],
+        "acceptedAnswers": [
+          "3 m"
+        ],
+        "exactCorrection": "La bonne réponse : 3 m.",
+        "explanation": "1 m = 10 dm. Donc 30 ÷ 10 = 3 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 30,
+          "from": "dm",
+          "to": "m",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_m_dm_5",
+        "conceptId": "length_m_dm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 m = … dm.",
+        "choices": [
+          "50 dm",
+          "500 dm",
+          "5 dm"
+        ],
+        "acceptedAnswers": [
+          "50 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 50 dm.",
+        "explanation": "1 m = 10 dm. Donc 5 × 10 = 50 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "m",
+          "to": "dm",
+          "result": 50
+        }
+      },
+      {
+        "id": "length_dm_m_5",
+        "conceptId": "length_dm_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 50 dm = … m.",
+        "choices": [
+          "5 m",
+          "50 m",
+          "6 m"
+        ],
+        "acceptedAnswers": [
+          "5 m"
+        ],
+        "exactCorrection": "La bonne réponse : 5 m.",
+        "explanation": "1 m = 10 dm. Donc 50 ÷ 10 = 5 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 50,
+          "from": "dm",
+          "to": "m",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_m_dm_8",
+        "conceptId": "length_m_dm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 m = … dm.",
+        "choices": [
+          "80 dm",
+          "800 dm",
+          "8 dm"
+        ],
+        "acceptedAnswers": [
+          "80 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 80 dm.",
+        "explanation": "1 m = 10 dm. Donc 8 × 10 = 80 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "m",
+          "to": "dm",
+          "result": 80
+        }
+      },
+      {
+        "id": "length_dm_m_8",
+        "conceptId": "length_dm_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 80 dm = … m.",
+        "choices": [
+          "8 m",
+          "80 m",
+          "9 m"
+        ],
+        "acceptedAnswers": [
+          "8 m"
+        ],
+        "exactCorrection": "La bonne réponse : 8 m.",
+        "explanation": "1 m = 10 dm. Donc 80 ÷ 10 = 8 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 80,
+          "from": "dm",
+          "to": "m",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_m_cm_2",
+        "conceptId": "length_m_cm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 m = … cm.",
+        "choices": [
+          "200 cm",
+          "2000 cm",
+          "20 cm"
+        ],
+        "acceptedAnswers": [
+          "200 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 200 cm.",
+        "explanation": "1 m = 100 cm. Donc 2 × 100 = 200 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "m",
+          "to": "cm",
+          "result": 200
+        }
+      },
+      {
+        "id": "length_cm_m_2",
+        "conceptId": "length_cm_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 200 cm = … m.",
+        "choices": [
+          "2 m",
+          "20 m",
+          "3 m"
+        ],
+        "acceptedAnswers": [
+          "2 m"
+        ],
+        "exactCorrection": "La bonne réponse : 2 m.",
+        "explanation": "1 m = 100 cm. Donc 200 ÷ 100 = 2 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 200,
+          "from": "cm",
+          "to": "m",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_m_cm_3",
+        "conceptId": "length_m_cm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 m = … cm.",
+        "choices": [
+          "300 cm",
+          "3000 cm",
+          "30 cm"
+        ],
+        "acceptedAnswers": [
+          "300 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 300 cm.",
+        "explanation": "1 m = 100 cm. Donc 3 × 100 = 300 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "m",
+          "to": "cm",
+          "result": 300
+        }
+      },
+      {
+        "id": "length_cm_m_3",
+        "conceptId": "length_cm_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 300 cm = … m.",
+        "choices": [
+          "3 m",
+          "30 m",
+          "4 m"
+        ],
+        "acceptedAnswers": [
+          "3 m"
+        ],
+        "exactCorrection": "La bonne réponse : 3 m.",
+        "explanation": "1 m = 100 cm. Donc 300 ÷ 100 = 3 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 300,
+          "from": "cm",
+          "to": "m",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_m_cm_5",
+        "conceptId": "length_m_cm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 m = … cm.",
+        "choices": [
+          "500 cm",
+          "5000 cm",
+          "50 cm"
+        ],
+        "acceptedAnswers": [
+          "500 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 500 cm.",
+        "explanation": "1 m = 100 cm. Donc 5 × 100 = 500 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "m",
+          "to": "cm",
+          "result": 500
+        }
+      },
+      {
+        "id": "length_cm_m_5",
+        "conceptId": "length_cm_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 500 cm = … m.",
+        "choices": [
+          "5 m",
+          "50 m",
+          "6 m"
+        ],
+        "acceptedAnswers": [
+          "5 m"
+        ],
+        "exactCorrection": "La bonne réponse : 5 m.",
+        "explanation": "1 m = 100 cm. Donc 500 ÷ 100 = 5 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 500,
+          "from": "cm",
+          "to": "m",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_m_cm_8",
+        "conceptId": "length_m_cm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 m = … cm.",
+        "choices": [
+          "800 cm",
+          "8000 cm",
+          "80 cm"
+        ],
+        "acceptedAnswers": [
+          "800 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 800 cm.",
+        "explanation": "1 m = 100 cm. Donc 8 × 100 = 800 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "m",
+          "to": "cm",
+          "result": 800
+        }
+      },
+      {
+        "id": "length_cm_m_8",
+        "conceptId": "length_cm_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 800 cm = … m.",
+        "choices": [
+          "8 m",
+          "80 m",
+          "9 m"
+        ],
+        "acceptedAnswers": [
+          "8 m"
+        ],
+        "exactCorrection": "La bonne réponse : 8 m.",
+        "explanation": "1 m = 100 cm. Donc 800 ÷ 100 = 8 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 800,
+          "from": "cm",
+          "to": "m",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_dm_cm_2",
+        "conceptId": "length_dm_cm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 dm = … cm.",
+        "choices": [
+          "20 cm",
+          "200 cm",
+          "2 cm"
+        ],
+        "acceptedAnswers": [
+          "20 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 20 cm.",
+        "explanation": "1 dm = 10 cm. Donc 2 × 10 = 20 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "dm",
+          "to": "cm",
+          "result": 20
+        }
+      },
+      {
+        "id": "length_cm_dm_2",
+        "conceptId": "length_cm_dm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 20 cm = … dm.",
+        "choices": [
+          "2 dm",
+          "20 dm",
+          "3 dm"
+        ],
+        "acceptedAnswers": [
+          "2 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 2 dm.",
+        "explanation": "1 dm = 10 cm. Donc 20 ÷ 10 = 2 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 20,
+          "from": "cm",
+          "to": "dm",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_dm_cm_3",
+        "conceptId": "length_dm_cm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 dm = … cm.",
+        "choices": [
+          "30 cm",
+          "300 cm",
+          "3 cm"
+        ],
+        "acceptedAnswers": [
+          "30 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 30 cm.",
+        "explanation": "1 dm = 10 cm. Donc 3 × 10 = 30 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "dm",
+          "to": "cm",
+          "result": 30
+        }
+      },
+      {
+        "id": "length_cm_dm_3",
+        "conceptId": "length_cm_dm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 30 cm = … dm.",
+        "choices": [
+          "3 dm",
+          "30 dm",
+          "4 dm"
+        ],
+        "acceptedAnswers": [
+          "3 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 3 dm.",
+        "explanation": "1 dm = 10 cm. Donc 30 ÷ 10 = 3 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 30,
+          "from": "cm",
+          "to": "dm",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_dm_cm_5",
+        "conceptId": "length_dm_cm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 dm = … cm.",
+        "choices": [
+          "50 cm",
+          "500 cm",
+          "5 cm"
+        ],
+        "acceptedAnswers": [
+          "50 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 50 cm.",
+        "explanation": "1 dm = 10 cm. Donc 5 × 10 = 50 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "dm",
+          "to": "cm",
+          "result": 50
+        }
+      },
+      {
+        "id": "length_cm_dm_5",
+        "conceptId": "length_cm_dm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 50 cm = … dm.",
+        "choices": [
+          "5 dm",
+          "50 dm",
+          "6 dm"
+        ],
+        "acceptedAnswers": [
+          "5 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 5 dm.",
+        "explanation": "1 dm = 10 cm. Donc 50 ÷ 10 = 5 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 50,
+          "from": "cm",
+          "to": "dm",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_dm_cm_8",
+        "conceptId": "length_dm_cm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 dm = … cm.",
+        "choices": [
+          "80 cm",
+          "800 cm",
+          "8 cm"
+        ],
+        "acceptedAnswers": [
+          "80 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 80 cm.",
+        "explanation": "1 dm = 10 cm. Donc 8 × 10 = 80 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "dm",
+          "to": "cm",
+          "result": 80
+        }
+      },
+      {
+        "id": "length_cm_dm_8",
+        "conceptId": "length_cm_dm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 80 cm = … dm.",
+        "choices": [
+          "8 dm",
+          "80 dm",
+          "9 dm"
+        ],
+        "acceptedAnswers": [
+          "8 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 8 dm.",
+        "explanation": "1 dm = 10 cm. Donc 80 ÷ 10 = 8 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 80,
+          "from": "cm",
+          "to": "dm",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_dm_mm_2",
+        "conceptId": "length_dm_mm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 dm = … mm.",
+        "choices": [
+          "200 mm",
+          "2000 mm",
+          "20 mm"
+        ],
+        "acceptedAnswers": [
+          "200 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 200 mm.",
+        "explanation": "1 dm = 100 mm. Donc 2 × 100 = 200 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "dm",
+          "to": "mm",
+          "result": 200
+        }
+      },
+      {
+        "id": "length_mm_dm_2",
+        "conceptId": "length_mm_dm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 200 mm = … dm.",
+        "choices": [
+          "2 dm",
+          "20 dm",
+          "3 dm"
+        ],
+        "acceptedAnswers": [
+          "2 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 2 dm.",
+        "explanation": "1 dm = 100 mm. Donc 200 ÷ 100 = 2 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 200,
+          "from": "mm",
+          "to": "dm",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_dm_mm_3",
+        "conceptId": "length_dm_mm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 dm = … mm.",
+        "choices": [
+          "300 mm",
+          "3000 mm",
+          "30 mm"
+        ],
+        "acceptedAnswers": [
+          "300 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 300 mm.",
+        "explanation": "1 dm = 100 mm. Donc 3 × 100 = 300 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "dm",
+          "to": "mm",
+          "result": 300
+        }
+      },
+      {
+        "id": "length_mm_dm_3",
+        "conceptId": "length_mm_dm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 300 mm = … dm.",
+        "choices": [
+          "3 dm",
+          "30 dm",
+          "4 dm"
+        ],
+        "acceptedAnswers": [
+          "3 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 3 dm.",
+        "explanation": "1 dm = 100 mm. Donc 300 ÷ 100 = 3 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 300,
+          "from": "mm",
+          "to": "dm",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_dm_mm_5",
+        "conceptId": "length_dm_mm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 dm = … mm.",
+        "choices": [
+          "500 mm",
+          "5000 mm",
+          "50 mm"
+        ],
+        "acceptedAnswers": [
+          "500 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 500 mm.",
+        "explanation": "1 dm = 100 mm. Donc 5 × 100 = 500 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "dm",
+          "to": "mm",
+          "result": 500
+        }
+      },
+      {
+        "id": "length_mm_dm_5",
+        "conceptId": "length_mm_dm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 500 mm = … dm.",
+        "choices": [
+          "5 dm",
+          "50 dm",
+          "6 dm"
+        ],
+        "acceptedAnswers": [
+          "5 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 5 dm.",
+        "explanation": "1 dm = 100 mm. Donc 500 ÷ 100 = 5 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 500,
+          "from": "mm",
+          "to": "dm",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_dm_mm_8",
+        "conceptId": "length_dm_mm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 dm = … mm.",
+        "choices": [
+          "800 mm",
+          "8000 mm",
+          "80 mm"
+        ],
+        "acceptedAnswers": [
+          "800 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 800 mm.",
+        "explanation": "1 dm = 100 mm. Donc 8 × 100 = 800 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "dm",
+          "to": "mm",
+          "result": 800
+        }
+      },
+      {
+        "id": "length_mm_dm_8",
+        "conceptId": "length_mm_dm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 800 mm = … dm.",
+        "choices": [
+          "8 dm",
+          "80 dm",
+          "9 dm"
+        ],
+        "acceptedAnswers": [
+          "8 dm"
+        ],
+        "exactCorrection": "La bonne réponse : 8 dm.",
+        "explanation": "1 dm = 100 mm. Donc 800 ÷ 100 = 8 dm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 800,
+          "from": "mm",
+          "to": "dm",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_cm_mm_2",
+        "conceptId": "length_cm_mm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 cm = … mm.",
+        "choices": [
+          "20 mm",
+          "200 mm",
+          "2 mm"
+        ],
+        "acceptedAnswers": [
+          "20 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 20 mm.",
+        "explanation": "1 cm = 10 mm. Donc 2 × 10 = 20 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "cm",
+          "to": "mm",
+          "result": 20
+        }
+      },
+      {
+        "id": "length_mm_cm_2",
+        "conceptId": "length_mm_cm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 20 mm = … cm.",
+        "choices": [
+          "2 cm",
+          "20 cm",
+          "3 cm"
+        ],
+        "acceptedAnswers": [
+          "2 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 2 cm.",
+        "explanation": "1 cm = 10 mm. Donc 20 ÷ 10 = 2 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 20,
+          "from": "mm",
+          "to": "cm",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_cm_mm_3",
+        "conceptId": "length_cm_mm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 cm = … mm.",
+        "choices": [
+          "30 mm",
+          "300 mm",
+          "3 mm"
+        ],
+        "acceptedAnswers": [
+          "30 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 30 mm.",
+        "explanation": "1 cm = 10 mm. Donc 3 × 10 = 30 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "cm",
+          "to": "mm",
+          "result": 30
+        }
+      },
+      {
+        "id": "length_mm_cm_3",
+        "conceptId": "length_mm_cm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 30 mm = … cm.",
+        "choices": [
+          "3 cm",
+          "30 cm",
+          "4 cm"
+        ],
+        "acceptedAnswers": [
+          "3 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 3 cm.",
+        "explanation": "1 cm = 10 mm. Donc 30 ÷ 10 = 3 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 30,
+          "from": "mm",
+          "to": "cm",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_cm_mm_5",
+        "conceptId": "length_cm_mm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 cm = … mm.",
+        "choices": [
+          "50 mm",
+          "500 mm",
+          "5 mm"
+        ],
+        "acceptedAnswers": [
+          "50 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 50 mm.",
+        "explanation": "1 cm = 10 mm. Donc 5 × 10 = 50 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "cm",
+          "to": "mm",
+          "result": 50
+        }
+      },
+      {
+        "id": "length_mm_cm_5",
+        "conceptId": "length_mm_cm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 50 mm = … cm.",
+        "choices": [
+          "5 cm",
+          "50 cm",
+          "6 cm"
+        ],
+        "acceptedAnswers": [
+          "5 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 5 cm.",
+        "explanation": "1 cm = 10 mm. Donc 50 ÷ 10 = 5 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 50,
+          "from": "mm",
+          "to": "cm",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_cm_mm_8",
+        "conceptId": "length_cm_mm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 cm = … mm.",
+        "choices": [
+          "80 mm",
+          "800 mm",
+          "8 mm"
+        ],
+        "acceptedAnswers": [
+          "80 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 80 mm.",
+        "explanation": "1 cm = 10 mm. Donc 8 × 10 = 80 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "cm",
+          "to": "mm",
+          "result": 80
+        }
+      },
+      {
+        "id": "length_mm_cm_8",
+        "conceptId": "length_mm_cm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 80 mm = … cm.",
+        "choices": [
+          "8 cm",
+          "80 cm",
+          "9 cm"
+        ],
+        "acceptedAnswers": [
+          "8 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 8 cm.",
+        "explanation": "1 cm = 10 mm. Donc 80 ÷ 10 = 8 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 80,
+          "from": "mm",
+          "to": "cm",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_m_mm_2",
+        "conceptId": "length_m_mm_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2 m = … mm.",
+        "choices": [
+          "2000 mm",
+          "20000 mm",
+          "200 mm"
+        ],
+        "acceptedAnswers": [
+          "2000 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 2000 mm.",
+        "explanation": "1 m = 1000 mm. Donc 2 × 1000 = 2000 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2,
+          "from": "m",
+          "to": "mm",
+          "result": 2000
+        }
+      },
+      {
+        "id": "length_mm_m_2",
+        "conceptId": "length_mm_m_2",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 2000 mm = … m.",
+        "choices": [
+          "2 m",
+          "20 m",
+          "3 m"
+        ],
+        "acceptedAnswers": [
+          "2 m"
+        ],
+        "exactCorrection": "La bonne réponse : 2 m.",
+        "explanation": "1 m = 1000 mm. Donc 2000 ÷ 1000 = 2 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 2000,
+          "from": "mm",
+          "to": "m",
+          "result": 2
+        }
+      },
+      {
+        "id": "length_m_mm_3",
+        "conceptId": "length_m_mm_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3 m = … mm.",
+        "choices": [
+          "3000 mm",
+          "30000 mm",
+          "300 mm"
+        ],
+        "acceptedAnswers": [
+          "3000 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 3000 mm.",
+        "explanation": "1 m = 1000 mm. Donc 3 × 1000 = 3000 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3,
+          "from": "m",
+          "to": "mm",
+          "result": 3000
+        }
+      },
+      {
+        "id": "length_mm_m_3",
+        "conceptId": "length_mm_m_3",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 3000 mm = … m.",
+        "choices": [
+          "3 m",
+          "30 m",
+          "4 m"
+        ],
+        "acceptedAnswers": [
+          "3 m"
+        ],
+        "exactCorrection": "La bonne réponse : 3 m.",
+        "explanation": "1 m = 1000 mm. Donc 3000 ÷ 1000 = 3 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 3000,
+          "from": "mm",
+          "to": "m",
+          "result": 3
+        }
+      },
+      {
+        "id": "length_m_mm_5",
+        "conceptId": "length_m_mm_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5 m = … mm.",
+        "choices": [
+          "5000 mm",
+          "50000 mm",
+          "500 mm"
+        ],
+        "acceptedAnswers": [
+          "5000 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 5000 mm.",
+        "explanation": "1 m = 1000 mm. Donc 5 × 1000 = 5000 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5,
+          "from": "m",
+          "to": "mm",
+          "result": 5000
+        }
+      },
+      {
+        "id": "length_mm_m_5",
+        "conceptId": "length_mm_m_5",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 5000 mm = … m.",
+        "choices": [
+          "5 m",
+          "50 m",
+          "6 m"
+        ],
+        "acceptedAnswers": [
+          "5 m"
+        ],
+        "exactCorrection": "La bonne réponse : 5 m.",
+        "explanation": "1 m = 1000 mm. Donc 5000 ÷ 1000 = 5 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 5000,
+          "from": "mm",
+          "to": "m",
+          "result": 5
+        }
+      },
+      {
+        "id": "length_m_mm_8",
+        "conceptId": "length_m_mm_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8 m = … mm.",
+        "choices": [
+          "8000 mm",
+          "80000 mm",
+          "800 mm"
+        ],
+        "acceptedAnswers": [
+          "8000 mm"
+        ],
+        "exactCorrection": "La bonne réponse : 8000 mm.",
+        "explanation": "1 m = 1000 mm. Donc 8 × 1000 = 8000 mm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8,
+          "from": "m",
+          "to": "mm",
+          "result": 8000
+        }
+      },
+      {
+        "id": "length_mm_m_8",
+        "conceptId": "length_mm_m_8",
+        "category": "convert",
+        "categoryLabel": "Change d’unité",
+        "prompt": "Convertis : 8000 mm = … m.",
+        "choices": [
+          "8 m",
+          "80 m",
+          "9 m"
+        ],
+        "acceptedAnswers": [
+          "8 m"
+        ],
+        "exactCorrection": "La bonne réponse : 8 m.",
+        "explanation": "1 m = 1000 mm. Donc 8000 ÷ 1000 = 8 m.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "conversion": {
+          "amount": 8000,
+          "from": "mm",
+          "to": "m",
+          "result": 8
+        }
+      },
+      {
+        "id": "length_km_m_-1",
+        "conceptId": "length_km_m_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 km … 2900 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 km = 3000 m. On compare donc 3000 m et 2900 m. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "km",
+          "right": 2900,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_km_m_0",
+        "conceptId": "length_km_m_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 km … 3000 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 km = 3000 m. On compare donc 3000 m et 3000 m. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "km",
+          "right": 3000,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_km_m_1",
+        "conceptId": "length_km_m_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 km … 3100 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 km = 3000 m. On compare donc 3000 m et 3100 m. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "km",
+          "right": 3100,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_hm_m_-1",
+        "conceptId": "length_hm_m_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 hm … 290 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 hm = 300 m. On compare donc 300 m et 290 m. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "hm",
+          "right": 290,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_hm_m_0",
+        "conceptId": "length_hm_m_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 hm … 300 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 hm = 300 m. On compare donc 300 m et 300 m. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "hm",
+          "right": 300,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_hm_m_1",
+        "conceptId": "length_hm_m_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 hm … 310 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 hm = 300 m. On compare donc 300 m et 310 m. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "hm",
+          "right": 310,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_dam_m_-1",
+        "conceptId": "length_dam_m_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dam … 29 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 dam = 30 m. On compare donc 30 m et 29 m. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dam",
+          "right": 29,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_dam_m_0",
+        "conceptId": "length_dam_m_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dam … 30 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 dam = 30 m. On compare donc 30 m et 30 m. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dam",
+          "right": 30,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_dam_m_1",
+        "conceptId": "length_dam_m_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dam … 31 m",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 dam = 30 m. On compare donc 30 m et 31 m. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dam",
+          "right": 31,
+          "to": "m"
+        }
+      },
+      {
+        "id": "length_m_dm_-1",
+        "conceptId": "length_m_dm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 29 dm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 m = 30 dm. On compare donc 30 dm et 29 dm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 29,
+          "to": "dm"
+        }
+      },
+      {
+        "id": "length_m_dm_0",
+        "conceptId": "length_m_dm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 30 dm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 m = 30 dm. On compare donc 30 dm et 30 dm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 30,
+          "to": "dm"
+        }
+      },
+      {
+        "id": "length_m_dm_1",
+        "conceptId": "length_m_dm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 31 dm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 m = 30 dm. On compare donc 30 dm et 31 dm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 31,
+          "to": "dm"
+        }
+      },
+      {
+        "id": "length_m_cm_-1",
+        "conceptId": "length_m_cm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 290 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 m = 300 cm. On compare donc 300 cm et 290 cm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 290,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_m_cm_0",
+        "conceptId": "length_m_cm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 300 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 m = 300 cm. On compare donc 300 cm et 300 cm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 300,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_m_cm_1",
+        "conceptId": "length_m_cm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 310 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 m = 300 cm. On compare donc 300 cm et 310 cm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 310,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_dm_cm_-1",
+        "conceptId": "length_dm_cm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 29 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 dm = 30 cm. On compare donc 30 cm et 29 cm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 29,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_dm_cm_0",
+        "conceptId": "length_dm_cm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 30 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 dm = 30 cm. On compare donc 30 cm et 30 cm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 30,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_dm_cm_1",
+        "conceptId": "length_dm_cm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 31 cm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 dm = 30 cm. On compare donc 30 cm et 31 cm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 31,
+          "to": "cm"
+        }
+      },
+      {
+        "id": "length_dm_mm_-1",
+        "conceptId": "length_dm_mm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 290 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 dm = 300 mm. On compare donc 300 mm et 290 mm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 290,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_dm_mm_0",
+        "conceptId": "length_dm_mm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 300 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 dm = 300 mm. On compare donc 300 mm et 300 mm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 300,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_dm_mm_1",
+        "conceptId": "length_dm_mm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 dm … 310 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 dm = 300 mm. On compare donc 300 mm et 310 mm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "dm",
+          "right": 310,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_cm_mm_-1",
+        "conceptId": "length_cm_mm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 cm … 29 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 cm = 30 mm. On compare donc 30 mm et 29 mm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "cm",
+          "right": 29,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_cm_mm_0",
+        "conceptId": "length_cm_mm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 cm … 30 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 cm = 30 mm. On compare donc 30 mm et 30 mm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "cm",
+          "right": 30,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_cm_mm_1",
+        "conceptId": "length_cm_mm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 cm … 31 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 cm = 30 mm. On compare donc 30 mm et 31 mm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "cm",
+          "right": 31,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_m_mm_-1",
+        "conceptId": "length_m_mm_-1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 2900 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus grand (>)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus grand (>).",
+        "explanation": "3 m = 3000 mm. On compare donc 3000 mm et 2900 mm. Le signe > convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 2900,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_m_mm_0",
+        "conceptId": "length_m_mm_0",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 3000 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Égal (=)"
+        ],
+        "exactCorrection": "La bonne réponse : Égal (=).",
+        "explanation": "3 m = 3000 mm. On compare donc 3000 mm et 3000 mm. Le signe = convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 3000,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_m_mm_1",
+        "conceptId": "length_m_mm_1",
+        "category": "compare",
+        "categoryLabel": "Compare les longueurs",
+        "prompt": "Quel signe convient ? 3 m … 3100 mm",
+        "choices": [
+          "Plus petit (<)",
+          "Égal (=)",
+          "Plus grand (>)"
+        ],
+        "acceptedAnswers": [
+          "Plus petit (<)"
+        ],
+        "exactCorrection": "La bonne réponse : Plus petit (<).",
+        "explanation": "3 m = 3000 mm. On compare donc 3000 mm et 3100 mm. Le signe < convient.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "comparison": {
+          "left": 3,
+          "from": "m",
+          "right": 3100,
+          "to": "mm"
+        }
+      },
+      {
+        "id": "length_ribbon_2",
+        "conceptId": "length_ribbon_2",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 2 m et 20 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "220 cm",
+          "22 cm",
+          "40 cm"
+        ],
+        "acceptedAnswers": [
+          "220 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 220 cm.",
+        "explanation": "2 m = 200 cm. On ajoute 20 cm : 200 + 20 = 220 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 2,
+          "cm": 20,
+          "result": 220
+        }
+      },
+      {
+        "id": "length_rope_2",
+        "conceptId": "length_rope_2",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 2 m. On coupe 10 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "190 cm",
+          "210 cm",
+          "30 cm"
+        ],
+        "acceptedAnswers": [
+          "190 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 190 cm.",
+        "explanation": "2 m = 200 cm. On enlève 10 cm : 200 − 10 = 190 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 2,
+          "cm": 10,
+          "result": 190
+        }
+      },
+      {
+        "id": "length_ribbon_3",
+        "conceptId": "length_ribbon_3",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 3 m et 30 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "330 cm",
+          "33 cm",
+          "60 cm"
+        ],
+        "acceptedAnswers": [
+          "330 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 330 cm.",
+        "explanation": "3 m = 300 cm. On ajoute 30 cm : 300 + 30 = 330 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 3,
+          "cm": 30,
+          "result": 330
+        }
+      },
+      {
+        "id": "length_rope_3",
+        "conceptId": "length_rope_3",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 3 m. On coupe 15 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "285 cm",
+          "315 cm",
+          "45 cm"
+        ],
+        "acceptedAnswers": [
+          "285 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 285 cm.",
+        "explanation": "3 m = 300 cm. On enlève 15 cm : 300 − 15 = 285 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 3,
+          "cm": 15,
+          "result": 285
+        }
+      },
+      {
+        "id": "length_ribbon_4",
+        "conceptId": "length_ribbon_4",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 4 m et 40 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "440 cm",
+          "44 cm",
+          "80 cm"
+        ],
+        "acceptedAnswers": [
+          "440 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 440 cm.",
+        "explanation": "4 m = 400 cm. On ajoute 40 cm : 400 + 40 = 440 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 4,
+          "cm": 40,
+          "result": 440
+        }
+      },
+      {
+        "id": "length_rope_4",
+        "conceptId": "length_rope_4",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 4 m. On coupe 20 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "380 cm",
+          "420 cm",
+          "60 cm"
+        ],
+        "acceptedAnswers": [
+          "380 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 380 cm.",
+        "explanation": "4 m = 400 cm. On enlève 20 cm : 400 − 20 = 380 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 4,
+          "cm": 20,
+          "result": 380
+        }
+      },
+      {
+        "id": "length_ribbon_5",
+        "conceptId": "length_ribbon_5",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 5 m et 50 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "550 cm",
+          "55 cm",
+          "100 cm"
+        ],
+        "acceptedAnswers": [
+          "550 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 550 cm.",
+        "explanation": "5 m = 500 cm. On ajoute 50 cm : 500 + 50 = 550 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 5,
+          "cm": 50,
+          "result": 550
+        }
+      },
+      {
+        "id": "length_rope_5",
+        "conceptId": "length_rope_5",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 5 m. On coupe 25 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "475 cm",
+          "525 cm",
+          "75 cm"
+        ],
+        "acceptedAnswers": [
+          "475 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 475 cm.",
+        "explanation": "5 m = 500 cm. On enlève 25 cm : 500 − 25 = 475 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 5,
+          "cm": 25,
+          "result": 475
+        }
+      },
+      {
+        "id": "length_ribbon_6",
+        "conceptId": "length_ribbon_6",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 6 m et 60 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "660 cm",
+          "66 cm",
+          "120 cm"
+        ],
+        "acceptedAnswers": [
+          "660 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 660 cm.",
+        "explanation": "6 m = 600 cm. On ajoute 60 cm : 600 + 60 = 660 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 6,
+          "cm": 60,
+          "result": 660
+        }
+      },
+      {
+        "id": "length_rope_6",
+        "conceptId": "length_rope_6",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 6 m. On coupe 30 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "570 cm",
+          "630 cm",
+          "90 cm"
+        ],
+        "acceptedAnswers": [
+          "570 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 570 cm.",
+        "explanation": "6 m = 600 cm. On enlève 30 cm : 600 − 30 = 570 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 6,
+          "cm": 30,
+          "result": 570
+        }
+      },
+      {
+        "id": "length_ribbon_7",
+        "conceptId": "length_ribbon_7",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 7 m et 70 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "770 cm",
+          "77 cm",
+          "140 cm"
+        ],
+        "acceptedAnswers": [
+          "770 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 770 cm.",
+        "explanation": "7 m = 700 cm. On ajoute 70 cm : 700 + 70 = 770 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 7,
+          "cm": 70,
+          "result": 770
+        }
+      },
+      {
+        "id": "length_rope_7",
+        "conceptId": "length_rope_7",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 7 m. On coupe 35 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "665 cm",
+          "735 cm",
+          "105 cm"
+        ],
+        "acceptedAnswers": [
+          "665 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 665 cm.",
+        "explanation": "7 m = 700 cm. On enlève 35 cm : 700 − 35 = 665 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 7,
+          "cm": 35,
+          "result": 665
+        }
+      },
+      {
+        "id": "length_ribbon_8",
+        "conceptId": "length_ribbon_8",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 8 m et 80 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "880 cm",
+          "88 cm",
+          "160 cm"
+        ],
+        "acceptedAnswers": [
+          "880 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 880 cm.",
+        "explanation": "8 m = 800 cm. On ajoute 80 cm : 800 + 80 = 880 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 8,
+          "cm": 80,
+          "result": 880
+        }
+      },
+      {
+        "id": "length_rope_8",
+        "conceptId": "length_rope_8",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 8 m. On coupe 40 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "760 cm",
+          "840 cm",
+          "120 cm"
+        ],
+        "acceptedAnswers": [
+          "760 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 760 cm.",
+        "explanation": "8 m = 800 cm. On enlève 40 cm : 800 − 40 = 760 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 8,
+          "cm": 40,
+          "result": 760
+        }
+      },
+      {
+        "id": "length_ribbon_9",
+        "conceptId": "length_ribbon_9",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Un ruban mesure 9 m et 90 cm. Quelle est sa longueur en centimètres ?",
+        "choices": [
+          "990 cm",
+          "99 cm",
+          "180 cm"
+        ],
+        "acceptedAnswers": [
+          "990 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 990 cm.",
+        "explanation": "9 m = 900 cm. On ajoute 90 cm : 900 + 90 = 990 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "sum",
+          "metres": 9,
+          "cm": 90,
+          "result": 990
+        }
+      },
+      {
+        "id": "length_rope_9",
+        "conceptId": "length_rope_9",
+        "category": "problem",
+        "categoryLabel": "Résous le défi",
+        "prompt": "Une corde mesure 9 m. On coupe 45 cm. Combien de centimètres reste-t-il ?",
+        "choices": [
+          "855 cm",
+          "945 cm",
+          "135 cm"
+        ],
+        "acceptedAnswers": [
+          "855 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 855 cm.",
+        "explanation": "9 m = 900 cm. On enlève 45 cm : 900 − 45 = 855 cm.",
+        "answerHint": "Tu peux utiliser un brouillon. Touche une réponse, puis valide.",
+        "sourceRef": "Exercice original CM1 — unités de longueur",
+        "problem": {
+          "kind": "subtract",
+          "metres": 9,
+          "cm": 45,
+          "result": 855
+        }
+      }
+    ],
+    "workedExample": "1 m = 10 dm = 100 cm = 1 000 mm. Dans km → hm → dam → m → dm → cm → mm, chaque pas vers la droite multiplie par 10."
+  },
   "english": {
     "id": "english",
     "subject": "Enzo · Anglais CM1",
@@ -9726,7 +14910,7 @@ let collection=cleanCollection(null),collectionSaved=true;
 try{collection=cleanCollection(JSON.parse(localStorage.getItem(COLLECTION_KEY)));}catch{}
 function saveCollection(){try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}}
 const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
-const icons={english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
+const icons={determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
 function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function focusHeading(){ root.querySelector('h1,h2')?.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
