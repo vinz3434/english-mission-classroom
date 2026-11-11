@@ -33,13 +33,1934 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 
 /* CM1 missions: preserve the existing island theme and touch targets. */
 .quiz-option.determinants{background:#fff4e8;border-color:#e8cfac;box-shadow:0 5px 0 #e8cfac}.determinants .option-icon{background:#ffe4ba}.determinants .option-subject{color:#80501c}.quiz-option.lengths{background:#eaf8f8;border-color:#b9dcdc;box-shadow:0 5px 0 #b9dcdc}.lengths .option-icon{background:#cdf0ee}.lengths .option-subject{color:#205c61}
+.quiz-option.svt{background:#f3efff;border-color:#d4c7ea;box-shadow:0 5px 0 #d4c7ea}.svt .option-icon{background:#e1d6fa}.svt .option-subject{color:#5a4084}
+.reward-rule{background:#fff7d6;border:1px solid #ead386;padding:12px 14px;border-radius:12px;font-size:14px;font-weight:700;line-height:1.5}
+.mission-trail{list-style:none;display:flex;justify-content:space-between;gap:3px;padding:0;margin:0 0 22px}.mission-trail li{display:grid;place-items:center;border-radius:50%;width:24px;height:24px;font-size:11px;font-weight:750;background:#edf1f1;border:1px solid #cad6d3;color:#526277}.mission-trail .trail-current{background:#fff1b9;border:2px solid #a57917}.mission-trail .trail-right{background:#d8efbb;color:#244f24}.mission-trail .trail-retry{background:#ffe3ca;color:#8c4117}
+.order-workbench{background:#f5f1ff;border:1px solid #d7c9ee;border-radius:14px;padding:14px;margin:-4px 0 22px}.order-workbench p{overflow-wrap:anywhere;font-weight:650;min-height:36px;margin:0 0 12px}.order-workbench button{white-space:normal;text-align:left}.answer-choices .chosen:disabled{background:#eef7ca;opacity:.7}
+.science-data{margin:20px 0;overflow-x:auto;border:1px solid #cbdad6;border-radius:14px}.science-data table,.science-chart table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}.science-data caption{caption-side:top;text-align:left;padding:14px;background:#f0f6f3;font-size:12px;line-height:1.5}.science-data th,.science-data td,.science-chart td,.science-chart th{padding:10px 7px;border-bottom:1px solid #dde6e3;text-align:left;overflow-wrap:anywhere}.science-data thead{background:#f1f4fa}.science-chart{margin:20px 0;background:#f6f8ff;padding:12px;border-radius:14px;border:1px solid #d9dff0}.science-chart figcaption{font-size:12px;line-height:1.5;font-weight:700}.science-chart svg{width:100%;height:auto;display:block;margin-top:12px}.science-chart svg text{font:15px system-ui,sans-serif;fill:#18304a}.science-chart summary{font-size:13px;min-height:44px;padding:12px 0;cursor:pointer}.review details{margin-top:10px}.review summary{min-height:44px;padding:10px 0;cursor:pointer;color:#3354bd;font-weight:650}.review details p{margin:0}
+.baby-birth{position:relative;overflow:hidden;min-height:270px}.birth-shell{font-size:105px;line-height:1.3;animation:shell-crack 1.5s forwards;position:relative;display:inline-block}.birth-shell span{position:absolute;right:-15px;top:0;color:#c99018;font-size:32px}.baby-creature{animation:baby-arrive 1.7s both}.baby-creature>span{display:block;font-size:90px;line-height:1.2}.baby-creature h2{font-size:24px;line-height:1.3}.baby-creature p{font-size:14px}.baby-birth .birth-shell{position:absolute;left:calc(50% - 58px);top:35px}
+@keyframes shell-crack{0%,20%{transform:rotate(0)}35%{transform:rotate(-15deg)}50%{transform:rotate(14deg)}65%{transform:rotate(-9deg) scale(1.1);opacity:1}100%{transform:scale(1.5);opacity:0;visibility:hidden}}
+@keyframes baby-arrive{0%,65%{opacity:0;transform:translateY(20px) scale(.7)}85%{opacity:1;transform:translateY(-7px) scale(1.08)}100%{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.birth-shell{display:none}.baby-creature{animation:none}}
 </style>
 </head>
 <body>
 <header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
-<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection anglaise est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les questionnaires Passé-présent-futur, Géographie, Déterminants et Longueurs proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie d’anglais à 10/10, sans achat ni tirage payant.</p><p>Déterminants, niveau CM1 : 92 questions originales en séries de dix. Trois déterminants à repérer, trois familles à identifier et quatre accords à choisir. Les quatre familles travaillées sont les articles définis, les articles indéfinis, les possessifs et les démonstratifs.</p><p>Unités de longueur, niveau CM1 : 129 questions originales en séries de dix. Deux questions sur les unités, quatre conversions, deux comparaisons et deux petits problèmes. Les mesures restent entières ; les corrections expliquent les équivalences.</p><p>Version 6.0 · Mise à jour le 11 novembre 2026.</p></details></footer>
+<footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection commune à toutes les matières est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les questionnaires Passé-présent-futur, Géographie, Déterminants et Longueurs proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie à 10/10 dans n’importe quelle matière, sans achat ni tirage payant.</p><p>Déterminants, niveau CM1 : 108 questions originales en séries de dix. Repérage, familles, accords, erreurs à réparer et groupes de mots à reconstruire. Les quatre familles travaillées sont les articles définis, les articles indéfinis, les possessifs et les démonstratifs.</p><p>Unités de longueur, niveau CM1 : 145 questions originales en séries de dix. Unités, conversions, comparaisons, petits problèmes, erreurs à corriger et longueurs à ranger. Les mesures restent entières ; les corrections expliquent les équivalences.</p><p>SVT, niveau 5e : questions originales sur les notions des supports disponibles : régimes alimentaires et digestion, respiration des animaux, besoins des muscles, lecture de tableaux et de graphiques. Les expériences présentées sont fictives ; les PDF de classe et leurs illustrations ne sont pas publiés.</p><p>Un 10/10 dans n’importe quelle matière donne un œuf à éclore. La même collection est conservée sur cet appareil. Les anciennes notes n’étaient pas enregistrées : cette version n’attribue pas de récompense rétroactive.</p><p>Version 7.0 · Mise à jour le 11 novembre 2026.</p></details></footer>
 <script>const QUIZZES = {
+  "svt": {
+    "id": "svt",
+    "subject": "SVT · 5e",
+    "title": "Le labo des animaux",
+    "description": "Pars en expédition : observe des animaux, déchiffre les expériences et déjoue les idées fausses sur la nutrition et la respiration.",
+    "menuDescription": "Nutrition, digestion, respiration, muscles, tableaux et graphiques.",
+    "duration": "8 à 12 minutes",
+    "scope": "Révision du chapitre 1 à partir des supports disponibles · Exercices originaux, distincts du contrôle.",
+    "size": 10,
+    "storageKey": "mes-revisions.svt.previous.v1",
+    "plan": [
+      [
+        "diet",
+        2
+      ],
+      [
+        "breathing",
+        2
+      ],
+      [
+        "oxygen",
+        1
+      ],
+      [
+        "glucose",
+        1
+      ],
+      [
+        "graphRead",
+        1
+      ],
+      [
+        "graphInterpret",
+        1
+      ],
+      [
+        "reasoning",
+        1
+      ],
+      [
+        "order",
+        1
+      ]
+    ],
+    "bank": [
+      {
+        "id": "svt_cat",
+        "conceptId": "svt_cat",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Le chat possède de grandes canines et mange de la viande. Quel mot convient ?",
+        "acceptedAnswers": [
+          "Zoophage"
+        ],
+        "choices": [
+          "Zoophage",
+          "Phytophage",
+          "Granivore"
+        ],
+        "exactCorrection": "La bonne réponse : Zoophage.",
+        "explanation": "Un zoophage consomme de la matière animale. Les canines servent notamment à saisir et déchirer.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_rabbit",
+        "conceptId": "svt_rabbit",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Le lapin mange surtout des végétaux. Quel mot décrit ce régime ?",
+        "acceptedAnswers": [
+          "Phytophage"
+        ],
+        "choices": [
+          "Phytophage",
+          "Zoophage",
+          "Piscivore"
+        ],
+        "exactCorrection": "La bonne réponse : Phytophage.",
+        "explanation": "Un phytophage se nourrit de matière végétale. Herbivore est ici un terme plus précis.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_cow",
+        "conceptId": "svt_cow",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Dans la panse de la vache, qui aide à digérer les fibres végétales ?",
+        "acceptedAnswers": [
+          "Des micro-organismes"
+        ],
+        "choices": [
+          "Des micro-organismes",
+          "Les canines",
+          "Les poumons"
+        ],
+        "exactCorrection": "La bonne réponse : Des micro-organismes.",
+        "explanation": "Des micro-organismes contribuent à la digestion de la cellulose dans un compartiment de l’estomac.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_caecum",
+        "conceptId": "svt_caecum",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Pourquoi le cæcum développé du lapin est-il utile ?",
+        "acceptedAnswers": [
+          "Il abrite des bactéries aidant à digérer les végétaux"
+        ],
+        "choices": [
+          "Il abrite des bactéries aidant à digérer les végétaux",
+          "Il remplace les poumons",
+          "Il produit des graines"
+        ],
+        "exactCorrection": "La bonne réponse : Il abrite des bactéries aidant à digérer les végétaux.",
+        "explanation": "Le cæcum héberge des micro-organismes qui participent à la digestion de la matière végétale.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_molar",
+        "conceptId": "svt_molar",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Une dent large avec une surface plate est surtout adaptée pour…",
+        "acceptedAnswers": [
+          "Broyer"
+        ],
+        "choices": [
+          "Broyer",
+          "Respirer",
+          "Transporter le sang"
+        ],
+        "exactCorrection": "La bonne réponse : Broyer.",
+        "explanation": "Les molaires à surface large permettent de broyer les aliments.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_gizzard",
+        "conceptId": "svt_gizzard",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Une poule n’a pas de dents broyeuses. Quel organe broie les graines ?",
+        "acceptedAnswers": [
+          "Le gésier"
+        ],
+        "choices": [
+          "Le gésier",
+          "Le jabot",
+          "L’œsophage"
+        ],
+        "exactCorrection": "La bonne réponse : Le gésier.",
+        "explanation": "Le gésier musculaire, aidé de petits cailloux, broie les graines. Le jabot les stocke et les humidifie.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_crop",
+        "conceptId": "svt_crop",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "La réserve où les graines de la poule sont humidifiées est…",
+        "acceptedAnswers": [
+          "Le jabot"
+        ],
+        "choices": [
+          "Le jabot",
+          "Le poumon",
+          "Le cæcum"
+        ],
+        "exactCorrection": "La bonne réponse : Le jabot.",
+        "explanation": "Le jabot est une zone de stockage ; il se distingue du gésier qui broie.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_intestine",
+        "conceptId": "svt_intestine",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Chez les mammifères comparés, l’intestin d’un herbivore est généralement…",
+        "acceptedAnswers": [
+          "Plus long que celui d’un carnivore"
+        ],
+        "choices": [
+          "Plus long que celui d’un carnivore",
+          "Toujours absent",
+          "Toujours identique à celui d’un carnivore"
+        ],
+        "exactCorrection": "La bonne réponse : Plus long que celui d’un carnivore.",
+        "explanation": "La matière végétale demande une digestion particulière ; le tube digestif des herbivores étudiés est plus long et complexe.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_absorb",
+        "conceptId": "svt_absorb",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Les nutriments obtenus après digestion sont absorbés notamment au niveau…",
+        "acceptedAnswers": [
+          "De l’intestin grêle"
+        ],
+        "choices": [
+          "De l’intestin grêle",
+          "Des dents",
+          "Des narines"
+        ],
+        "exactCorrection": "La bonne réponse : De l’intestin grêle.",
+        "explanation": "L’intestin grêle joue un rôle important dans l’absorption des nutriments.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_bird",
+        "conceptId": "svt_bird",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Un oiseau qui se nourrit surtout de poissons est…",
+        "acceptedAnswers": [
+          "Piscivore"
+        ],
+        "choices": [
+          "Piscivore",
+          "Granivore",
+          "Nectarivore"
+        ],
+        "exactCorrection": "La bonne réponse : Piscivore.",
+        "explanation": "Piscivore signifie qui mange des poissons. Tous les oiseaux n’ont pas le même régime.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_insect",
+        "conceptId": "svt_insect",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Une mésange capture surtout des insectes. Elle est…",
+        "acceptedAnswers": [
+          "Insectivore"
+        ],
+        "choices": [
+          "Insectivore",
+          "Granivore",
+          "Frugivore"
+        ],
+        "exactCorrection": "La bonne réponse : Insectivore.",
+        "explanation": "Insectivore est un régime zoophage : les insectes sont des animaux.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_ruminate",
+        "conceptId": "svt_ruminate",
+        "category": "diet",
+        "categoryLabel": "Safari des aliments",
+        "prompt": "Quand une vache remâche les aliments revenus vers sa bouche, elle…",
+        "acceptedAnswers": [
+          "Rumine"
+        ],
+        "choices": [
+          "Rumine",
+          "Respire par des branchies",
+          "Absorbe les nutriments par les dents"
+        ],
+        "exactCorrection": "La bonne réponse : Rumine.",
+        "explanation": "La rumination comprend le retour d’aliments vers la bouche pour une nouvelle mastication.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_dauphin_organ",
+        "conceptId": "svt_dauphin_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des poumons"
+        ],
+        "choices": [
+          "Des poumons",
+          "Des branchies",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Des poumons.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le dauphin vit dans la mer mais remonte respirer à la surface."
+      },
+      {
+        "id": "svt_dauphin_medium",
+        "conceptId": "svt_dauphin_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’air"
+        ],
+        "choices": [
+          "L’air",
+          "L’eau",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’air.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le dauphin vit dans la mer mais remonte respirer à la surface."
+      },
+      {
+        "id": "svt_brochet_organ",
+        "conceptId": "svt_brochet_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des branchies"
+        ],
+        "choices": [
+          "Des branchies",
+          "Des poumons",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Des branchies.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le brochet fait circuler de l’eau sur ses organes respiratoires."
+      },
+      {
+        "id": "svt_brochet_medium",
+        "conceptId": "svt_brochet_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’eau"
+        ],
+        "choices": [
+          "L’eau",
+          "L’air",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’eau.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le brochet fait circuler de l’eau sur ses organes respiratoires."
+      },
+      {
+        "id": "svt_moule_organ",
+        "conceptId": "svt_moule_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des branchies"
+        ],
+        "choices": [
+          "Des branchies",
+          "Des poumons",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Des branchies.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La moule respire grâce à des organes au contact de l’eau."
+      },
+      {
+        "id": "svt_moule_medium",
+        "conceptId": "svt_moule_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’eau"
+        ],
+        "choices": [
+          "L’eau",
+          "L’air",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’eau.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La moule respire grâce à des organes au contact de l’eau."
+      },
+      {
+        "id": "svt_limace_organ",
+        "conceptId": "svt_limace_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Un poumon"
+        ],
+        "choices": [
+          "Un poumon",
+          "Des branchies",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Un poumon.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La limace terrestre possède un organe qui reçoit de l’air."
+      },
+      {
+        "id": "svt_limace_medium",
+        "conceptId": "svt_limace_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’air"
+        ],
+        "choices": [
+          "L’air",
+          "L’eau",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’air.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La limace terrestre possède un organe qui reçoit de l’air."
+      },
+      {
+        "id": "svt_limnee_organ",
+        "conceptId": "svt_limnee_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Un poumon"
+        ],
+        "choices": [
+          "Un poumon",
+          "Des branchies",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Un poumon.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La limnée vit dans l’eau et remonte remplir son poumon."
+      },
+      {
+        "id": "svt_limnee_medium",
+        "conceptId": "svt_limnee_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’air"
+        ],
+        "choices": [
+          "L’air",
+          "L’eau",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’air.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La limnée vit dans l’eau et remonte remplir son poumon."
+      },
+      {
+        "id": "svt_nepe_organ",
+        "conceptId": "svt_nepe_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des trachées"
+        ],
+        "choices": [
+          "Des trachées",
+          "Des poumons",
+          "Des branchies"
+        ],
+        "exactCorrection": "La bonne réponse : Des trachées.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La nèpe prend l’air à la surface par un tube relié à ses trachées."
+      },
+      {
+        "id": "svt_nepe_medium",
+        "conceptId": "svt_nepe_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’air"
+        ],
+        "choices": [
+          "L’air",
+          "L’eau",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’air.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "La nèpe prend l’air à la surface par un tube relié à ses trachées."
+      },
+      {
+        "id": "svt_dytique_organ",
+        "conceptId": "svt_dytique_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des trachées"
+        ],
+        "choices": [
+          "Des trachées",
+          "Des poumons",
+          "Des branchies"
+        ],
+        "exactCorrection": "La bonne réponse : Des trachées.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le dytique garde sous ses ailes une réserve d’air reliée à ses trachées."
+      },
+      {
+        "id": "svt_dytique_medium",
+        "conceptId": "svt_dytique_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’air"
+        ],
+        "choices": [
+          "L’air",
+          "L’eau",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’air.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Le dytique garde sous ses ailes une réserve d’air reliée à ses trachées."
+      },
+      {
+        "id": "svt_ecrevisse_organ",
+        "conceptId": "svt_ecrevisse_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des branchies"
+        ],
+        "choices": [
+          "Des branchies",
+          "Des poumons",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Des branchies.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Chez l’écrevisse, un courant d’eau passe sur les branchies."
+      },
+      {
+        "id": "svt_ecrevisse_medium",
+        "conceptId": "svt_ecrevisse_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’eau"
+        ],
+        "choices": [
+          "L’eau",
+          "L’air",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’eau.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "Chez l’écrevisse, un courant d’eau passe sur les branchies."
+      },
+      {
+        "id": "svt_epinoche_organ",
+        "conceptId": "svt_epinoche_organ",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Observe cette scène : quel organe respiratoire est cité ?",
+        "acceptedAnswers": [
+          "Des branchies"
+        ],
+        "choices": [
+          "Des branchies",
+          "Des poumons",
+          "Des trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Des branchies.",
+        "explanation": "Il faut distinguer le lieu de vie de l’animal et l’organe par lequel il prélève le dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "L’épinoche renouvelle l’eau sur ses branchies grâce aux mouvements de sa bouche."
+      },
+      {
+        "id": "svt_epinoche_medium",
+        "conceptId": "svt_epinoche_medium",
+        "category": "breathing",
+        "categoryLabel": "Enquête respiration",
+        "prompt": "Dans cette observation, où l’animal prélève-t-il son dioxygène ?",
+        "acceptedAnswers": [
+          "L’eau"
+        ],
+        "choices": [
+          "L’eau",
+          "L’air",
+          "Dans les aliments uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : L’eau.",
+        "explanation": "Lis le milieu qui arrive à l’organe respiratoire : vivre dans l’eau ne signifie pas toujours respirer dans l’eau.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "contextSnippet": "L’épinoche renouvelle l’eau sur ses branchies grâce aux mouvements de sa bouche."
+      },
+      {
+        "id": "svt_oxygen_0",
+        "conceptId": "svt_oxygen_0",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "6 mL"
+        ],
+        "choices": [
+          "6 mL",
+          "34 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 6 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 14 = 6 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "14"
+            ],
+            [
+              "Glucose (mg)",
+              "90",
+              "60"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 14,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_0",
+        "conceptId": "svt_glucose_0",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Quel constat montre que le muscle a prélevé du glucose ?",
+        "acceptedAnswers": [
+          "Le sang sortant contient moins de glucose"
+        ],
+        "choices": [
+          "Le sang sortant contient moins de glucose",
+          "Le sang sortant contient plus de glucose",
+          "Le glucose est absent du sang entrant"
+        ],
+        "exactCorrection": "La bonne réponse : Le sang sortant contient moins de glucose.",
+        "explanation": "La diminution entre l’entrée et la sortie montre un prélèvement de glucose par le muscle.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "14"
+            ],
+            [
+              "Glucose (mg)",
+              "90",
+              "60"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_0",
+        "conceptId": "svt_read_0",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 4 minutes ?",
+        "acceptedAnswers": [
+          "12 mg/L"
+        ],
+        "choices": [
+          "12 mg/L",
+          "14 mg/L",
+          "10 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 12 mg/L.",
+        "explanation": "On part de 4 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 12 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              16
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              6,
+              10
+            ]
+          ]
+        },
+        "reading": {
+          "x": 4,
+          "y": 12
+        }
+      },
+      {
+        "id": "svt_trend_0",
+        "conceptId": "svt_trend_0",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "Quelle phrase décrit correctement cette courbe ?",
+        "acceptedAnswers": [
+          "La quantité de dioxygène diminue au cours du temps"
+        ],
+        "choices": [
+          "La quantité de dioxygène diminue au cours du temps",
+          "La quantité de dioxygène augmente",
+          "La quantité de dioxygène reste constante"
+        ],
+        "exactCorrection": "La bonne réponse : La quantité de dioxygène diminue au cours du temps.",
+        "explanation": "La courbe descend. Dans ce flacon fermé, le muscle prélève du dioxygène.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              16
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              6,
+              10
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_oxygen_1",
+        "conceptId": "svt_oxygen_1",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "7 mL"
+        ],
+        "choices": [
+          "7 mL",
+          "33 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 7 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 13 = 7 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "13"
+            ],
+            [
+              "Glucose (mg)",
+              "92",
+              "61"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 13,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_1",
+        "conceptId": "svt_glucose_1",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Léo additionne les deux valeurs de glucose pour calculer le prélèvement. Quelle opération faut-il faire ?",
+        "acceptedAnswers": [
+          "Soustraire la sortie à l’entrée"
+        ],
+        "choices": [
+          "Soustraire la sortie à l’entrée",
+          "Additionner l’entrée et la sortie",
+          "Soustraire l’entrée à la sortie"
+        ],
+        "exactCorrection": "La bonne réponse : Soustraire la sortie à l’entrée.",
+        "explanation": "Pour calculer ce qui a été prélevé, on enlève la valeur de sortie à la valeur d’entrée.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "13"
+            ],
+            [
+              "Glucose (mg)",
+              "92",
+              "61"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_1",
+        "conceptId": "svt_read_1",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 0 minutes ?",
+        "acceptedAnswers": [
+          "17 mg/L"
+        ],
+        "choices": [
+          "17 mg/L",
+          "19 mg/L",
+          "15 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 17 mg/L.",
+        "explanation": "On part de 0 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 17 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              17
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        },
+        "reading": {
+          "x": 0,
+          "y": 17
+        }
+      },
+      {
+        "id": "svt_trend_1",
+        "conceptId": "svt_trend_1",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "À quel moment la quantité de dioxygène est-elle la plus grande ?",
+        "acceptedAnswers": [
+          "Au début, à 0 minute"
+        ],
+        "choices": [
+          "Au début, à 0 minute",
+          "À 6 minutes",
+          "Elle est identique partout"
+        ],
+        "exactCorrection": "La bonne réponse : Au début, à 0 minute.",
+        "explanation": "Le point le plus haut de la courbe correspond au début de la mesure.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              17
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_oxygen_2",
+        "conceptId": "svt_oxygen_2",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "8 mL"
+        ],
+        "choices": [
+          "8 mL",
+          "32 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 8 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 12 = 8 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "12"
+            ],
+            [
+              "Glucose (mg)",
+              "94",
+              "62"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 12,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_2",
+        "conceptId": "svt_glucose_2",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Combien de glucose le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "32 mg"
+        ],
+        "choices": [
+          "32 mg",
+          "156 mg",
+          "62 mg"
+        ],
+        "exactCorrection": "La bonne réponse : 32 mg.",
+        "explanation": "Le prélèvement est 94 − 62 = 32 mg.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "12"
+            ],
+            [
+              "Glucose (mg)",
+              "94",
+              "62"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_2",
+        "conceptId": "svt_read_2",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 6 minutes ?",
+        "acceptedAnswers": [
+          "12 mg/L"
+        ],
+        "choices": [
+          "12 mg/L",
+          "14 mg/L",
+          "10 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 12 mg/L.",
+        "explanation": "On part de 6 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 12 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              18
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        "reading": {
+          "x": 6,
+          "y": 12
+        }
+      },
+      {
+        "id": "svt_trend_2",
+        "conceptId": "svt_trend_2",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "De combien la quantité de dioxygène a-t-elle diminué entre 0 et 6 minutes ?",
+        "acceptedAnswers": [
+          "6 mg/L"
+        ],
+        "choices": [
+          "6 mg/L",
+          "3 mg/L",
+          "26 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 6 mg/L.",
+        "explanation": "On calcule la différence : 18 − 12 = 6 mg/L.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              18
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_oxygen_3",
+        "conceptId": "svt_oxygen_3",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "9 mL"
+        ],
+        "choices": [
+          "9 mL",
+          "31 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 9 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 11 = 9 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "11"
+            ],
+            [
+              "Glucose (mg)",
+              "96",
+              "63"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 11,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_3",
+        "conceptId": "svt_glucose_3",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Quel couple de substances le muscle a-t-il prélevé dans cette expérience ?",
+        "acceptedAnswers": [
+          "Dioxygène et glucose"
+        ],
+        "choices": [
+          "Dioxygène et glucose",
+          "Dioxygène uniquement",
+          "Glucose uniquement"
+        ],
+        "exactCorrection": "La bonne réponse : Dioxygène et glucose.",
+        "explanation": "Les deux valeurs diminuent entre l’entrée et la sortie : le muscle a prélevé les deux substances.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "11"
+            ],
+            [
+              "Glucose (mg)",
+              "96",
+              "63"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_3",
+        "conceptId": "svt_read_3",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 2 minutes ?",
+        "acceptedAnswers": [
+          "17 mg/L"
+        ],
+        "choices": [
+          "17 mg/L",
+          "19 mg/L",
+          "15 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 17 mg/L.",
+        "explanation": "On part de 2 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 17 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              19
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              6,
+              13
+            ]
+          ]
+        },
+        "reading": {
+          "x": 2,
+          "y": 17
+        }
+      },
+      {
+        "id": "svt_trend_3",
+        "conceptId": "svt_trend_3",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "Le muscle produit-il le dioxygène mesuré dans ce flacon fermé ?",
+        "acceptedAnswers": [
+          "Non, il en consomme"
+        ],
+        "choices": [
+          "Non, il en consomme",
+          "Oui, la courbe augmente",
+          "Oui, car il respire"
+        ],
+        "exactCorrection": "La bonne réponse : Non, il en consomme.",
+        "explanation": "La quantité mesurée diminue : les résultats montrent un prélèvement de dioxygène par le muscle.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              19
+            ],
+            [
+              2,
+              17
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              6,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_oxygen_4",
+        "conceptId": "svt_oxygen_4",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "10 mL"
+        ],
+        "choices": [
+          "10 mL",
+          "30 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 10 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 10 = 10 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "10"
+            ],
+            [
+              "Glucose (mg)",
+              "98",
+              "64"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 10,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_4",
+        "conceptId": "svt_glucose_4",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Le sang sortant contient-il encore du glucose ?",
+        "acceptedAnswers": [
+          "Oui, mais moins qu’à l’entrée"
+        ],
+        "choices": [
+          "Oui, mais moins qu’à l’entrée",
+          "Non, il ne reste plus rien",
+          "Oui, plus qu’à l’entrée"
+        ],
+        "exactCorrection": "La bonne réponse : Oui, mais moins qu’à l’entrée.",
+        "explanation": "Un prélèvement par le muscle ne signifie pas que tout le glucose a disparu du sang.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "10"
+            ],
+            [
+              "Glucose (mg)",
+              "98",
+              "64"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_4",
+        "conceptId": "svt_read_4",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 4 minutes ?",
+        "acceptedAnswers": [
+          "16 mg/L"
+        ],
+        "choices": [
+          "16 mg/L",
+          "18 mg/L",
+          "14 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 16 mg/L.",
+        "explanation": "On part de 4 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 16 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              20
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              6,
+              14
+            ]
+          ]
+        },
+        "reading": {
+          "x": 4,
+          "y": 16
+        }
+      },
+      {
+        "id": "svt_trend_4",
+        "conceptId": "svt_trend_4",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "Quel titre convient à l’axe horizontal de cette courbe ?",
+        "acceptedAnswers": [
+          "Temps (min)"
+        ],
+        "choices": [
+          "Temps (min)",
+          "Dioxygène (mg/L)",
+          "Longueur du muscle (cm)"
+        ],
+        "exactCorrection": "La bonne réponse : Temps (min).",
+        "explanation": "Les points sont suivis à plusieurs instants : l’axe horizontal représente le temps.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              20
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              6,
+              14
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_oxygen_5",
+        "conceptId": "svt_oxygen_5",
+        "category": "oxygen",
+        "categoryLabel": "Le laboratoire des muscles",
+        "prompt": "Combien de dioxygène le muscle a-t-il prélevé pour 100 mL de sang ?",
+        "acceptedAnswers": [
+          "11 mL"
+        ],
+        "choices": [
+          "11 mL",
+          "29 mL",
+          "20 mL"
+        ],
+        "exactCorrection": "La bonne réponse : 11 mL.",
+        "explanation": "On calcule entrée moins sortie : 20 − 9 = 11 mL. Le muscle a consommé cette quantité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "9"
+            ],
+            [
+              "Glucose (mg)",
+              "100",
+              "65"
+            ]
+          ]
+        },
+        "calculation": {
+          "a": 20,
+          "b": 9,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "svt_glucose_5",
+        "conceptId": "svt_glucose_5",
+        "category": "glucose",
+        "categoryLabel": "L’énergie des organes",
+        "prompt": "Le glucose est un nutriment. Que permet-il notamment au muscle ?",
+        "acceptedAnswers": [
+          "De produire l’énergie nécessaire à son activité"
+        ],
+        "choices": [
+          "De produire l’énergie nécessaire à son activité",
+          "De remplacer les organes respiratoires",
+          "De fabriquer de l’air inspiré"
+        ],
+        "exactCorrection": "La bonne réponse : De produire l’énergie nécessaire à son activité.",
+        "explanation": "Le muscle utilise des nutriments et du dioxygène pour son fonctionnement.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "dataTable": {
+          "caption": "Expérience fictive : pour 100 mL de sang traversant un muscle",
+          "headers": [
+            "Substance",
+            "À l’entrée",
+            "À la sortie"
+          ],
+          "rows": [
+            [
+              "Dioxygène (mL)",
+              "20",
+              "9"
+            ],
+            [
+              "Glucose (mg)",
+              "100",
+              "65"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_read_5",
+        "conceptId": "svt_read_5",
+        "category": "graphRead",
+        "categoryLabel": "Détective des graphiques",
+        "prompt": "Quelle quantité de dioxygène lit-on à 6 minutes ?",
+        "acceptedAnswers": [
+          "15 mg/L"
+        ],
+        "choices": [
+          "15 mg/L",
+          "17 mg/L",
+          "13 mg/L"
+        ],
+        "exactCorrection": "La bonne réponse : 15 mg/L.",
+        "explanation": "On part de 6 minutes sur l’axe horizontal, on rejoint la courbe, puis on lit 15 mg/L sur l’axe vertical.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              21
+            ],
+            [
+              2,
+              19
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              6,
+              15
+            ]
+          ]
+        },
+        "reading": {
+          "x": 6,
+          "y": 15
+        }
+      },
+      {
+        "id": "svt_trend_5",
+        "conceptId": "svt_trend_5",
+        "category": "graphInterpret",
+        "categoryLabel": "Le défi de la courbe",
+        "prompt": "À quelle minute la quantité mesurée est-elle la plus faible ?",
+        "acceptedAnswers": [
+          "À 6 minutes"
+        ],
+        "choices": [
+          "À 6 minutes",
+          "À 0 minute",
+          "À 2 minutes"
+        ],
+        "exactCorrection": "La bonne réponse : À 6 minutes.",
+        "explanation": "Parmi les quatre mesures affichées, le dernier point est le plus bas.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "chart": {
+          "title": "Expérience fictive : dioxygène dans un flacon contenant un muscle",
+          "xLabel": "Temps (min)",
+          "yLabel": "Dioxygène (mg/L)",
+          "points": [
+            [
+              0,
+              21
+            ],
+            [
+              2,
+              19
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              6,
+              15
+            ]
+          ]
+        }
+      },
+      {
+        "id": "svt_water",
+        "conceptId": "svt_water",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Le guide affirme : « Tout animal qui vit dans l’eau respire dans l’eau. » Choisis le bon contre-exemple.",
+        "acceptedAnswers": [
+          "Le dauphin vit dans l’eau mais respire dans l’air"
+        ],
+        "choices": [
+          "Le dauphin vit dans l’eau mais respire dans l’air",
+          "Le brochet respire dans l’eau",
+          "La moule vit dans la mer"
+        ],
+        "exactCorrection": "La bonne réponse : Le dauphin vit dans l’eau mais respire dans l’air.",
+        "explanation": "Le dauphin montre que milieu de vie et milieu de respiration peuvent être différents.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_gill",
+        "conceptId": "svt_gill",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Un camarade dessine des trachées à l’écrevisse. Quelle correction proposes-tu ?",
+        "acceptedAnswers": [
+          "Remplacer les trachées par des branchies"
+        ],
+        "choices": [
+          "Remplacer les trachées par des branchies",
+          "Remplacer les trachées par un jabot",
+          "Garder les trachées"
+        ],
+        "exactCorrection": "La bonne réponse : Remplacer les trachées par des branchies.",
+        "explanation": "L’écrevisse prélève le dioxygène dissous dans l’eau grâce à ses branchies.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_muscle",
+        "conceptId": "svt_muscle",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Vrai ou faux : un muscle est un organe qui a besoin de glucose et de dioxygène.",
+        "acceptedAnswers": [
+          "Vrai"
+        ],
+        "choices": [
+          "Vrai",
+          "Faux",
+          "Seulement quand on court"
+        ],
+        "exactCorrection": "La bonne réponse : Vrai.",
+        "explanation": "Les organes ont besoin de nutriments et de dioxygène, même au repos ; les besoins varient avec l’activité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_title",
+        "conceptId": "svt_title",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Pour titrer une courbe, quelle proposition est la plus complète ?",
+        "acceptedAnswers": [
+          "Quantité de dioxygène en fonction du temps"
+        ],
+        "choices": [
+          "Quantité de dioxygène en fonction du temps",
+          "Le muscle est joli",
+          "Expérience numéro deux"
+        ],
+        "exactCorrection": "La bonne réponse : Quantité de dioxygène en fonction du temps.",
+        "explanation": "Un titre scientifique indique ce qui est mesuré et en fonction de quelle grandeur.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_axis",
+        "conceptId": "svt_axis",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Un camarade lit les minutes sur l’axe vertical « dioxygène (mg/L) ». Quelle est son erreur ?",
+        "acceptedAnswers": [
+          "Il a confondu les axes"
+        ],
+        "choices": [
+          "Il a confondu les axes",
+          "Il a bien lu les unités",
+          "Il a mesuré un régime alimentaire"
+        ],
+        "exactCorrection": "La bonne réponse : Il a confondu les axes.",
+        "explanation": "Pour lire une valeur, commence par les noms et les unités des axes.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_food",
+        "conceptId": "svt_food",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Vrai ou faux : tous les oiseaux mangent uniquement des graines.",
+        "acceptedAnswers": [
+          "Faux"
+        ],
+        "choices": [
+          "Faux",
+          "Vrai",
+          "Seulement les oiseaux aquatiques"
+        ],
+        "exactCorrection": "La bonne réponse : Faux.",
+        "explanation": "Les oiseaux peuvent avoir des régimes différents : insectivore, piscivore, granivore, etc.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_microbes_useful",
+        "conceptId": "svt_microbes_useful",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Une élève écrit : « Toutes les bactéries sont inutiles. » Quelle observation la contredit ?",
+        "acceptedAnswers": [
+          "Des bactéries du cæcum aident à digérer des végétaux"
+        ],
+        "choices": [
+          "Des bactéries du cæcum aident à digérer des végétaux",
+          "Les canines déchirent",
+          "Les poumons contiennent de l’air"
+        ],
+        "exactCorrection": "La bonne réponse : Des bactéries du cæcum aident à digérer des végétaux.",
+        "explanation": "Certains micro-organismes participent à la digestion de la cellulose chez des herbivores.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_transport",
+        "conceptId": "svt_transport",
+        "category": "reasoning",
+        "categoryLabel": "Débusque le piège",
+        "prompt": "Pour alimenter les organes, qu’apporte notamment le sang ?",
+        "acceptedAnswers": [
+          "Du dioxygène et des nutriments"
+        ],
+        "choices": [
+          "Du dioxygène et des nutriments",
+          "Des cailloux et des graines",
+          "Seulement de l’air entier"
+        ],
+        "exactCorrection": "La bonne réponse : Du dioxygène et des nutriments.",
+        "explanation": "Le sang transporte du dioxygène et des nutriments jusqu’aux organes.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux"
+      },
+      {
+        "id": "svt_lung",
+        "conceptId": "svt_lung",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets dans l’ordre le trajet du dioxygène vers un muscle.",
+        "acceptedAnswers": [
+          "Air inspiré → Alvéoles pulmonaires → Sang → Muscle"
+        ],
+        "exactCorrection": "La bonne réponse : Air inspiré → Alvéoles pulmonaires → Sang → Muscle.",
+        "explanation": "Au niveau des alvéoles, le dioxygène passe vers le sang ; le sang le transporte aux organes.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Air inspiré",
+          "Alvéoles pulmonaires",
+          "Sang",
+          "Muscle"
+        ]
+      },
+      {
+        "id": "svt_read",
+        "conceptId": "svt_read",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets dans l’ordre une méthode de lecture de courbe.",
+        "acceptedAnswers": [
+          "Lire le nom des axes → Repérer le temps demandé → Rejoindre la courbe → Lire la valeur et son unité"
+        ],
+        "exactCorrection": "La bonne réponse : Lire le nom des axes → Repérer le temps demandé → Rejoindre la courbe → Lire la valeur et son unité.",
+        "explanation": "Une méthode organisée évite de confondre les axes ou d’oublier l’unité.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Lire le nom des axes",
+          "Repérer le temps demandé",
+          "Rejoindre la courbe",
+          "Lire la valeur et son unité"
+        ]
+      },
+      {
+        "id": "svt_digest",
+        "conceptId": "svt_digest",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets dans l’ordre ces étapes simplifiées de la nutrition.",
+        "acceptedAnswers": [
+          "Aliment ingéré → Digestion → Absorption des nutriments → Transport par le sang"
+        ],
+        "exactCorrection": "La bonne réponse : Aliment ingéré → Digestion → Absorption des nutriments → Transport par le sang.",
+        "explanation": "Après digestion, les nutriments sont absorbés puis transportés vers les organes.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Aliment ingéré",
+          "Digestion",
+          "Absorption des nutriments",
+          "Transport par le sang"
+        ]
+      },
+      {
+        "id": "svt_table",
+        "conceptId": "svt_table",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets dans l’ordre la comparaison de deux valeurs d’un tableau.",
+        "acceptedAnswers": [
+          "Lire les en-têtes → Repérer les deux cases → Comparer les valeurs → Rédiger le constat avec les unités"
+        ],
+        "exactCorrection": "La bonne réponse : Lire les en-têtes → Repérer les deux cases → Comparer les valeurs → Rédiger le constat avec les unités.",
+        "explanation": "Le constat décrit ce qu’on observe avant une éventuelle explication.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Lire les en-têtes",
+          "Repérer les deux cases",
+          "Comparer les valeurs",
+          "Rédiger le constat avec les unités"
+        ]
+      },
+      {
+        "id": "svt_lung2",
+        "conceptId": "svt_lung2",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Pour expliquer l’enrichissement du sang en dioxygène, remets ces étapes dans l’ordre.",
+        "acceptedAnswers": [
+          "Air renouvelé dans les poumons → Dioxygène présent dans les alvéoles → Passage vers les capillaires → Sang plus riche en dioxygène"
+        ],
+        "exactCorrection": "La bonne réponse : Air renouvelé dans les poumons → Dioxygène présent dans les alvéoles → Passage vers les capillaires → Sang plus riche en dioxygène.",
+        "explanation": "Le dioxygène passe de l’air alvéolaire au sang des capillaires.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Air renouvelé dans les poumons",
+          "Dioxygène présent dans les alvéoles",
+          "Passage vers les capillaires",
+          "Sang plus riche en dioxygène"
+        ]
+      },
+      {
+        "id": "svt_poule",
+        "conceptId": "svt_poule",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets le trajet des graines de la poule dans l’ordre indiqué.",
+        "acceptedAnswers": [
+          "Bec → Œsophage → Jabot → Gésier"
+        ],
+        "exactCorrection": "La bonne réponse : Bec → Œsophage → Jabot → Gésier.",
+        "explanation": "Le jabot stocke et humidifie ; le gésier broie.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Bec",
+          "Œsophage",
+          "Jabot",
+          "Gésier"
+        ]
+      },
+      {
+        "id": "svt_lab",
+        "conceptId": "svt_lab",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets dans l’ordre les grandes étapes d’une expérience.",
+        "acceptedAnswers": [
+          "Poser une question → Faire une mesure → Décrire les résultats → Proposer une conclusion"
+        ],
+        "exactCorrection": "La bonne réponse : Poser une question → Faire une mesure → Décrire les résultats → Proposer une conclusion.",
+        "explanation": "On s’appuie sur les résultats avant de conclure.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Poser une question",
+          "Faire une mesure",
+          "Décrire les résultats",
+          "Proposer une conclusion"
+        ]
+      },
+      {
+        "id": "svt_compare",
+        "conceptId": "svt_compare",
+        "category": "order",
+        "categoryLabel": "Remets dans l’ordre",
+        "prompt": "Remets la démarche de comparaison des tubes digestifs dans l’ordre.",
+        "acceptedAnswers": [
+          "Observer les deux schémas → Relever un point commun → Relever une différence → Relier la différence au régime alimentaire"
+        ],
+        "exactCorrection": "La bonne réponse : Observer les deux schémas → Relever un point commun → Relever une différence → Relier la différence au régime alimentaire.",
+        "explanation": "Comparer consiste à nommer à la fois ce qui se ressemble et ce qui diffère.",
+        "sourceRef": "Entraînement original — nutrition et organisation des animaux",
+        "kind": "order",
+        "parts": [
+          "Observer les deux schémas",
+          "Relever un point commun",
+          "Relever une différence",
+          "Relier la différence au régime alimentaire"
+        ]
+      }
+    ],
+    "reward": true
+  },
   "determinants": {
     "id": "determinants",
     "subject": "Français · CM1",
@@ -53,15 +1974,23 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
     "plan": [
       [
         "spot",
-        3
+        2
       ],
       [
         "family",
-        3
+        2
       ],
       [
         "agreement",
-        4
+        2
+      ],
+      [
+        "reasoning",
+        2
+      ],
+      [
+        "order",
+        2
       ]
     ],
     "bank": [
@@ -2044,9 +3973,306 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
         "sourceRef": "Exercice original CM1 — déterminants",
         "det": "des",
         "noun": "oiseaux"
+      },
+      {
+        "id": "determinants_challenge_fix_0",
+        "conceptId": "determinants_challenge_fix_0",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « cette arbre ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "cet arbre"
+        ],
+        "choices": [
+          "cet arbre",
+          "cette arbre",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : cet arbre.",
+        "explanation": "« Arbre » est masculin singulier et commence par une voyelle.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_1",
+        "conceptId": "determinants_challenge_fix_1",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « cet maison ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "cette maison"
+        ],
+        "choices": [
+          "cette maison",
+          "cet maison",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : cette maison.",
+        "explanation": "« Maison » est féminin singulier.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_2",
+        "conceptId": "determinants_challenge_fix_2",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « ce oiseaux ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "ces oiseaux"
+        ],
+        "choices": [
+          "ces oiseaux",
+          "ce oiseaux",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : ces oiseaux.",
+        "explanation": "« Oiseaux » est au pluriel.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_3",
+        "conceptId": "determinants_challenge_fix_3",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « une ballon ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "un ballon"
+        ],
+        "choices": [
+          "un ballon",
+          "une ballon",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : un ballon.",
+        "explanation": "« Ballon » est masculin singulier.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_4",
+        "conceptId": "determinants_challenge_fix_4",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « un étoiles ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "des étoiles"
+        ],
+        "choices": [
+          "des étoiles",
+          "un étoiles",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : des étoiles.",
+        "explanation": "« Étoiles » est au pluriel.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_5",
+        "conceptId": "determinants_challenge_fix_5",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « une vélo ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "un vélo"
+        ],
+        "choices": [
+          "un vélo",
+          "une vélo",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : un vélo.",
+        "explanation": "« Vélo » est masculin singulier.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_6",
+        "conceptId": "determinants_challenge_fix_6",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « cet fleur ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "cette fleur"
+        ],
+        "choices": [
+          "cette fleur",
+          "cet fleur",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : cette fleur.",
+        "explanation": "« Fleur » est féminin singulier.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_fix_7",
+        "conceptId": "determinants_challenge_fix_7",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le lutin a écrit « un trousse ». Quelle réparation choisis-tu ?",
+        "acceptedAnswers": [
+          "une trousse"
+        ],
+        "choices": [
+          "une trousse",
+          "un trousse",
+          "Supprimer le nom"
+        ],
+        "exactCorrection": "La bonne réponse : une trousse.",
+        "explanation": "« Trousse » est féminin singulier.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "determinants_challenge_order_0",
+        "conceptId": "determinants_challenge_order_0",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "un → petit → dragon"
+        ],
+        "exactCorrection": "La bonne réponse : un → petit → dragon.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "un",
+          "petit",
+          "dragon"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_1",
+        "conceptId": "determinants_challenge_order_1",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "une → grande → forêt"
+        ],
+        "exactCorrection": "La bonne réponse : une → grande → forêt.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "une",
+          "grande",
+          "forêt"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_2",
+        "conceptId": "determinants_challenge_order_2",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "ce → joli → bateau"
+        ],
+        "exactCorrection": "La bonne réponse : ce → joli → bateau.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "ce",
+          "joli",
+          "bateau"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_3",
+        "conceptId": "determinants_challenge_order_3",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "cette → petite → fleur"
+        ],
+        "exactCorrection": "La bonne réponse : cette → petite → fleur.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "cette",
+          "petite",
+          "fleur"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_4",
+        "conceptId": "determinants_challenge_order_4",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "mes → nouveaux → livres"
+        ],
+        "exactCorrection": "La bonne réponse : mes → nouveaux → livres.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "mes",
+          "nouveaux",
+          "livres"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_5",
+        "conceptId": "determinants_challenge_order_5",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "ses → grandes → ailes"
+        ],
+        "exactCorrection": "La bonne réponse : ses → grandes → ailes.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "ses",
+          "grandes",
+          "ailes"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_6",
+        "conceptId": "determinants_challenge_order_6",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "le → vieux → château"
+        ],
+        "exactCorrection": "La bonne réponse : le → vieux → château.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "le",
+          "vieux",
+          "château"
+        ]
+      },
+      {
+        "id": "determinants_challenge_order_7",
+        "conceptId": "determinants_challenge_order_7",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Construis le groupe dans cet ordre : déterminant → adjectif → nom.",
+        "acceptedAnswers": [
+          "des → belles → étoiles"
+        ],
+        "exactCorrection": "La bonne réponse : des → belles → étoiles.",
+        "explanation": "Le déterminant accompagne le nom. Ici, la consigne place l’adjectif entre les deux.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "des",
+          "belles",
+          "étoiles"
+        ]
       }
     ],
-    "workedExample": "Dans « cette petite maison », cette est le déterminant, petite est un adjectif et maison est le nom."
+    "workedExample": "Dans « cette petite maison », cette est le déterminant, petite est un adjectif et maison est le nom.",
+    "reward": true
   },
   "lengths": {
     "id": "lengths",
@@ -2061,11 +4287,11 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
     "plan": [
       [
         "unit",
-        2
+        1
       ],
       [
         "convert",
-        4
+        3
       ],
       [
         "compare",
@@ -2074,6 +4300,14 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
       [
         "problem",
         2
+      ],
+      [
+        "reasoning",
+        1
+      ],
+      [
+        "order",
+        1
       ]
     ],
     "bank": [
@@ -5217,9 +7451,306 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
           "cm": 45,
           "result": 855
         }
+      },
+      {
+        "id": "lengths_challenge_metres_2",
+        "conceptId": "lengths_challenge_metres_2",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 2 m = 20 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "2 m = 200 cm"
+        ],
+        "choices": [
+          "2 m = 200 cm",
+          "2 m = 20 cm",
+          "2 m = 2000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 2 m = 200 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 2 × 100 = 200.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_2",
+        "conceptId": "lengths_challenge_length_2",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "2 cm → 2 dm → 2 m"
+        ],
+        "exactCorrection": "La bonne réponse : 2 cm → 2 dm → 2 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "2 cm",
+          "2 dm",
+          "2 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_3",
+        "conceptId": "lengths_challenge_metres_3",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 3 m = 30 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "3 m = 300 cm"
+        ],
+        "choices": [
+          "3 m = 300 cm",
+          "3 m = 30 cm",
+          "3 m = 3000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 3 m = 300 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 3 × 100 = 300.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_3",
+        "conceptId": "lengths_challenge_length_3",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "3 cm → 3 dm → 3 m"
+        ],
+        "exactCorrection": "La bonne réponse : 3 cm → 3 dm → 3 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "3 cm",
+          "3 dm",
+          "3 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_4",
+        "conceptId": "lengths_challenge_metres_4",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 4 m = 40 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "4 m = 400 cm"
+        ],
+        "choices": [
+          "4 m = 400 cm",
+          "4 m = 40 cm",
+          "4 m = 4000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 4 m = 400 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 4 × 100 = 400.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_4",
+        "conceptId": "lengths_challenge_length_4",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "4 cm → 4 dm → 4 m"
+        ],
+        "exactCorrection": "La bonne réponse : 4 cm → 4 dm → 4 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "4 cm",
+          "4 dm",
+          "4 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_5",
+        "conceptId": "lengths_challenge_metres_5",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 5 m = 50 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "5 m = 500 cm"
+        ],
+        "choices": [
+          "5 m = 500 cm",
+          "5 m = 50 cm",
+          "5 m = 5000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 5 m = 500 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 5 × 100 = 500.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_5",
+        "conceptId": "lengths_challenge_length_5",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "5 cm → 5 dm → 5 m"
+        ],
+        "exactCorrection": "La bonne réponse : 5 cm → 5 dm → 5 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "5 cm",
+          "5 dm",
+          "5 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_6",
+        "conceptId": "lengths_challenge_metres_6",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 6 m = 60 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "6 m = 600 cm"
+        ],
+        "choices": [
+          "6 m = 600 cm",
+          "6 m = 60 cm",
+          "6 m = 6000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 6 m = 600 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 6 × 100 = 600.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_6",
+        "conceptId": "lengths_challenge_length_6",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "6 cm → 6 dm → 6 m"
+        ],
+        "exactCorrection": "La bonne réponse : 6 cm → 6 dm → 6 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "6 cm",
+          "6 dm",
+          "6 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_7",
+        "conceptId": "lengths_challenge_metres_7",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 7 m = 70 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "7 m = 700 cm"
+        ],
+        "choices": [
+          "7 m = 700 cm",
+          "7 m = 70 cm",
+          "7 m = 7000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 7 m = 700 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 7 × 100 = 700.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_7",
+        "conceptId": "lengths_challenge_length_7",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "7 cm → 7 dm → 7 m"
+        ],
+        "exactCorrection": "La bonne réponse : 7 cm → 7 dm → 7 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "7 cm",
+          "7 dm",
+          "7 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_8",
+        "conceptId": "lengths_challenge_metres_8",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 8 m = 80 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "8 m = 800 cm"
+        ],
+        "choices": [
+          "8 m = 800 cm",
+          "8 m = 80 cm",
+          "8 m = 8000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 8 m = 800 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 8 × 100 = 800.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_8",
+        "conceptId": "lengths_challenge_length_8",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "8 cm → 8 dm → 8 m"
+        ],
+        "exactCorrection": "La bonne réponse : 8 cm → 8 dm → 8 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "8 cm",
+          "8 dm",
+          "8 m"
+        ]
+      },
+      {
+        "id": "lengths_challenge_metres_9",
+        "conceptId": "lengths_challenge_metres_9",
+        "category": "reasoning",
+        "categoryLabel": "Cherche le piège",
+        "prompt": "Le gardien annonce « 9 m = 90 cm ». Trouve la bonne réparation.",
+        "acceptedAnswers": [
+          "9 m = 900 cm"
+        ],
+        "choices": [
+          "9 m = 900 cm",
+          "9 m = 90 cm",
+          "9 m = 9000 cm"
+        ],
+        "exactCorrection": "La bonne réponse : 9 m = 900 cm.",
+        "explanation": "Un mètre contient 100 centimètres : 9 × 100 = 900.",
+        "sourceRef": "Défi original CM1"
+      },
+      {
+        "id": "lengths_challenge_length_9",
+        "conceptId": "lengths_challenge_length_9",
+        "category": "order",
+        "categoryLabel": "Le puzzle des mots",
+        "prompt": "Range ces longueurs de la plus petite à la plus grande.",
+        "acceptedAnswers": [
+          "9 cm → 9 dm → 9 m"
+        ],
+        "exactCorrection": "La bonne réponse : 9 cm → 9 dm → 9 m.",
+        "explanation": "Pour un même nombre, les centimètres sont plus petits que les décimètres, puis viennent les mètres.",
+        "sourceRef": "Défi original CM1",
+        "kind": "order",
+        "parts": [
+          "9 cm",
+          "9 dm",
+          "9 m"
+        ]
       }
     ],
-    "workedExample": "1 m = 10 dm = 100 cm = 1 000 mm. Dans km → hm → dam → m → dm → cm → mm, chaque pas vers la droite multiplie par 10."
+    "workedExample": "1 m = 10 dm = 100 cm = 1 000 mm. Dans km → hm → dam → m → dm → cm → mm, chaque pas vers la droite multiplie par 10.",
+    "reward": true
   },
   "english": {
     "id": "english",
@@ -10732,7 +13263,8 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
         "explanation": "Le radical et la terminaison sont les deux parties du verbe.",
         "accentSensitive": true
       }
-    ]
+    ],
+    "reward": true
   },
   "time": {
     "id": "time",
@@ -11903,7 +14435,8 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
         "answerHint": "Choisis Passé, Présent ou Futur, puis valide.",
         "sourceRef": "Activité de classement du 7/09, document 6"
       }
-    ]
+    ],
+    "reward": true
   },
   "geography": {
     "id": "geography",
@@ -13218,7 +15751,8 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
         "answerHint": "Choisis une proposition, puis valide.",
         "sourceRef": "Géo.4"
       }
-    ]
+    ],
+    "reward": true
   },
   "penelopeMaths": {
     "id": "penelopeMaths",
@@ -14800,7 +17334,8 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
         "explanation": "On calcule d’abord la parenthèse intérieure, puis la parenthèse extérieure, et enfin la multiplication."
       }
     ],
-    "workedExample": "Exemple guidé : 8 + 2 × 3 = 8 + 6 = 14. On effectue la multiplication avant l’addition."
+    "workedExample": "Exemple guidé : 8 + 2 × 3 = 8 + 6 = 14. On effectue la multiplication avant l’addition.",
+    "reward": true
   }
 };
 function normalize(text, accentSensitive = false) {
@@ -14901,6 +17436,20 @@ function cleanCollection(value){
 function earnEgg(value){const state=cleanCollection(value);if(state.earned>=10000)return state;return {...state,earned:state.earned+1,pending:state.pending+1};}
 function hatchEgg(value){const state=cleanCollection(value);if(!state.pending)return state;return {...state,pending:state.pending-1,pets:[...state.pets,state.pets.length%PETS.length]};}
 
+function missionTrail(){
+ return `<ol class="mission-trail" aria-label="Ton parcours de dix défis">${Array.from({length:questions.length},(_,i)=>`<li class="${i<results.length?(results[i].correct?'trail-right':'trail-retry'):i===index?'trail-current':''}" aria-label="Défi ${i+1}${i<results.length?(results[i].correct?' réussi':' à revoir'):i===index?' en cours':' à venir'}">${i<results.length?(results[i].correct?'✓':'↗'):i+1}</li>`).join('')}</ol>`;
+}
+function questionVisual(q){
+ if(q.dataTable){const t=q.dataTable;return `<div class="science-data"><table><caption>${escapeHTML(t.caption)}</caption><thead><tr>${t.headers.map(h=>`<th scope="col">${escapeHTML(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(row=>`<tr>${row.map((c,i)=>i?`<td>${escapeHTML(c)}</td>`:`<th scope="row">${escapeHTML(c)}</th>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
+ if(q.chart){const c=q.chart,maxX=Math.max(...c.points.map(p=>p[0])),maxY=Math.ceil(Math.max(...c.points.map(p=>p[1]))/5)*5;
+ const x=n=>55+n/maxX*300,y=n=>175-n/maxY*130;
+ return `<figure class="science-chart"><figcaption>${escapeHTML(c.title)}</figcaption><svg viewBox="0 0 400 235" role="img" aria-label="${escapeHTML(c.yLabel)} en fonction de ${escapeHTML(c.xLabel)}"><path d="M55 35 V175 H365" fill="none" stroke="#526277" stroke-width="2"/>${[0,maxY/2,maxY].map(n=>`<text x="44" y="${y(n)+5}" text-anchor="end">${n}</text><path d="M55 ${y(n)} H355" stroke="#dde6e5"/>`).join('')}<polyline points="${c.points.map(p=>x(p[0])+','+y(p[1])).join(' ')}" fill="none" stroke="#5063ba" stroke-width="3"/>${c.points.map(p=>`<circle cx="${x(p[0])}" cy="${y(p[1])}" r="4" fill="#5063ba"/><text x="${x(p[0])}" y="197" text-anchor="middle">${p[0]}</text>`).join('')}<text x="60" y="22">${escapeHTML(c.yLabel)}</text><text x="205" y="225" text-anchor="middle">${escapeHTML(c.xLabel)}</text></svg><details><summary>Lire les valeurs du graphique</summary><table><thead><tr><th>${escapeHTML(c.xLabel)}</th><th>${escapeHTML(c.yLabel)}</th></tr></thead><tbody>${c.points.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td></tr>`).join('')}</tbody></table></details></figure>`;}
+ return '';
+}
+function babyReveal(pet){
+ return `<div class="pet-reveal baby-birth ${pet.colour}"><div class="birth-shell" aria-hidden="true">🥚<span>✦</span></div><div class="baby-creature"><span aria-hidden="true">${pet.icon}</span><h2>Un bébé ${escapeHTML(pet.name.toLowerCase())} est né !</h2><p>Ton compagnon t’attend dans « Ma collection ».</p></div>${rewardDisclaimer()}</div>`;
+}
+
 const root = document.querySelector('#quiz');
 const menuButton = document.querySelector('#menu-button');
 const previousByQuiz = new Map();
@@ -14910,7 +17459,7 @@ let collection=cleanCollection(null),collectionSaved=true;
 try{collection=cleanCollection(JSON.parse(localStorage.getItem(COLLECTION_KEY)));}catch{}
 function saveCollection(){try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}}
 const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
-const icons={determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
+const icons={svt:'🔬',determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
 function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function focusHeading(){ root.querySelector('h1,h2')?.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
@@ -14922,14 +17471,14 @@ function loadPrevious(quiz){
 }
 function showMenu(){
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><p class="note">L’œuf magique récompense une mission d’anglais à 10/10. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
+  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><p class="note">Chaque mission à 10/10 donne un œuf magique, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
   document.querySelector('#collection-open').addEventListener('click',showCollection);
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
 }
 function showWelcome(id){
   selectedQuiz=QUIZZES[id];questions=[];results=[];index=0;submitted=false;root.dataset.quizId=id;menuButton.hidden=false;
   const quiz=selectedQuiz;
-  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div>${quiz.workedExample?`<div class="worked-example"><strong>Un exemple pour commencer</strong><p>${escapeHTML(quiz.workedExample)}</p></div>`:''}${quiz.reward?`<div class="mission-map"><strong>Les 7 mondes de ton cahier</strong><p>👋 Présentation · 🎒 Classe · 👕 Vêtements<br>🏠 Maison et matin · ⚽ Goûts et famille<br>🎃 Halloween · 🗽 Vocabulaire culturel</p><p class="note">Chaque partie passe par les sept thèmes.</p></div>`:''}<div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>${quiz.reward?rewardDisclaimer()+`<details class="listening"><summary>Réécouter les supports de classe</summary><p>Ces liens ouvrent les supports d’origine avec Internet. Les questions du quiz ne remplacent pas l’écoute.</p>${quiz.listening.map(x=>`<p><a href="${escapeHTML(x.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(x.title)} ↗</a></p>`).join('')}</details>`:''}`;
+  root.innerHTML=`<div class="eyebrow">${escapeHTML(quiz.subject)}</div><h1 tabindex="-1">${escapeHTML(quiz.title)}</h1><p class="intro">${escapeHTML(quiz.description)}</p><div class="chips"><span class="chip">${quiz.size} questions</span><span class="chip">${escapeHTML(quiz.duration)}</span><span class="chip">Nouvelles séries</span></div>${quiz.workedExample?`<div class="worked-example"><strong>Un exemple pour commencer</strong><p>${escapeHTML(quiz.workedExample)}</p></div>`:''}${quiz.id==='english'?`<div class="mission-map"><strong>Les 7 mondes de ton cahier</strong><p>👋 Présentation · 🎒 Classe · 👕 Vêtements<br>🏠 Maison et matin · ⚽ Goûts et famille<br>🎃 Halloween · 🗽 Vocabulaire culturel</p><p class="note">Chaque partie passe par les sept thèmes.</p></div>`:''}<p class="reward-rule">🥚 Objectif : 10/10 pour gagner un œuf à faire éclore.</p><div class="rule"><span aria-hidden="true">✓</span><div>À toi de jouer d’abord.<br>La correction arrive après ta réponse.</div></div><button class="primary" id="start">Commencer la mission →</button><p class="note">${escapeHTML(quiz.scope)}</p>${quiz.id==='english'?rewardDisclaimer()+`<details class="listening"><summary>Réécouter les supports de classe</summary><p>Ces liens ouvrent les supports d’origine avec Internet. Les questions du quiz ne remplacent pas l’écoute.</p>${quiz.listening.map(x=>`<p><a href="${escapeHTML(x.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(x.title)} ↗</a></p>`).join('')}</details>`:''}`;
   document.querySelector('#start').addEventListener('click',start);focusHeading();
 }
 function start(){
@@ -14941,18 +17490,23 @@ function start(){
 }
 function showQuestion(){
   submitted=false;const q=questions[index],total=questions.length;
-  const choices=q.choices?shuffle(q.choices):null;
-  root.innerHTML=`<div class="topline"><span>Question ${index+1} sur ${total}</span><span class="category">${escapeHTML(q.categoryLabel)}</span></div><div class="progress" role="progressbar" aria-label="Progression" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${total}"><div style="width:${index/total*100}%"></div></div>${q.contextSnippet?`<div class="context" lang="en">${escapeHTML(q.contextSnippet)}</div>`:''}<h2 tabindex="-1">${escapeHTML(q.prompt)}</h2><form id="answer-form" novalidate>${choices?'<p class="answer-label" id="answer-label">Ta réponse</p>':'<label for="answer">Ta réponse</label>'}${q.answerHint?`<p class="answer-hint">${escapeHTML(q.answerHint)}</p>`:''}${choices?`<div class="answer-choices" role="group" aria-labelledby="answer-label">${choices.map((answer,i)=>`<button type="button" class="choice" data-choice="${i}" aria-pressed="false">${escapeHTML(answer)}</button>`).join('')}</div><input type="hidden" id="answer" name="answer" value="">`:`<input id="answer" name="answer" placeholder="Écris ta réponse ici…" ${q.inputMode?`inputmode="${escapeHTML(q.inputMode)}"`:''} autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="300" required>`}<button class="primary" id="check" type="submit" disabled>Valider ma réponse</button></form><div id="feedback" aria-live="polite" aria-atomic="true"></div>`;
+  root.dataset.questionId=q.id;
+  const ordering=q.kind==='order', picked=[];
+  const choices=ordering?shuffle(q.parts):q.choices?shuffle(q.choices):null;
+  root.innerHTML=`${missionTrail()}<div class="topline"><span>Question ${index+1} sur ${total}</span><span class="category">${escapeHTML(q.categoryLabel)}</span></div><div class="progress" role="progressbar" aria-label="Progression" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${total}"><div style="width:${index/total*100}%"></div></div>${questionVisual(q)}${q.contextSnippet?`<div class="context" lang="${selectedQuiz.id==='english'?'en':'fr'}">${escapeHTML(q.contextSnippet)}</div>`:''}<h2 tabindex="-1">${escapeHTML(q.prompt)}</h2><form id="answer-form" novalidate>${choices?`<p class="answer-label" id="answer-label">${ordering?'Touche les éléments dans le bon ordre':'Ta réponse'}</p>`:'<label for="answer">Ta réponse</label>'}${q.answerHint?`<p class="answer-hint">${escapeHTML(q.answerHint)}</p>`:''}${choices?`<div class="answer-choices" role="group" aria-labelledby="answer-label">${choices.map((answer,i)=>`<button type="button" class="choice" data-choice="${i}" aria-pressed="false">${escapeHTML(answer)}</button>`).join('')}</div>${ordering?'<div class="order-workbench"><p id="order-answer" aria-live="polite">Ton parcours apparaît ici.</p><button class="small-button" id="order-undo" type="button" disabled>Annuler le dernier choix</button></div>':''}<input type="hidden" id="answer" name="answer" value="">`:`<input id="answer" name="answer" placeholder="Écris ta réponse ici…" ${q.inputMode?`inputmode="${escapeHTML(q.inputMode)}"`:''} autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="300" required>`}<button class="primary" id="check" type="submit" disabled>Valider ma réponse</button></form><div id="feedback" aria-live="polite" aria-atomic="true"></div>`;
   const input=document.querySelector('#answer'),check=document.querySelector('#check');
   input.addEventListener('input',()=>{check.disabled=!normalize(input.value,q.accentSensitive);});
   if(choices)root.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{
-    if(submitted)return;input.value=choices[Number(button.dataset.choice)];check.disabled=false;
+    if(submitted)return;
+    if(ordering){picked.push(Number(button.dataset.choice));button.disabled=true;button.setAttribute('aria-pressed','true');button.classList.add('chosen');input.value=picked.map(i=>choices[i]).join(' → ');document.querySelector('#order-answer').textContent=input.value;document.querySelector('#order-undo').disabled=false;check.disabled=picked.length!==choices.length;return;}
+    input.value=choices[Number(button.dataset.choice)];check.disabled=false;
     root.querySelectorAll('[data-choice]').forEach(item=>{const selected=item===button;item.setAttribute('aria-pressed',String(selected));item.classList.toggle('chosen',selected);});
   }));
+  document.querySelector('#order-undo')?.addEventListener('click',()=>{if(submitted||!picked.length)return;const last=picked.pop(),button=root.querySelector('[data-choice="'+last+'"]');button.disabled=false;button.setAttribute('aria-pressed','false');button.classList.remove('chosen');input.value=picked.map(i=>choices[i]).join(' → ');document.querySelector('#order-answer').textContent=input.value||'Ton parcours apparaît ici.';document.querySelector('#order-undo').disabled=!picked.length;check.disabled=true;});
   document.querySelector('#answer-form').addEventListener('submit',event=>{
-    event.preventDefault();if(submitted||!normalize(input.value,q.accentSensitive))return;submitted=true;
+    event.preventDefault();if(submitted||!normalize(input.value,q.accentSensitive)||(ordering&&picked.length!==choices.length))return;submitted=true;
     const answer=input.value.trim(),assessment=q.englishFlexible?assessEnglish(q,answer):{correct:isCorrect(q,answer),typo:false},correct=assessment.correct;results.push({question:q,answer,correct,typo:assessment.typo});input.disabled=true;check.hidden=true;
-    root.querySelectorAll('[data-choice]').forEach(button=>{button.disabled=true;});
+    root.querySelectorAll('[data-choice]').forEach(button=>{button.disabled=true;});document.querySelector('#order-undo')?.setAttribute('disabled','');
     document.querySelector('#feedback').innerHTML=`<div class="feedback ${correct?'correct':''}"><strong>${correct?'Bien joué ! ✓':'On apprend en essayant.'}</strong>${assessment.typo?'<p>Le mot est reconnu malgré une petite faute de frappe. Regarde bien son orthographe ci-dessous.</p>':''}<p>${escapeHTML(q.exactCorrection)}</p><p>${escapeHTML(q.explanation)}</p></div><button class="primary" id="next">${index===total-1?'Voir mon résultat →':'Question suivante →'}</button>`;
     document.querySelector('#next').addEventListener('click',()=>{document.querySelector('#next').disabled=true;index++;if(index===total)summary();else showQuestion();},{once:true});document.querySelector('#next').focus({preventScroll:true});
   });focusHeading();
@@ -14962,19 +17516,19 @@ function summary(){
   const earned=selectedQuiz.reward&&score===total&&!sessionRewardClaimed;
   if(earned){collection=earnEgg(collection);saveCollection();sessionRewardClaimed=true;}
   const message=score===total?'Mission accomplie !':score/total>=.6?'Tu progresses, continue !':'Chaque essai t’aide à apprendre.';
-  root.innerHTML=`<div class="eyebrow">Mission terminée · ${escapeHTML(selectedQuiz.subject)}</div><h1 tabindex="-1">${message}</h1><div class="score">${score}<span> / ${total}</span></div>${earned?`<div class="reward-panel">${eggArt(true)}<h2>Un œuf magique pour toi !</h2><p>Les dix réponses sont justes. Un nouveau compagnon t’attend.</p><button class="primary" id="hatch">Faire éclore mon œuf ✨</button>${rewardDisclaimer()}${!collectionSaved?'<p>Le stockage est indisponible : la collection restera pendant cette visite uniquement.</p>':''}</div>`:selectedQuiz.reward?'<p class="note">Tu peux retenter ta chance avec de nouvelles questions. L’œuf arrive à 10/10.</p>':''}<div id="hatch-result" aria-live="polite"></div><p class="intro">Voici les ${total} questions de ta partie.</p><ul class="review">${results.map(r=>`<li><strong class="${r.correct?'right':'wrong'}">${r.correct?'✓ Réussi':'↗ À revoir'}</strong>${escapeHTML(r.question.prompt)}<div class="answer">Ta réponse : ${escapeHTML(r.answer)}</div><div>${escapeHTML(r.question.exactCorrection)}</div></li>`).join('')}</ul><button class="primary" id="again">Une nouvelle mission ↗</button><button class="secondary" id="other-quiz">Choisir un autre questionnaire</button><p class="note">La prochaine série évite les ${total} notions de celle-ci.</p>`;
+  root.innerHTML=`<div class="eyebrow">Mission terminée · ${escapeHTML(selectedQuiz.subject)}</div><h1 tabindex="-1">${message}</h1><div class="score">${score}<span> / ${total}</span></div>${earned?`<div class="reward-panel">${eggArt(true)}<h2>Un œuf magique pour toi !</h2><p>Les dix réponses sont justes. Un nouveau compagnon t’attend.</p><button class="primary" id="hatch">Faire éclore mon œuf ✨</button>${rewardDisclaimer()}${!collectionSaved?'<p>Le stockage est indisponible : la collection restera pendant cette visite uniquement.</p>':''}</div>`:selectedQuiz.reward?'<p class="note">Tu peux retenter ta chance avec de nouvelles questions. L’œuf arrive à 10/10.</p>':''}<div id="hatch-result" aria-live="polite"></div><p class="intro">Voici les ${total} questions de ta partie.</p><ul class="review">${results.map(r=>`<li><strong class="${r.correct?'right':'wrong'}">${r.correct?'✓ Réussi':'↗ À revoir'}</strong>${escapeHTML(r.question.prompt)}<div class="answer">Ta réponse : ${escapeHTML(r.answer)}</div><div>${escapeHTML(r.question.exactCorrection)}</div><details><summary>Comprendre la réponse</summary><p>${escapeHTML(r.question.explanation)}</p></details></li>`).join('')}</ul><button class="primary" id="again">Une nouvelle mission ↗</button><button class="secondary" id="other-quiz">Choisir un autre questionnaire</button><p class="note">La prochaine série évite les ${total} notions de celle-ci.</p>`;
   if(earned)document.querySelector('#hatch').addEventListener('click',()=>{
    document.querySelector('#hatch').disabled=true;collection=hatchEgg(collection);saveCollection();
-   const pet=PETS[collection.pets.at(-1)];document.querySelector('#hatch-result').innerHTML=`<div class="pet-reveal ${pet.colour}"><span aria-hidden="true">${pet.icon}</span><h2>${pet.name}</h2><p>Bienvenue dans ta collection !</p>${rewardDisclaimer()}</div>`;
+   const pet=PETS[collection.pets.at(-1)];document.querySelector('#hatch-result').innerHTML=babyReveal(pet);
    document.querySelector('#hatch-result').scrollIntoView({behavior:'auto',block:'center'});
   },{once:true});
   document.querySelector('#again').addEventListener('click',start);document.querySelector('#other-quiz').addEventListener('click',showMenu);focusHeading();
 }
 function showCollection(){
  menuButton.hidden=false;root.dataset.quizId='collection';
- root.innerHTML=`<div class="eyebrow">Tes compagnons de révision</div><h1 tabindex="-1">Ma collection</h1><p class="intro">${collection.earned} œuf${collection.earned>1?'s':''} gagné${collection.earned>1?'s':''} · ${collection.pending} à éclore</p>${collection.pending?`<div class="reward-panel">${eggArt(true)}<button class="primary" id="collection-hatch">Faire éclore un œuf ✨</button></div>`:''}<div class="pet-grid">${PETS.map((pet,i)=>{const count=collection.pets.filter(x=>x===i).length;return `<div class="pet-tile ${count?'':'locked'}"><span aria-hidden="true">${count?pet.icon:'🥚'}</span><strong>${count?pet.name:'À découvrir'}</strong><small>${count?'× '+count:'Une mission à 10/10'}</small></div>`;}).join('')}</div>${rewardDisclaimer()}<p class="note">Ta collection est enregistrée sur cet appareil. Elle n’est pas synchronisée entre téléphones.</p><button class="secondary" id="collection-back">Retour aux missions</button>`;
+ root.innerHTML=`<div class="eyebrow">Tes compagnons de révision</div><h1 tabindex="-1">Ma collection</h1><p class="intro">${collection.earned} œuf${collection.earned>1?'s':''} gagné${collection.earned>1?'s':''} · ${collection.pending} à éclore</p>${collection.pending?`<div class="reward-panel">${eggArt(true)}<button class="primary" id="collection-hatch">Faire éclore un œuf ✨</button></div>`:''}<div class="pet-grid">${PETS.map((pet,i)=>{const count=collection.pets.filter(x=>x===i).length;return `<div class="pet-tile ${count?'':'locked'}"><span aria-hidden="true">${count?pet.icon:'🥚'}</span><strong>${count?pet.name:'À découvrir'}</strong><small>${count?'× '+count:'Une mission à 10/10'}</small></div>`;}).join('')}</div>${rewardDisclaimer()}<p class="note">Ta collection est enregistrée sur cet appareil. Elle n’est pas synchronisée entre téléphones.</p><div id="collection-birth" aria-live="polite"></div><button class="secondary" id="collection-back">Retour aux missions</button>`;
  document.querySelector('#collection-back').addEventListener('click',showMenu);
- document.querySelector('#collection-hatch')?.addEventListener('click',()=>{collection=hatchEgg(collection);saveCollection();showCollection();});focusHeading();
+ document.querySelector('#collection-hatch')?.addEventListener('click',()=>{collection=hatchEgg(collection);saveCollection();const pet=PETS[collection.pets.at(-1)];showCollection();document.querySelector('#collection-birth').innerHTML=babyReveal(pet);document.querySelector('#collection-birth').scrollIntoView({block:'center'});});focusHeading();
 }
 menuButton.addEventListener('click',showMenu);showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
