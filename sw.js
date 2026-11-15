@@ -1,6 +1,6 @@
 // Cache local limité au chemin de cette application, sans suivi ni API.
 const PREFIX = 'english-mission:' + self.registration.scope + ':';
-const CACHE = PREFIX + 'v7';
+const CACHE = PREFIX + 'v20261115-4';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
@@ -14,7 +14,7 @@ self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate') {
     event.respondWith(caches.open(CACHE).then(async cache => {
       try {
-        const response = await fetch(event.request);
+        const response = await fetch(event.request, {cache:'no-store'});
         if (!response.ok) return (await cache.match('./index.html')) || response;
         await cache.put('./index.html', response.clone());
         await cache.put('./', response.clone());
