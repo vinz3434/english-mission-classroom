@@ -18079,6 +18079,12 @@ const DICTEE_FES=[
 ['royal','adjectif'],['somptueux','adjectif'],['interdit','adjectif'],['précieux','adjectif'],['encadré','adjectif'],['doré','adjectif'],['géométrique','adjectif'],
 ['avant','mot invariable'],['comme','mot invariable'],['pour','mot invariable'],['seulement','mot invariable'],['par','mot invariable'],['dans','mot invariable'],['couchant','mot invariable'],['en','mot invariable']
 ];
+function dictationDifference(actual,expected){
+ const visible=t=>Array.from(t).map(c=>c===' '?'␠':c==='\t'?'⇥':c==='\n'?'↵':/\s/u.test(c)?'[U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')+']':c).join('');
+ const left=Array.from(actual),right=Array.from(expected);let at=0;while(at<left.length&&at<right.length&&left[at]===right[at])at++;
+ const describe=c=>c===undefined?'fin du texte':JSON.stringify(c)+' (U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')+')';
+ return '<p>Ta saisie exacte : <code>'+escapeHTML(visible(actual))+'</code><br>Attendu : <code>'+escapeHTML(visible(expected))+'</code></p><p>␠ indique un espace. Différence au caractère '+(at+1)+' : saisi '+escapeHTML(describe(left[at]))+' ; attendu '+escapeHTML(describe(right[at]))+'.</p><p>La comparaison reste stricte, y compris les espaces et caractères invisibles. Retape le mot sans espace ajouté par le clavier.</p>';
+}
 function showDicteeFes(){
  selectedQuiz=null;menuButton.hidden=false;root.dataset.quizId='dictee-fes';
  const shuffled=DICTEE_FES.slice();
@@ -18103,13 +18109,13 @@ function showDicteeFes(){
  }
  function render(){
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-15.4</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 8. Les mots non surlignés sont également inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Écris exactement le mot dicté : majuscules, minuscules, accents, apostrophes et espaces comptent. Aucune tolérance.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Source : fiche de classe « Orthographe 8 — Le pluriel des noms et des adjectifs (1) », mots du Palais royal de Fès, Dictées et histoire des arts autour du monde, Cycle 3, © Retz.</p>';
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-15.5</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 8. Les mots non surlignés sont également inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Écris exactement le mot dicté : majuscules, minuscules, accents, apostrophes et espaces comptent. Aucune tolérance.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Source : fiche de classe « Orthographe 8 — Le pluriel des noms et des adjectifs (1) », mots du Palais royal de Fès, Dictées et histoire des arts autour du monde, Cycle 3, © Retz.</p>';
    voices();root.querySelector('#dict-listen').onclick=speak;
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
      done=true;const ok=field.value===series[n][0];if(ok)score++;
      field.disabled=true;root.querySelector('#dict-check').disabled=true;
-     root.querySelector('#dict-feedback').innerHTML='<h2>'+(ok?'Bien écrit !':'À revoir')+'</h2><p>Orthographe attendue : <strong>'+escapeHTML(series[n][0])+'</strong></p><p>'+score+' réponse(s) correcte(s) sur '+(n+1)+'.</p><button id="dict-next">'+(n+1<series.length?'Mot suivant':'Terminer')+'</button>';
+     root.querySelector('#dict-feedback').innerHTML='<h2>'+(ok?'Bien écrit !':'À revoir')+'</h2><p>Orthographe attendue : <strong>'+escapeHTML(series[n][0])+'</strong></p>'+(ok?'':dictationDifference(field.value,series[n][0]))+'<p>'+score+' réponse(s) correcte(s) sur '+(n+1)+'.</p><button id="dict-next">'+(n+1<series.length?'Mot suivant':'Terminer')+'</button>';
      root.querySelector('#dict-next').onclick=()=>{if(synth)synth.cancel();n++;if(n<series.length){render();speak();}else{if(score===series.length){collection=earnEgg(collection);saveCollection();}root.innerHTML='<h1>Série de 10 mots terminée</h1><p>'+score+' / '+series.length+' mots correctement écrits.</p>'+(score===series.length?'<p>Un œuf gagné ! Il couve cinq minutes dans Ma collection.</p>':'')+'<p>Entraînement uniquement. Ce résultat n’est pas enregistré.</p><button id="dict-restart">Nouvelle série de 10 mots</button>';root.querySelector('#dict-restart').onclick=showDicteeFes;}};
    };
  }
@@ -18144,7 +18150,7 @@ function showExactConjugation(){
 menuButton.addEventListener('click',showMenu);showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-15.4';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-15.5';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
