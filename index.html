@@ -42,7 +42,7 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 @keyframes shell-crack{0%,20%{transform:rotate(0)}35%{transform:rotate(-15deg)}50%{transform:rotate(14deg)}65%{transform:rotate(-9deg) scale(1.1);opacity:1}100%{transform:scale(1.5);opacity:0;visibility:hidden}}
 @keyframes baby-arrive{0%,65%{opacity:0;transform:translateY(20px) scale(.7)}85%{opacity:1;transform:translateY(-7px) scale(1.08)}100%{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.birth-shell{display:none}.baby-creature{animation:none}}
-</style>
+fieldset{border:1px solid #cbd6e5;border-radius:12px;padding:15px;margin:20px 0}legend{padding:0 6px;line-height:1.5}select{width:100%;min-height:48px;padding:10px;border:1px solid #b9c8dc;border-radius:10px;background:white;color:var(--navy);font:inherit}.exact-words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.exact-words label{margin:0;padding:12px 4px;display:flex;align-items:center;gap:5px;font-size:14px}.exact-words input{width:20px;min-height:20px;margin:0} </style>
 </head>
 <body>
 <header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
@@ -17471,8 +17471,8 @@ function loadPrevious(quiz){
 }
 function showMenu(){
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><p class="note">Chaque mission à 10/10 donne un œuf magique, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
-  document.querySelector('#collection-open').addEventListener('click',showCollection);
+  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><p class="note">Chaque mission à 10/10 donne un œuf magique, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
+  document.querySelector('#collection-open').addEventListener('click',showCollection);document.querySelector('#exact-conjugation-open').addEventListener('click',showExactConjugation);
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
 }
 function showWelcome(id){
@@ -17530,6 +17530,32 @@ function showCollection(){
  document.querySelector('#collection-back').addEventListener('click',showMenu);
  document.querySelector('#collection-hatch')?.addEventListener('click',()=>{collection=hatchEgg(collection);saveCollection();const pet=PETS[collection.pets.at(-1)];showCollection();document.querySelector('#collection-birth').innerHTML=babyReveal(pet);document.querySelector('#collection-birth').scrollIntoView({block:'center'});});focusHeading();
 }
+
+/* Exact four-exercise training sheet. No pupil data or private document links. */
+function showExactConjugation(){
+ selectedQuiz=null;menuButton.hidden=false;root.dataset.quizId='conjugation-sheet';
+ const words=['panier','faire','ouvrir','dire','bougie','voir','finir','gâteau','cheminée','prendre','bouger','cendre','poire','blanchir','souffler'];
+ const phrases=['Tu connais tes tables de multiplication par cœur.','Hier soir, tu as appelé ta grand-mère au téléphone.','Dans un mois, tu déménageras dans un nouvel appartement.','Chaque Noël, vous alliez voir un spectacle musical.'];
+ const nouns=['Tu <strong>souris</strong> en voyant ton ami.','Pour Noël, j’ai demandé une nouvelle <strong>montre</strong>.','La <strong>souris</strong> a grignoté tout mon fromage.','Il me <strong>montre</strong> le chemin à suivre pour arriver en ville.'];
+ const verbs=['manger','mentir','aller','réunir','avertir','cuisiner','poser','punir','dire'];
+ root.innerHTML='<div class="eyebrow">Français · Fiche d’entraînement</div><h1 tabindex="-1">Les quatre exercices de conjugaison</h1><p class="intro">Les mots et phrases de la fiche préparée, dans le même ordre. Ce n’est pas le sujet annoncé de la maîtresse.</p><p class="note">Adaptation tactile : touche au lieu de colorier ; saisis le verbe au lieu de le souligner. Aucune réponse n’est envoyée ni conservée après avoir quitté la fiche.</p><form id="exact-form"><h2>1. Colorie uniquement les verbes.</h2><div class="exact-words">'+words.map((w,i)=>'<label><input type="checkbox" name="word'+i+'"> '+w+'</label>').join('')+'</div><h2>2. Souligne les verbes conjugués et précise leur infinitif.</h2>'+phrases.map((p,i)=>'<fieldset><legend>'+p+'</legend><label for="verb'+i+'">Verbe conjugué</label><input id="verb'+i+'" name="verb'+i+'" autocomplete="off"><label for="inf'+i+'">Infinitif</label><input id="inf'+i+'" name="inf'+i+'" autocomplete="off"></fieldset>').join('')+'<h2>3. Indique si le mot en gras est un nom ou un verbe.</h2>'+nouns.map((p,i)=>'<label for="noun'+i+'">'+p+'</label><select id="noun'+i+'" name="noun'+i+'"><option value="">Choisir…</option><option>Nom</option><option>Verbe</option></select>').join('')+'<h2>4. Classe les verbes suivants selon leur groupe.</h2><p>manger • mentir • aller • réunir • avertir<br>cuisiner • poser • punir • dire</p>'+verbs.map((v,i)=>'<label for="group'+i+'">'+v+'</label><select id="group'+i+'" name="group'+i+'"><option value="">Choisir…</option><option value="1">1er groupe</option><option value="2">2e groupe</option><option value="3">3e groupe</option></select>').join('')+'<button class="primary" type="submit" style="margin-top:24px">Vérifier mes quatre exercices</button></form><div id="exact-feedback" aria-live="polite"></div><button class="secondary" id="exact-back">Retour aux missions</button><p class="note">Exercices : MDI/SEJER, 2019, p. 229. Fiche d’entraînement ; présentation interactive adaptée.</p>';
+ document.querySelector('#exact-back').addEventListener('click',showMenu);
+ document.querySelector('#exact-form').addEventListener('submit',e=>{
+ e.preventDefault();const form=e.currentTarget, d=new FormData(form);
+ const clean=x=>String(x||'').trim().toLowerCase().replace(/[’]/g,"'").replace(/\s+/g,' ');
+ const checks=[];
+ words.forEach((w,i)=>checks.push([w,d.has('word'+i)==!['panier','bougie','gâteau','cheminée','cendre','poire'].includes(w),!['panier','bougie','gâteau','cheminée','cendre','poire'].includes(w)?'verbe':'nom']));
+ [['connais','connaître'],['as appelé','appeler'],['déménageras','déménager'],['alliez','aller']].forEach((a,i)=>{
+ const infinitive=clean(d.get('inf'+i));
+ checks.push([phrases[i],clean(d.get('verb'+i))===a[0]&&(infinitive===a[1]||(i===0&&infinitive==='connaitre')),a[0]+' → '+a[1]]);
+ });
+ ['Verbe','Nom','Nom','Verbe'].forEach((a,i)=>checks.push([['Tu souris…','… une nouvelle montre.','La souris…','Il me montre…'][i],d.get('noun'+i)===a,a]));
+ ['1','3','3','2','2','1','1','2','3'].forEach((a,i)=>checks.push([verbs[i],d.get('group'+i)===a,a==='1'?'1er groupe':a+'e groupe']));
+ document.querySelector('#exact-feedback').innerHTML='<h2>Correction</h2><p>'+checks.filter(x=>x[1]).length+' réponses justes sur '+checks.length+'. Tu peux corriger tes réponses puis vérifier à nouveau.</p><ul class="review">'+checks.map(x=>'<li><strong class="'+(x[1]?'right':'wrong')+'">'+(x[1]?'✓':'↗')+' '+escapeHTML(x[0])+'</strong>'+escapeHTML(x[2])+'</li>').join('')+'</ul><p class="note">« as appelé » comprend l’auxiliaire et le participe passé. Dans « vous alliez voir », le verbe conjugué est « alliez » ; « voir » est déjà à l’infinitif.</p>';
+ document.querySelector('#exact-feedback').scrollIntoView({block:'start'});
+ });focusHeading();
+}
+
 menuButton.addEventListener('click',showMenu);showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
@@ -17544,3 +17570,4 @@ if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol
 }
 </script>
 </body></html>
+
