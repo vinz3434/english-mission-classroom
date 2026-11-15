@@ -18969,15 +18969,15 @@ function drawSession(bank, previous = [], random = Math.random, plan = [['vocabu
 const PETS=[{name:'Chouette savante',icon:'🦉',colour:'violet'},{name:'Renard des mots',icon:'🦊',colour:'orange'},{name:'Dragon des étoiles',icon:'🐉',colour:'green'},{name:'Chat de la lune',icon:'🐈‍⬛',colour:'blue'},{name:'Licorne des livres',icon:'🦄',colour:'pink'},{name:'Panda des énigmes',icon:'🐼',colour:'green'},{name:'Lapin explorateur',icon:'🐰',colour:'pink'},{name:'Tortue des nombres',icon:'🐢',colour:'green'},{name:'Hibou cosmique',icon:'🦉',colour:'blue'},{name:'Papillon des rêves',icon:'🦋',colour:'violet'},{name:'Dauphin curieux',icon:'🐬',colour:'blue'},{name:'Lion courageux',icon:'🦁',colour:'orange'}];
 const INCUBATION_MS=5*60*1000;
 function cleanCollection(value,now=Date.now()){
- if(!value||!Number.isSafeInteger(value.earned)||value.earned<0||value.earned>10000||!Array.isArray(value.pets))return {version:2,earned:0,pending:0,pets:[],readyAt:[],masterReward:false};
+ if(!value||!Number.isSafeInteger(value.earned)||value.earned<0||value.earned>Number.MAX_SAFE_INTEGER||!Array.isArray(value.pets))return {version:2,earned:0,pending:0,pets:[],readyAt:[],masterReward:false};
  const pets=value.pets.filter(x=>Number.isInteger(x)&&x>=0&&x<PETS.length).slice(0,value.earned);
  const pending=value.earned-pets.length;
  const readyAt=Array.isArray(value.readyAt)?value.readyAt.filter(x=>Number.isFinite(x)&&x>=0).slice(0,pending):[];
  while(readyAt.length<pending)readyAt.push(now+INCUBATION_MS);
- return {version:2,earned:value.earned,pending,pets,readyAt,masterReward:value.masterReward===true};
+ return {version:2,earned:value.earned,pending,pets,readyAt,masterReward:value.masterReward===true||new Set(pets).size===PETS.length};
 }
 function earnEgg(value,now=Date.now()){
- const state=cleanCollection(value,now),count=Math.min(1,10000-state.earned);
+ const state=cleanCollection(value,now),count=Math.min(1,Number.MAX_SAFE_INTEGER-state.earned);
  return {...state,earned:state.earned+count,pending:state.pending+count,readyAt:[...state.readyAt,...Array(count).fill(now+INCUBATION_MS)]};
 }
 function hatchEgg(value,now=Date.now()){
@@ -19008,9 +19008,31 @@ const previousByQuiz = new Map();
 let selectedQuiz = null, questions = [], results = [], index = 0, submitted = false,sessionRewardClaimed=false;
 const COLLECTION_KEY='mes-revisions.english.eggs.v1';
 let collection=cleanCollection(null),collectionSaved=true;
-try{const previous=localStorage.getItem(COLLECTION_KEY);if(previous&&!localStorage.getItem(COLLECTION_KEY+'.backup-before-incubation'))localStorage.setItem(COLLECTION_KEY+'.backup-before-incubation',previous);collection=cleanCollection(JSON.parse(previous));}catch{collectionSaved=false;}
-function saveCollection(){try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}}
+// Never replace unreadable saved progress with an empty collection.
+let collectionReadBlocked=false;
+try{
+ const previous=localStorage.getItem(COLLECTION_KEY);
+ if(previous){
+  const parsed=JSON.parse(previous);
+  if(!parsed||!Number.isSafeInteger(parsed.earned)||parsed.earned<0||!Array.isArray(parsed.pets))throw new Error('Collection illisible');
+  collection=cleanCollection(parsed);
+  try{if(!localStorage.getItem(COLLECTION_KEY+'.backup-before-progression'))localStorage.setItem(COLLECTION_KEY+'.backup-before-progression',previous);}catch{/* A full backup store must not prevent loading the real collection. */}
+ }
+}catch{collectionSaved=false;collectionReadBlocked=true;}
+function saveCollection(){
+ if(collectionReadBlocked){collectionSaved=false;return;}
+ try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));collectionSaved=true;}catch{collectionSaved=false;}
+}
 saveCollection();
+function collectionProgress(state){
+ const counts=PETS.map((_,i)=>state.pets.filter(x=>x===i).length);
+ const completed=Math.min(...counts);
+ return {counts,completed,level:completed+1,found:counts.filter(n=>n>completed).length};
+}
+function progressionPanel(state){
+ const p=collectionProgress(state);
+ return `<div class="reward-panel"><h2>✨ Collection étoilée · niveau ${p.level}</h2><p>Chaque compagnon supplémentaire agrandit ta collection. Réunis un nouvel exemplaire de chacune des 12 espèces pour gagner un nouveau sceau Phénix.</p><p><strong>${p.found} / 12 espèces au niveau ${p.level}</strong> · ${p.completed} collection${p.completed>1?'s':''} complète${p.completed>1?'s':''}</p><p>${p.completed?'🐦‍🔥 Phénix des savoirs · '+p.completed+' sceau'+(p.completed>1?'x':'')+' de collection.':(state.masterReward?'🐦‍🔥 Ton Phénix déjà obtenu est conservé. Prochain objectif : compléter ce niveau.':'Prochain trésor : le Phénix des savoirs au premier niveau complet.')}</p><p>Les niveaux se poursuivent, sans recommencer à zéro. Les 12 espèces restent les mêmes : chaque niveau est une nouvelle collection étoilée, pas une nouvelle espèce. Aucun compagnon n’est dépensé.</p></div>`;
+}
 const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
 const icons={englishNew:'🥕',svt:'🔬',determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
 function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
@@ -19076,8 +19098,8 @@ function summary(){
 }
 function showCollection(){
  menuButton.hidden=false;root.dataset.quizId='collection';
- collection=cleanCollection(collection);const ready=collection.readyAt.filter(t=>t<=Date.now()).length;
- root.innerHTML=`<div class="eyebrow">La nurserie des compagnons</div><h1 tabindex="-1">Ma collection</h1><p class="intro">${collection.earned} œufs gagnés · ${collection.pending} à éclore · ${collection.pets.length} compagnons</p><p>Un 10/10 donne un œuf. Il couve cinq minutes : tu peux faire une pause, il ne se perd pas.</p><div class="reward-panel"><h2>🥚 Mes œufs</h2><div id="incubation-status" aria-live="polite"></div><button class="primary" id="collection-hatch" ${ready?'':'disabled'}>Faire éclore un œuf prêt ✨</button></div><div class="reward-panel"><h2>🏆 Collection complète</h2><p>Réunis les 12 compagnons différents pour obtenir une seule fois le Phénix des savoirs. Tu gardes tous tes compagnons.</p>${collection.masterReward?'<p><strong>🐦‍🔥 Phénix des savoirs obtenu !</strong> Récompense unique conservée dans ta collection.</p>':`<p>${new Set(collection.pets).size} / ${PETS.length} compagnons différents découverts.</p>`}</div><div class="pet-grid">${PETS.map((pet,i)=>{const count=collection.pets.filter(x=>x===i).length;return `<div class="pet-tile ${count?'':'locked'}"><span aria-hidden="true">${count?pet.icon:'🥚'}</span><strong>${count?pet.name:'Compagnon mystère'}</strong><small>${count?'× '+count:'À découvrir après éclosion'}</small></div>`;}).join('')}</div>${rewardDisclaimer()}<p class="note">Collection enregistrée dans ce navigateur, sur cet appareil, sans compte ni données personnelles. Elle reste après fermeture, mais peut disparaître si les données du navigateur sont effacées. Pas de synchronisation entre appareils.</p>${!collectionSaved?'<p role="alert">Sauvegarde locale indisponible : ta collection risque de disparaître à la fermeture.</p>':''}<div id="collection-birth" aria-live="polite"></div><button class="secondary" id="collection-back">Retour aux missions</button>`;
+ collection=cleanCollection(collection);saveCollection();const ready=collection.readyAt.filter(t=>t<=Date.now()).length;
+ root.innerHTML=`<div class="eyebrow">La nurserie des compagnons</div><h1 tabindex="-1">Ma collection</h1><p class="intro">${collection.earned} œufs gagnés · ${collection.pending} à éclore · ${collection.pets.length} compagnons</p><p>Un 10/10 donne un œuf. Il couve cinq minutes : tu peux faire une pause, il ne se perd pas.</p><div class="reward-panel"><h2>🥚 Mes œufs</h2><div id="incubation-status" aria-live="polite"></div><button class="primary" id="collection-hatch" ${ready?'':'disabled'}>Faire éclore un œuf prêt ✨</button></div>${progressionPanel(collection)}<div class="pet-grid">${PETS.map((pet,i)=>{const count=collection.pets.filter(x=>x===i).length;return `<div class="pet-tile ${count?'':'locked'}"><span aria-hidden="true">${count?pet.icon:'🥚'}</span><strong>${count?pet.name:'Compagnon mystère'}</strong><small>${count?'× '+count+' · '+count+' étoile'+(count>1?'s':''):'À découvrir après éclosion'}</small></div>`;}).join('')}</div>${rewardDisclaimer()}<p class="note">Collection enregistrée dans ce navigateur, sur cet appareil, sans compte ni données personnelles. Elle reste après fermeture, mais peut disparaître si les données du navigateur sont effacées. Pas de synchronisation entre appareils.</p>${!collectionSaved?'<p role="alert">Sauvegarde locale indisponible : ne ferme pas cette page et ne vide pas les données du navigateur. Les anciennes données ne sont pas remplacées si elles sont illisibles ; les nouveaux gains restent provisoires.</p>':''}<div id="collection-birth" aria-live="polite"></div><button class="secondary" id="collection-back">Retour aux missions</button>`;
  function refresh(){
   if(root.dataset.quizId!=='collection')return false;
   const now=Date.now(),r=collection.readyAt.filter(t=>t<=now).length;
@@ -19130,7 +19152,7 @@ function showDicteeFes(){
  }
  function render(){
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-15.9</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 8. Les mots non surlignés sont également inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Source : fiche de classe « Orthographe 8 — Le pluriel des noms et des adjectifs (1) », mots du Palais royal de Fès, Dictées et histoire des arts autour du monde, Cycle 3, © Retz.</p>';
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-15.10</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 8. Les mots non surlignés sont également inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Source : fiche de classe « Orthographe 8 — Le pluriel des noms et des adjectifs (1) », mots du Palais royal de Fès, Dictées et histoire des arts autour du monde, Cycle 3, © Retz.</p>';
    voices();root.querySelector('#dict-listen').onclick=speak;
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
@@ -19171,7 +19193,7 @@ function showExactConjugation(){
 menuButton.addEventListener('click',showMenu);showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-15.9';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-15.10';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
@@ -19183,4 +19205,5 @@ if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol
 }
 </script>
 </body></html>
+
 
