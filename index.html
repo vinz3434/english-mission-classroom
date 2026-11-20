@@ -49,6 +49,437 @@ fieldset{border:1px solid #cbd6e5;border-radius:12px;padding:15px;margin:20px 0}
 <main><section class="card" id="quiz" aria-label="Questionnaires de révision"></section><noscript><p>Active JavaScript dans ton navigateur pour jouer au quiz.</p></noscript></main>
 <footer class="footer"><span id="offline-status" class="status">Quiz autonomes · sans compte</span><details><summary>Sur ton téléphone</summary><p>Ouvre le lien dans Chrome sur Android, puis son menu ⋮ → « Ajouter à l’écran d’accueil » ou « Installer l’application ». Les intitulés varient selon le téléphone.</p><p>Pour jouer sans réseau, attends l’indication « Questionnaires prêts hors connexion ». Les réponses et les scores restent en mémoire pendant la partie. Les œufs et les compagnons du quiz sont conservés sur cet appareil. Si l’ancien écran reste affiché après une mise à jour, ferme les onglets du quiz puis rouvre ce lien avec Internet.</p></details><details><summary>À propos et confidentialité</summary><p>Anglais : toutes les dix fiches disponibles du cahier. Sept thèmes : présentation, classe, vêtements et couleurs, maison et matin, goûts et famille, Halloween et positions, vocabulaire culturel. Dix questions par partie, avec une question par sous-thème. Le quiz ne prétend pas couvrir un programme annuel non fourni.</p><p>CONJ.3 : 84 questions originales sur le verbe, l’infinitif et les groupes. Chaque série contient 10 questions : 3 verbes à repérer, 3 infinitifs, 1 question sur chaque groupe, puis 1 sur le radical ou la terminaison. CONJ.1 et CONJ.2 ne sont pas inclus.</p><p>Passé, présent, futur : 60 questions originales adaptées de l’activité de classement reçue. Dix questions par partie : six phrases (deux par période) et quatre expressions de temps. La correspondance de cette activité avec CONJ.1 reste à confirmer ; CONJ.2 n’est pas incluse.</p><p>Géo.2 à Géo.4 : 61 questions originales sur les déplacements quotidiens, les raisons de voyager loin, les moyens de transport et leurs infrastructures. Dix questions par partie : trois de Géo.2, trois de Géo.3 et quatre de Géo.4. Géo.1 n’est pas incluse.</p><p>Parenthèses et priorités, niveau 5e : 80 calculs originaux, en séries de 10. Deux calculs de gauche à droite, deux avec des priorités, trois avec parenthèses simples et trois avec parenthèses doubles. Écris seulement le résultat : les virgules et les points sont acceptés pour les décimaux. Les corrections détaillent les étapes.</p><p>Les notions de la dernière partie de chaque questionnaire sont mémorisées sur cet appareil pour varier les séries. La collection commune à toutes les matières est également enregistrée sur cet appareil. Aucune réponse ni aucun score ne sont envoyés par le quiz ; aucun compte à créer. Aucun outil d’analyse ni publicité. L’hébergeur peut conserver ses journaux techniques habituels.</p><p>En anglais, les synonymes prévus, les variantes britanniques et américaines, les articles facultatifs en vocabulaire et certaines petites fautes de frappe sont acceptés. La bonne orthographe reste affichée. Les contresens restent refusés ; d’autres formulations justes peuvent encore manquer. Les accents et l’orthographe restent nécessaires dans les réponses écrites de CONJ.3. Les questionnaires Passé-présent-futur, Géographie, Déterminants et Longueurs proposent des réponses à toucher. Le quiz ne remplace pas les exercices écrits ni l’écoute des enregistrements de classe.</p><p>Les œufs et compagnons sont des créations du quiz, sans transfert vers Roblox ni lien officiel avec Steal An Egg. Un œuf est gagné pour chaque nouvelle partie à 10/10 dans n’importe quelle matière, sans achat ni tirage payant.</p><p>Déterminants, niveau CM1 : 108 questions originales en séries de dix. Repérage, familles, accords, erreurs à réparer et groupes de mots à reconstruire. Les quatre familles travaillées sont les articles définis, les articles indéfinis, les possessifs et les démonstratifs.</p><p>Unités de longueur, niveau CM1 : 145 questions originales en séries de dix. Unités, conversions, comparaisons, petits problèmes, erreurs à corriger et longueurs à ranger. Les mesures restent entières ; les corrections expliquent les équivalences.</p><p>SVT, niveau 5e : questions originales sur les notions des supports disponibles : régimes alimentaires et digestion, respiration des animaux, besoins des muscles, lecture de tableaux et de graphiques. Les expériences présentées sont fictives ; les PDF de classe et leurs illustrations ne sont pas publiés.</p><p>Un 10/10 dans un questionnaire donne un œuf à faire éclore après cinq minutes. La même collection est conservée sur cet appareil. Les anciennes notes n’étaient pas enregistrées : cette version n’attribue pas de récompense rétroactive.</p><p>Histoire H1–H4 : 29 questions originales. Repères et compréhension du récit, avec réserves scientifiques distinctes. Aucune photo ni copie de cahier publiée.</p><p>Mission Histoire ajoutée le 17 novembre 2026.</p></details></footer>
 <script>const QUIZZES ={
+"nomAdjectif":{
+  "id": "nomAdjectif",
+  "subject": "Grammaire",
+  "title": "Le nom et l’adjectif",
+  "description": "Repère des noms et des adjectifs, puis accorde les adjectifs avec les noms qu’ils précisent.",
+  "menuDescription": "Nom propre ou commun, genre, nombre et accord de l’adjectif.",
+  "duration": "5 à 8 minutes",
+  "scope": "Questions originales CM1 : reconnaître les noms et les adjectifs dans le groupe nominal. Ce quiz ne reproduit pas une évaluation.",
+  "size": 10,
+  "storageKey": "mes-revisions.nom-adjectif.previous.v1",
+  "plan": [
+    [
+      "repere",
+      2
+    ],
+    [
+      "type",
+      2
+    ],
+    [
+      "genre",
+      2
+    ],
+    [
+      "lien",
+      2
+    ],
+    [
+      "accord",
+      2
+    ]
+  ],
+  "bank": [
+    {
+      "id": "na_1",
+      "conceptId": "na_1",
+      "category": "repere",
+      "categoryLabel": "Repérer le nom et l’adjectif",
+      "prompt": "Dans « une grotte profonde », quel mot est le nom ?",
+      "choices": [
+        "grotte",
+        "une",
+        "profonde"
+      ],
+      "acceptedAnswers": [
+        "grotte"
+      ],
+      "exactCorrection": "grotte",
+      "explanation": "« Grotte » désigne un lieu ; « profonde » donne une précision sur la grotte.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_2",
+      "conceptId": "na_2",
+      "category": "repere",
+      "categoryLabel": "Repérer le nom et l’adjectif",
+      "prompt": "Dans « un vieux vélo », quel mot est l’adjectif ?",
+      "choices": [
+        "un",
+        "vieux",
+        "vélo"
+      ],
+      "acceptedAnswers": [
+        "vieux"
+      ],
+      "exactCorrection": "vieux",
+      "explanation": "« Vieux » précise comment est le vélo.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_3",
+      "conceptId": "na_3",
+      "category": "repere",
+      "categoryLabel": "Repérer le nom et l’adjectif",
+      "prompt": "Dans « des fenêtres étroites », quel mot est le nom ?",
+      "choices": [
+        "des",
+        "étroites",
+        "fenêtres"
+      ],
+      "acceptedAnswers": [
+        "fenêtres"
+      ],
+      "exactCorrection": "fenêtres",
+      "explanation": "« Fenêtres » nomme des objets ; « étroites » donne une précision.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_4",
+      "conceptId": "na_4",
+      "category": "repere",
+      "categoryLabel": "Repérer le nom et l’adjectif",
+      "prompt": "Dans « cette minuscule fourmi », quel mot est l’adjectif ?",
+      "choices": [
+        "minuscule",
+        "cette",
+        "fourmi"
+      ],
+      "acceptedAnswers": [
+        "minuscule"
+      ],
+      "exactCorrection": "minuscule",
+      "explanation": "« Minuscule » donne une précision sur la fourmi.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_5",
+      "conceptId": "na_5",
+      "category": "type",
+      "categoryLabel": "Nom propre ou nom commun",
+      "prompt": "Dans « Nous marchons près de la Loire », quel est le nom propre ?",
+      "choices": [
+        "marchons",
+        "Loire",
+        "près"
+      ],
+      "acceptedAnswers": [
+        "Loire"
+      ],
+      "exactCorrection": "Loire",
+      "explanation": "« Loire » désigne un fleuve précis. Le nom propre prend une majuscule.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_6",
+      "conceptId": "na_6",
+      "category": "type",
+      "categoryLabel": "Nom propre ou nom commun",
+      "prompt": "Quel mot est un nom commun ?",
+      "choices": [
+        "Alpes",
+        "paisible",
+        "forêt"
+      ],
+      "acceptedAnswers": [
+        "forêt"
+      ],
+      "exactCorrection": "forêt",
+      "explanation": "« Forêt » désigne un type de lieu ; « Alpes » est le nom propre d’un massif.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_7",
+      "conceptId": "na_7",
+      "category": "type",
+      "categoryLabel": "Nom propre ou nom commun",
+      "prompt": "Dans « On visite Lyon et son musée », quel est le nom commun ?",
+      "choices": [
+        "musée",
+        "Lyon",
+        "visite"
+      ],
+      "acceptedAnswers": [
+        "musée"
+      ],
+      "exactCorrection": "musée",
+      "explanation": "« Musée » désigne un lieu. « Lyon » est le nom propre d’une ville.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_8",
+      "conceptId": "na_8",
+      "category": "type",
+      "categoryLabel": "Nom propre ou nom commun",
+      "prompt": "Quel est le nom propre dans « Nous avons observé la Lune » ?",
+      "choices": [
+        "observé",
+        "Lune",
+        "nous"
+      ],
+      "acceptedAnswers": [
+        "Lune"
+      ],
+      "exactCorrection": "Lune",
+      "explanation": "« Lune » est ici le nom de l’astre. Il prend une majuscule.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_9",
+      "conceptId": "na_9",
+      "category": "genre",
+      "categoryLabel": "Genre et nombre du nom",
+      "prompt": "Quel est le genre du nom « rivière » ?",
+      "choices": [
+        "masculin",
+        "féminin"
+      ],
+      "acceptedAnswers": [
+        "féminin"
+      ],
+      "exactCorrection": "féminin",
+      "explanation": "On dit « une rivière » : c’est un nom féminin.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_10",
+      "conceptId": "na_10",
+      "category": "genre",
+      "categoryLabel": "Genre et nombre du nom",
+      "prompt": "Quel est le genre du nom « nuage » ?",
+      "choices": [
+        "masculin",
+        "féminin"
+      ],
+      "acceptedAnswers": [
+        "masculin"
+      ],
+      "exactCorrection": "masculin",
+      "explanation": "On dit « un nuage » : c’est un nom masculin.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_11",
+      "conceptId": "na_11",
+      "category": "genre",
+      "categoryLabel": "Genre et nombre du nom",
+      "prompt": "Dans « des lampes », quels sont le genre et le nombre du nom ?",
+      "choices": [
+        "masculin pluriel",
+        "féminin pluriel",
+        "féminin singulier"
+      ],
+      "acceptedAnswers": [
+        "féminin pluriel"
+      ],
+      "exactCorrection": "féminin pluriel",
+      "explanation": "On dit « une lampe » au singulier ; « des lampes » est au pluriel.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_12",
+      "conceptId": "na_12",
+      "category": "genre",
+      "categoryLabel": "Genre et nombre du nom",
+      "prompt": "Dans « des coussins », quels sont le genre et le nombre du nom ?",
+      "choices": [
+        "féminin pluriel",
+        "masculin singulier",
+        "masculin pluriel"
+      ],
+      "acceptedAnswers": [
+        "masculin pluriel"
+      ],
+      "exactCorrection": "masculin pluriel",
+      "explanation": "On dit « un coussin » au singulier ; « des coussins » est au pluriel.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_13",
+      "conceptId": "na_13",
+      "category": "lien",
+      "categoryLabel": "Relier l’adjectif au nom",
+      "prompt": "Dans « Les feuilles jaunes tombent », quel nom l’adjectif « jaunes » précise-t-il ?",
+      "choices": [
+        "feuilles",
+        "les",
+        "tombent"
+      ],
+      "acceptedAnswers": [
+        "feuilles"
+      ],
+      "exactCorrection": "feuilles",
+      "explanation": "« Jaunes » indique comment sont les feuilles : c’est l’adjectif épithète du nom « feuilles ».",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_14",
+      "conceptId": "na_14",
+      "category": "lien",
+      "categoryLabel": "Relier l’adjectif au nom",
+      "prompt": "Dans « Le renard roux traverse le bois », quel nom « roux » précise-t-il ?",
+      "choices": [
+        "bois",
+        "renard",
+        "traverse"
+      ],
+      "acceptedAnswers": [
+        "renard"
+      ],
+      "exactCorrection": "renard",
+      "explanation": "C’est le renard qui est roux. L’adjectif « roux » précise le nom « renard ».",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_15",
+      "conceptId": "na_15",
+      "category": "lien",
+      "categoryLabel": "Relier l’adjectif au nom",
+      "prompt": "Dans « une grande mare », quel nom est précisé par « grande » ?",
+      "choices": [
+        "une",
+        "grande",
+        "mare"
+      ],
+      "acceptedAnswers": [
+        "mare"
+      ],
+      "exactCorrection": "mare",
+      "explanation": "La mare est grande. Dans le groupe nominal, « grande » est épithète du nom « mare ».",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_16",
+      "conceptId": "na_16",
+      "category": "lien",
+      "categoryLabel": "Relier l’adjectif au nom",
+      "prompt": "Dans « des galets lisses », quel rôle joue « lisses » ?",
+      "choices": [
+        "Il précise le nom « galets ».",
+        "Il nomme les objets.",
+        "Il indique une action."
+      ],
+      "acceptedAnswers": [
+        "Il précise le nom « galets »."
+      ],
+      "exactCorrection": "Il précise le nom « galets ».",
+      "explanation": "« Lisses » décrit la surface des galets.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_17",
+      "conceptId": "na_17",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Complète : « une veste ___ » (vert).",
+      "choices": [
+        "vert",
+        "verte",
+        "vertes"
+      ],
+      "acceptedAnswers": [
+        "verte"
+      ],
+      "exactCorrection": "verte",
+      "explanation": "« Veste » est féminin singulier. L’adjectif s’accorde : verte.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_18",
+      "conceptId": "na_18",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Complète : « des rubans ___ » (long).",
+      "choices": [
+        "long",
+        "longues",
+        "longs"
+      ],
+      "acceptedAnswers": [
+        "longs"
+      ],
+      "exactCorrection": "longs",
+      "explanation": "« Rubans » est masculin pluriel. L’adjectif s’accorde : longs.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_19",
+      "conceptId": "na_19",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Complète : « des routes ___ » (étroit).",
+      "choices": [
+        "étroites",
+        "étroit",
+        "étroits"
+      ],
+      "acceptedAnswers": [
+        "étroites"
+      ],
+      "exactCorrection": "étroites",
+      "explanation": "« Routes » est féminin pluriel. L’adjectif s’accorde : étroites.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_20",
+      "conceptId": "na_20",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Complète : « un panier ___ » (plein).",
+      "choices": [
+        "pleine",
+        "plein",
+        "pleins"
+      ],
+      "acceptedAnswers": [
+        "plein"
+      ],
+      "exactCorrection": "plein",
+      "explanation": "« Panier » est masculin singulier. On écrit « un panier plein ».",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_21",
+      "conceptId": "na_21",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Transforme « un mur blanc » au pluriel.",
+      "choices": [
+        "des murs blanc",
+        "des mur blancs",
+        "des murs blancs"
+      ],
+      "acceptedAnswers": [
+        "des murs blancs"
+      ],
+      "exactCorrection": "des murs blancs",
+      "explanation": "Au pluriel, on écrit « murs » et on accorde « blancs » avec ce nom.",
+      "answerHint": "Touche une réponse, puis valide."
+    },
+    {
+      "id": "na_22",
+      "conceptId": "na_22",
+      "category": "accord",
+      "categoryLabel": "Accorder l’adjectif",
+      "prompt": "Transforme « une valise légère » au pluriel.",
+      "choices": [
+        "des valises légères",
+        "des valises légère",
+        "des valise légères"
+      ],
+      "acceptedAnswers": [
+        "des valises légères"
+      ],
+      "exactCorrection": "des valises légères",
+      "explanation": "« Valises » est féminin pluriel. « Légères » s’accorde au féminin pluriel.",
+      "answerHint": "Touche une réponse, puis valide."
+    }
+  ],
+  "workedExample": "Dans « des lanternes rouges », « lanternes » est le nom. « Rouges » précise ce nom et s’accorde au féminin pluriel.",
+  "reward": true
+},
 "geometryGeom2":{
   "id": "geometryGeom2",
   "subject": "Géométrie · GEOM.2",
@@ -20274,7 +20705,7 @@ function progressionPanel(state){
  return `<div class="reward-panel"><h2>✨ Collection étoilée · niveau ${p.level}</h2><p>Chaque compagnon supplémentaire agrandit ta collection. Réunis un nouvel exemplaire de chacune des 12 espèces pour gagner un nouveau sceau Phénix.</p><p><strong>${p.found} / 12 espèces au niveau ${p.level}</strong> · ${p.completed} collection${p.completed>1?'s':''} complète${p.completed>1?'s':''}</p><p>${p.completed?'🐦‍🔥 Phénix des savoirs · '+p.completed+' sceau'+(p.completed>1?'x':'')+' de collection.':(state.masterReward?'🐦‍🔥 Ton Phénix déjà obtenu est conservé. Prochain objectif : compléter ce niveau.':'Prochain trésor : le Phénix des savoirs au premier niveau complet.')}</p><p>Les niveaux se poursuivent, sans recommencer à zéro. Les 12 espèces restent les mêmes : chaque niveau est une nouvelle collection étoilée, pas une nouvelle espèce. Aucun compagnon n’est dépensé.</p></div>`;
 }
 const eggArt=(small=false)=>`<div class="egg-art ${small?'small':''}" aria-hidden="true"><span>✦</span></div>`;
-const icons={geometryGeom2:'📐',historyH1H4:'🦴',englishNew:'🥕',svt:'🔬',determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',conjPresent:'✍️',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
+const icons={nomAdjectif:'🔤',geometryGeom2:'📐',historyH1H4:'🦴',englishNew:'🥕',svt:'🔬',determinants:'🔎',lengths:'📏',english:'🥚',conj3:'📚',conjPresent:'✍️',time:'⏳',geography:'🌍',penelopeMaths:'🧮'};
 function rewardDisclaimer(){return '<p class="reward-disclaimer">Collection du quiz uniquement · aucun objet ajouté dans Roblox.</p>';}
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function focusHeading(){ root.querySelector('h1,h2')?.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
