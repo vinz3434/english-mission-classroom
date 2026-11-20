@@ -43,6 +43,36 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 @keyframes baby-arrive{0%,65%{opacity:0;transform:translateY(20px) scale(.7)}85%{opacity:1;transform:translateY(-7px) scale(1.08)}100%{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.birth-shell{display:none}.baby-creature{animation:none}}
 fieldset{border:1px solid #cbd6e5;border-radius:12px;padding:15px;margin:20px 0}legend{padding:0 6px;line-height:1.5}select{width:100%;min-height:48px;padding:10px;border:1px solid #b9c8dc;border-radius:10px;background:white;color:var(--navy);font:inherit}.exact-words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.exact-words label{margin:0;padding:12px 4px;display:flex;align-items:center;gap:5px;font-size:14px}.exact-words input{width:20px;min-height:20px;margin:0} </style>
+<style>
+#grammar-evaluation { color:#1d2433; line-height:1.55; }
+#grammar-evaluation .card { background:#fff; border:1px solid #d6ddee; border-radius:16px; padding:1rem; margin:.7rem 0; }
+#grammar-evaluation h1,#grammar-evaluation h2 { line-height:1.25; }
+#grammar-evaluation h2 { font-size:1.33rem; color:#283676; }
+#grammar-evaluation h3 { font-size:1.04rem; }
+#grammar-evaluation .footer,#grammar-evaluation .hint { font-size:.90rem; color:#414d64; }
+#grammar-evaluation nav { display:flex; flex-wrap:wrap; gap:.6rem; margin:1rem 0; }
+#grammar-evaluation button,#grammar-evaluation select,#grammar-evaluation textarea { font:inherit; color:inherit; }
+#grammar-evaluation .nav { border:1px solid #29376f; border-radius:.55rem; background:#fff; padding:.45rem .9rem; font-weight:650; }
+#grammar-evaluation .nav[aria-pressed=true] { background:#29376f; color:#fff; }
+#grammar-evaluation :focus-visible { outline:3px solid #7745ab; outline-offset:2px; }
+#grammar-evaluation [hidden] { display:none!important; }
+#grammar-evaluation .word { background:transparent; border:1px solid transparent; border-radius:.5rem; padding:.12rem .27rem; }
+#grammar-evaluation .word:hover,#grammar-evaluation .word:focus-visible { background:#edf0f8; }
+#grammar-evaluation .word[data-mark="1"] { border:2px solid #17452d; background:#e8f8ef; border-radius:1rem; color:#102e20; font-weight:700; }
+#grammar-evaluation .word[data-mark="2"] { text-decoration:line-through; text-decoration-thickness:2px; background:#ffefe6; color:#6c230b; }
+#grammar-evaluation .pile { line-height:2.25; }
+#grammar-evaluation table { border-collapse:collapse; width:100%; font-size:.92rem; }
+#grammar-evaluation th,#grammar-evaluation td { border:1px solid #bfc9e3; padding:.25rem .45rem; text-align:left; }
+#grammar-evaluation th { background:#edf0fb; }
+#grammar-evaluation .table-wrap { overflow-x:auto; }
+#grammar-evaluation .classification td { vertical-align:top; min-width:6.5rem; width:50%; }
+#grammar-evaluation label { font-size:.92rem; }
+#grammar-evaluation textarea { display:block; width:100%; margin:.4rem 0 1rem; border:1px solid #7886a7; border-radius:.4rem; padding:.4rem; background:#fff; }
+#grammar-evaluation footer { text-align:right; }
+</style>
+<style>.grammar-shortcut{display:grid;gap:.18rem;margin:0 0 1rem;padding:.85rem 1rem;border:2px solid #283676;border-radius:16px;background:#edf0fb;color:#1d285f;text-decoration:none}.grammar-shortcut:hover,.grammar-shortcut:focus-visible{text-decoration:underline}.grammar-shortcut:focus-visible{outline:3px solid #7745ab;outline-offset:3px}.grammar-shortcut strong{font-size:1.2rem}.grammar-shortcut-type{font-size:.85rem;font-weight:700;letter-spacing:.03em}</style>
+<style>#grammar-evaluation .classification-row{display:grid;grid-template-columns:minmax(6.3rem,1fr) minmax(7.5rem,1fr);align-items:center;gap:.65rem;padding:.32rem 0;border-bottom:1px solid #e4e8f3}#grammar-evaluation select{width:100%;padding:.3rem;border:1px solid #7886a7;border-radius:.4rem}#grammar-evaluation progress{width:100%;height:1rem}#grammar-evaluation .evaluation-feedback{padding:.75rem 1rem;margin:.8rem 0;background:#edf0fb;border-radius:12px}#grammar-evaluation .evaluation-feedback li{margin:.45rem 0}#grammar-evaluation .primary{margin:.7rem 0}#grammar-evaluation label{display:inline-block;margin-top:.25rem}#grammar-evaluation fieldset:disabled{opacity:.8}</style>
+<style>#grammar-evaluation .exact-instruction{font-size:clamp(1.24rem,4.1vw,1.6rem);font-weight:500;letter-spacing:0}#grammar-evaluation .exact-instruction strong{font-weight:800}#grammar-evaluation .name-pool,#grammar-evaluation .name-tray{display:flex;flex-wrap:wrap;align-content:flex-start;gap:.32rem;padding:.45rem .2rem;min-height:2.1rem}#grammar-evaluation .name-chip[data-mark="0"]{border:1px solid #a8b5d5;background:#f1f4fb;min-height:2.25rem}#grammar-evaluation .column-action{display:block;width:100%;padding:.25rem;min-height:2.25rem}#grammar-evaluation .column-action:disabled{opacity:.52;cursor:default}#grammar-evaluation .source-paragraph{border:1px solid #4759a2;border-radius:.6rem;padding:.4rem .65rem}#grammar-evaluation .exercise-phrases .pile{margin:.26rem 0}#grammar-evaluation .classification-row{display:grid;grid-template-columns:minmax(6.3rem,1fr) minmax(7.5rem,1fr);align-items:center;gap:.65rem;padding:.32rem 0;border-bottom:1px solid #e4e8f3}#grammar-evaluation select{width:100%;padding:.3rem;border:1px solid #7886a7;border-radius:.4rem}#grammar-evaluation progress{width:100%;height:1rem}#grammar-evaluation .evaluation-feedback{padding:.75rem 1rem;margin:.8rem 0;background:#edf0fb;border-radius:12px}#grammar-evaluation .evaluation-feedback li{margin:.45rem 0}#grammar-evaluation .primary{margin:.7rem 0}#grammar-evaluation label{display:inline-block;margin-top:.25rem}#grammar-evaluation fieldset:disabled{opacity:.8}</style>
 </head>
 <body>
 <header><div class="logo" aria-hidden="true">🥚</div><div><strong>Mes révisions</strong><small>Des missions et des compagnons.</small></div><button id="menu-button" class="menu-button" hidden>Questionnaires</button></header>
@@ -20718,8 +20748,8 @@ function loadPrevious(quiz){
 function showMenu(){
   if(window.speechSynthesis)window.speechSynthesis.cancel();
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="dict-fes-open">Dictée vocale — Le conte et les griots (Sénégal) →</button><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
-  document.querySelector('#collection-open').addEventListener('click',showCollection);document.querySelector('#exact-conjugation-open').addEventListener('click',showExactConjugation);document.querySelector('#dict-fes-open').addEventListener('click',showDicteeFes);
+  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="dict-fes-open">Dictée vocale — Le conte et les griots (Sénégal) →</button><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><button class="secondary" id="exact-grammar-open">Grammaire — Le nom et l’adjectif · 8 exercices (évaluations 1 et 2) →</button><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
+  document.querySelector('#collection-open').addEventListener('click',showCollection);document.querySelector('#exact-conjugation-open').addEventListener('click',showExactConjugation);document.querySelector('#exact-grammar-open').addEventListener('click',showExactGrammar);document.querySelector('#dict-fes-open').addEventListener('click',showDicteeFes);
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
 }
 function showWelcome(id){
@@ -21037,10 +21067,265 @@ function showExactConjugation(){
  });focusHeading();
 }
 
-menuButton.addEventListener('click',showMenu);showMenu();
+function showExactGrammar(){
+ selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='exact-grammar';menuButton.hidden=false;
+const grammarKey=[{"noms":["griffes","Blanche-Neige","écaille","ogre","Croquette","baguette","pelage","sortilège","tempête","sorcier","fourrure"],"propres":["Blanche-Neige","Croquette"],"texte":[{"N":["magicien","chapeau"],"A":["vieux","énorme","pointu"]},{"N":["souris","fromage"],"A":["petite","grise","doré"]},{"N":["loup","lune"],"A":["solitaire","froide","brillante"]},{"N":["fée","baguette"],"A":["malicieuse","argentée"]}],"place":[{"options":[["gris","Le loup gris traversait une mystérieuse forêt."]]},{"options":[["magique","La vieille fée agitait une baguette magique dorée."],["magique","La vieille fée agitait une baguette dorée magique."]]},{"options":[["petit","Le petit renard volait un trésor étincelant."]]}]},{"noms":["bravoure","discernement","noblesse","présence","franchise","courage","fierté","prestige","caractère"],"majuscules":[["Victoria","Angleterre"],["Spencer","Hamilton","Buckingham"],["Cornouailles","Écosse"]],"texte":[{"N":["salle","femme","démarche","respect","personnes","robe","soie","couture","élégance","visage","volonté"],"A":["calme","distante","assurée","présentes","brodée","sobre","raffinée","sévère","inflexible"]}],"place":[{"options":[["fière","La reine fière traversait les immenses couloirs du palais royal."],["immenses","La fière reine traversait les couloirs immenses du palais royal."]],"unchanged":true,"note":"« La fière reine » et « les immenses couloirs » sont déjà possibles en français."},{"options":[["rouillée","Le vieux général portait une armure rouillée aux broderies dorées."]]},{"options":[["inquiet","Un messager inquiet aux mains tremblantes remit la mystérieuse lettre au roi."],["mystérieuse","Un inquiet messager aux mains tremblantes remit la lettre mystérieuse au roi."]],"unchanged":true,"note":"« Un inquiet messager » et « la mystérieuse lettre » sont aussi possibles en français."}]}];
+const pages=[{"edition":1,"folio":103,"skills":[["Identifier les mots selon leur nature : les noms.","1, 2, 3"],["Identifier les mots selon leur nature : les adjectifs.","3"],["Manipuler les adjectifs.","4"]],"sections":[{"instruction":"Entoure uniquement les noms.","body":["griffes","rapide","Blanche-Neige","bondir","écaille","le","ogre","silencieusement","Croquette","baguette","nager","pelage","grand","sortilège","tempête","sorcier","fourrure","un"]},{"instruction":"Classe les noms de l’exercice précédent dans ce tableau.","body":["Nom commun","Nom propre"]},{"instruction":"Entoure les noms et barre les adjectifs.","body":["Un vieux magicien portait un énorme chapeau pointu.","La petite souris grise grignotait le fromage doré.","Un loup solitaire hurlait sous une froide lune brillante.","La fée malicieuse agitait sa baguette argentée."]},{"instruction":"Barre l’adjectif qui n’est pas à la bonne place et récris la phrase correctement.","body":["Le gris loup traversait une mystérieuse forêt.","La vieille fée agitait une magique baguette dorée.","Le renard petit volait un trésor étincelant."]}]},{"edition":2,"folio":104,"skills":[["Consolider les capacités à identifier les mots selon leur nature : les noms.","1, 2, 3"],["Consolider les capacités à identifier les mots selon leur nature : les adjectifs","3"],["Manipuler les adjectifs.","4"]],"sections":[{"instruction":"Entoure uniquement les noms.","body":["bravoure","discernement","noblesse","ressentir","présence","sembler","franchise","courage","élégant","fierté","vivement","prestige","impressionnant","caractère"]},{"instruction":"Entoure les noms propres et récris-les en dessous avec la majuscule.","body":["La reine victoria régnait sur l’angleterre depuis de longues années.","Ses conseillers, spencer et hamilton, l’accompagnaient dans les salons de buckingham.","Elle pensait souvent aux côtes de cornouailles et aux landes d’écosse."]},{"instruction":"Entoure les noms et barre les adjectifs.","body":["Dans la salle, une femme remarquablement calme et distante entrait. Sa démarche assurée imposait le respect aux personnes présentes. Elle portait une robe de soie brodée. Cette couture était d’une élégance sobre et raffinée. Son visage sévère trahissait une volonté inflexible."]},{"instruction":"Barre l’adjectif qui n’est pas à la bonne place et récris la phrase correctement.","body":["La fière reine traversait les immenses couloirs du palais royal.","Le vieux général portait une rouillée armure aux broderies dorées.","Un inquiet messager aux mains tremblantes remit la mystérieuse lettre au roi."]}]}];
+let current=0, scores=[];
+const ref=document.createElement('div');
+ref.id='grammar-evaluation';
+root.replaceChildren(ref);
+const text=(tag,value,parent)=>{const n=document.createElement(tag);if(value!==null)n.textContent=value;if(parent)parent.append(n);return n;};
+const button=(value,cls,parent,action)=>{
+ const b=text('button',value,parent);b.type='button';b.className=cls;if(action)b.addEventListener('click',action);return b;
+};
+const tokens=value=>Array.from(value.matchAll(/[\p{L}\p{M}]+(?:-[\p{L}\p{M}]+)*|[^\p{L}\p{M}]+/gu),m=>m[0]);
+const isWord=value=>/^[\p{L}\p{M}]/u.test(value);
+const lower=value=>value.normalize('NFC').toLocaleLowerCase('fr');
+const canonical=value=>lower(value).trim().replace(/[’‘]/g,"'").replace(/\s+/g,' ').replace(/[.!?]$/,'').trim();
+const capWords=value=>tokens(value.normalize('NFC')).filter(isWord);
+const sets=(value)=>new Set(value);
+const compactList=(items)=>items.length?items.join(', '):'aucun';
+const corner=(value,parent)=>{const el=text('p',value,parent);el.className='hint';return el;};
+function markedWords(value,parent,modes,split,exclusive=false){
+ const container=text('div',null,parent);container.className='pile';
+ const elements=[];
+ const change=(entry,state)=>{
+  entry.state=state;
+  entry.button.dataset.mark=String(modes[state][0]);
+  entry.button.setAttribute('aria-pressed',String(state!==0));
+  entry.button.setAttribute('aria-label',entry.token+' : '+modes[state][1]);
+ };
+ const list=split?tokens(value):value;
+ list.forEach((word,i)=>{
+  if(!isWord(word)){container.append(document.createTextNode(word));return;}
+  const entry={token:word,state:0,button:button(word,'word',container)};
+  change(entry,0);
+  entry.button.onclick=()=>{
+   const state=(entry.state+1)%modes.length;
+   if(exclusive&&state)for(const old of elements)if(old!==entry)change(old,0);
+   change(entry,state);
+  };
+  elements.push(entry);
+  if(!split&&i<list.length-1)container.append(document.createTextNode(' • '));
+ });
+ return elements;
+}
+const circle=[[0,'non marqué'],[1,'entouré']];
+const twoKinds=[[0,'non marqué'],[1,'entouré : nom'],[2,'barré : adjectif']];
+const strike=[[0,'non marqué'],[2,'barré']];
+function shortAnswer(parent,id,label){
+ const l=text('label',label,parent);l.htmlFor=id;
+ const n=text('textarea',null,parent);n.id=id;n.rows=2;n.spellcheck=false;n.setAttribute('autocapitalize','off');n.setAttribute('autocorrect','off');n.setAttribute('autocomplete','off');
+ return n;
+}
+function listsForMarks(entries,targetN,targetA=[]){
+ const N=sets(targetN.map(lower)),A=sets(targetA.map(lower));
+ let total=0,right=0,extra=0;
+ for(const e of entries){
+  const term=lower(e.token),value=N.has(term)?1:A.has(term)?2:0;
+  if(value){total++;if(e.state===value)right++;}
+  else if(e.state)extra++;
+ }
+ return {total,right:Math.max(0,right-extra),chosenN:entries.filter(x=>x.state===1).map(x=>x.token),chosenA:entries.filter(x=>x.state===2).map(x=>x.token)};
+}
+function gradeCapitalInput(actual,expected){
+ const seen=new Set();
+ let right=0,extra=0;
+ for(const value of capWords(actual)){
+   if(expected.includes(value)&&!seen.has(value)){right++;seen.add(value);}
+   else if(!expected.some(name=>lower(name)===lower(value)))extra++;
+ }
+ return {total:expected.length,right:Math.max(0,right-extra)};
+}
+function gradePlacement(words, typed, line, answer){
+ const selected=words.find(item=>item.state)?.token??'';
+ const original=canonical(line),user=canonical(typed);
+ const validNames=new Set(answer.options.map(x=>lower(x[0])));
+ const unchanged=Boolean(answer.unchanged)&&!selected&&user===original;
+ const rightSelect=(selected&&validNames.has(lower(selected)))||unchanged;
+ const rightRewrite=answer.options.some(([,example])=>canonical(example)===user)||unchanged;
+ return {right:Number(rightSelect)+Number(rightRewrite),total:2,selected,typed,answer:answer.options[0][1],note:answer.note};
+}
+function addFeedback(list, label, actual, solution, note){
+ const item=text('li',null,list);
+ text('strong',label+' : ',item);
+ text('span','Ta réponse : '+actual+'. ',item);
+ text('span','Correction : '+solution+'.',item);
+ if(note)text('p',note,item);
+}
+const rightLabel=count=>count===1?' réponse juste':' réponses justes';
+function ratio(right,total){return total?Math.round(100*right/total)/10:0;}
+function fmt(score){return score.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1});}
+function start(){
+ ref.replaceChildren();
+ const box=text('section',null,ref);box.className='card';
+ const title=text('h1','Le nom et l’adjectif',box);title.tabIndex=-1;
+ text('p','Deux évaluations, huit exercices dans l’ordre. Valide chaque exercice pour voir la correction, puis passe au suivant.',box);
+ corner('La note sur 10 est calculée sur les réponses justes. Les éléments non répondus ne rapportent rien. Une sélection en trop peut enlever une réponse juste dans le même exercice, sans descendre sous zéro. Ce n’est pas le barème de la maîtresse.',box);
+ button('Commencer', 'primary',box,()=>{current=0;scores=[];render();});
+ focusHeading();
+}
+function render(){
+ ref.replaceChildren();
+ const isSecond=current>=4, p=pages[isSecond?1:0],key=grammarKey[isSecond?1:0], ex=current%4, data=p.sections[ex];
+ const section=text('section',null,ref);section.className='card';
+ corner('Évaluation '+p.edition+' · Exercice '+(current+1)+' sur 8',section);
+ const heading=text('h1',null,section);heading.tabIndex=-1;heading.className='exact-instruction';
+ const emphasized=new Set([0,1,2,3].map(i=>i===0?['Entoure']:i===1?isSecond?['Entoure','récris']:['Classe']:i===2?['Entoure','barre']:['Barre','récris'])[ex]);
+ for(const part of data.instruction.split(/(Entoure|Classe|Barre|barre|récris)/u)){
+   if(emphasized.has(part))text('strong',part,heading);else heading.append(document.createTextNode(part));
+ }
+ const progress=text('progress',null,section);progress.max=8;progress.value=current;progress.setAttribute('aria-label','Progression des huit exercices');
+ const form=text('form',null,section);
+ const challenge=text('fieldset',null,form);challenge.style.margin='0';challenge.style.padding='0';challenge.style.border='0';
+ challenge.setAttribute('aria-label','Tes réponses');
+ let evaluate;
+ if(ex===0){
+  corner('Clique sur un mot pour l’entourer ; reclique pour annuler.',challenge);
+  const printedWidth=isSecond?7:6;
+  const words=[];
+  for(let first=0;first<data.body.length;first+=printedWidth){
+   words.push(...markedWords(data.body.slice(first,first+printedWidth),challenge,circle,false));
+   if(first+printedWidth<data.body.length)challenge.lastElementChild.append(document.createTextNode(' •'));
+  }
+  evaluate=feedback=>{
+   const r=listsForMarks(words,key.noms);
+   addFeedback(feedback,'Noms',compactList(r.chosenN),compactList(key.noms));
+   return {right:r.right,total:r.total};
+  };
+ }else if(ex===1&&!isSecond){
+  const common=sets(key.noms.filter(x=>!key.propres.includes(x))), proper=sets(key.propres);
+  corner('Choisis un nom, puis sa colonne. Tu peux changer de colonne ou remettre un nom dans la liste.',challenge);
+  const pool=text('div',null,challenge);pool.className='name-pool';pool.setAttribute('aria-label','Noms à classer');
+  const table=text('table',null,challenge);table.className='classification';
+  const tr=text('tr',null,text('thead',null,table)),row=text('tr',null,text('tbody',null,table));
+  const cols=data.body.map(label=>{text('th',label,tr).scope='col';return text('td',null,row);});
+  let active=null;
+  const entries=[];
+  const actions=[];
+  function pick(entry){
+    const next=entry===active?null:entry;
+    if(active){active.button.setAttribute('aria-pressed','false');active.button.dataset.mark='0';}
+    active=next;
+    if(active){active.button.setAttribute('aria-pressed','true');active.button.dataset.mark='1';}
+    for(const a of actions)a.disabled=!active;
+    reset.disabled=!active||active.column===0;
+  }
+  const trays=cols.map((col,i)=>{
+   const b=button('Placer ici','nav column-action',col,()=>{
+    if(!active)return;
+    const entry=active;entry.column=i+1;trays[i].append(entry.button);pick(entry);
+    entry.button.focus();
+   });
+   b.disabled=true;b.setAttribute('aria-label','Placer dans « '+data.body[i]+' »');actions.push(b);
+   const tray=text('div',null,col);tray.className='name-tray';tray.setAttribute('aria-label','Noms classés dans « '+data.body[i]+' »');return tray;
+  });
+  const reset=button('Remettre dans la liste','secondary',challenge,()=>{
+   if(!active)return;
+   const entry=active;entry.column=0;pool.append(entry.button);pick(entry);
+   entry.button.focus();
+  });
+  reset.disabled=true;
+  for(const w of p.sections[0].body.filter(word=>common.has(word)||proper.has(word))){
+   const entry={w,column:0,button:null};
+   entry.button=button(w,'word name-chip',pool,()=>pick(entry));entry.button.dataset.mark='0';entry.button.setAttribute('aria-pressed','false');
+   entries.push(entry);
+  }
+  evaluate=feedback=>{
+   const right=entries.filter(e=>e.column===(common.has(e.w)?1:2)).length;
+   for(const [i,label] of data.body.entries())addFeedback(feedback,label,compactList(entries.filter(e=>e.column===i+1).map(e=>e.w)),compactList(i?key.propres:[...common]));
+   return {right,total:entries.length};
+  };
+ }else if(ex===1&&isSecond){
+  const parts=data.body.map((sentence,i)=>{
+   const words=markedWords(sentence,challenge,circle,true);
+   return [words,shortAnswer(challenge,'capitales-'+i,'Phrase '+(i+1)+' : récris les noms propres')];
+  });
+  evaluate=feedback=>{
+   const score={right:0,total:0};
+   parts.forEach(([words,area],i)=>{
+    const names=key.majuscules[i],marked=listsForMarks(words,names),written=gradeCapitalInput(area.value,names);
+    score.right+=marked.right+written.right;score.total+=marked.total+written.total;
+    addFeedback(feedback,'Phrase '+(i+1),'Entourés : '+compactList(marked.chosenN)+' ; récrits : '+(area.value.trim()||'aucun'),compactList(names));
+   });
+   return score;
+  };
+ }else if(ex===2){
+  corner('Un clic : entourer le nom. Deux clics : barrer l’adjectif. Trois clics : effacer la marque.',challenge);
+  const lines=text('div',null,challenge);lines.className=isSecond?'source-paragraph exercise-phrases':'exercise-phrases';
+  const groups=data.body.map(sentence=>markedWords(sentence,lines,twoKinds,true));
+  evaluate=feedback=>{
+   const score={right:0,total:0};
+   groups.forEach((words,i)=>{
+    const t=key.texte[i],noted=listsForMarks(words,t.N,t.A);
+    score.right+=noted.right;score.total+=noted.total;
+    const label=groups.length===1?'Dans le texte':'Phrase '+(i+1);
+    addFeedback(feedback,label+' — noms',compactList(noted.chosenN),compactList(t.N));
+    addFeedback(feedback,label+' — adjectifs',compactList(noted.chosenA),compactList(t.A));
+   });
+   return score;
+  };
+ }else{
+  const parts=data.body.map((sentence,i)=>{
+   const words=markedWords(sentence,challenge,strike,true,true);
+   const area=shortAnswer(challenge,'replace-'+i,'→ Phrase '+(i+1)+' récrite');
+   if(!isSecond)area.rows=1;
+   return [words,area];
+  });
+  evaluate=feedback=>{
+   const score={right:0,total:0};
+   parts.forEach(([words,area],i)=>{
+    const r=gradePlacement(words,area.value,data.body[i],key.place[i]);
+    score.right+=r.right;score.total+=r.total;
+    addFeedback(feedback,'Phrase '+(i+1),(r.selected?'Adjectif barré : '+r.selected+' ; ':'')+(r.typed.trim()||'non récrite'),r.answer.replace(/\.$/,''),r.note);
+   });
+   return score;
+  };
+ }
+ const controls=text('div',null,form);
+ const submit=text('button','Valider',controls);submit.type='submit';submit.className='primary';
+ let locked=false;
+ form.addEventListener('submit',event=>{
+  event.preventDefault();if(locked)return;
+  locked=true;challenge.disabled=true;submit.hidden=true;submit.disabled=true;
+  const correction=text('section',null,form);correction.className='evaluation-feedback';
+  const title=text('h2','Correction',correction);title.tabIndex=-1;
+  const feedback=text('ul',null,correction);
+  const result=evaluate(feedback);scores.push(result);
+  text('p',result.right+' / '+result.total+rightLabel(result.right),correction);
+  button(current===7?'Voir ma note':'Exercice suivant','primary',correction,(event)=>{
+   if(event.currentTarget.disabled)return;event.currentTarget.disabled=true;
+   if(current===7){summary();return;}
+   current++;render();
+  });
+  title.focus();
+ });
+ focusHeading();
+}
+function summary(){
+ if(scores.length!==8)return;
+ ref.replaceChildren();
+ const area=text('section',null,ref);area.className='card';
+ const h=text('h1','Ta note finale',area);h.tabIndex=-1;
+ const total=scores.reduce((n,r)=>n+r.total,0),right=scores.reduce((n,r)=>n+r.right,0);
+ text('h2',fmt(ratio(right,total))+' / 10',area);
+ text('p',right+rightLabel(right)+' sur '+total+' dans les huit exercices.',area);
+ const ul=text('ol',null,area);scores.forEach((r,i)=>text('li','Exercice '+(i+1)+' : '+r.right+' / '+r.total,ul));
+ button('Recommencer','primary',area,()=>{current=0;scores=[];render();});
+ focusHeading();
+}
+start();
+}
+function hasGrammarShortcut(){return new URLSearchParams(location.search).get('exercices')==='grammaire';}
+menuButton.addEventListener('click',()=>{
+ if(hasGrammarShortcut()){const pageURL=new URL(location.href);pageURL.searchParams.delete('exercices');history.replaceState(null,'',pageURL);}
+ showMenu();
+});
+if(hasGrammarShortcut())showExactGrammar();else showMenu();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-18.CONJ-PRESENT.1';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-20.GRAMMAIRE.1';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
