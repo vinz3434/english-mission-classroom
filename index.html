@@ -21679,12 +21679,68 @@ function dictationDifference(actual,expected){
  const describe=c=>c===undefined?'fin du texte':JSON.stringify(c)+' (U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')+')';
  return '<p>Ta saisie sans espaces : <code>'+escapeHTML(visible(actual))+'</code><br>Attendu : <code>'+escapeHTML(visible(expected))+'</code></p><p>␠ indique un espace. Différence au caractère '+(at+1)+' : saisi '+escapeHTML(describe(left[at]))+' ; attendu '+escapeHTML(describe(right[at]))+'.</p><p>Les espaces sont ignorés dans les deux textes. Les lettres, majuscules, accents et autres caractères restent strictement comparés.</p>';
 }
+function configureLocalDictation(button,status,onTranscript){
+ const Recognition=window.SpeechRecognition;
+ let available=false,active=null;
+ const unavailable='La reconnaissance vocale française sur cet appareil n’est pas disponible. Tu peux répondre au clavier ; aucune voix distante ne sera utilisée.';
+ if(typeof Recognition!=='function'||typeof Recognition.available!=='function'){
+   status.textContent=unavailable;return ()=>{};
+ }
+ Recognition.available({langs:['fr-FR'],processLocally:true}).then(state=>{
+   available=state==='available';
+   button.disabled=!available;
+   status.textContent=available
+     ?'Dictée vocale locale prête. Le micro ne démarre qu’après ton appui.'
+     :state==='downloadable'||state==='downloading'
+       ?'La voix française locale n’est pas installée sur cet appareil. Aucune installation ni voix distante n’est lancée.'
+       :unavailable;
+ }).catch(()=>{status.textContent=unavailable;});
+ button.onclick=()=>{
+   if(!available)return;
+   let recognition;
+   try{
+     recognition=new Recognition();
+     recognition.lang='fr-FR';
+     recognition.processLocally=true;
+     if(recognition.processLocally!==true)throw new Error('local recognition unavailable');
+   }catch{
+     available=false;button.disabled=true;status.textContent=unavailable;return;
+   }
+   active=recognition;button.disabled=true;
+   let received=false;
+   status.textContent='Écoute locale en cours. Le micro ne sert qu’à cette réponse.';
+   recognition.onresult=event=>{
+     const result=event.results&&event.results[event.results.length-1];
+     const transcript=result&&result[0]&&result[0].transcript;
+     if(result&&result.isFinal&&transcript){
+       received=true;onTranscript(transcript);
+       status.textContent='Réponse reconnue sur l’appareil. Relis-la, puis vérifie-la.';
+     }
+   };
+   recognition.onerror=event=>{
+     status.textContent=event.error==='not-allowed'
+       ?'Accès au micro refusé. Tu peux répondre au clavier.'
+       :'La reconnaissance vocale locale a échoué. Tu peux répondre au clavier.';
+   };
+   recognition.onend=()=>{
+     if(active===recognition)active=null;
+     button.disabled=!available;
+     if(!received&&status.textContent.startsWith('Écoute locale'))
+       status.textContent='Aucune réponse reconnue. Tu peux réessayer ou répondre au clavier.';
+   };
+   try{recognition.start();}
+   catch{active=null;button.disabled=!available;status.textContent='La reconnaissance vocale locale ne peut pas démarrer. Tu peux répondre au clavier.';}
+ };
+ return ()=>{
+   if(active){try{active.abort();}catch{} active=null;}
+ };
+}
 function showDicteeFes(){
  selectedQuiz=null;menuButton.hidden=false;root.dataset.quizId='dictee-fes';
  const shuffled=DICTEE_FES.slice();
  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
  const series=shuffled.slice(0,10);
- let n=0,done=false,heard=false,score=0,voice=null;
+ let n=0,done=false,heard=false,score=0,voice=null;let stopSpeechInput=()=>{};
  const synth=window.speechSynthesis;
  function voices(){
    const local=synth?synth.getVoices().filter(v=>v.localService&&/^fr(?:-|_)/i.test(v.lang)):[];
@@ -21702,9 +21758,10 @@ function showDicteeFes(){
    synth.speak(u);
  }
  function render(){
+   stopSpeechInput();stopSpeechInput=()=>{};
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le conte et les griots (Sénégal)</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-19.ORTHO9</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 9 : 45 mots (24 noms, 6 verbes, 5 adjectifs et 10 mots invariables). Tous les mots de la liste sont inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Orthographe 9 · Le conte et les griots (Sénégal).</p>';
-   voices();root.querySelector('#dict-listen').onclick=speak;
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le conte et les griots (Sénégal)</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-19.ORTHO9</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 9 : 45 mots (24 noms, 6 verbes, 5 adjectifs et 10 mots invariables). Tous les mots de la liste sont inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
+   voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
      done=true;const answer=field.value.replace(/\s/gu,'');const expected=series[n][0].replace(/\s/gu,'');const ok=answer===expected;if(ok)score++;
@@ -21766,7 +21823,7 @@ function showDicteePalaisFes(){
  const shuffled=DICTEE_PALAIS_FES.slice();
  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
  const series=shuffled.slice(0,10);
- let n=0,done=false,heard=false,score=0,voice=null;
+ let n=0,done=false,heard=false,score=0,voice=null;let stopSpeechInput=()=>{};
  const synth=window.speechSynthesis;
  const here=()=>root.dataset.quizId==='dictee-palais-fes';
  function voices(){
@@ -21785,9 +21842,10 @@ function showDicteePalaisFes(){
    synth.speak(u);
  }
  function render(){
+   stopSpeechInput();stopSpeechInput=()=>{};
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong></p><p class="intro">Écoute puis écris le mot ou groupe de mots, avec son déterminant s’il est prononcé. Les accents comptent. Aucun microphone ni enregistrement. La voix dépend de l’appareil ; le hors-ligne reste à vérifier.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la liste du palais royal de Fès : 44 mots.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong></p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Aucun micro. Aucune réponse enregistrée. Voix locale uniquement. Dictée · Le palais royal de Fès.</p>';
-   voices();root.querySelector('#dict-listen').onclick=speak;
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong></p><p class="intro">Écoute puis écris le mot ou groupe de mots, avec son déterminant s’il est prononcé. Les accents comptent. La réponse vocale, si disponible, est traitée sur l’appareil après appui ; aucune voix distante n’est utilisée. Saisie clavier possible.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la liste du palais royal de Fès : 44 mots.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong></p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas : ils peuvent manquer, être répétés ou ajoutés. Les lettres, majuscules, minuscules, accents et apostrophes doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
+   voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
      done=true;const answer=field.value.replace(/\s/gu,'');const expected=series[n].replace(/\s/gu,'');const ok=answer===expected;if(ok)score++;
@@ -22085,7 +22143,7 @@ menuButton.addEventListener('click',()=>{
 (exerciseShortcut()||showMenu)();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-20.FICHES.2';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-21.LOCAL-DICTATION.1';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
