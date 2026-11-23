@@ -21434,7 +21434,7 @@ function loadPrevious(quiz){
 function showMenu(){
   if(window.speechSynthesis)window.speechSynthesis.cancel();
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="dict-fes-open">Dictée vocale — Le conte et les griots (Sénégal) →</button><button class="secondary" id="dict-palais-fes-open">Dictée vocale — Le palais royal de Fès →</button><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><button class="secondary" id="exact-conjugation-b-open">Fiche de conjugaison B — les 4 exercices →</button><button class="secondary" id="conj2-open">CONJ.2 — Le détective du temps · 12 défis →</button><button class="secondary" id="exact-grammar-open">Grammaire — Le nom et l’adjectif · 8 exercices (évaluations 1 et 2) →</button><button class="secondary" id="multiplications-open">Maths — Multiplications posées →</button><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
+  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="dict-fes-open">Dictée vocale — Le Sphinx de Gizeh →</button><button class="secondary" id="dict-palais-fes-open">Dictée vocale — Le palais royal de Fès →</button><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><button class="secondary" id="exact-conjugation-b-open">Fiche de conjugaison B — les 4 exercices →</button><button class="secondary" id="conj2-open">CONJ.2 — Le détective du temps · 12 défis →</button><button class="secondary" id="exact-grammar-open">Grammaire — Le nom et l’adjectif · 8 exercices (évaluations 1 et 2) →</button><button class="secondary" id="multiplications-open">Maths — Multiplications posées →</button><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
   document.querySelector('#collection-open').addEventListener('click',showCollection);document.querySelector('#multiplications-open').addEventListener('click',showMultiplications);document.querySelector('#exact-conjugation-open').addEventListener('click',showExactConjugation);document.querySelector('#exact-grammar-open').addEventListener('click',showExactGrammar);document.querySelector('#exact-conjugation-b-open').addEventListener('click',showExactConjugationB);document.querySelector('#conj2-open').addEventListener('click',showConj2);document.querySelector('#dict-palais-fes-open').addEventListener('click',showDicteePalaisFes);document.querySelector('#dict-fes-open').addEventListener('click',showDicteeFes);
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
 }
@@ -21505,19 +21505,39 @@ function showCollection(){
 
 const DICTEE_FES=[
   [
-    "le Sénégal",
+    "l’Égypte",
     "nom"
   ],
   [
-    "l’Afrique",
+    "le désert",
     "nom"
   ],
   [
-    "une histoire",
+    "une sculpture",
     "nom"
   ],
   [
-    "le conteur",
+    "le monde",
+    "nom"
+  ],
+  [
+    "la roche",
+    "nom"
+  ],
+  [
+    "un an",
+    "nom"
+  ],
+  [
+    "le corps",
+    "nom"
+  ],
+  [
+    "une créature",
+    "nom"
+  ],
+  [
+    "le lion",
     "nom"
   ],
   [
@@ -21525,163 +21545,123 @@ const DICTEE_FES=[
     "nom"
   ],
   [
-    "un pays",
+    "un pharaon",
     "nom"
   ],
   [
-    "un village",
+    "la force",
     "nom"
   ],
   [
-    "un réservoir",
+    "le roi",
     "nom"
   ],
   [
-    "le récit",
+    "la sagesse",
     "nom"
   ],
   [
-    "le public",
+    "la pyramide",
     "nom"
   ],
   [
-    "la mémoire",
+    "un rôle",
     "nom"
   ],
   [
-    "le chanteur",
+    "la protection",
     "nom"
   ],
   [
-    "le cœur",
+    "un tombeau",
     "nom"
   ],
   [
-    "la musique",
+    "le fils",
     "nom"
   ],
   [
-    "un acteur",
+    "le père",
     "nom"
   ],
   [
-    "le soir",
+    "un hommage",
     "nom"
   ],
   [
-    "la lueur",
-    "nom"
-  ],
-  [
-    "le feu",
-    "nom"
-  ],
-  [
-    "une aventure",
-    "nom"
-  ],
-  [
-    "un personnage",
-    "nom"
-  ],
-  [
-    "l’erreur",
-    "nom"
-  ],
-  [
-    "une heure",
-    "nom"
-  ],
-  [
-    "un auditeur",
-    "nom"
-  ],
-  [
-    "un animal",
-    "nom"
-  ],
-  [
-    "se déplacer",
+    "se dresser",
     "verbe"
   ],
   [
-    "raconter",
+    "symboliser",
     "verbe"
   ],
   [
-    "avoir",
+    "construire",
     "verbe"
   ],
   [
-    "connaitre",
+    "penser",
     "verbe"
   ],
   [
-    "captiver",
-    "verbe"
-  ],
-  [
-    "réfléchir",
-    "verbe"
-  ],
-  [
-    "plein",
+    "grand",
     "adjectif"
   ],
   [
-    "historique",
+    "énigmatique",
     "adjectif"
   ],
   [
-    "légendaire",
+    "taillé",
     "adjectif"
   ],
   [
-    "excellent",
+    "représenté",
     "adjectif"
   ],
   [
-    "ancien",
+    "monumental",
     "adjectif"
+  ],
+  [
+    "immense",
+    "adjectif"
+  ],
+  [
+    "humain",
+    "adjectif"
+  ],
+  [
+    "là",
+    "mot invariable"
+  ],
+  [
+    "plus",
+    "mot invariable"
+  ],
+  [
+    "entièrement",
+    "mot invariable"
   ],
   [
     "dans",
     "mot invariable"
   ],
   [
-    "comme",
+    "il y a",
     "mot invariable"
   ],
   [
-    "avec",
+    "par",
     "mot invariable"
   ],
   [
-    "plusieurs",
+    "devant",
     "mot invariable"
   ],
   [
-    "souvent",
-    "mot invariable"
-  ],
-  [
-    "aussi",
-    "mot invariable"
-  ],
-  [
-    "cela",
-    "mot invariable"
-  ],
-  [
-    "pendant",
-    "mot invariable"
-  ],
-  [
-    "surtout",
-    "mot invariable"
-  ],
-  [
-    "mais",
+    "car",
     "mot invariable"
   ]
 ];
@@ -21775,7 +21755,7 @@ function showDicteeFes(){
  function render(){
    stopSpeechInput();stopSpeechInput=()=>{};
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le conte et les griots (Sénégal)</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-19.ORTHO9</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 9 : 45 mots (24 noms, 6 verbes, 5 adjectifs et 10 mots invariables). Tous les mots de la liste sont inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas. Les apostrophes droite et typographique sont acceptées, mais ne les oublie pas. Les lettres, majuscules, minuscules et accents doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le Sphinx de Gizeh</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-23.ORTHO10</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 10 : 40 mots (21 noms, 4 verbes, 7 adjectifs et 8 mots invariables). Tous les mots de la liste sont inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas. Les apostrophes droite et typographique sont acceptées, mais ne les oublie pas. Les lettres, majuscules, minuscules et accents doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
    voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
