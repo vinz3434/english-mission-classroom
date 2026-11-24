@@ -22261,63 +22261,12 @@ function dictationFeedback(actual,expected){
    ? '<p>Il manque l’accent : pense à écrire <strong>'+escapeHTML([...accents][0])+'</strong>.</p>'
    : '<p>Il manque des accents. Regarde bien le mot corrigé.</p>';
 }
-function configureLocalDictation(button,status,onTranscript){
- const Recognition=window.SpeechRecognition;
- let available=false,active=null;
- button.hidden=true;
- if(typeof Recognition!=='function'||typeof Recognition.available!=='function')return ()=>{};
- Recognition.available({langs:['fr-FR'],processLocally:true}).then(state=>{
-   available=state==='available';
-   button.disabled=!available;
-   button.hidden=!available;
-   status.textContent=available?'Le micro démarre seulement après ton appui.':'';
- }).catch(()=>{status.textContent='';});
- button.onclick=()=>{
-   if(!available)return;
-   let recognition;
-   try{
-     recognition=new Recognition();
-     recognition.lang='fr-FR';
-     recognition.processLocally=true;
-     if(recognition.processLocally!==true)throw new Error('local recognition unavailable');
-   }catch{
-     available=false;button.disabled=true;button.hidden=true;status.textContent='';return;
-   }
-   active=recognition;button.disabled=true;
-   let received=false;
-   status.textContent='Écoute locale en cours. Le micro ne sert qu’à cette réponse.';
-   recognition.onresult=event=>{
-     const result=event.results&&event.results[event.results.length-1];
-     const transcript=result&&result[0]&&result[0].transcript;
-     if(result&&result.isFinal&&transcript){
-       received=true;onTranscript(transcript);
-       status.textContent='Réponse reconnue sur l’appareil. Relis-la, puis vérifie-la.';
-     }
-   };
-   recognition.onerror=event=>{
-     status.textContent=event.error==='not-allowed'
-       ?'Accès au micro refusé.'
-       :'Le micro n’a pas reconnu la réponse.';
-   };
-   recognition.onend=()=>{
-     if(active===recognition)active=null;
-     button.disabled=!available;
-     if(!received&&status.textContent.startsWith('Écoute locale'))
-       status.textContent='Aucune réponse reconnue. Tu peux réessayer.';
-   };
-   try{recognition.start();}
-   catch{active=null;button.disabled=!available;status.textContent='Le micro ne peut pas démarrer.';}
- };
- return ()=>{
-   if(active){try{active.abort();}catch{} active=null;}
- };
-}
 function showDicteeFes(){
  selectedQuiz=null;menuButton.hidden=false;root.dataset.quizId='dictee-fes';
  const shuffled=DICTEE_FES.slice();
  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
  const series=shuffled.slice(0,10);
- let n=0,done=false,score=0,voice=null;let stopSpeechInput=()=>{};
+ let n=0,done=false,score=0,voice=null;
  const synth=window.speechSynthesis;
  function voices(){
    const local=synth?synth.getVoices().filter(v=>v.localService&&/^fr(?:-|_)/i.test(v.lang)):[];
@@ -22335,10 +22284,9 @@ function showDicteeFes(){
    synth.speak(u);
  }
  function render(){
-   stopSpeechInput();stopSpeechInput=()=>{};
    done=false;
-   root.innerHTML='<div class="eyebrow">Orthographe 10 · Dictée vocale de mots</div><h1 tabindex="-1">Le Sphinx de Gizeh</h1><p class="intro">Écoute, puis écris ce que tu entends. Si un déterminant est dicté, écris-le aussi.</p><p class="note">10 mots différents par série, tirés des 40 entrées de la fiche Orthographe 10. Ce n’est pas le texte de la future dictée.</p><p class="dictation-progress"><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" hidden disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Pense aux accents et aux majuscules.</p><button id="dict-check" type="submit">Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div>';
-   voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
+   root.innerHTML='<div class="eyebrow">Orthographe 10 · Dictée vocale de mots</div><h1 tabindex="-1">Le Sphinx de Gizeh</h1><p class="intro">Écoute, puis écris ce que tu entends. Si un déterminant est dicté, écris-le aussi.</p><p class="note">10 mots différents par série, tirés des 40 entrées de la fiche Orthographe 10. Ce n’est pas le texte de la future dictée.</p><p class="dictation-progress"><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Pense aux accents et aux majuscules.</p><button id="dict-check" type="submit">Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div>';
+   voices();root.querySelector('#dict-listen').onclick=speak;
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
      done=true;const answer=canonicalDictation(field.value);const expected=canonicalDictation(series[n][0]);const ok=answer===expected;if(ok)score++;
@@ -22400,7 +22348,7 @@ function showDicteePalaisFes(){
  const shuffled=DICTEE_PALAIS_FES.slice();
  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
  const series=shuffled.slice(0,10);
- let n=0,done=false,score=0,voice=null;let stopSpeechInput=()=>{};
+ let n=0,done=false,score=0,voice=null;
  const synth=window.speechSynthesis;
  const here=()=>root.dataset.quizId==='dictee-palais-fes';
  function voices(){
@@ -22419,10 +22367,9 @@ function showDicteePalaisFes(){
    synth.speak(u);
  }
  function render(){
-   stopSpeechInput();stopSpeechInput=()=>{};
    done=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong></p><p class="intro">Écoute puis écris le mot ou groupe de mots, avec son déterminant s’il est prononcé. Les accents comptent.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la liste du palais royal de Fès : 44 mots.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong></p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" hidden disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Pense aux accents et aux majuscules.</p><button id="dict-check" type="submit">Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div>';
-   voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
+   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le palais royal de Fès</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong></p><p class="intro">Écoute puis écris le mot ou groupe de mots, avec son déterminant s’il est prononcé. Les accents comptent.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la liste du palais royal de Fès : 44 mots.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong></p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Pense aux accents et aux majuscules.</p><button id="dict-check" type="submit">Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div>';
+   voices();root.querySelector('#dict-listen').onclick=speak;
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
      done=true;const answer=canonicalDictation(field.value);const expected=canonicalDictation(series[n]);const ok=answer===expected;if(ok)score++;
@@ -22721,7 +22668,7 @@ menuButton.addEventListener('click',()=>{
 (exerciseShortcut()||showMenu)();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.REVISIONS.4';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.REVISIONS.5';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
