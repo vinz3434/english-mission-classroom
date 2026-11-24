@@ -1,6 +1,6 @@
 // Cache local limité au chemin de cette application, sans suivi ni API.
 const PREFIX = 'english-mission:' + self.registration.scope + ':';
-const CACHE = PREFIX + 'v20261122-multiplications-1';
+const CACHE = PREFIX + 'v20261124-geom3-1';
 const FILES = ['./', './index.html', './multiplications.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
@@ -25,3 +25,4 @@ self.addEventListener('fetch', event => {
   }
   event.respondWith(caches.open(CACHE).then(async cache => (await cache.match(event.request)) || fetch(event.request)));
 });
+
