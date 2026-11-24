@@ -42,7 +42,13 @@ h1{font-weight:900;letter-spacing:-1.6px}h2{font-weight:850}.hero{display:flex;a
 @keyframes shell-crack{0%,20%{transform:rotate(0)}35%{transform:rotate(-15deg)}50%{transform:rotate(14deg)}65%{transform:rotate(-9deg) scale(1.1);opacity:1}100%{transform:scale(1.5);opacity:0;visibility:hidden}}
 @keyframes baby-arrive{0%,65%{opacity:0;transform:translateY(20px) scale(.7)}85%{opacity:1;transform:translateY(-7px) scale(1.08)}100%{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.birth-shell{display:none}.baby-creature{animation:none}}
-fieldset{border:1px solid #cbd6e5;border-radius:12px;padding:15px;margin:20px 0}legend{padding:0 6px;line-height:1.5}select{width:100%;min-height:48px;padding:10px;border:1px solid #b9c8dc;border-radius:10px;background:white;color:var(--navy);font:inherit}.exact-words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.exact-words label{margin:0;padding:12px 4px;display:flex;align-items:center;gap:5px;font-size:14px}.exact-words input{width:20px;min-height:20px;margin:0} </style>
+fieldset{border:1px solid #cbd6e5;border-radius:12px;padding:15px;margin:20px 0}legend{padding:0 6px;line-height:1.5}select{width:100%;min-height:48px;padding:10px;border:1px solid #b9c8dc;border-radius:10px;background:white;color:var(--navy);font:inherit}.exact-words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.exact-words label{margin:0;padding:12px 4px;display:flex;align-items:center;gap:5px;font-size:14px}.exact-words input{width:20px;min-height:20px;margin:0} .quiz-option.menu-english{background:#fff7e8;border-color:#e8d1a9;box-shadow:0 5px 0 #e8d1a9}.menu-english .option-icon{background:#f9e5b9}
+.quiz-option.menu-dictee{background:#f4edfc;border-color:#d7c4e9;box-shadow:0 5px 0 #d7c4e9}.menu-dictee .option-icon{background:#e8d8f6}
+.quiz-option.menu-maths{background:#ebf8f6;border-color:#bce1da;box-shadow:0 5px 0 #bce1da}.menu-maths .option-icon{background:#cff0e7}
+.quiz-option.menu-french{background:#edf5fc;border-color:#c5dcee;box-shadow:0 5px 0 #c5dcee}.menu-french .option-icon{background:#d7eaf9}
+.quiz-option.menu-archive{background:#f7f7fa;border-color:#dce0e8;box-shadow:0 5px 0 #dce0e8}.menu-archive .option-icon{background:#e8eaf0}
+.menu-archives{margin:20px 0 12px;border:1px solid #dce0e8;border-radius:15px;padding:0 12px}.menu-archives summary{min-height:48px;padding:12px 4px;cursor:pointer;font-weight:800}.menu-archives .quiz-menu{margin:0 0 14px}.dictation-progress{margin:20px 0 12px;font-weight:800}
+</style>
 <style>
 #grammar-evaluation { color:#1d2433; line-height:1.55; }
 #grammar-evaluation .card { background:#fff; border:1px solid #d6ddee; border-radius:16px; padding:1rem; margin:.7rem 0; }
@@ -21975,12 +21981,40 @@ function loadPrevious(quiz){
   try { const saved=JSON.parse(localStorage.getItem(quiz.storageKey)||'[]'); if(Array.isArray(saved)) previous=saved.filter(x=>typeof x==='string' && quiz.bank.some(q=>q.conceptId===x)).slice(0,quiz.size); } catch {}
   previousByQuiz.set(quiz.id,previous); return previous;
 }
+function menuCard(id,tone,icon,subject,title,description,meta,attr='data-menu-action'){
+  return '<button type="button" class="quiz-option '+tone+'" '+attr+'="'+id+'"><span class="option-icon" aria-hidden="true">'+icon+'</span><span class="option-subject">'+escapeHTML(subject)+'</span><strong>'+escapeHTML(title)+'</strong><span class="option-description">'+escapeHTML(description)+'</span><span class="option-meta">'+escapeHTML(meta)+' →</span></button>';
+}
+const currentCards=[
+  ['sphinx','menu-dictee','🎧','Orthographe 10 · Dictée vocale','Le Sphinx de Gizeh','Écoute et écris les mots de la fiche.','10 mots par série'],
+  ['multiplications','menu-maths','✖️','Mathématiques','Multiplications posées','Pose tes calculs étape par étape.','Entraînement'],
+  ['nom-adjectif','menu-french','🔤','Grammaire','Le nom et l’adjectif','Repère les noms et les adjectifs.','8 exercices'],
+  ['thanksgiving','menu-english','🦃','Anglais · CM1','Thanksgiving et At the grocer’s','Questions à choix ou réponses à écrire.','10 questions par série']
+];
+const extraCards=[
+  ['conjugaison-a','menu-french','📚','Conjugaison','Fiche de conjugaison','Repère et classe les verbes.','4 exercices'],
+  ['conjugaison-b','menu-french','📘','Conjugaison','Fiche de conjugaison B','Poursuis avec une deuxième fiche.','4 exercices'],
+  ['conj2','menu-french','⏳','Conjugaison · CONJ.2','Le détective du temps','Repère quand se déroule l’action.','12 défis']
+];
+const archivedCards=[
+  ['fes','menu-archive','📦','Orthographe · Archive','Le palais royal de Fès','Retrouve cette ancienne dictée de mots.','Ouvrir l’archive']
+];
 function showMenu(){
   if(window.speechSynthesis)window.speechSynthesis.cancel();
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
-  root.innerHTML=`<div class="hero"><div><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>${eggArt()}</div><div class="collection-bar"><span>🥚 ${collection.pending} œuf${collection.pending>1?'s':''} à éclore · ${collection.pets.length} compagnon${collection.pets.length>1?'s':''}</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Choisis ta mission</h2><div class="quiz-menu">${Object.values(QUIZZES).map(q=>`<button class="quiz-option ${q.id}" data-quiz="${q.id}"><span class="option-icon" aria-hidden="true">${icons[q.id]}</span><span class="option-subject">${escapeHTML(q.subject)}</span><strong>${escapeHTML(q.title)}</strong><span class="option-description">${escapeHTML(q.menuDescription)}</span><span class="option-meta">${q.size} questions · ${escapeHTML(q.duration)} →</span></button>`).join('')}</div><button class="secondary" id="dict-fes-open">Dictée vocale — Le Sphinx de Gizeh →</button><button class="secondary" id="dict-palais-fes-open">Dictée vocale — Le palais royal de Fès →</button><button class="secondary" id="exact-conjugation-open">Fiche de conjugaison — les 4 exercices préparés →</button><button class="secondary" id="exact-conjugation-b-open">Fiche de conjugaison B — les 4 exercices →</button><button class="secondary" id="conj2-open">CONJ.2 — Le détective du temps · 12 défis →</button><button class="secondary" id="exact-grammar-open">Grammaire — Le nom et l’adjectif · 8 exercices (évaluations 1 et 2) →</button><button class="secondary" id="multiplications-open">Maths — Multiplications posées →</button><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>${rewardDisclaimer()}`;
-  document.querySelector('#collection-open').addEventListener('click',showCollection);document.querySelector('#multiplications-open').addEventListener('click',showMultiplications);document.querySelector('#exact-conjugation-open').addEventListener('click',showExactConjugation);document.querySelector('#exact-grammar-open').addEventListener('click',showExactGrammar);document.querySelector('#exact-conjugation-b-open').addEventListener('click',showExactConjugationB);document.querySelector('#conj2-open').addEventListener('click',showConj2);document.querySelector('#dict-palais-fes-open').addEventListener('click',showDicteePalaisFes);document.querySelector('#dict-fes-open').addEventListener('click',showDicteeFes);
+  const top=['geometryGeom3','conjPresent'].filter(id=>QUIZZES[id]);
+  const card=q=>menuCard(q.id,q.id,icons[q.id],q.subject,q.title,q.menuDescription,q.size+' questions · '+q.duration,'data-quiz');
+  const rest=Object.values(QUIZZES).filter(q=>!['englishNew','englishWrite',...top].includes(q.id));
+  root.innerHTML='<div class="hero"><div class="hero-copy"><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>'+eggArt()+'</div><div class="collection-bar"><span>🥚 '+collection.pending+' œuf'+(collection.pending===1?'':'s')+' à éclore · '+collection.pets.length+' compagnon'+(collection.pets.length===1?'':'s')+'</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Révisions du moment</h2><div class="quiz-menu">'+currentCards.map(c=>menuCard(...c)).join('')+top.map(k=>card(QUIZZES[k])).join('')+'</div><h2 class="menu-heading">Autres missions</h2><div class="quiz-menu">'+rest.map(card).join('')+extraCards.map(c=>menuCard(...c)).join('')+'</div><details class="menu-archives"><summary>Archives</summary><div class="quiz-menu">'+archivedCards.map(c=>menuCard(...c)).join('')+'</div></details><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>'+rewardDisclaimer();
+  document.querySelector('#collection-open').addEventListener('click',showCollection);
+  const actions={sphinx:showDicteeFes,multiplications:showMultiplications,'nom-adjectif':showExactGrammar,thanksgiving:showThanksgivingModes,'conjugaison-a':showExactConjugation,'conjugaison-b':showExactConjugationB,conj2:showConj2,fes:showDicteePalaisFes};
+  root.querySelectorAll('[data-menu-action]').forEach(button=>button.addEventListener('click',actions[button.dataset.menuAction]));
   root.querySelectorAll('[data-quiz]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.quiz)));focusHeading();
+}
+function showThanksgivingModes(){
+  selectedQuiz=null;menuButton.hidden=false;root.dataset.quizId='thanksgiving';
+  root.innerHTML='<div class="eyebrow">Anglais · CM1</div><h1 tabindex="-1">Thanksgiving et At the grocer’s</h1><p class="intro">Choisis ton mode. Les deux séries restent disponibles.</p><div class="quiz-menu">'+menuCard('englishNew','menu-english','🦃','Mode 1','Questions à choix','Thanksgiving, aliments et préférences.','10 questions','data-english-mode')+menuCard('englishWrite','menu-english','✍️','Mode 2','Réponses à écrire','Retrouve le mot ou l’expression en anglais.','10 questions','data-english-mode')+'</div>';
+  root.querySelectorAll('[data-english-mode]').forEach(button=>button.addEventListener('click',()=>showWelcome(button.dataset.englishMode)));
+  focusHeading();
 }
 function showWelcome(id){
   selectedQuiz=QUIZZES[id];questions=[];results=[];index=0;submitted=false;root.dataset.quizId=id;menuButton.hidden=false;
@@ -22299,7 +22333,7 @@ function showDicteeFes(){
  function render(){
    stopSpeechInput();stopSpeechInput=()=>{};
    done=false;heard=false;
-   root.innerHTML='<div class="eyebrow">Orthographe · Dictée de mots</div><h1 tabindex="-1">Le Sphinx de Gizeh</h1><p><strong>DICTÉE · 10 MOTS SEULEMENT</strong> · version 2026-11-23.ORTHO10</p><p class="intro">Écoute, puis écris le mot avec son déterminant quand il est dicté.</p><p class="note">Cette partie s’arrête après 10 mots, sans répétition. Chaque nouvelle série est mélangée à partir de la fiche Orthographe 10 : 40 mots (21 noms, 4 verbes, 7 adjectifs et 8 mots invariables). Tous les mots de la liste sont inclus. Ce n’est pas le texte de la future dictée.</p><p><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas. Les apostrophes droite et typographique sont acceptées, mais ne les oublie pas. Les lettres, majuscules, minuscules et accents doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
+   root.innerHTML='<div class="eyebrow">Orthographe 10 · Dictée vocale de mots</div><h1 tabindex="-1">Le Sphinx de Gizeh</h1><p class="intro">Écoute, puis écris ce que tu entends. Si un déterminant est dicté, écris-le aussi.</p><p class="note">10 mots différents par série, tirés des 40 entrées de la fiche Orthographe 10. Ce n’est pas le texte de la future dictée.</p><p class="dictation-progress"><strong>Mot '+(n+1)+' / '+series.length+'</strong> · '+series[n][1]+'</p><button id="dict-listen" type="button">Écouter / répéter le mot</button><p id="dict-voice-status" role="status"></p><button id="dict-speech" type="button" disabled>Dicter ma réponse sur cet appareil</button><p id="dict-speech-status" role="status"></p><form id="dict-form"><label for="dict-answer">Ta réponse</label><input id="dict-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="dict-hint"><p id="dict-hint">Les espaces ne comptent pas. Les apostrophes droite et typographique sont acceptées, mais ne les oublie pas. Les lettres, majuscules, minuscules et accents doivent être exacts.</p><button id="dict-check" disabled>Vérifier ma réponse</button></form><div id="dict-feedback" aria-live="polite"></div><p class="note">Réponse vocale facultative, locale uniquement. Le micro démarre après appui ; aucun enregistrement n’est conservé. Saisie clavier disponible.</p>';
    voices();root.querySelector('#dict-listen').onclick=speak;const speechField=root.querySelector('#dict-answer');stopSpeechInput=configureLocalDictation(root.querySelector('#dict-speech'),root.querySelector('#dict-speech-status'),transcript=>{if(speechField&&!speechField.disabled)speechField.value=transcript;});
    root.querySelector('#dict-form').onsubmit=e=>{
      e.preventDefault();if(done||!heard)return;const field=root.querySelector('#dict-answer');if(!field.value.trim()){field.focus();return;}
@@ -22683,7 +22717,7 @@ menuButton.addEventListener('click',()=>{
 (exerciseShortcut()||showMenu)();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.GEOM3.1';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.REVISIONS.1';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
