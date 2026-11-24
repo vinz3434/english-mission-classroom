@@ -22002,8 +22002,9 @@ function showMenu(){
   if(window.speechSynthesis)window.speechSynthesis.cancel();
   selectedQuiz=null;questions=[];results=[];index=0;submitted=false;root.dataset.quizId='menu';menuButton.hidden=true;
   const card=q=>menuCard(q.id,q.id,icons[q.id],q.subject,q.title,q.menuDescription,q.size+' questions · '+q.duration,'data-quiz');
-  const rest=Object.values(QUIZZES).filter(q=>!['englishNew','englishWrite'].includes(q.id));
-  root.innerHTML='<div class="hero"><div class="hero-copy"><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>'+eggArt()+'</div><div class="collection-bar"><span>🥚 '+collection.pending+' œuf'+(collection.pending===1?'':'s')+' à éclore · '+collection.pets.length+' compagnon'+(collection.pets.length===1?'':'s')+'</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Révisions du moment</h2><div class="quiz-menu">'+currentCards.map(c=>menuCard(...c)).join('')+'</div><details class="menu-archives"><summary>Archives</summary><div class="quiz-menu">'+archivedCards.map(c=>menuCard(...c)).join('')+extraCards.map(c=>menuCard(...c)).join('')+rest.map(card).join('')+'</div></details><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>'+rewardDisclaimer();
+  const currentQuizIds=['geometryGeom3'];
+  const rest=Object.values(QUIZZES).filter(q=>!['englishNew','englishWrite',...currentQuizIds].includes(q.id));
+  root.innerHTML='<div class="hero"><div class="hero-copy"><div class="eyebrow">Le monde des révisions</div><h1 tabindex="-1">Une mission.<br>Un nouvel œuf.</h1><p class="intro">Explore, apprends et agrandis ta collection.</p></div>'+eggArt()+'</div><div class="collection-bar"><span>🥚 '+collection.pending+' œuf'+(collection.pending===1?'':'s')+' à éclore · '+collection.pets.length+' compagnon'+(collection.pets.length===1?'':'s')+'</span><button id="collection-open" class="small-button">Ma collection →</button></div><h2 class="menu-heading">Révisions du moment</h2><div class="quiz-menu">'+currentCards.map(c=>menuCard(...c)).join('')+currentQuizIds.map(id=>card(QUIZZES[id])).join('')+'</div><details class="menu-archives"><summary>Archives</summary><div class="quiz-menu">'+archivedCards.map(c=>menuCard(...c)).join('')+extraCards.map(c=>menuCard(...c)).join('')+rest.map(card).join('')+'</div></details><p class="note">Chaque mission à 10/10 donne un œuf à faire éclore après cinq minutes, quelle que soit la matière. La correction arrive après ta réponse.</p>'+rewardDisclaimer();
   document.querySelector('#collection-open').addEventListener('click',showCollection);
   const actions={sphinx:showDicteeFes,multiplications:showMultiplications,'nom-adjectif':showExactGrammar,thanksgiving:showThanksgivingModes,'conjugaison-a':showExactConjugation,'conjugaison-b':showExactConjugationB,conj2:showConj2,fes:showDicteePalaisFes};
   root.querySelectorAll('[data-menu-action]').forEach(button=>button.addEventListener('click',actions[button.dataset.menuAction]));
@@ -22720,7 +22721,7 @@ menuButton.addEventListener('click',()=>{
 (exerciseShortcut()||showMenu)();
 if('serviceWorker' in navigator && ['http:','https:'].includes(location.protocol)){
   const status=document.querySelector('#offline-status');
-  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.REVISIONS.3';refresh.onclick=()=>location.reload();status.after(refresh);
+  const refresh=document.createElement('button');refresh.type='button';refresh.className='secondary';refresh.textContent='Actualiser l’application · version 2026-11-24.REVISIONS.4';refresh.onclick=()=>location.reload();status.after(refresh);
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     const updateStatus=()=>{
       if(reg.waiting){status.textContent='Mise à jour prête : ferme puis rouvre le quiz.';status.classList.remove('ready');}
